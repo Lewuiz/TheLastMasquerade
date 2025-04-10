@@ -11,13 +11,11 @@ namespace Main
         {
             return new Dictionary<string, object>()
             {
-                {name, "TESTING"}
+                {PLAYER_NAME, "TESTING"},
             };
         }
 
-        [JsonProperty(PropertyName = NAME)]
-        public string name = default;
-        public const string NAME = "A";
+        public const string PLAYER_NAME = "player_name";
 
         public override string GetSaveDataId()
         {

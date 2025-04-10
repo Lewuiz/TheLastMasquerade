@@ -5,15 +5,18 @@ namespace Main
 {
     public static class SaveDataExtension
     {
-        public static T ToObject<T>(this object obj) where T : class
+        public static T ToObject<T>(this object obj)
         {
-            if (typeof(T).IsValueType || typeof(T) == typeof(string))
-            {
-                return (T)Convert.ChangeType(obj, typeof(T));
-            }
+            if (obj == null)
+                return default;
 
-            var json = JsonConvert.SerializeObject(obj);
-            return JsonConvert.DeserializeObject<T>(json)!;
+            Type targetType = typeof(T);
+
+            if (targetType.IsPrimitive || targetType == typeof(string) || targetType.IsValueType)
+                return (T)Convert.ChangeType(obj, targetType);
+
+            string json = JsonConvert.SerializeObject(obj);
+            return JsonConvert.DeserializeObject<T>(json);
         }
     }
 }
