@@ -8,16 +8,10 @@ namespace Main.Singleton
     /// <typeparam name="T"></typeparam>
     public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
     {
-        #region Fields
-
         /// <summary>
         /// The instance.
         /// </summary>
         private static T instance;
-
-        #endregion
-
-        #region Properties
 
         /// <summary>
         /// Gets the instance.
@@ -29,11 +23,7 @@ namespace Main.Singleton
             {
                 if (instance == null)
                 {
-#if UNITY_6000
                     instance = FindAnyObjectByType<T>();
-#else
-                    instance = FindObjectOfType<T>();
-#endif
                     if (instance == null)
                     {
                         GameObject obj = new GameObject();
@@ -45,15 +35,14 @@ namespace Main.Singleton
             }
         }
 
-        #endregion
-
-        #region Unity Messages
-
         /// <summary>
         /// Use this for initialization.
         /// </summary>
         protected virtual void Awake()
         {
+            if (!Application.isPlaying)
+                return;
+
             if (instance == null)
             {
                 instance = this as T;
@@ -73,14 +62,6 @@ namespace Main.Singleton
             }
         }
 
-        #endregion
-
-        #region Protected Methods
-
-        #endregion
-
-        #region Public Methods
-
         public virtual void OnSingletonClear() { }
 
         public static void CreateInstance()
@@ -99,7 +80,5 @@ namespace Main.Singleton
             instance.OnSingletonClear();
             instance = default(T);
         }
-
-        #endregion
     }
 }

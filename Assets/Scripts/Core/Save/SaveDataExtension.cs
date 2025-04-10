@@ -1,5 +1,5 @@
+using Newtonsoft.Json;
 using System;
-using UnityEngine;
 
 namespace Main
 {
@@ -12,8 +12,8 @@ namespace Main
                 return (T)Convert.ChangeType(obj, typeof(T));
             }
 
-            string json = JsonUtility.ToJson(obj);
-            return JsonUtility.FromJson<T>(json);
+            var json = JsonConvert.SerializeObject(obj);
+            return JsonConvert.DeserializeObject<T>(json)!;
         }
     }
 }

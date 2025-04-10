@@ -6,28 +6,78 @@ namespace Main.Singleton
     /// This singleton is persistent across scenes by calling <see cref="UnityEngine.Object.DontDestroyOnLoad(Object)"/>.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class PersistentMonoSingleton<T> : MonoSingleton<T> where T : MonoSingleton<T>
+    public abstract class PersistentMonoSingleton<T> : MonoBehaviour where T : PersistentMonoSingleton<T>
     {
         /// <summary>
-        /// if this is true, this singleton will auto detach if it finds itself parented on awake
+        /// The instance.
         /// </summary>
-        [Tooltip("if this is true, this singleton will auto detach if it finds itself parented on awake")]
-        [SerializeField] private bool UnparentOnAwake = true;
-        
-        #region Protected Methods
+        private static T instance;
 
-        protected override void Awake()
+        /// <summary>
+        /// Gets the instance.
+        /// </summary>
+        /// <value>The instance.</value>
+        public static T Instance
         {
-            if (UnparentOnAwake) {
-                transform.SetParent(null);
-            }
-            base.Awake();
-            if (Application.isPlaying)
+            get
             {
-                DontDestroyOnLoad(gameObject);
+                if (instance == null)
+                {
+                    instance = FindAnyObjectByType<T>();
+                    if (instance == null)
+                    {
+                        GameObject obj = new GameObject();
+                        obj.name = typeof(T).Name;
+                        instance = obj.AddComponent<T>();
+                    }
+                }
+                return instance;
             }
         }
 
-        #endregion
+        /// <summary>
+        /// Use this for initialization.
+        /// </summary>
+        protected virtual void Awake()
+        {
+            if (!Application.isPlaying)
+                return;
+
+            if (instance == null)
+            {
+                instance = this as T;
+                DontDestroyOnLoad(instance);
+            }
+            else
+            {
+                if (Application.isPlaying)
+                {
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    DestroyImmediate(gameObject);
+                }
+            }
+        }
+
+        public virtual void OnSingletonClear() { }
+
+        public static void CreateInstance()
+        {
+            DestroyInstance();
+            instance = Instance;
+        }
+
+        public static void DestroyInstance()
+        {
+            if (instance == null)
+            {
+                return;
+            }
+
+            instance.OnSingletonClear();
+            instance = default(T);
+        }
     }
 }

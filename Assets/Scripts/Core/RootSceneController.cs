@@ -18,8 +18,8 @@ namespace Main
             DOTween.Init();
             DOTween.SetTweensCapacity(200, 200);
 
-            GameCore gameCore = Resources.Load<GameCore>("Core/Game Core");
-            Instantiate(gameCore.gameObject);
+            GameObject gameObject = new GameObject();
+            GameCore gameCore = gameObject.AddComponent<GameCore>();
             yield return gameCore.Initialized();
         }
     }
