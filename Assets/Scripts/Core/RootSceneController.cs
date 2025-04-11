@@ -17,10 +17,10 @@ namespace Main
 
             DOTween.Init();
             DOTween.SetTweensCapacity(200, 200);
-
-            GameObject gameObject = new GameObject();
-            GameCore gameCore = gameObject.AddComponent<GameCore>();
-            yield return gameCore.Initialized();
+;
+            GameObject gameCoreGO = Resources.Load<GameObject>("Core/Game Core");
+            Instantiate(gameCoreGO);
+            yield return GameCore.Instance.Initialized();
         }
     }
 }

@@ -6,7 +6,7 @@ namespace Main.Singleton
     /// This singleton is persistent across scenes by calling <see cref="UnityEngine.Object.DontDestroyOnLoad(Object)"/>.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class PersistentMonoSingleton<T> : MonoBehaviour where T : PersistentMonoSingleton<T>
+    public abstract class PersistentMonoSingleton<T> : MonoBehaviour where T : Component
     {
         /// <summary>
         /// The instance.
@@ -61,7 +61,7 @@ namespace Main.Singleton
             }
         }
 
-        public virtual void OnSingletonClear() { }
+        protected virtual void OnSingletonClear() { }
 
         public static void CreateInstance()
         {
@@ -76,7 +76,8 @@ namespace Main.Singleton
                 return;
             }
 
-            instance.OnSingletonClear();
+            PersistentMonoSingleton<T> persistentMonoSingleton = instance as PersistentMonoSingleton<T>;
+            persistentMonoSingleton.OnSingletonClear();
             instance = default(T);
         }
     }

@@ -11,11 +11,11 @@ namespace Main
     /// </summary>
     public static class EventBusUtil
     {
-        public static IReadOnlyList<Type> EventTypes { get; set; }
-        public static IReadOnlyList<Type> EventBusTypes { get; set; }
+        public static IReadOnlyList<Type> EventTypes { get; set; } = new List<Type>();
+        public static IReadOnlyList<Type> EventBusTypes { get; set; } = new List<Type>();
 
 #if UNITY_EDITOR
-        public static PlayModeStateChange PlayModeState { get; set; }
+        public static PlayModeStateChange PlayModeState { get; set; } = default;
 
         /// <summary>
         /// Initializes the Unity Editor related components of the EventBusUtil.

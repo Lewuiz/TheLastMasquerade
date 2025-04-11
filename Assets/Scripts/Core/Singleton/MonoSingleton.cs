@@ -6,7 +6,7 @@ namespace Main.Singleton
     /// The basic MonoBehaviour singleton implementation, this singleton is destroyed after scene changes, use <see cref="PersistentMonoSingleton{T}"/> if you want a persistent and global singleton instance.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
+    public abstract class MonoSingleton<T> : MonoBehaviour where T : Component
     {
         /// <summary>
         /// The instance.
@@ -77,8 +77,14 @@ namespace Main.Singleton
                 return;
             }
 
-            instance.OnSingletonClear();
+            MonoSingleton<T> monoSingleton = instance as MonoSingleton<T>;
+            monoSingleton.OnSingletonClear();
             instance = default(T);
+        }
+
+        private void OnDestroy()
+        {
+            DestroyInstance();
         }
     }
 }
