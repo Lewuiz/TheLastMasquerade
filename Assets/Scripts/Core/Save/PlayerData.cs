@@ -14,7 +14,8 @@ namespace Main
                 {
                     STORY_PROGRESS, new StoryProgress()
                     {
-                        dialogue = "scene_opening_blackwood_estate"
+                        dialogue = "scene_opening_blackwood_estate",
+                        storyIndex = 0
                     }
                 }
             };
@@ -29,6 +30,9 @@ namespace Main
             public string dialogue;
             public const string DIALOGUE = "a";
 
+            [JsonProperty(PropertyName = STORY_INDEX)]
+            public int storyIndex;
+            public const string STORY_INDEX = "b";
         }
 
         public override string GetSaveDataId()
