@@ -11,11 +11,25 @@ namespace Main
         {
             return new Dictionary<string, object>()
             {
-                {PLAYER_NAME, "TESTING"},
+                {
+                    STORY_PROGRESS, new StoryProgress()
+                    {
+                        dialogue = "scene_opening_blackwood_estate"
+                    }
+                }
             };
         }
 
-        public const string PLAYER_NAME = "player_name";
+        public const string STORY_PROGRESS = "story_progress";
+
+        [Serializable]
+        public class StoryProgress
+        {
+            [JsonProperty(PropertyName = DIALOGUE)]
+            public string dialogue;
+            public const string DIALOGUE = "a";
+
+        }
 
         public override string GetSaveDataId()
         {
