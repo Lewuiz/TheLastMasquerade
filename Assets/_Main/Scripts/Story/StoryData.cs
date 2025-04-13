@@ -11,10 +11,10 @@ namespace Main
     {
         public string dialogueId;
         public bool isAutoSave;
-        public List<DialogueData> dialogueDataList = new List<DialogueData>();
-        public List<DialogueChoice> dialogueChoiceList = new List<DialogueChoice>();
-        public List<DialogueEvent> events = new List<DialogueEvent>();
-        public List<DialogueGameMode> nextGameMode = new List<DialogueGameMode>();
+        public List<DialogueData> dialogue = new List<DialogueData>();
+        public List<DialogueEventData> events = new List<DialogueEventData>();
+        public List<DialogueChoiceData> choices = new List<DialogueChoiceData>();
+        public List<DialogueGameModeData> nextGameMode = new List<DialogueGameModeData>();
     }
 
     public class DialogueCharacterData
@@ -24,19 +24,19 @@ namespace Main
         public string expression;
     }
 
-    public class DialogueChoice
+    public class DialogueChoiceData
     {
         public string text;
         public string nextDialogueId;
     }
 
-    public class DialogueEvent
+    public class DialogueEventData
     {
         public string type;
         public string value;
     }
 
-    public class DialogueGameMode
+    public class DialogueGameModeData
     {
         public string type;
         public string nextDialogueId;

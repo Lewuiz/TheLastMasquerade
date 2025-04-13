@@ -7,11 +7,13 @@ namespace Main
     {
         [SerializeField] private List<CharacterData> characterDataList = new List<CharacterData>();
         [SerializeField] private SpriteRenderer backgroundSR = default;
+        [SerializeField] private BackgroundSizeFitter backgroundSizeFitter = default;
         [SerializeField] private DialoguePanel dialoguePanel = default;
+        [SerializeField] private DialogueChoice dialogueChoice = default;
 
         public void Init() 
         {
-            
+            dialoguePanel.Init(PlayNextDialogue);
         }
 
         public void PlayNextDialogue()
@@ -19,9 +21,10 @@ namespace Main
 
         }
 
-        private void UpdateBackground()
+        private void UpdateBackground(Sprite sprite)
         {
-
+            backgroundSR.sprite = sprite;
+            backgroundSizeFitter.FitToCamera();
         }
     }
 }

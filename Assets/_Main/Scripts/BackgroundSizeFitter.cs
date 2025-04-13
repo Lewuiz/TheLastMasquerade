@@ -4,7 +4,7 @@ namespace Main
 {
     [RequireComponent(typeof(SpriteRenderer))]
     [ExecuteInEditMode]
-    public class BackrgoundSizeFitter : MonoBehaviour
+    public class BackgroundSizeFitter : MonoBehaviour
     {
         private void Awake()
         {
