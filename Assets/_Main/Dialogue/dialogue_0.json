@@ -1,0 +1,259 @@
+[
+    {
+        "dialogueId": "scene_opening_blackwood_estate",
+        "isAutoSave": true,
+        "dialogue": [
+            {
+                "character": "Elias",
+                "text": "It's cold.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Security Guard",
+                "text": "Go right in, Sir Wakefield."
+            },
+            {
+                "character": "Henshaw",
+                "text": "Good evening, Sir Elias. Let me lead you to the ballroom while the maid brings your luggage to your room.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Blackwood",
+                "text": "Ah, Detective Wakefield, welcome! I trust your journey was pleasant?",
+                "expression": "excited"
+            },
+            {
+                "character": "Elias",
+                "text": "As pleasant as one can expect. I am honored by the invitation, my lord.",
+                "expression": "amused"
+            },
+            {
+                "character": "Blackwood",
+                "text": "Eleanor? You look unwell.",
+                "expression": "confused"
+            },
+            {
+                "character": "Eleanor",
+                "text": "I've been overworking myself. Excuse me, I need a drink.",
+                "expression": "nervous"
+            },
+            {
+                "character": "Rosalind",
+                "text": "Oh my, her dress must be worth thousands.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Fairfax",
+                "text": "Blackwood still has the soul of a young bachelor, even at his age.",
+                "expression": "happy"
+            }
+        ],
+        "choices": [
+            {
+                "text": "Click on the carriage to leave",
+                "nextDialogueId": "ending_a"
+            },
+            {
+                "text": "Show the invitation to the security guard",
+                "nextDialogueId": "scene_ballroom_entry"
+            }
+        ],
+        "events": [
+            {
+                "type": "changeBackground",
+                "value": "blackwood_estate_night.png"
+            },
+            {
+                "type": "playSound",
+                "value": "carriage_stop.wav"
+            }
+        ],
+        "nextGameMode": {
+            "type": "hidden_object",
+            "nextDialogueId": "scene_investigate_ballroom"
+        }
+    },
+    {
+        "dialogueId": "scene_morning_discovery",
+        "isAutoSave": true,
+        "dialogue": [
+            {
+                "character": "Elias",
+                "text": "What a night. Time to rest.",
+                "expression": "amused"
+            },
+            {
+                "character": "Servant 2",
+                "text": "Good morning, Sir Wakefield. This is Lady Eleanor's tea. Would you like one as well?"
+            },
+            {
+                "character": "Elias",
+                "text": "Did anything unusual happen last night?"
+            },
+            {
+                "character": "Servant 2",
+                "text": "Well… Lady Eleanor was awake very late. I saw her pacing in the hallway, distressed. She entered the library and seemed to be on a call, whispering frantically about a note she received. She was afraid, sir. She kept saying she didn't know who to trust.",
+                "expression": "hesitant"
+            },
+            {
+                "character": "Blackwood",
+                "text": "[Servant 1], check on Eleanor."
+            },
+            {
+                "character": "Servant 1",
+                "text": "My lord… Lady Eleanor… she's dead."
+            }
+        ],
+        "events": [
+            {
+                "type": "inspectObject",
+                "value": "teacup"
+            },
+            {
+                "type": "playSound",
+                "value": "suspense_music.mp3"
+            }
+        ],
+        "nextGameMode": {
+            "type": "hidden_object",
+            "nextDialogueId": "scene_crime_investigation"
+        }
+    },
+    {
+        "dialogueId": "scene_crime_investigation",
+        "isAutoSave": true,
+        "dialogue": [
+            {
+                "character": "Elias",
+                "text": "A death threat!"
+            },
+            {
+                "character": "Elias",
+                "text": "Why did you give Eleanor the tea? Do you recall anything suspicious last night?"
+            },
+            {
+                "character": "Servant 2",
+                "text": "She always begins her morning with tea. As for last night… three guests spent the most time with her—Blackwood, Fairfax, and Lady Rosalind. And… well, the way she acted in the library. She was terrified, sir. I regret not asking her more."
+            }
+        ],
+        "events": [
+            {
+                "type": "inspectObject",
+                "value": "tea_cup"
+            },
+            {
+                "type": "inspectObject",
+                "value": "pockets"
+            },
+            {
+                "type": "inspectObject",
+                "value": "bedside_table"
+            }
+        ],
+        "nextGameMode": {
+            "type": "hidden_object",
+            "nextDialogueId": "scene_library_search"
+        }
+    },
+    {
+        "dialogueId": "scene_library_search",
+        "isAutoSave": true,
+        "dialogue": [
+            {
+                "character": "Private Investigator",
+                "text": "The killer knows about Blackwood, Fairfax, and Eleanor's business dealings. You're treading dangerous ground."
+            },
+            {
+                "character": "Henshaw",
+                "text": "It should be in the library bookshelf. A simple task for a sharp mind such as yours."
+            }
+        ],
+        "events": [
+            {
+                "type": "puzzle",
+                "value": "bookshelf_logic"
+            },
+            {
+                "type": "findItem",
+                "value": "guest_list"
+            }
+        ],
+        "nextGameMode": {
+            "type": "hidden_object",
+            "nextDialogueId": "scene_fairfax_missing"
+        }
+    },
+    {
+        "dialogueId": "scene_fairfax_missing",
+        "isAutoSave": true,
+        "dialogue": [
+            {
+                "character": "Servant 1",
+                "text": "Fairfax was last seen near Blackwood's chambers."
+            }
+        ],
+        "events": [
+            {
+                "type": "searchArea",
+                "value": "hallway"
+            },
+            {
+                "type": "findItem",
+                "value": "golf_stick"
+            },
+            {
+                "type": "findItem",
+                "value": "torn_note"
+            },
+            {
+                "type": "discoverPassage",
+                "value": "under_carpet"
+            }
+        ],
+        "nextGameMode": {
+            "type": "hidden_object",
+            "nextDialogueId": "scene_confrontation"
+        }
+    },
+    {
+        "dialogueId": "scene_confrontation",
+        "isAutoSave": true,
+        "dialogue": [
+            {
+                "character": "Blackwood",
+                "text": "This handwriting… Isabella.",
+                "expression": "shock"
+            },
+            {
+                "character": "Lady Isabella",
+                "text": "They forced you to leave me. Eleanor took everything. She had to go. And Fairfax… he simply had to follow her.",
+                "expression": "angry"
+            },
+            {
+                "character": "Elias",
+                "text": "Your motives were greed and vengeance. And yet, you wore the mask of love.",
+                "expression": "amused"
+            }
+        ],
+        "events": [
+            {
+                "type": "combat",
+                "value": "quick_time_event"
+            }
+        ],
+        "choices": [
+            {
+                "text": "Overpower Henshaw",
+                "nextDialogueId": "ending_justice_prevails"
+            },
+            {
+                "text": "Fail to react in time",
+                "nextDialogueId": "ending_tragedy"
+            }
+        ],
+        "nextGameMode": {
+            "type": "combat",
+            "nextDialogueId": "scene_final_outcome"
+        }
+    }
+]
