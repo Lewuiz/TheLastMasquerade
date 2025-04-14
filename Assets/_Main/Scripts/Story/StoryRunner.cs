@@ -9,11 +9,18 @@ namespace Main
         [SerializeField] private SpriteRenderer backgroundSR = default;
         [SerializeField] private BackgroundSizeFitter backgroundSizeFitter = default;
         [SerializeField] private DialoguePanel dialoguePanel = default;
-        [SerializeField] private DialogueChoice dialogueChoice = default;
+        [SerializeField] private DialogueChoicePanel dialogueChoicePanel = default;
 
         public void Init() 
         {
             dialoguePanel.Init(PlayNextDialogue);
+            dialogueChoicePanel.Init();
+        }
+
+        private void ShowDialogueChoice()
+        {
+            dialogueChoicePanel.gameObject.SetActive(true);
+            dialogueChoicePanel.ShowDialogue();
         }
 
         public void PlayNextDialogue()
