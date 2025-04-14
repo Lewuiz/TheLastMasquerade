@@ -20,6 +20,10 @@ namespace Main
             {
                 dialogueChoiceList[i].Init(OnDialogueSelect);
             }
+
+            cg.alpha = 0f;
+            SetCanvasGroupInteactable(false);
+            gameObject.SetActive(false);
         }
 
         public void ShowDialogue()
@@ -29,12 +33,12 @@ namespace Main
 
         private IEnumerator ShowDialogueCor()
         {
-            SetCanvasInteactable(false);
+            SetCanvasGroupInteactable(false);
             yield return cg.DOFade(1f, .3f).WaitForCompletion();
-            SetCanvasInteactable(true);
+            SetCanvasGroupInteactable(true);
         }
 
-        private void SetCanvasInteactable(bool canInteract)
+        private void SetCanvasGroupInteactable(bool canInteract)
         {
             cg.interactable = canInteract;
             cg.blocksRaycasts = canInteract;
@@ -47,7 +51,7 @@ namespace Main
 
         private IEnumerator HideDialogueCor()
         {
-            SetCanvasInteactable(false);
+            SetCanvasGroupInteactable(false);
             yield return cg.DOFade(0f, .3f).WaitForCompletion();
         }
 
