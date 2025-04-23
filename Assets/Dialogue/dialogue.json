@@ -158,7 +158,7 @@
             },
             {
                 "character": "narrator",
-                "text": "(Then a new guest arrive, taking away everyone's attention)"
+                "text": "(Then a new guest arrives, taking away everyone's attention)"
             },
             {
                 "character": "narrator",
@@ -231,7 +231,8 @@
             },
             {
                 "character": "Elias",
-                "text": "(Seems like everyone hasn't woken up yet, maybe I can do some exploring)"
+                "text": "(Seems like everyone hasn't woken up yet, maybe I can do some exploring)",
+                "expression": "neutral"
             }
         ],
         "events": [
@@ -257,7 +258,7 @@
         "dialogue": [
             {
                 "character": "narrator",
-                "text": "(As Elias admires the intricate paintings on the walls of the hallway, he was met with one of the servants, Perry, holding a hot cup of fresh tea.)"
+                "text": "(As Elias admires the intricate paintings on the walls of the hallway, he was met with one of the servants, Edith, holding a hot cup of fresh tea.)"
             },
             {
                 "character": "Edith",
@@ -284,7 +285,7 @@
             },
             {
                 "character": "narrator",
-                "text": "(Perry bows, then places the teacup that was in his hands on to a nearby dresser and rushes to Lady Rosalind's bedroom)"
+                "text": "(Edith bows, then places the teacup that was in his hands on to a nearby dresser and rushes to Lady Rosalind's bedroom)"
             }
         ],
         "events": [
@@ -311,7 +312,8 @@
             },
             {
                 "character": "Elias",
-                "text": "(It seems like not everyone has woken up yet)"
+                "text": "(It seems like not everyone has woken up yet)",
+                "expression": "neutral"
             }
         ],
         "events": [
@@ -332,7 +334,7 @@
             },
             {
                 "character": "Blackwood",
-                "text": "Good morning, Mr. Wakefield! Please, have a seat while we wait for everyone else to get ready",
+                "text": "Good morning, Mr. Wakefield! Please, have a seat while we wait for everyone else to get ready.",
                 "expression": "excited"
             },
             {
@@ -356,7 +358,7 @@
             },
             {
                 "character": "narrator",
-                "text": "(As chatter errupts in the dining hall, more guests eventually arrived. The woman in red at the ball the night before, took a seat across Elias.)"
+                "text": "(As chatter erupts in the dining hall, more guests eventually arrive. The woman in red at the ball the night before, took a seat across from Elias.)"
             },
             {
                 "character": "Isabella",
@@ -366,7 +368,7 @@
             {
                 "character": "Blackwood",
                 "text": "Morning to you too, Lady Isabella",
-                "expression": "happy"
+                "expression": "excited"
             },
             {
                 "character": "narrator",
@@ -374,7 +376,7 @@
             },
             {
                 "character": "Rosalind",
-                "text": "I'm sorry I'm late, everyone. I thought I lost my shoe, and turns out the maid found it under the bed, haha. Thank you for your help earlier, Edith.",
+                "text": "I'm sorry I'm late, everyone. I thought I lost my shoe, and it turns out the maid found it under the bed, haha. Thank you for your help earlier, Edith.",
                 "expression": "happy"
             },
             {
@@ -384,7 +386,7 @@
             },
             {
                 "character": "Blackwood",
-                "text": "Hmm, Eleanor isn't here yet. That's strange of her to be not on time. Edith, can you check on her?",
+                "text": "Hmm, Eleanor isn't here yet. It's strange of her to not be on time. Edith, can you check on her?",
                 "expression": "neutral"
             },
             {
@@ -407,7 +409,7 @@
             },
             {
                 "character": "Edith",
-                "text": "My Lord!",
+                "text": "My lord!",
                 "expression": "shock"
             },
             {
@@ -490,12 +492,12 @@
             },
             {
                 "character": "Edith",
-                "text": "there she is, my lord...",
+                "text": "There she is, my lord...",
                 "expression": "shock"
             },
             {
                 "character": "narrator",
-                "text": "(On the floor, lays the lifeless body of Lady Eleanor.)"
+                "text": "(On the floor, lies the lifeless body of Lady Eleanor.)"
             },
             {
                 "character": "Blackwood",
@@ -513,7 +515,8 @@
             },
             {
                 "character": "Elias",
-                "text": "(This doesn't look like an accident, let's search for some clues)"
+                "text": "(This doesn't look like an accident, let's search for some clues)",
+                "expression": "deep in thought"
             }
         ],
         "events": [
@@ -579,7 +582,7 @@
         "dialogue": [
             {
                 "character": "Elias",
-                "text": "I believe this is Lady Eleanor's desk"
+                "text": "I believe this is Lady Eleanor's desk."
             }
         ],
         "events": [
@@ -744,17 +747,17 @@
             },
             {
                 "character": "Elias",
-                "text": "I'm working on a case, it's regarding Lady Eleanor Blackwood. I found your name card on your desk. What do you know about her?",
+                "text": "I'm working on a case, it's regarding Lady Eleanor Blackwood. I found your name card on her desk. What do you know about her?",
                 "expression": "neutral"
             },
             {
                 "character": "Edmund",
-                "text": "Ah, Lady Blackwood. Did she hire you?",
+                "text": "Ah, Lady Blackwood. Did she hire you as well?",
                 "expression": "neutral"
             },
             {
                 "character": "Elias",
-                "text": "No... she's dead.",
+                "text": "No... she has been murdered.",
                 "expression": "deep in thought"
             },
             {
@@ -764,12 +767,12 @@
             },
             {
                 "character": "Elias",
-                "text": "That's why I need all the information you have on her so I can solve her death, since I found a note written by you",
+                "text": "That's why I need all the information you have on her so I can solve her death, since I found a note written by you.",
                 "expression": "neutral"
             },
             {
                 "character": "Edmund",
-                "text": "She had reported me that someone has been continuously writing her death threats. But I haven't found the culprit.",
+                "text": "She had reported to me that someone has been continuously writing her death threats. But I haven't found the culprit. It appears I was too late",
                 "expression": "neutral"
             },
             {
@@ -799,7 +802,8 @@
             },
             {
                 "character": "Edmund",
-                "text": "My pleasure, good luck on this case, Detective!"
+                "text": "My pleasure, good luck on this case, Detective!",
+                "expression": "neutral"
             }
         ]
     },
@@ -824,12 +828,8 @@
             },
             {
                 "character": "Edith",
-                "text": "Yesterday night, I saw her walked into the library after the party and spent some time there before returning to her chambers.",
+                "text": "Yesterday night, I saw her walk into the library after the party and spent some time there before returning to her chambers.",
                 "expression": "neutral"
-            },
-            {
-                "character": "Elias",
-                "text": "Alright, I need to go to the library to look for more clues"
             }
         ],
         "events": [
@@ -856,7 +856,7 @@
             },
             {
                 "character": "Perry",
-                "text": "um...",
+                "text": "Um...",
                 "expression": "neutral"
             },
             {
@@ -876,7 +876,7 @@
             },
             {
                 "character": "Perry",
-                "text": "During the party last night, Lady Eleanor seems so... nervous.",
+                "text": "During the party last night, Lady Eleanor seemed so... nervous.",
                 "expression": "nervous"
             },
             {
@@ -930,7 +930,8 @@
         "dialogue": [
             {
                 "character": "Elias",
-                "text": "A note asking her to meet at the library... I should investigate the library."
+                "text": "A note asking her to meet at the library... I should investigate the library.",
+                "expression": "neutral"
             }
         ],
         "events": [
