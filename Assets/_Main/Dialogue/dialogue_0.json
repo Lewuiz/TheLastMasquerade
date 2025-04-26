@@ -1,21 +1,89 @@
 [
     {
-        "dialogueId": "scene_opening_blackwood_estate",
+        "dialogueId": "scene_1a",
         "isAutoSave": true,
         "dialogue": [
+            {
+                "character": "narrator",
+                "text": "(Detective Elias Wakefield steps out of a carriage, adjusting his gloves as he gazes at the grand Blackwood estate. The night air hums with the distant chatter of high society, and warm candlelight spills from the ballroom windows.)"
+            },
             {
                 "character": "Elias",
                 "text": "It's cold.",
                 "expression": "neutral"
             },
             {
+                "character": "narrator",
+                "text": "(A security guard blocks the entrance.)"
+            }
+        ],
+        "events": [
+            {
+                "type": "changeBackground",
+                "value": "carriage.png",
+                "line": 0
+            },
+            {
+                "type": "changeBackground",
+                "value": "house gate.png",
+                "line": 1
+            },
+            {
+                "type": "playSound",
+                "value": "carriage_stopping.mp3",
+                "line": 0,
+                "loop": false
+            }
+        ]
+    },
+    {
+        "dialogueId": "ending_a",
+        "isAutoSave": true,
+        "dialogue": [
+            {
+                "character": "Elias",
+                "text": "(You know... on second thoughts, I don't think I'm in the mood for a party at the moment)",
+                "expression": "deep in thought"
+            },
+            {
+                "character": "narrator",
+                "text": "(Elias hops back on to the carriage, deciding to spend his night at a nearby teahouse instead, fully in bliss)"
+            }
+        ],
+        "events": [
+            {
+                "type": "changeBackground",
+                "value": "carriage.png",
+                "line": 0
+            }
+        ]
+    },
+    {
+        "dialogueId": "scene_1b",
+        "isAutoSave": true,
+        "dialogue": [
+            {
                 "character": "Security Guard",
-                "text": "Go right in, Sir Wakefield."
+                "text": "Go right in, Sir Wakefield.",
+                "expression": "neutral"
+            },
+            {
+                "character": "narrator",
+                "text": "(Elias steps inside, greeted by an older man in a suit)"
             },
             {
                 "character": "Henshaw",
-                "text": "Good evening, Sir Elias. Let me lead you to the ballroom while the maid brings your luggage to your room.",
+                "text": "Good evening, Sir Elias. I am Alistair Henshaw, let me lead you to the ballroom while our maid Edith here brings your luggage to your room.",
                 "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "Thank you.",
+                "expression": "neutral"
+            },
+            {
+                "character": "narrator",
+                "text": "(The ballroom is lively, filled with guests in elegant attire.)"
             },
             {
                 "character": "Blackwood",
@@ -29,13 +97,72 @@
             },
             {
                 "character": "Blackwood",
-                "text": "Eleanor? You look unwell.",
+                "text": "Ah, let me introduce you to my business associates",
+                "expression": "excited"
+            },
+            {
+                "character": "narrator",
+                "text": "(Blackwood then leads Elias to a group of chattering people)"
+            },
+            {
+                "character": "Blackwood",
+                "text": "Excuse me, everyone, sorry to interrupt, this is my good pal, and also the best detective in town, Elias Wakefield.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "Haha, I wouldn't call myself the best...",
+                "expression": "amused"
+            },
+            {
+                "character": "Fairfax",
+                "text": "Ah yes, I've heard of you, Sir Wakefield. I'm Henry Fairfax, nice to meet you.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Rosalind",
+                "text": "It's a pleasure to meet you, Sir. I'm Rosalind",
+                "expression": "happy"
+            },
+            {
+                "character": "narrator",
+                "text": "(Among the group, a woman in a green dress stays silent, her eyes averted, seeming to be deep in thought)"
+            },
+            {
+                "character": "Blackwood",
+                "text": "Eleanor? You look unwell--",
                 "expression": "confused"
             },
             {
                 "character": "Eleanor",
                 "text": "I've been overworking myself. Excuse me, I need a drink.",
                 "expression": "nervous"
+            },
+            {
+                "character": "narrator",
+                "text": "(Eleanor leaves, still looking distressed. Blackwood was speechless for a moment)"
+            },
+            {
+                "character": "Blackwood",
+                "text": "Ahem, I deeply apologize for that, Detective. That was my sister, Eleanor. This behavior is very unlike her at all.",
+                "expression": "anxious"
+            },
+            {
+                "character": "Elias",
+                "text": "No worries, my lord. It's fine.",
+                "expression": "neutral"
+            },
+            {
+                "character": "narrator",
+                "text": "(The atmosphere then quiets down, turning awkward as each person sips their drink)"
+            },
+            {
+                "character": "narrator",
+                "text": "(Then a new guest arrives, taking away everyone's attention)"
+            },
+            {
+                "character": "narrator",
+                "text": "(A stunning woman in a red gown enters. Blackwood immediately rushes to greet her.)"
             },
             {
                 "character": "Rosalind",
@@ -46,214 +173,819 @@
                 "character": "Fairfax",
                 "text": "Blackwood still has the soul of a young bachelor, even at his age.",
                 "expression": "happy"
-            }
-        ],
-        "choices": [
-            {
-                "text": "Click on the carriage to leave",
-                "nextDialogueId": "ending_a"
             },
             {
-                "text": "Show the invitation to the security guard",
-                "nextDialogueId": "scene_ballroom_entry"
+                "character": "Perry",
+                "text": "Drinks, Sir Wakefield?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "Yes, thank you",
+                "expression": "neutral"
+            },
+            {
+                "character": "narrator",
+                "text": "(Elias picks up a champagne glass, then moves to a quieter corner, observing Eleanor's continued unease.)"
             }
         ],
         "events": [
             {
                 "type": "changeBackground",
-                "value": "blackwood_estate_night.png"
+                "value": "house gate.png",
+                "line": 0
+            },
+            {
+                "type": "changeBackground",
+                "value": "masquerade ball.png",
+                "line": 5
             },
             {
                 "type": "playSound",
-                "value": "carriage_stop.wav"
+                "value": "orchestra_music.mp3",
+                "line": 5,
+                "loop": true
             }
         ],
         "nextGameMode": {
-            "type": "hidden_object",
-            "nextDialogueId": "scene_investigate_ballroom"
+            "type": "hiddenObject",
+            "nextDialogueId": "scene_2a"
         }
     },
     {
-        "dialogueId": "scene_morning_discovery",
+        "dialogueId": "scene_2a",
         "isAutoSave": true,
         "dialogue": [
+            {
+                "character": "narrator",
+                "text": "(Midnight strikes, and all guests retire back into their chambers.)"
+            },
             {
                 "character": "Elias",
                 "text": "What a night. Time to rest.",
                 "expression": "amused"
             },
             {
-                "character": "Servant 2",
-                "text": "Good morning, Sir Wakefield. This is Lady Eleanor's tea. Would you like one as well?"
+                "character": "narrator",
+                "text": "(The next morning, as dawn barely rises, Elias wakes early and gets ready for the day.)"
             },
             {
                 "character": "Elias",
-                "text": "Did anything unusual happen last night?"
-            },
-            {
-                "character": "Servant 2",
-                "text": "Well… Lady Eleanor was awake very late. I saw her pacing in the hallway, distressed. She entered the library and seemed to be on a call, whispering frantically about a note she received. She was afraid, sir. She kept saying she didn't know who to trust.",
-                "expression": "hesitant"
-            },
-            {
-                "character": "Blackwood",
-                "text": "[Servant 1], check on Eleanor."
-            },
-            {
-                "character": "Servant 1",
-                "text": "My lord… Lady Eleanor… she's dead."
+                "text": "(Seems like everyone hasn't woken up yet, maybe I can do some exploring)",
+                "expression": "neutral"
             }
         ],
         "events": [
             {
-                "type": "inspectObject",
-                "value": "teacup"
+                "type": "changeBackground",
+                "value": "hallway 1.png",
+                "line": 0
             },
             {
                 "type": "playSound",
-                "value": "suspense_music.mp3"
+                "value": "carriage_stop.mp3",
+                "line": 0
             }
         ],
         "nextGameMode": {
-            "type": "hidden_object",
-            "nextDialogueId": "scene_crime_investigation"
+            "type": "hiddenObject",
+            "nextDialogueId": "scene_2b"
         }
     },
     {
-        "dialogueId": "scene_crime_investigation",
+        "dialogueId": "scene_2b",
         "isAutoSave": true,
         "dialogue": [
+            {
+                "character": "narrator",
+                "text": "(As Elias admires the intricate paintings on the walls of the hallway, he was met with one of the servants, Edith, holding a hot cup of fresh tea.)"
+            },
+            {
+                "character": "Edith",
+                "text": "Good morning, Sir Wakefield. You're up this early. Would you like a cup of tea?",
+                "expression": "neutral"
+            },
             {
                 "character": "Elias",
-                "text": "A death threat!"
+                "text": "Uh--",
+                "expression": "neutral"
+            },
+            {
+                "character": "narrator",
+                "text": "(Before Elias can respond, a loud yell echoes through the hallway)"
+            },
+            {
+                "character": "Rosalind",
+                "text": "EXCUSE ME! CAN SOMEONE COME TO MY ROOM? I NEED SOME ASSISTANCE WITH MY DRESS!"
+            },
+            {
+                "character": "Edith",
+                "text": "Yes, My Lady! I will be right there. Excuse me, Sir",
+                "expression": "neutral"
+            },
+            {
+                "character": "narrator",
+                "text": "(Edith bows, then places the teacup that was in his hands on to a nearby dresser and rushes to Lady Rosalind's bedroom)"
+            }
+        ],
+        "events": [
+            {
+                "type": "changeBackground",
+                "value": "hallway 2.png",
+                "line": 0
+            },
+            {
+                "type": "playSound",
+                "value": "calm_music.mp3",
+                "line": 0,
+                "loop": true
+            }
+        ]
+    },
+    {
+        "dialogueId": "scene_2c",
+        "isAutoSave": true,
+        "dialogue": [
+            {
+                "character": "narrator",
+                "text": "(Each side of the hallways were filled with shut wooden doors, it was eerily quiet)"
             },
             {
                 "character": "Elias",
-                "text": "Why did you give Eleanor the tea? Do you recall anything suspicious last night?"
-            },
-            {
-                "character": "Servant 2",
-                "text": "She always begins her morning with tea. As for last night… three guests spent the most time with her—Blackwood, Fairfax, and Lady Rosalind. And… well, the way she acted in the library. She was terrified, sir. I regret not asking her more."
+                "text": "(It seems like not everyone has woken up yet)",
+                "expression": "neutral"
             }
         ],
         "events": [
             {
-                "type": "inspectObject",
-                "value": "tea_cup"
-            },
-            {
-                "type": "inspectObject",
-                "value": "pockets"
-            },
-            {
-                "type": "inspectObject",
-                "value": "bedside_table"
+                "type": "changeBackground",
+                "value": "hallway 3.png",
+                "line": 0
             }
-        ],
-        "nextGameMode": {
-            "type": "hidden_object",
-            "nextDialogueId": "scene_library_search"
-        }
+        ]
     },
     {
-        "dialogueId": "scene_library_search",
+        "dialogueId": "scene_2d",
         "isAutoSave": true,
         "dialogue": [
             {
-                "character": "Private Investigator",
-                "text": "The killer knows about Blackwood, Fairfax, and Eleanor's business dealings. You're treading dangerous ground."
+                "character": "narrator",
+                "text": "(Elias enters the manor's dining hall. It was grand, in there lays a large table with many chairs, with some guests seated already."
             },
-            {
-                "character": "Henshaw",
-                "text": "It should be in the library bookshelf. A simple task for a sharp mind such as yours."
-            }
-        ],
-        "events": [
-            {
-                "type": "puzzle",
-                "value": "bookshelf_logic"
-            },
-            {
-                "type": "findItem",
-                "value": "guest_list"
-            }
-        ],
-        "nextGameMode": {
-            "type": "hidden_object",
-            "nextDialogueId": "scene_fairfax_missing"
-        }
-    },
-    {
-        "dialogueId": "scene_fairfax_missing",
-        "isAutoSave": true,
-        "dialogue": [
-            {
-                "character": "Servant 1",
-                "text": "Fairfax was last seen near Blackwood's chambers."
-            }
-        ],
-        "events": [
-            {
-                "type": "searchArea",
-                "value": "hallway"
-            },
-            {
-                "type": "findItem",
-                "value": "golf_stick"
-            },
-            {
-                "type": "findItem",
-                "value": "torn_note"
-            },
-            {
-                "type": "discoverPassage",
-                "value": "under_carpet"
-            }
-        ],
-        "nextGameMode": {
-            "type": "hidden_object",
-            "nextDialogueId": "scene_confrontation"
-        }
-    },
-    {
-        "dialogueId": "scene_confrontation",
-        "isAutoSave": true,
-        "dialogue": [
             {
                 "character": "Blackwood",
-                "text": "This handwriting… Isabella.",
+                "text": "Good morning, Mr. Wakefield! Please, have a seat while we wait for everyone else to get ready.",
+                "expression": "excited"
+            },
+            {
+                "character": "Elias",
+                "text": "Yes, my lord.",
+                "expression": "amused"
+            },
+            {
+                "character": "narrator",
+                "text": "(Elias takes a seat next to Lord Fairfax)"
+            },
+            {
+                "character": "Fairfax",
+                "text": "Good day, Detective. How has your morning been?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "I'm fine, thank you.",
+                "expression": "neutral"
+            },
+            {
+                "character": "narrator",
+                "text": "(As chatter erupts in the dining hall, more guests eventually arrive. The woman in red at the ball the night before, took a seat across from Elias.)"
+            },
+            {
+                "character": "Isabella",
+                "text": "Morning, gentlemen.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Blackwood",
+                "text": "Morning to you too, Lady Isabella",
+                "expression": "excited"
+            },
+            {
+                "character": "narrator",
+                "text": "(Not long after, Lady Rosalind arrived, looking rushed and seated next to Blackwood)"
+            },
+            {
+                "character": "Rosalind",
+                "text": "I'm sorry I'm late, everyone. I thought I lost my shoe, and it turns out the maid found it under the bed, haha. Thank you for your help earlier, Edith.",
+                "expression": "happy"
+            },
+            {
+                "character": "Edith",
+                "text": "My pleasure, my lady",
+                "expression": "neutral"
+            },
+            {
+                "character": "Blackwood",
+                "text": "Hmm, Eleanor isn't here yet. It's strange of her to not be on time. Edith, can you check on her?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Edith",
+                "text": "Yes, my lord. I shall go to her room.",
+                "expression": "neutral"
+            },
+            {
+                "character": "narrator",
+                "text": "(Edith then leaves the dining hall, while Perry and Henshaw serve each guest their breakfast platters)"
+            },
+            {
+                "character": "Blackwood",
+                "text": "While we wait for Eleanor, please enjoy the food, everyone.",
+                "expression": "excited"
+            },
+            {
+                "character": "narrator",
+                "text": "(Not long after, Edith comes back rushing, looking pale)"
+            },
+            {
+                "character": "Edith",
+                "text": "My lord!",
                 "expression": "shock"
             },
             {
-                "character": "Lady Isabella",
-                "text": "They forced you to leave me. Eleanor took everything. She had to go. And Fairfax… he simply had to follow her.",
-                "expression": "angry"
+                "character": "Blackwood",
+                "text": "What's the matter, Edith?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Edith",
+                "text": "It's Lady Eleanor... she's dead, my Lord...",
+                "expression": "shock"
+            }
+        ],
+        "events": [
+            {
+                "type": "changeBackground",
+                "value": "dining room.png",
+                "line": 0
+            },
+            {
+                "type": "playSound",
+                "value": "tense-horror-background-174809.mp3",
+                "line": 19,
+                "loop": true
+            }
+        ],
+        "nextGameMode": {
+            "type": "hiddenObject",
+            "nextDialogueId": "scene_3a"
+        }
+    },
+    {
+        "dialogueId": "scene_2e",
+        "isAutoSave": false,
+        "dialogue": [
+            {
+                "character": "Elias",
+                "text": "A warm cup of jasmine tea.",
+                "expression": "neutral"
+            }
+        ],
+        "events": [
+            {
+                "type": "inspectObject",
+                "value": "tea cup.png"
+            }
+        ]
+    },
+    {
+        "dialogueId": "scene_3a",
+        "isAutoSave": true,
+        "dialogue": [
+            {
+                "character": "narrator",
+                "text": "(The room was tense and silent, everyone sat there wide-eyed)"
+            },
+            {
+                "character": "Blackwood",
+                "text": "What do you mean, Edith?",
+                "expression": "shock"
+            },
+            {
+                "character": "Edith",
+                "text": "Please follow me, my lord.",
+                "expression": "shock"
+            },
+            {
+                "character": "Blackwood",
+                "text": "Everyone, please retire in your rooms. Detective Wakefield, please follow me...",
+                "expression": "neutral"
             },
             {
                 "character": "Elias",
-                "text": "Your motives were greed and vengeance. And yet, you wore the mask of love.",
+                "text": "Yes, my lord.",
+                "expression": "neutral"
+            },
+            {
+                "character": "narrator",
+                "text": "(Edith, Blackwood, and Elias rush into Eleanor's room)"
+            },
+            {
+                "character": "Edith",
+                "text": "There she is, my lord...",
+                "expression": "shock"
+            },
+            {
+                "character": "narrator",
+                "text": "(On the floor, lies the lifeless body of Lady Eleanor.)"
+            },
+            {
+                "character": "Blackwood",
+                "text": "ELEANOR...?! Who dared to do this to my beloved sister?!",
+                "expression": "shock"
+            },
+            {
+                "character": "Elias",
+                "text": "...",
+                "expression": "deep in thought"
+            },
+            {
+                "character": "narrator",
+                "text": "(Blackwood stormed out of the room enraged, while Edith still stood by the door shaking from shock)"
+            },
+            {
+                "character": "Elias",
+                "text": "(This doesn't look like an accident, let's search for some clues)",
+                "expression": "deep in thought"
+            }
+        ],
+        "events": [
+            {
+                "type": "changeBackground",
+                "value": "dining room.png",
+                "line": 0
+            },
+            {
+                "type": "changeBackground",
+                "value": "bedroom.png",
+                "line": 5
+            },
+            {
+                "type": "changeBackground",
+                "value": "carpet.png",
+                "line": 7
+            },
+            {
+                "type": "playSound",
+                "value": "tense-horror-background-174809.mp3",
+                "line": 0
+            }
+        ]
+    },
+    {
+        "dialogueId": "scene_3b",
+        "isAutoSave": false,
+        "dialogue": [
+            {
+                "character": "Elias",
+                "text": "Almond Scent... cyanide! This case is definitely no accident.",
+                "expression": "neutral"
+            }
+        ],
+        "events": [
+            {
+                "type": "inspectObject",
+                "value": "tea spilled.png"
+            }
+        ]
+    },
+    {
+        "dialogueId": "scene_3c",
+        "isAutoSave": false,
+        "dialogue": [
+            {
+                "character": "Elias",
+                "text": "So, this is the library, huh"
+            }
+        ],
+        "events": [
+            {
+                "type": "changeBackground",
+                "value": "library.png",
+                "line": 0
+            }
+        ]
+    },
+    {
+        "dialogueId": "scene_3d",
+        "isAutoSave": false,
+        "dialogue": [
+            {
+                "character": "Elias",
+                "text": "I believe this is Lady Eleanor's desk."
+            }
+        ],
+        "events": [
+            {
+                "type": "changeBackground",
+                "value": "library.png",
+                "line": 0
+            }
+        ]
+    },
+    {
+        "dialogueId": "scene_3e",
+        "isAutoSave": false,
+        "dialogue": [
+            {
+                "character": "Elias",
+                "text": "There is something slipped inside this book",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "A key? And what is this..., a name card? Maybe I can try to call the number",
+                "expression": "neutral"
+            }
+        ],
+        "events": [
+            {
+                "type": "inspectObject",
+                "value": "key.png"
+            },
+            {
+                "type": "inspectObject",
+                "value": "name card.png"
+            }
+        ] 
+    },
+    {
+        "dialogueId": "scene_3f",
+        "isAutoSave": false,
+        "dialogue": [
+            {
+                "character": "Elias",
+                "text": "A business proposal? It seems like Lady Eleanor is working on a new business venture. Interesting.",
+                "expression": "neutral"
+            }
+        ],
+        "events": [
+            {
+                "type": "inspectObject",
+                "value": "business proposal.png"
+            }
+        ]
+    },
+    {
+        "dialogueId": "scene_3g",
+        "isAutoSave": false,
+        "dialogue": [
+            {
+                "character": "Elias",
+                "text": "What box is this? It's locked. I wonder if the key is around here somewhere",
+                "expression": "neutral"
+            }
+        ],
+        "events": [
+            {
+                "type": "inspectObject",
+                "value": "box.png"
+            }
+        ]
+    },
+    {
+        "dialogueId": "scene_3h",
+        "isAutoSave": false,
+        "dialogue": [
+            {
+                "character": "Elias",
+                "text": "Are all these threatening letters addressed to Lady Eleanor? I need to find the murderer as soon as possible. The suspect must have had such a strong motive.",
+                "expression": "neutral"
+            }
+        ],
+        "events": [
+            {
+                "type": "inspectObject",
+                "value": "deadth threat 1.png"
+            },
+            {
+                "type": "inspectObject",
+                "value": "dead threat 2.png"
+            },
+            {
+                "type": "inspectObject",
+                "value": "deadth threat 3.png"
+            }
+        ] 
+    },
+    {
+        "dialogueId": "scene_3i",
+        "isAutoSave": false,
+        "dialogue": [
+            {
+                "character": "Elias",
+                "text": "I can say all the books in the library are so many and quite complete",
+                "expression": "neutral"
+            }
+        ],
+        "events": [
+            {
+                "type": "changeBackground",
+                "value": "bookshelf.png",
+                "line": 0
+            }
+        ]
+    },
+    {
+        "dialogueId": "scene_3j",
+        "isAutoSave": false,
+        "dialogue": [
+            {
+                "character": "Elias",
+                "text": "There's a telephone here. But who should I dial?",
+                "expression": "neutral"
+            }
+        ],
+        "events": [
+            {
+                "type": "changeBackground",
+                "value": "rotary_phone.png"
+            }
+        ],
+        "nextGameMode": {
+            "type": "phoneMinigame"
+        }
+    },
+    {
+        "dialogueId": "scene_3k",
+        "isAutoSave": true,
+        "dialogue": [
+            {
+                "character": "???",
+                "text": "Hello?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "Hello, is this Mr. Edmund?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Edmund",
+                "text": "Hmm, and who is this I am talking to?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "I am Elias Wakefield, a--",
+                "expression": "neutral"
+            },
+            {
+                "character": "Edmund",
+                "text": "Elias Wakefield? As in the infamous detective in town? What brings you to reach out to me?",
+                "expression": "excited"
+            },
+            {
+                "character": "Elias",
+                "text": "I'm working on a case, it's regarding Lady Eleanor Blackwood. I found your name card on her desk. What do you know about her?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Edmund",
+                "text": "Ah, Lady Blackwood. Did she hire you as well?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "No... she has been murdered.",
+                "expression": "deep in thought"
+            },
+            {
+                "character": "Edmund",
+                "text": "Oh...",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "That's why I need all the information you have on her so I can solve her death, since I found a note written by you.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Edmund",
+                "text": "She had reported to me that someone has been continuously writing her death threats. But I haven't found the culprit. It appears I was too late",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "Have you gotten any clues so far?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Edmund",
+                "text": "Lord Blackwood, Lady Eleanor, and Lord Fairfax, they are working on a new business venture, something related to railways. Someone who knows about this wants to ruin their plan.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "And how do you know that?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Edmund",
+                "text": "One of the death threats Eleanor had shown me said that this person loathed their upcoming business plan, and went into great detail. I believe this person is someone close to them because that death threat was written way before the masquerade party for the business was held.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "Hmm, I see. Thank you for the information, Mr. Edmund.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Edmund",
+                "text": "My pleasure, good luck on this case, Detective!",
+                "expression": "neutral"
+            }
+        ]
+    },
+    {
+        "dialogueId": "scene_3l",
+        "isAutoSave": true,
+        "dialogue": [
+            {
+                "character": "Elias",
+                "text": "It is you who served the tea for Lady Eleanor, isn't it?",
+                "expression": "deep in thought"
+            },
+            {
+                "character": "Edith",
+                "text": "Yes, Sir! But I swear to God, it isn't me! You have to believe me!",
+                "expression": "shock"
+            },
+            {
+                "character": "Elias",
+                "text": "Calm down! When was the last time you saw Lady Eleanor?",
+                "expression": "shock"
+            },
+            {
+                "character": "Edith",
+                "text": "Yesterday night, I saw her walk into the library after the party and spent some time there before returning to her chambers.",
+                "expression": "neutral"
+            }
+        ],
+        "events": [
+            {
+                "type": "changeBackground",
+                "value": "bedroom.png",
+                "line": 0
+            }
+        ]  
+    },
+    {
+        "dialogueId": "scene_3m",
+        "isAutoSave": true,
+        "dialogue": [
+            {
+                "character": "Perry",
+                "text": "How is the investigation going so far, Sir?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "I'm currently still working on it.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Perry",
+                "text": "Um...",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "Do you have something to tell?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Perry",
+                "text": "I do not know if this is important, Sir...",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "You know everything matters, and please if you have some clues that will be helpful.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Perry",
+                "text": "During the party last night, Lady Eleanor seemed so... nervous.",
+                "expression": "nervous"
+            },
+            {
+                "character": "Elias",
+                "text": "Yes, I noticed as well. Do you know why?",
+                "expression": "deep in thought"
+            },
+            {
+                "character": "Perry",
+                "text": "I do not know much, Sir. She was fine before, yet after talking with some people she suddenly changed her behavior.",
+                "expression": "nervous"
+            },
+            {
+                "character": "Elias",
+                "text": "Do you know whom she talked with the whole night?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Perry",
+                "text": "I don't know because everyone used a mask. I remember she talked with three people, each wearing a black, gold, and silver mask respectively.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "Thank you for the information.",
                 "expression": "amused"
             }
         ],
         "events": [
             {
-                "type": "combat",
-                "value": "quick_time_event"
+                "type": "changeBackground",
+                "value": "hallway 1.png",
+                "line": 0
+            }
+        ]
+    },
+    {
+        "dialogueId": "scene_3n",
+        "isAutoSave": false,
+        "dialogue": [
+            {
+                "character": "Elias",
+                "text": "Her face looks pale, her lips black. What could've happened to her?",
+                "expression": "neutral"
+            }
+        ]
+    },
+    {
+        "dialogueId": "scene_3o",
+        "isAutoSave": false,
+        "dialogue": [
+            {
+                "character": "Elias",
+                "text": "A note asking her to meet at the library... I should investigate the library.",
+                "expression": "neutral"
             }
         ],
-        "choices": [
+        "events": [
             {
-                "text": "Overpower Henshaw",
-                "nextDialogueId": "ending_justice_prevails"
-            },
-            {
-                "text": "Fail to react in time",
-                "nextDialogueId": "ending_tragedy"
+                "type": "inspectObject",
+                "value": "note.png"
             }
-        ],
-        "nextGameMode": {
-            "type": "combat",
-            "nextDialogueId": "scene_final_outcome"
+        ]
+    },
+    {
+    "dialogueId": "scene_4a",
+    "isAutoSave": true,
+    "dialogue": [
+        {
+            "character": "Elias",
+            "text": "During the masquerade, only one guest wore a black mask — Lord Blackwood, the host himself.",
+            "expression": "thinking"
+        },
+        {
+            "character": "Elias",
+            "text": "Now... where could Lord Blackwood be? I need answers — and quickly.",
+            "expression": "neutral"
+        },
+        {
+            "character": "Elias",
+            "text": "(footsteps approaching...)",
+            "expression": "thinking"
+        },
+        {
+            "character": "Lord Blackwood",
+            "text": "Detective, how goes the investigation? I won’t rest until the one responsible for my sister’s death is found. I assure you — they’ll receive no mercy.",
+            "expression": "stern"
+        },
+        {
+            "character": "Elias",
+            "text": "I need access to the guest list. One of the servants mentioned Lady Eleanor spoke with three individuals during the ball. You were the one in the black mask, correct?",
+            "expression": "serious"
+        },
+        {
+            "character": "Lord Blackwood",
+            "text": "Yes, that was me. As the host, I wore black. But I entrusted all the arrangements to Mr. Henshaw — he’s the only one who would have the full guest list.",
+            "expression": "calm"
+        },
+        {
+            "character": "Elias",
+            "text": "Understood. I’ll find Mr. Henshaw. Thank you, Lord Blackwood.",
+            "expression": "neutral"
+        },
+        {
+            "character": "Lord Blackwood",
+            "text": "Do whatever it takes, Detective. And be quick... I fear this won’t be the last tragedy if the killer isn’t unmasked soon.",
+            "expression": "grim"
         }
-    }
+    ]
+}
+
 ]
