@@ -988,8 +988,8 @@
         ],
          "events": [
             {
-                "type": "inspectObject",
-                "value": "note.png"
+                "type": "changebackground",
+                "value": "hallway 1.jpeg"
             }
          ]
 }
