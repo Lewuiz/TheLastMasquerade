@@ -942,50 +942,55 @@
         ]
     },
     {
-    "dialogueId": "scene_4a",
-    "isAutoSave": true,
-    "dialogue": [
-        {
-            "character": "Elias",
-            "text": "During the masquerade, only one guest wore a black mask — Lord Blackwood, the host himself.",
-            "expression": "thinking"
-        },
-        {
-            "character": "Elias",
-            "text": "Now... where could Lord Blackwood be? I need answers — and quickly.",
-            "expression": "neutral"
-        },
-        {
-            "character": "Elias",
-            "text": "(footsteps approaching...)",
-            "expression": "thinking"
-        },
-        {
-            "character": "Lord Blackwood",
-            "text": "Detective, how goes the investigation? I won’t rest until the one responsible for my sister’s death is found. I assure you — they’ll receive no mercy.",
-            "expression": "stern"
-        },
-        {
-            "character": "Elias",
-            "text": "I need access to the guest list. One of the servants mentioned Lady Eleanor spoke with three individuals during the ball. You were the one in the black mask, correct?",
-            "expression": "serious"
-        },
-        {
-            "character": "Lord Blackwood",
-            "text": "Yes, that was me. As the host, I wore black. But I entrusted all the arrangements to Mr. Henshaw — he’s the only one who would have the full guest list.",
-            "expression": "calm"
-        },
-        {
-            "character": "Elias",
-            "text": "Understood. I’ll find Mr. Henshaw. Thank you, Lord Blackwood.",
-            "expression": "neutral"
-        },
-        {
-            "character": "Lord Blackwood",
-            "text": "Do whatever it takes, Detective. And be quick... I fear this won’t be the last tragedy if the killer isn’t unmasked soon.",
-            "expression": "grim"
-        }
-    ]
+        "dialogueId": "scene_4a",
+        "isAutoSave": true,
+        "dialogue": [
+            {
+                "character": "Elias",
+                "text": "During the masquerade, only one guest wore a black mask — Lord Blackwood, the host himself.",
+                "expression": "thinking"
+            },
+            {
+                "character": "Elias",
+                "text": "Now... where could Lord Blackwood be? I need answers — and quickly.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "(footsteps approaching...)",
+                "expression": "thinking"
+            },
+            {
+                "character": "Lord Blackwood",
+                "text": "Detective, how goes the investigation? I won’t rest until the one responsible for my sister’s death is found. I assure you — they’ll receive no mercy.",
+                "expression": "stern"
+            },
+            {
+                "character": "Elias",
+                "text": "I need access to the guest list. One of the servants mentioned Lady Eleanor spoke with three individuals during the ball. You were the one in the black mask, correct?",
+                "expression": "serious"
+            },
+            {
+                "character": "Lord Blackwood",
+                "text": "Yes, that was me. As the host, I wore black. But I entrusted all the arrangements to Mr. Henshaw — he’s the only one who would have the full guest list.",
+                "expression": "calm"
+            },
+            {
+                "character": "Elias",
+                "text": "Understood. I’ll find Mr. Henshaw. Thank you, Lord Blackwood.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Lord Blackwood",
+                "text": "Do whatever it takes, Detective. And be quick... I fear this won’t be the last tragedy if the killer isn’t unmasked soon.",
+                "expression": "grim"
+            }
+        ],
+         "events": [
+            {
+                "type": "inspectObject",
+                "value": "note.png"
+            }
+         ]
 }
-
 ]
