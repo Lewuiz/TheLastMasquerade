@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,33 +6,65 @@ namespace Main
 {
     public class StoryRunner : MonoBehaviour
     {
-        [SerializeField] private List<CharacterData> characterDataList = new List<CharacterData>();
-        [SerializeField] private SpriteRenderer backgroundSR = default;
-        [SerializeField] private BackgroundSizeFitter backgroundSizeFitter = default;
         [SerializeField] private DialoguePanel dialoguePanel = default;
-        [SerializeField] private DialogueChoicePanel dialogueChoicePanel = default;
 
-        public void Init() 
+        private StoryManager storyManager = default;
+        private StoryData storyData = default;
+        private int dialogueDataIdx = -1;
+
+        public void Init(StoryManager storyManager, Action CheckDialogueEvent)
         {
-            dialoguePanel.Init(PlayNextDialogue);
-            dialogueChoicePanel.Init();
+            this.storyManager = storyManager;
+            storyData = storyManager.GetChapterData(storyManager.CurrentChapter);
+
+            dialoguePanel.Init(OnDialogueEnded, CheckDialogueEvent);
+
+            dialogueDataIdx = storyData.dialogueDataList.FindIndex(dialogue => dialogue.dialogueId == storyManager.CurrentDialogueId);
+            PlayDialogue();
         }
 
-        private void ShowDialogueChoice()
+        private void PlayDialogue()
         {
-            dialogueChoicePanel.gameObject.SetActive(true);
-            dialogueChoicePanel.ShowDialogue();
+            var dialogueData = storyData.dialogueDataList[dialogueDataIdx];
+            dialoguePanel.UpdateDialogueData(dialogueData);
+            dialoguePanel.UpdateDialoguePanel();
+            
         }
 
-        public void PlayNextDialogue()
+        private void OnChapterEnded()
         {
+            int nextChapter = storyManager.CurrentChapter + 1;
+            storyData = storyManager.GetChapterData(nextChapter);
 
+            bool isStoryCompleted = storyData != null;
+
+            if (isStoryCompleted)
+            {
+                storyManager.UpdateStoryProgress("completed", nextChapter);
+            }
+            else
+            {
+                string dialogueId = storyData.dialogueDataList[0].dialogueId;
+                storyManager.UpdateStoryProgress(dialogueId, nextChapter);
+            }
         }
 
-        private void UpdateBackground(Sprite sprite)
+        private void OnDialogueEnded()
         {
-            backgroundSR.sprite = sprite;
-            backgroundSizeFitter.FitToCamera();
+            dialogueDataIdx++;
+
+            bool isChapterEnded = dialogueDataIdx >= storyData.dialogueDataList.Count;
+            if (isChapterEnded)
+            {
+                OnChapterEnded();
+            }
+            else
+            {
+                string dialogueId = storyData.dialogueDataList[dialogueDataIdx].dialogueId;
+                storyManager.UpdateStoryProgress(dialogueId, storyManager.CurrentChapter);
+
+                PlayDialogue();
+            }
         }
     }
 }

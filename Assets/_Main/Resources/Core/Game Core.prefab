@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9021bb6d28766140b3a8268ed10138a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueDataList: []
+  dialogueDataList:
+  - {fileID: 4900000, guid: 437401e1b05ffc14f8e4991f599f1db4, type: 3}
 --- !u!1 &8312634910807180592
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,4 +91,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aaf9418de3fe1b45b1a6f15baaf2448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storyManager: {fileID: 4321843009574711703}
+  <StoryManager>k__BackingField: {fileID: 4321843009574711703}

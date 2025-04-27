@@ -6,7 +6,7 @@ namespace Main
 {
     public class GameCore : PersistentMonoSingleton<GameCore>
     {
-        [SerializeField] private StoryManager storyManager = default;
+        [field: SerializeField] public StoryManager StoryManager { get; private set; } = default;
         public SaveManager SaveManager { get; private set; } = default;
 
         public IEnumerator Initialized()
@@ -14,6 +14,7 @@ namespace Main
             yield return null;
             // Initialize in order of priority
             InitializedSaveData();
+
             InitializedStoryManager();
 
             Debug.Log($"[{nameof(GameCore)}] has been initialized successfully");
@@ -26,7 +27,7 @@ namespace Main
 
         private void InitializedStoryManager()
         {
-            storyManager.Init();
+            StoryManager.Init();
         }
     }
 }

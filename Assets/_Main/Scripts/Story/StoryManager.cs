@@ -11,6 +11,9 @@ namespace Main
         private SaveManager saveManager = default;
         private PlayerData.StoryProgress storyProgress = default;
 
+        public string CurrentDialogueId => storyProgress.dialogue;
+        public int CurrentChapter => storyProgress.chapter;
+
         private List<StoryData> storyDataList = new List<StoryData>();
 
         public void Init()
@@ -20,8 +23,13 @@ namespace Main
 
             for (int i = 0; i < dialogueDataList.Count; i++)
             {
-                List<StoryData> storyData = JsonConvert.DeserializeObject<List<StoryData>>(dialogueDataList[i].text);
-                storyDataList.AddRange(storyData);
+                List<DialogueData> dialogueDataList = JsonConvert.DeserializeObject<List<DialogueData>>(this.dialogueDataList[i].text);
+                StoryData storyData = new StoryData()
+                {
+                    chapter = i,
+                    dialogueDataList = dialogueDataList
+                };
+                storyDataList.Add(storyData);
             }
         }
 
@@ -38,7 +46,26 @@ namespace Main
             throw new System.Exception($"[{nameof(StoryManager)}] did not find such id: {dialogueId}");
         }
 
-        public void Save()
+        public StoryData GetChapterData(int chapter)
+        {
+            return storyDataList.Find(storyData => storyData.chapter == chapter);
+        }
+
+        public void UpdateStoryProgress(string progressId, int chapter)
+        {
+            storyProgress.dialogue = progressId;
+            storyProgress.chapter = chapter;
+
+            Save();
+        }
+
+        public int GetTotalActorOnEachDialogue()
+        {
+
+            return 0;
+        }
+
+        private void Save()
         {
             saveManager.Set<PlayerData>(PlayerData.STORY_PROGRESS, storyProgress);
         }

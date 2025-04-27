@@ -4,6 +4,7 @@ namespace Main
 {
     public class StoryData
     {
+        public int chapter = default;
         public List<DialogueData> dialogueDataList = new List<DialogueData>();
     }
 
@@ -11,10 +12,10 @@ namespace Main
     {
         public string dialogueId;
         public bool isAutoSave;
-        public List<DialogueData> dialogue = new List<DialogueData>();
+        public List<DialogueCharacterData> dialogue = new List<DialogueCharacterData>();
         public List<DialogueEventData> events = new List<DialogueEventData>();
-        public List<DialogueChoiceData> choices = new List<DialogueChoiceData>();
-        public List<DialogueGameModeData> nextGameMode = new List<DialogueGameModeData>();
+        //public List<DialogueChoiceData> choices = new List<DialogueChoiceData>();
+        public DialogueGameModeData nextGameMode = new DialogueGameModeData();
     }
 
     public class DialogueCharacterData
