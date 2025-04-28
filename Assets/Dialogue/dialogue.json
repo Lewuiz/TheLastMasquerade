@@ -20,13 +20,8 @@
     "events": [
       {
         "type": "changeBackground",
-        "value": "carriage.png",
-        "line": 0
-      },
-      {
-        "type": "changeBackground",
         "value": "house gate.png",
-        "line": 1
+        "line": 0
       },
       {
         "type": "playSound",
@@ -48,13 +43,6 @@
       {
         "character": "narrator",
         "text": "(Elias hops back on to the carriage, deciding to spend his night at a nearby teahouse instead, fully in bliss)"
-      }
-    ],
-    "events": [
-      {
-        "type": "changeBackground",
-        "value": "carriage.png",
-        "line": 0
       }
     ]
   },
@@ -239,11 +227,6 @@
       {
         "type": "changeBackground",
         "value": "hallway 1.jpeg",
-        "line": 0
-      },
-      {
-        "type": "playSound",
-        "value": "carriage_stop.mp3",
         "line": 0
       }
     ],
@@ -527,7 +510,7 @@
       },
       {
         "type": "changeBackground",
-        "value": "bedroom.png",
+        "value": "bedroom.jpeg",
         "line": 5
       },
       {
@@ -588,7 +571,7 @@
     "events": [
       {
         "type": "changeBackground",
-        "value": "library.png",
+        "value": "desk.png",
         "line": 0
       }
     ]
@@ -709,7 +692,7 @@
     "events": [
       {
         "type": "changeBackground",
-        "value": "rotary_phone.png"
+        "value": "telephone.png"
       }
     ],
     "nextGameMode": {
@@ -835,7 +818,7 @@
     "events": [
       {
         "type": "changeBackground",
-        "value": "bedroom.png",
+        "value": "bedroom.jpeg",
         "line": 0
       }
     ]
@@ -937,7 +920,7 @@
     "events": [
       {
         "type": "inspectObject",
-        "value": "note.png"
+        "value": "threat letter.png"
       }
     ]
   },
