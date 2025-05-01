@@ -20,17 +20,17 @@ namespace Main
         private Action<DialogueActorControl> checkCharacterControl = default;
         private Action<List<string>> addCharacter = default;
         private Func<bool> isAnimating = default;
+        private Action<List<DialogueEventData>> executeDialogueEvent = default;
 
-        public void Init(StoryManager storyManager, Action<DialogueCharacterData> updateDialoguePanel,
-            Action<string> updateActorConversation, Action<DialogueActorControl> checkCharacterControl,
-            Action<List<string>> addCharacter, Func<bool> isAnimating)
+        public void Init(StoryRunnerData data)
         {
-            this.storyManager = storyManager;
-            this.updateDialoguePanel = updateDialoguePanel;
-            this.updateActorConversation = updateActorConversation;
-            this.checkCharacterControl = checkCharacterControl;
-            this.addCharacter = addCharacter;
-            this.isAnimating = isAnimating;
+            storyManager = data.storyManager;
+            updateDialoguePanel = data.updateDialoguePanel;
+            updateActorConversation = data.updateActorConversation;
+            checkCharacterControl = data.checkCharacterControl;
+            addCharacter = data.addCharacter;
+            isAnimating = data.isAnimating;
+            executeDialogueEvent = data.executeDialogueEvent;
 
             storyData = storyManager.GetChapterData(storyManager.CurrentChapter);
             dialogueDataIdx = storyData.dialogueDataList.FindIndex(dialogue => dialogue.dialogueId == storyManager.CurrentDialogueId);
@@ -65,16 +65,17 @@ namespace Main
             }
 
             DialogueCharacterData dialogueCharacterData = dialogueCharacterDataList[dialogueCharacterIdx];
-            PlayDialogueEvent(dialogueCharacterData);
+            ExecuteDialogEvent(dialogueCharacterData);
 
             checkCharacterControl?.Invoke(dialogueCharacterData.actorControl);
             updateDialoguePanel?.Invoke(dialogueCharacterData);
             updateActorConversation?.Invoke(dialogueCharacterData.character);
         }
 
-        private void PlayDialogueEvent(DialogueCharacterData dialogueCharacterData)
+        private void ExecuteDialogEvent(DialogueCharacterData dialogueCharacterData)
         {
-            var dialogueCharacterEvent = dialogueCharacterData.events;
+            var dialogueEvents = dialogueCharacterData.events;
+            executeDialogueEvent?.Invoke(dialogueEvents);
         }
 
         private void OnDialogueEnded()
