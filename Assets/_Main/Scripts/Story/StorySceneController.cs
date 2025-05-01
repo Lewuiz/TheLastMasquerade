@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Main
@@ -17,9 +19,27 @@ namespace Main
         {
             storyManager = GameCore.Instance.StoryManager;
 
-            storyRunner.Init(storyManager, dialoguePanel.UpdateDialoguePanel);
-            dialoguePanel.Init(storyRunner.PlayNextDialogue);
+            actorController.Init();
+            storyRunner.Init(storyManager, dialoguePanel.UpdateDialoguePanel, actorController.UpdateActorConversation, CheckActorCharacter, actorController.AddCharacterInDialogue, IsPlayingAnimation);
+            dialoguePanel.Init(storyRunner.PlayNextDialogue, IsPlayingAnimation);
             dialogueChoicePanel.Init();
+        }
+
+        private void CheckActorCharacter(DialogueActorControl dialogueActorControl)
+        {
+            StartCoroutine(CheckActorCharacterCor(dialogueActorControl));
+        }
+
+        private IEnumerator CheckActorCharacterCor(DialogueActorControl dialogueActorControl)
+        {
+            if (dialogueActorControl == null)
+                yield break;
+
+            var hideActorlist = dialogueActorControl.hide;
+            yield return actorController.RemoveActorInDialogueCor(hideActorlist);
+
+            var showActorlist = dialogueActorControl.show;
+            yield return actorController.AddCharacterInDialogueCor(showActorlist);
         }
 
         private void ShowDialogueChoice()
@@ -32,6 +52,11 @@ namespace Main
         {
             backgroundSR.sprite = sprite;
             backgroundSizeFitter.FitToCamera();
+        }
+
+        private bool IsPlayingAnimation()
+        {
+            return actorController.IsAnimatingActor();
         }
     }
 }

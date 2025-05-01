@@ -23,6 +23,7 @@ namespace Main
 
             hasInit = true;
             defaultSortingOrder = actorSR.sortingOrder;
+            SetDefault();
         }
 
         public void SetCharacterData(CharacterData characterData)
@@ -48,6 +49,7 @@ namespace Main
             if (IsInDialogue)
                 return;
 
+            gameObject.SetActive(true);
             StartCoroutine(ShowCor());
         }
 
@@ -71,23 +73,36 @@ namespace Main
             yield return actorSR.DOFade(0f, .2f).WaitForCompletion();
             gameObject.SetActive(false);
             IsPlayingAnimation = false;
+            SetActorInDialogue(false);
         }
 
         public void ShowConversation()
         {
-            Color32 activeActorColor = Color.white;
+            StartCoroutine(ShowConversationCor());
+        }
 
-            actorSR.DOColor(activeActorColor, .3f);
-            actorSR.transform.DOScale(1.02f, .3f);
+        private IEnumerator ShowConversationCor()
+        {
+            IsPlayingAnimation = true;
             actorSR.sortingOrder = defaultSortingOrder + 1;
+            Color32 activeActorColor = Color.white;
+            actorSR.DOColor(activeActorColor, .3f);
+            yield return actorSR.transform.DOScale(1.02f, .3f).WaitForCompletion();
+            IsPlayingAnimation = false;
         }
 
         public void HideConversation()
         {
-            IsPlayingAnimation = false;
+            StartCoroutine(HideConversationCor());
+        }
+
+        private IEnumerator HideConversationCor()
+        {
+            IsPlayingAnimation = true;
             actorSR.DOColor(inactiveActorColor, .3f);
-            actorSR.transform.DOScale(1f, .3f);
+            yield return actorSR.transform.DOScale(1f, .3f).WaitForCompletion();
             actorSR.sortingOrder = defaultSortingOrder;
+            IsPlayingAnimation = false;
         }
 
         public void SetActorInDialogue(bool isInDialogue)

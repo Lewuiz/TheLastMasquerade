@@ -13,9 +13,11 @@ namespace Main
         [SerializeField] private TextMeshProUGUI dialogueStatusTMP = default;
 
         private Action onDialogueClick = default;
-        public void Init(Action onDialogueClick)
+        private Func<bool> isPlayingAnimation = default;
+        public void Init(Action onDialogueClick, Func<bool> isPlayingAnimation)
         {
             this.onDialogueClick = onDialogueClick;
+            this.isPlayingAnimation = isPlayingAnimation;
         }
 
         public void UpdateDialoguePanel(DialogueCharacterData dialogueCharacterData)
@@ -26,6 +28,9 @@ namespace Main
 
         public void Continue()
         {
+            if (isPlayingAnimation.Invoke())
+                return;
+
             onDialogueClick?.Invoke();
         }
     }

@@ -1,6 +1,6 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 namespace Main
@@ -13,25 +13,49 @@ namespace Main
         private int dialogueDataIdx = -1;
 
         private List<DialogueCharacterData> dialogueCharacterDataList = new List<DialogueCharacterData>();
-        private int dialogueCharacterIdx = 0;
-        private DialogueCharacterData CurrentCharacterDialogue => dialogueCharacterDataList[dialogueCharacterIdx];
+        private int dialogueCharacterIdx = -1;
 
         private Action<DialogueCharacterData> updateDialoguePanel = default;
+        private Action<string> updateActorConversation = default;
+        private Action<DialogueActorControl> checkCharacterControl = default;
+        private Action<List<string>> addCharacter = default;
+        private Func<bool> isAnimating = default;
 
-        public void Init(StoryManager storyManager, Action<DialogueCharacterData> updateDialoguePanel)
+        public void Init(StoryManager storyManager, Action<DialogueCharacterData> updateDialoguePanel,
+            Action<string> updateActorConversation, Action<DialogueActorControl> checkCharacterControl,
+            Action<List<string>> addCharacter, Func<bool> isAnimating)
         {
             this.storyManager = storyManager;
             this.updateDialoguePanel = updateDialoguePanel;
+            this.updateActorConversation = updateActorConversation;
+            this.checkCharacterControl = checkCharacterControl;
+            this.addCharacter = addCharacter;
+            this.isAnimating = isAnimating;
 
             storyData = storyManager.GetChapterData(storyManager.CurrentChapter);
             dialogueDataIdx = storyData.dialogueDataList.FindIndex(dialogue => dialogue.dialogueId == storyManager.CurrentDialogueId);
             dialogueCharacterDataList = storyData.dialogueDataList[dialogueDataIdx].dialogue;
 
-            updateDialoguePanel?.Invoke(CurrentCharacterDialogue);
+            AddCharacterByDefault();
+            PlayNextDialogue();
+        }
+
+        private void AddCharacterByDefault()
+        {
+            var dialogue = storyData.dialogueDataList[dialogueDataIdx];
+            addCharacter?.Invoke(dialogue.defaultActors);
         }
 
         public void PlayNextDialogue()
         {
+            StartCoroutine(PlayNextDialogueCor());
+        }
+
+        private IEnumerator PlayNextDialogueCor()
+        {
+            while(isAnimating.Invoke())
+                yield return null;
+
             dialogueCharacterIdx++;
             bool isCharacterDialogueEnded = dialogueCharacterIdx >= dialogueCharacterDataList.Count;
 
@@ -40,7 +64,17 @@ namespace Main
                 OnDialogueEnded();
             }
 
-            updateDialoguePanel?.Invoke(CurrentCharacterDialogue);
+            DialogueCharacterData dialogueCharacterData = dialogueCharacterDataList[dialogueCharacterIdx];
+            PlayDialogueEvent(dialogueCharacterData);
+
+            checkCharacterControl?.Invoke(dialogueCharacterData.actorControl);
+            updateDialoguePanel?.Invoke(dialogueCharacterData);
+            updateActorConversation?.Invoke(dialogueCharacterData.character);
+        }
+
+        private void PlayDialogueEvent(DialogueCharacterData dialogueCharacterData)
+        {
+            var dialogueCharacterEvent = dialogueCharacterData.events;
         }
 
         private void OnDialogueEnded()
@@ -58,6 +92,7 @@ namespace Main
                 string dialogueId = storyData.dialogueDataList[dialogueDataIdx].dialogueId;
                 storyManager.UpdateStoryProgress(dialogueId, storyManager.CurrentChapter);
                 dialogueCharacterDataList = storyData.dialogueDataList[dialogueDataIdx].dialogue;
+                AddCharacterByDefault();
             }
         }
 
@@ -69,13 +104,15 @@ namespace Main
             if (nextChapterData == null)
             {
                 //storyManager.UpdateStoryProgress("completed", nextChapter);
+                //return to main menu
             }
             else
             {
                 string nextDialogueId = storyData.dialogueDataList[dialogueDataIdx].nextDialogueId;
                 storyManager.UpdateStoryProgress(nextDialogueId, nextChapter);
+
+                //will load to level selection maybe or peobably continue the game
             }
-            //will load to level selection maybe?
             Debug.Log("On Chapter Ended");
         }
     }
