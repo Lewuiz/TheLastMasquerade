@@ -13,5 +13,6 @@ namespace Main
         public Action<List<string>> addCharacter = default;
         public Func<bool> isAnimating = default;
         public Action<List<DialogueEventData>> executeDialogueEvent = default;
+        public Action backToChapterSelectionScene = default;
     }
 }

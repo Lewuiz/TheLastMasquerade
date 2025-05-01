@@ -26,11 +26,16 @@ namespace Main
 
             actorController.Init();
             InitializeStoryRunner();
-            dialoguePanel.Init(storyRunner.PlayNextDialogue, IsPlayingAnimation);
+            dialoguePanel.Init(storyRunner.PlayNextDialogue, CanProceedNextDialogue);
             dialogueChoicePanel.Init();
             storyEventHandler.Init(UpdateBackground);
 
-            loadingOverlay.HideOvelay(1f, .5f);
+            loadingOverlay.HideOvelay(.5f, .1f);
+        }
+
+        private bool CanProceedNextDialogue()
+        {
+            return !IsPlayingAnimation() && !storyRunner.IsChapterEnded;
         }
 
         private void CheckActorCharacter(DialogueActorControl dialogueActorControl)
@@ -48,7 +53,8 @@ namespace Main
                 executeDialogueEvent = ExecuteStoryEvent,
                 isAnimating = IsPlayingAnimation,
                 updateActorConversation = actorController.UpdateActorConversation,
-                updateDialoguePanel = dialoguePanel.UpdateDialoguePanel
+                updateDialoguePanel = dialoguePanel.UpdateDialoguePanel,
+                backToChapterSelectionScene = BackToChapterSelection
             };
             storyRunner.Init(storyRunnerData);
         }
@@ -89,6 +95,14 @@ namespace Main
         private bool IsPlayingAnimation()
         {
             return actorController.IsAnimatingActor() || loadingOverlay.IsPlayingAnimation;
+        }
+
+        private void BackToChapterSelection()
+        {
+            loadingOverlay.Show(.5f, () => 
+            {
+                LoadScene(SceneID.ChapterSelectionScene);
+            });
         }
     }
 }

@@ -21,6 +21,9 @@ namespace Main
         private Action<List<string>> addCharacter = default;
         private Func<bool> isAnimating = default;
         private Action<List<DialogueEventData>> executeDialogueEvent = default;
+        private Action backToChapterSelectionScene = default;
+
+        public bool IsChapterEnded { get; private set; } = false;
 
         public void Init(StoryRunnerData data)
         {
@@ -31,6 +34,9 @@ namespace Main
             addCharacter = data.addCharacter;
             isAnimating = data.isAnimating;
             executeDialogueEvent = data.executeDialogueEvent;
+            backToChapterSelectionScene = data.backToChapterSelectionScene;
+
+            IsChapterEnded = false;
 
             storyData = storyManager.GetChapterData(storyManager.CurrentChapter);
             dialogueDataIdx = storyData.dialogueDataList.FindIndex(dialogue => dialogue.dialogueId == storyManager.CurrentDialogueId);
@@ -99,6 +105,8 @@ namespace Main
 
         private void OnChapterEnded()
         {
+            IsChapterEnded = true;
+
             int nextChapter = storyManager.CurrentChapter + 1;
             var nextChapterData = storyManager.GetChapterData(nextChapter);
 
@@ -111,10 +119,9 @@ namespace Main
             {
                 string nextDialogueId = storyData.dialogueDataList[dialogueDataIdx].nextDialogueId;
                 storyManager.UpdateStoryProgress(nextDialogueId, nextChapter);
-
-                //will load to level selection maybe or peobably continue the game
             }
-            Debug.Log("On Chapter Ended");
+
+            backToChapterSelectionScene?.Invoke();
         }
     }
 }
