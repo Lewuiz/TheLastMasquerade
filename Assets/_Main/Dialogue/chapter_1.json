@@ -20,8 +20,8 @@
                         "value": "footstep.mp3"
                     },
                     {
-                        "type": "changeBackground",
-                        "value": "house gate.png"
+                        "type": "change_background",
+                        "value": "house_gate"
                     }
                 ]
             },
@@ -55,8 +55,8 @@
                 "expression": "neutral",
                 "events": [
                     {
-                        "type": "changeBackground",
-                        "value": "house gate.png"
+                        "type": "change_background",
+                        "value": "house_gate"
                     }
                 ]
             },
@@ -92,8 +92,8 @@
                 },
                 "events": [
                     {
-                        "type": "changeBackground",
-                        "value": "masquerade ball.png"
+                        "type": "change_background",
+                        "value": "masquerade_ball"
                     },
                     {
                         "type": "playSound",

@@ -12,22 +12,43 @@ namespace Main
         [SerializeField] private DialogueChoicePanel dialogueChoicePanel = default;
         [SerializeField] private ActorController actorController = default;
         [SerializeField] private DialoguePanel dialoguePanel = default;
+        [SerializeField] private LoadingOverlay loadingOverlay = default;
+        [SerializeField] private StoryEventHandler storyEventHandler = default;
 
         private StoryManager storyManager = default;
 
         protected override void OnStartCompleted()
         {
+            loadingOverlay.InitialLoading();
             storyManager = GameCore.Instance.StoryManager;
 
             actorController.Init();
-            storyRunner.Init(storyManager, dialoguePanel.UpdateDialoguePanel, actorController.UpdateActorConversation, CheckActorCharacter, actorController.AddCharacterInDialogue, IsPlayingAnimation);
+            InitializeStoryRunner();
             dialoguePanel.Init(storyRunner.PlayNextDialogue, IsPlayingAnimation);
             dialogueChoicePanel.Init();
+            storyEventHandler.Init(UpdateBackground);
+
+            loadingOverlay.HideOvelay(1f);
         }
 
         private void CheckActorCharacter(DialogueActorControl dialogueActorControl)
         {
             StartCoroutine(CheckActorCharacterCor(dialogueActorControl));
+        }
+
+        private void InitializeStoryRunner()
+        {
+            StoryRunnerData storyRunnerData = new StoryRunnerData()
+            {
+                storyManager = storyManager,
+                addCharacter = actorController.AddCharacterInDialogue,
+                checkCharacterControl = CheckActorCharacter,
+                executeDialogueEvent = ExecuteStoryEvent,
+                isAnimating = IsPlayingAnimation,
+                updateActorConversation = actorController.UpdateActorConversation,
+                updateDialoguePanel = dialoguePanel.UpdateDialoguePanel
+            };
+            storyRunner.Init(storyRunnerData);
         }
 
         private IEnumerator CheckActorCharacterCor(DialogueActorControl dialogueActorControl)
@@ -42,6 +63,11 @@ namespace Main
             yield return actorController.AddCharacterInDialogueCor(showActorlist);
         }
 
+        private void ExecuteStoryEvent(List<DialogueEventData> dialoguesDataList)
+        {
+            storyEventHandler.ExecuteEvents(dialoguesDataList);
+        }
+
         private void ShowDialogueChoice()
         {
             dialogueChoicePanel.gameObject.SetActive(true);
@@ -50,13 +76,17 @@ namespace Main
 
         private void UpdateBackground(Sprite sprite)
         {
-            backgroundSR.sprite = sprite;
-            backgroundSizeFitter.FitToCamera();
+            void callback()
+            {
+                backgroundSR.sprite = sprite;
+                backgroundSizeFitter.FitToCamera();
+            }
+            loadingOverlay.ShowAndHideOverlay(.3f, callback, .5f, .3f);
         }
 
         private bool IsPlayingAnimation()
         {
-            return actorController.IsAnimatingActor();
+            return actorController.IsAnimatingActor() || loadingOverlay.IsPlayingAnimation;
         }
     }
 }

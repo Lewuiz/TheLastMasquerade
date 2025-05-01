@@ -10,11 +10,11 @@ namespace Main
 
         private int defaultSortingOrder = default;
         private bool hasInit = false;
-        public CharacterData CharacterData { get; private set; } = default;
-        public bool IsInDialogue = false;
-
         private readonly Color32 inactiveActorColor = new Color32(107, 107, 107, 255);
-        public bool IsPlayingAnimation = false;
+        
+        public CharacterData CharacterData { get; private set; } = default;
+        public bool IsPlayingAnimation { get; private set; } = false;
+        public bool IsInDialogue { get; private set; } = false;
 
         public void Init()
         {
@@ -107,7 +107,7 @@ namespace Main
 
         public void SetActorInDialogue(bool isInDialogue)
         {
-            IsInDialogue = isInDialogue;
+            this.IsInDialogue = isInDialogue;
         }
     }
 }
