@@ -27,7 +27,12 @@
             },
             {
                 "character": "narrator",
-                "text": "(A security guard blocks the entrance.)"
+                "text": "(A security guard blocks the entrance.)",
+                "actorControl": {
+                    "show": [
+                        "Security Guard:1"
+                    ]
+                }
             },
             {
                 "character": "Elias",
