@@ -6,7 +6,11 @@ namespace Main
     {
         public void Play()
         {
-            LoadScene(SceneID.ChapterSelectionScene);
+            void callback()
+            {
+                LoadScene(SceneID.ChapterSelectionScene);
+            }
+            Overlay.Instance.LoadingOverlay.Show(.5f, callback);
         }
     }
 }

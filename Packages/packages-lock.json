@@ -1,13 +1,11 @@
 {
   "dependencies": {
     "com.coffee.ui-effect": {
-      "version": "https://github.com/mob-sakai/UIEffect.git?path=Packages/src",
+      "version": "https://github.com/mob-sakai/UIEffect.git#upm",
       "depth": 0,
       "source": "git",
-      "dependencies": {
-        "com.unity.ugui": "1.0.0"
-      },
-      "hash": "3eb775dcf57b5b1fc8af6fd923f6ce0a4fa51bd5"
+      "dependencies": {},
+      "hash": "332340e7bc2f8257816dd28784607a1edf6b6c2a"
     },
     "com.qiaozhilei.easy-text-effects": {
       "version": "https://github.com/LeiQiaoZhi/Easy-Text-Effect.git",

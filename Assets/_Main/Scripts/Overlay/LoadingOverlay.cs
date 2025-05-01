@@ -1,5 +1,5 @@
 using DG.Tweening;
-using DG.Tweening.Plugins.Options;
+using Main.Singleton;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -21,33 +21,46 @@ namespace Main
             overlayCor = StartCoroutine(ShowAndHideOverlayCor(fadeInDuration, callback, hideDelayDuration, fadeOutDuration));
         }
 
-        public void InitialLoading()
-        {
-            overlayImage.gameObject.SetActive(true);
-            overlayImage.color = new Color32(0, 0, 0, 255);
-        }
-
-        public void HideOvelay(float fadeOutDuration)
-        {
-            KillAnimationCor();
-            overlayCor = StartCoroutine(HideOvelayCor(fadeOutDuration));
-        }
-
-        public IEnumerator HideOvelayCor(float fadeOutDuration)
-        {
-            yield return overlayImage.DOFade(0f, fadeOutDuration).SetId(OVERLAY_ANIMATION_ID).WaitForCompletion();
-            IsPlayingAnimation = false;
-            overlayImage.gameObject.SetActive(false);
-        }
-
         private IEnumerator ShowAndHideOverlayCor(float fadeInDuration, Action callback, float hideDelayDuration, float fadeOutDuration)
         {
             overlayImage.gameObject.SetActive(true);
             IsPlayingAnimation = true;
             yield return overlayImage.DOFade(1f, fadeInDuration).SetId(OVERLAY_ANIMATION_ID).WaitForCompletion();
             callback?.Invoke();
+            yield return HideOvelayCor(fadeOutDuration, hideDelayDuration);
+        }
+
+        public void InitialLoading()
+        {
+            overlayImage.gameObject.SetActive(true);
+            overlayImage.color = new Color32(0, 0, 0, 255);
+        }
+
+        public void HideOvelay(float fadeOutDuration, float hideDelayDuration = 0)
+        {
+            KillAnimationCor();
+            overlayCor = StartCoroutine(HideOvelayCor(fadeOutDuration, hideDelayDuration));
+        }
+
+        public IEnumerator HideOvelayCor(float fadeOutDuration, float hideDelayDuration = 0)
+        {
             yield return new WaitForSeconds(hideDelayDuration);
-            yield return HideOvelayCor(fadeOutDuration);
+            yield return overlayImage.DOFade(0f, fadeOutDuration).SetId(OVERLAY_ANIMATION_ID).WaitForCompletion();
+            IsPlayingAnimation = false;
+            overlayImage.gameObject.SetActive(false);
+        }
+
+        public void Show(float fadeInDuration, Action callback)
+        {
+            overlayImage.gameObject.SetActive(true);
+            StartCoroutine(ShowCor(fadeInDuration, callback));
+        }
+
+        public IEnumerator ShowCor(float fadeInDuration, Action callback)
+        {
+            IsPlayingAnimation = true;
+            yield return overlayImage.DOFade(1f, fadeInDuration).SetId(OVERLAY_ANIMATION_ID).WaitForCompletion();
+            callback?.Invoke();
         }
 
         private void KillAnimationCor()

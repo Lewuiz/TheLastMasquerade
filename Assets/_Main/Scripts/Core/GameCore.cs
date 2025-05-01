@@ -14,9 +14,8 @@ namespace Main
             yield return null;
             // Initialize in order of priority
             InitializedSaveData();
-
             InitializedStoryManager();
-
+            InitializedOverlay();
             Debug.Log($"[{nameof(GameCore)}] has been initialized successfully");
         }
 
@@ -28,6 +27,13 @@ namespace Main
         private void InitializedStoryManager()
         {
             StoryManager.Init();
+        }
+
+        private void InitializedOverlay()
+        {
+            GameObject overlayGO =  Resources.Load<GameObject>("Core/Overlay Canvas");
+            Instantiate(overlayGO);
+            Overlay.Instance.Init();
         }
     }
 }
