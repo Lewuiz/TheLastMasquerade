@@ -105,6 +105,11 @@ namespace Main
 
         private void OnChapterEnded()
         {
+            StartCoroutine(OnChapterEndedCor());
+        }
+
+        private IEnumerator OnChapterEndedCor()
+        {
             IsChapterEnded = true;
 
             int nextChapter = storyManager.CurrentChapter + 1;
@@ -120,6 +125,9 @@ namespace Main
                 string nextDialogueId = storyData.dialogueDataList[dialogueDataIdx].nextDialogueId;
                 storyManager.UpdateStoryProgress(nextDialogueId, nextChapter);
             }
+
+            while (isAnimating.Invoke())
+                yield return null;
 
             backToChapterSelectionScene?.Invoke();
         }
