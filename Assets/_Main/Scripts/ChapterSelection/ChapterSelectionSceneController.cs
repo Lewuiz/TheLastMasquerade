@@ -6,6 +6,7 @@ namespace Main
     {
         protected override void OnStartCompleted()
         {
+            Overlay.Instance.LoadingOverlay.InitialLoading();
             Overlay.Instance.LoadingOverlay.HideOvelay(.5f, 1f);
         }
     }

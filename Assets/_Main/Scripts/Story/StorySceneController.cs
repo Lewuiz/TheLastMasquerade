@@ -12,13 +12,15 @@ namespace Main
         [SerializeField] private DialogueChoicePanel dialogueChoicePanel = default;
         [SerializeField] private ActorController actorController = default;
         [SerializeField] private DialoguePanel dialoguePanel = default;
-        [SerializeField] private LoadingOverlay loadingOverlay = default;
         [SerializeField] private StoryEventHandler storyEventHandler = default;
 
         private StoryManager storyManager = default;
+        private LoadingOverlay loadingOverlay = default;
 
         protected override void OnStartCompleted()
         {
+            loadingOverlay = Overlay.Instance.LoadingOverlay;
+
             loadingOverlay.InitialLoading();
             storyManager = GameCore.Instance.StoryManager;
 
@@ -28,7 +30,7 @@ namespace Main
             dialogueChoicePanel.Init();
             storyEventHandler.Init(UpdateBackground);
 
-            loadingOverlay.HideOvelay(1f);
+            loadingOverlay.HideOvelay(1f, .5f);
         }
 
         private void CheckActorCharacter(DialogueActorControl dialogueActorControl)
