@@ -19,7 +19,7 @@ namespace Main.Scene
 
         }
 
-        protected void LoadScene(SceneId sceneId)
+        protected void LoadScene(SceneID sceneId)
         {
             StartCoroutine(LoadSceneCor((int)sceneId));
         }
