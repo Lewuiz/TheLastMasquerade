@@ -12,10 +12,10 @@ namespace Main
     {
         public string dialogueId;
         public bool isAutoSave;
-        public List<DialogueCharacterData> dialogue = new List<DialogueCharacterData>();
-        public List<DialogueEventData> events = new List<DialogueEventData>();
-        //public List<DialogueChoiceData> choices = new List<DialogueChoiceData>();
-        public DialogueGameModeData nextGameMode = new DialogueGameModeData();
+        public List<string> defaultActors;
+        public List<DialogueCharacterData> dialogue;
+        public List<DialogueChoiceData> choices;
+        public string nextDialogueId;
     }
 
     public class DialogueCharacterData
@@ -23,6 +23,8 @@ namespace Main
         public string character;
         public string text;
         public string expression;
+        public List<DialogueEventData> events;
+        public DialogueActorControl actorControl;
     }
 
     public class DialogueChoiceData
@@ -37,9 +39,9 @@ namespace Main
         public string value;
     }
 
-    public class DialogueGameModeData
+    public class DialogueActorControl
     {
-        public string type;
-        public string nextDialogueId;
+        public List<string> hide;
+        public List<string> show;
     }
 }

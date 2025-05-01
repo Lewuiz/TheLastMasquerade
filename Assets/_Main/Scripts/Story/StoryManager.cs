@@ -61,7 +61,6 @@ namespace Main
 
         public int GetTotalActorOnEachDialogue()
         {
-
             return 0;
         }
 

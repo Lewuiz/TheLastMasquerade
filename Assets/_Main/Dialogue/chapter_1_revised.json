@@ -1,0 +1,240 @@
+[
+    {
+        "dialogueId": "scene_1a",
+        "isAutoSave": true,
+        "defaultActors": [
+            "Elias"
+        ],
+        "dialogue": [
+            {
+                "character": "narrator",
+                "text": "(Detective Elias Wakefield steps out of a carriage, adjusting his gloves as he gazes at the grand Blackwood estate. The night air hums with the distant chatter of high society, and warm candlelight spills from the ballroom windows.)"
+            },
+            {
+                "character": "Elias",
+                "text": "It's cold.",
+                "expression": "neutral",
+                "events": [
+                    {
+                        "type": "playSound",
+                        "value": "footstep.mp3"
+                    },
+                    {
+                        "type": "changeBackground",
+                        "value": "house gate.png"
+                    }
+                ]
+            },
+            {
+                "character": "narrator",
+                "text": "(A security guard blocks the entrance.)"
+            },
+            {
+                "character": "Elias",
+                "text": "(You know... on second thoughts, I don't think I'm in the mood for a party at the moment)",
+                "expression": "deep in thought"
+            },
+            {
+                "character": "narrator",
+                "text": "(Elias hops back on to the carriage, deciding to spend his night at a nearby teahouse instead, fully in bliss)"
+            }
+        ],
+        "nextDialogueId": "scene_1b"
+    },
+    {
+        "dialogueId": "scene_1b",
+        "isAutoSave": true,
+        "defaultActors": [
+            "Elias",
+            "Security Guard"
+        ],
+        "dialogue": [
+            {
+                "character": "Security Guard",
+                "text": "Go right in, Sir Wakefield.",
+                "expression": "neutral",
+                "events": [
+                    {
+                        "type": "changeBackground",
+                        "value": "house gate.png"
+                    }
+                ]
+            },
+            {
+                "character": "narrator",
+                "text": "(Elias steps inside, greeted by an older man in a suit)"
+            },
+            {
+                "character": "Henshaw",
+                "text": "Good evening, Sir Elias. I am Alistair Henshaw, let me lead you to the ballroom while our maid Edith here brings your luggage to your room.",
+                "expression": "neutral",
+                "actorControl": {
+                    "hide": [
+                        "Security Guard"
+                    ],
+                    "show": [
+                        "Henshaw:1"
+                    ]
+                }
+            },
+            {
+                "character": "Elias",
+                "text": "Thank you.",
+                "expression": "neutral"
+            },
+            {
+                "character": "narrator",
+                "text": "(The ballroom is lively, filled with guests in elegant attire.)",
+                "actorControl": {
+                    "hide": [
+                        "Henshaw"
+                    ]
+                },
+                "events": [
+                    {
+                        "type": "changeBackground",
+                        "value": "masquerade ball.png"
+                    },
+                    {
+                        "type": "playSound",
+                        "value": "orchestra_music.mp3"
+                    }
+                ]
+            },
+            {
+                "character": "Blackwood",
+                "text": "Ah, Detective Wakefield, welcome! I trust your journey was pleasant?",
+                "expression": "excited",
+                "actorControl": {
+                    "show": [
+                        "Blackwood:1"
+                    ]
+                }
+            },
+            {
+                "character": "Elias",
+                "text": "As pleasant as one can expect. I am honored by the invitation, my lord.",
+                "expression": "amused"
+            },
+            {
+                "character": "Blackwood",
+                "text": "Ah, let me introduce you to my business associates",
+                "expression": "excited"
+            },
+            {
+                "character": "narrator",
+                "text": "(Blackwood then leads Elias to a group of chattering people)"
+            },
+            {
+                "character": "Blackwood",
+                "text": "Excuse me, everyone, sorry to interrupt, this is my good pal, and also the best detective in town, Elias Wakefield.",
+                "expression": "neutral",
+                "actorControl": {
+                    "show": [
+                        "Fairfax:3",
+                        "Rosalind:5"
+                    ]
+                }
+            },
+            {
+                "character": "Elias",
+                "text": "Haha, I wouldn't call myself the best...",
+                "expression": "amused"
+            },
+            {
+                "character": "Fairfax",
+                "text": "Ah yes, I've heard of you, Sir Wakefield. I'm Henry Fairfax, nice to meet you.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Rosalind",
+                "text": "It's a pleasure to meet you, Sir. I'm Rosalind",
+                "expression": "happy"
+            },
+            {
+                "character": "narrator",
+                "text": "(Among the group, a woman in a green dress stays silent, her eyes averted, seeming to be deep in thought)"
+            },
+            {
+                "character": "Blackwood",
+                "text": "Eleanor? You look unwell--",
+                "expression": "confused",
+                "actorControl": {
+                    "hide": [
+                        "Fairfax",
+                        "Rosalind"
+                    ],
+                    "show": [
+                        "Eleanor:3"
+                    ]
+                }
+            },
+            {
+                "character": "Blackwood",
+                "text": "Eleanor? You look unwell--",
+                "expression": "confused"
+            },
+            {
+                "character": "Eleanor",
+                "text": "I've been overworking myself. Excuse me, I need a drink.",
+                "expression": "nervous"
+            },
+            {
+                "character": "narrator",
+                "text": "(Eleanor leaves, still looking distressed. Blackwood was speechless for a moment)",
+                "actorControl": {
+                    "hide": [
+                        "Eleanor"
+                    ]
+                }
+            },
+            {
+                "character": "Blackwood",
+                "text": "Ahem, I deeply apologize for that, Detective. That was my sister, Eleanor. This behavior is very unlike her at all.",
+                "expression": "anxious"
+            },
+            {
+                "character": "Elias",
+                "text": "No worries, my lord. It's fine.",
+                "expression": "neutral"
+            },
+            {
+                "character": "narrator",
+                "text": "(The atmosphere then quiets down, turning awkward as each person sips their drink)"
+            },
+            {
+                "character": "narrator",
+                "text": "(Then a new guest arrives, taking away everyone's attention)"
+            },
+            {
+                "character": "narrator",
+                "text": "(A stunning woman in a red gown enters. Blackwood immediately rushes to greet her.)",
+                "actorControl": {
+                    "show": [
+                        "Fairfax:3",
+                        "Rosalind:5"
+                    ]
+                }
+            },
+            {
+                "character": "Perry",
+                "text": "Drinks, Sir Wakefield?",
+                "expression": "neutral",
+                "actorControl": {
+                    "show": [
+                        "Perry:2"
+                    ]
+                }
+            },
+            {
+                "character": "Elias",
+                "text": "Yes, thank you",
+                "expression": "neutral"
+            },
+            {
+                "character": "narrator",
+                "text": "(Elias picks up a champagne glass, then moves to a quieter corner, observing Eleanor's continued unease.)"
+            }
+        ]
+    }
+]

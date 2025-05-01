@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System.Collections;
 using UnityEngine;
 
 namespace Main
@@ -7,13 +8,20 @@ namespace Main
     {
         [SerializeField] private SpriteRenderer actorSR = default;
 
-        public CharacterData CharacterData { get; private set; } = default;
-
-        public bool CanOverrideActor { get; private set; } = false;
         private int defaultSortingOrder = default;
+        private bool hasInit = false;
+        public CharacterData CharacterData { get; private set; } = default;
+        public bool IsInDialogue = false;
+
+        private readonly Color32 inactiveActorColor = new Color32(107, 107, 107, 255);
+        public bool IsPlayingAnimation = false;
 
         public void Init()
         {
+            if (hasInit)
+                return;
+
+            hasInit = true;
             defaultSortingOrder = actorSR.sortingOrder;
         }
 
@@ -21,9 +29,8 @@ namespace Main
         {
             SetDefault();
 
-            this.CharacterData = characterData;
+            CharacterData = characterData;
             actorSR.sprite = characterData.characterSpriteList[0];
-            CanOverrideActor = false;
         }
 
         private void SetDefault()
@@ -31,9 +38,42 @@ namespace Main
             transform.localScale = Vector3.one;
             actorSR.color = Color.white;
             actorSR.sortingOrder = defaultSortingOrder;
+
+            actorSR.transform.localScale = Vector3.zero;
+            actorSR.color = new Color32(inactiveActorColor.r, inactiveActorColor.g, inactiveActorColor.b, 0);
         }
 
         public void Show()
+        {
+            if (IsInDialogue)
+                return;
+
+            StartCoroutine(ShowCor());
+        }
+
+        private IEnumerator ShowCor()
+        {
+            IsPlayingAnimation = true;
+            actorSR.transform.DOScale(1f, .2f);
+            yield return actorSR.DOFade(1f, .2f).WaitForCompletion();
+            IsPlayingAnimation = false;
+        }
+
+        public void Hide()
+        {
+            StartCoroutine(HideCor());
+        }
+
+        public IEnumerator HideCor()
+        {
+            IsPlayingAnimation = true;
+            actorSR.transform.DOScale(0f, .2f);
+            yield return actorSR.DOFade(0f, .2f).WaitForCompletion();
+            gameObject.SetActive(false);
+            IsPlayingAnimation = false;
+        }
+
+        public void ShowConversation()
         {
             Color32 activeActorColor = Color.white;
 
@@ -42,18 +82,17 @@ namespace Main
             actorSR.sortingOrder = defaultSortingOrder + 1;
         }
 
-        public void Hide()
+        public void HideConversation()
         {
-            Color32 inactiveActorColor = new Color32(107,107,107,255);
-
+            IsPlayingAnimation = false;
             actorSR.DOColor(inactiveActorColor, .3f);
             actorSR.transform.DOScale(1f, .3f);
             actorSR.sortingOrder = defaultSortingOrder;
         }
 
-        public void OverrideActor()
+        public void SetActorInDialogue(bool isInDialogue)
         {
-            CanOverrideActor = true;
+            IsInDialogue = isInDialogue;
         }
     }
 }
