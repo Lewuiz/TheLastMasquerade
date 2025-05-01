@@ -31,7 +31,7 @@ namespace Main
             float scaleX = screenWidth / spriteSize.x;
             float scaleY = screenHeight / spriteSize.y;
 
-            transform.localScale = Mathf.Min(scaleX, scaleY) * Vector3.one;
+            transform.localScale = Mathf.Max(scaleX, scaleY) * Vector3.one;
         }
     }
 }
