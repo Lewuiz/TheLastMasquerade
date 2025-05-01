@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueDataList:
-  - {fileID: 4900000, guid: 437401e1b05ffc14f8e4991f599f1db4, type: 3}
+  - {fileID: 4900000, guid: 3a08fc91e1995c849a1bcc1c86291be5, type: 3}
 --- !u!1 &8312634910807180592
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,8 @@ namespace Main
         [SerializeField] private BackgroundSizeFitter backgroundSizeFitter = default;
         [SerializeField] private StoryRunner storyRunner = default;
         [SerializeField] private DialogueChoicePanel dialogueChoicePanel = default;
+        [SerializeField] private ActorController actorController = default;
+        [SerializeField] private DialoguePanel dialoguePanel = default;
 
         private StoryManager storyManager = default;
 
@@ -15,7 +17,8 @@ namespace Main
         {
             storyManager = GameCore.Instance.StoryManager;
 
-            storyRunner.Init(storyManager, CheckDialogueEvent);
+            storyRunner.Init(storyManager, dialoguePanel.UpdateDialoguePanel);
+            dialoguePanel.Init(storyRunner.PlayNextDialogue);
             dialogueChoicePanel.Init();
         }
 
@@ -29,11 +32,6 @@ namespace Main
         {
             backgroundSR.sprite = sprite;
             backgroundSizeFitter.FitToCamera();
-        }
-
-        private void CheckDialogueEvent()
-        {
-
         }
     }
 }

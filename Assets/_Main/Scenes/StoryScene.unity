@@ -199,6 +199,7 @@ MonoBehaviour:
   storyRunner: {fileID: 228367828}
   dialogueChoicePanel: {fileID: 423789135}
   actorController: {fileID: 1515296990}
+  dialoguePanel: {fileID: 157309713}
 --- !u!1 &157309711
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,7 +327,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38046c17c6bfbb445aa4e3eab6550a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 157309713}
 --- !u!1 &301749327
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,7 +1362,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1912832875}
@@ -2175,7 +2175,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca6c54d83f22ac4b92b1f691d1dac0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterDataList: []
+  characterDataList:
+  - {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
+  - {fileID: 11400000, guid: e3e3b01075cfef5448786d6b861fb316, type: 2}
+  - {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+  - {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
+  - {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
+  - {fileID: 11400000, guid: 6ee169133aa926d4094861beabb39e8b, type: 2}
+  - {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
+  - {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+  - {fileID: 11400000, guid: a8241fb1ead44e047a1486d07917a732, type: 2}
+  - {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
+  - {fileID: 11400000, guid: 39fb3c771c4123c4781887e7bf4155df, type: 2}
   actorTemplate: {fileID: 1912832876}
 --- !u!1 &1536299681
 GameObject:
@@ -2887,7 +2898,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1912832875
 Transform:
   m_ObjectHideFlags: 0
@@ -2897,7 +2908,7 @@ Transform:
   m_GameObject: {fileID: 1912832874}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: -7, z: 0}
+  m_LocalPosition: {x: -14, y: -7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2915,7 +2926,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6008af6c19eb16549bd5fa47ee23e4c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actorSR: {fileID: 0}
+  actorSR: {fileID: 1912832877}
+  IsInDialogue: 0
+  IsPlayingAnimation: 0
 --- !u!212 &1912832877
 SpriteRenderer:
   m_ObjectHideFlags: 0

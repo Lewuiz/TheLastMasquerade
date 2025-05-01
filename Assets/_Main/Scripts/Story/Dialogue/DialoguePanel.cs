@@ -12,43 +12,21 @@ namespace Main
         [SerializeField] private TextMeshProUGUI characterDialogueTMP = default;
         [SerializeField] private TextMeshProUGUI dialogueStatusTMP = default;
 
-        private List<DialogueCharacterData> dialogueCharacterDataList = new List<DialogueCharacterData>();
-        private int dialogueIdx = 0;
-
-        private Action onDialogueEnded = default;
-        private Action checkDialogueEvent = default;
-
-        public void Init(Action onDialogueEnded, Action checkDialogueEvent)
+        private Action onDialogueClick = default;
+        public void Init(Action onDialogueClick)
         {
-            this.onDialogueEnded = onDialogueEnded;
-            this.checkDialogueEvent = checkDialogueEvent;
+            this.onDialogueClick = onDialogueClick;
         }
 
-        public void UpdateDialogueData(DialogueData dialogueData)
+        public void UpdateDialoguePanel(DialogueCharacterData dialogueCharacterData)
         {
-            dialogueIdx = 0;
-            dialogueCharacterDataList = dialogueData.dialogue;
-        }
-
-        public void UpdateDialoguePanel()
-        {
-            checkDialogueEvent?.Invoke();
-            DialogueCharacterData dialogueCharacterData = dialogueCharacterDataList[dialogueIdx];
             characterDialogueTMP.text = dialogueCharacterData.text;
             characterNameTMP.text = dialogueCharacterData.character;
         }
 
         public void Continue()
         {
-            dialogueIdx++;
-            if (dialogueIdx < dialogueCharacterDataList.Count)
-            {
-                UpdateDialoguePanel();
-            }
-            else
-            {
-                onDialogueEnded?.Invoke();
-            }
+            onDialogueClick?.Invoke();
         }
     }
 }

@@ -10,17 +10,24 @@ namespace Main
         [SerializeField] private Actor actorTemplate = default;
 
         private List<Actor> actorList = new List<Actor>();
-        private readonly List<Vector2> actorPosition = new List<Vector2>()
+        private readonly List<Vector2> actorPositionList = new List<Vector2>()
         {
-            new Vector2(-10, -7), //position actor 1
-            new Vector2(10, -7),  //position actor 2
-            new Vector2(-5, -7), //position actor 3
-            new Vector2(5, -7),  //position actor 4
+            new Vector2(-14, -7), //position actor 1
+            new Vector2(14, -7),  //position actor 2
+            new Vector2(-9, -7), //position actor 3
+            new Vector2(9, -7),  //position actor 4
+            new Vector2(-4, -7), //position actor 5
+            new Vector2(4, -7),  //position actor 6
         };
 
         public void Init()
         {
-
+            for (int i = 0; i < actorPositionList.Count; i++)
+            {
+                Actor actor = Instantiate(actorTemplate, actorTemplate.transform.parent);
+                actor.Init();
+                actorList.Add(actor);
+            }
         }
 
         public void UpdateActorConversation(string characterId)
