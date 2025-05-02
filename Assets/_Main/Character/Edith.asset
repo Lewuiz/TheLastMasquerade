@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 902e56b24e5eb0e4da7c63fee01e6f58, type: 3}
-  m_Name: Servant 1
+  m_Name: Edith
   m_EditorClassIdentifier: 
-  characterId: Servant 1
-  characterName: Servant
+  characterId: Edith
+  characterName: Edith
   characterSpriteList:
   - {fileID: 21300000, guid: 5a65a9a4b3a4fd64986fca2d93298c62, type: 3}

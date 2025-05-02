@@ -417,6 +417,14 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 0e5eb4fea064fe846b2772f7424b1759, type: 3}
   - id: house_gate
     sprite: {fileID: 21300000, guid: b58078e1ce4af8246a791af7a1fd5c9e, type: 3}
+  - id: hallway_1
+    sprite: {fileID: 21300000, guid: b94f107a03ae41c44a01df103517304c, type: 3}
+  - id: hallway_2
+    sprite: {fileID: 21300000, guid: b94f107a03ae41c44a01df103517304c, type: 3}
+  - id: hallway_3
+    sprite: {fileID: 21300000, guid: b94f107a03ae41c44a01df103517304c, type: 3}
+  - id: dining_room
+    sprite: {fileID: 21300000, guid: 81a4217b926cf0b40805e22ae6813b47, type: 3}
 --- !u!1 &831123856
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,10 +2,19 @@
   {
     "dialogueId": "scene_2a",
     "isAutoSave": true,
+    "defaultActors": [
+      "Elias"
+    ],
     "dialogue": [
       {
         "character": "narrator",
-        "text": "(Midnight strikes, and all guests retire back into their chambers.)"
+        "text": "(Midnight strikes, and all guests retire back into their chambers.)",
+        "events": [
+          {
+            "type": "change_background",
+            "value": "hallway_1"
+          }
+        ]
       },
       {
         "character": "Elias",
@@ -22,22 +31,29 @@
         "expression": "neutral"
       }
     ],
-    "events": [
-      {
-        "type": "changeBackground",
-        "value": "hallway 1.jpeg",
-        "line": 0
-      }
-    ],
-    "nextGameMode": {
-      "type": "hiddenObject",
-      "nextDialogueId": "scene_2b"
-    }
+    "nextDialogueId": "scene_2b"
   },
   {
     "dialogueId": "scene_2b",
     "isAutoSave": true,
+    "defaultActors": [
+      "Elias"
+    ],
     "dialogue": [
+      {
+        "character": "narrator",
+        "text": "(Midnight strikes, and all guests retire back into their chambers.)",
+        "events": [
+          {
+            "type": "change_background",
+            "value": "hallway_2"
+          },
+          {
+            "type": "play_sound",
+            "value": "calm_music.mp3"
+          }
+        ]
+      },
       {
         "character": "narrator",
         "text": "(As Elias admires the intricate paintings on the walls of the hallway, he was met with one of the servants, Edith, holding a hot cup of fresh tea.)"
@@ -45,7 +61,12 @@
       {
         "character": "Edith",
         "text": "Good morning, Sir Wakefield. You're up this early. Would you like a cup of tea?",
-        "expression": "neutral"
+        "expression": "neutral",
+        "actorControl": {
+          "show": [
+            "Edith:1"
+          ]
+        }
       },
       {
         "character": "Elias",
@@ -58,7 +79,12 @@
       },
       {
         "character": "Rosalind",
-        "text": "EXCUSE ME! CAN SOMEONE COME TO MY ROOM? I NEED SOME ASSISTANCE WITH MY DRESS!"
+        "text": "EXCUSE ME! CAN SOMEONE COME TO MY ROOM? I NEED SOME ASSISTANCE WITH MY DRESS!",
+        "actorControl": {
+          "show": [
+            "Rosalind:3"
+          ]
+        }
       },
       {
         "character": "Edith",
@@ -70,27 +96,29 @@
         "text": "(Edith bows, then places the teacup that was in his hands on to a nearby dresser and rushes to Lady Rosalind's bedroom)"
       }
     ],
-    "events": [
-      {
-        "type": "changeBackground",
-        "value": "hallway 2.png",
-        "line": 0
-      },
-      {
-        "type": "playSound",
-        "value": "calm_music.mp3",
-        "line": 0,
-        "loop": true
-      }
-    ]
+    "nextDialogueId": "scene_2c"
   },
   {
     "dialogueId": "scene_2c",
     "isAutoSave": true,
+    "defaultActors": [
+      "Elias"
+    ],
     "dialogue": [
       {
         "character": "narrator",
-        "text": "(Each side of the hallways were filled with shut wooden doors, it was eerily quiet)"
+        "text": "(Each side of the hallways were filled with shut wooden doors, it was eerily quiet)",
+        "actorControl": {
+          "hide": [
+            "Rosalind", "Edith"
+          ]
+        },
+        "events": [
+          {
+            "type": "change_background",
+            "value": "hallway_3"
+          }
+        ]
       },
       {
         "character": "Elias",
@@ -98,16 +126,13 @@
         "expression": "neutral"
       }
     ],
-    "events": [
-      {
-        "type": "changeBackground",
-        "value": "hallway 3.png",
-        "line": 0
-      }
-    ]
+    "nextDialogueId" : "scene_2d"
   },
   {
     "dialogueId": "scene_2d",
+    "defaultActors": [
+      "Elias"
+    ],
     "isAutoSave": true,
     "dialogue": [
       {
@@ -117,7 +142,18 @@
       {
         "character": "Blackwood",
         "text": "Good morning, Mr. Wakefield! Please, have a seat while we wait for everyone else to get ready.",
-        "expression": "excited"
+        "expression": "excited",
+        "actorControl": {
+          "show": [
+            "Blackwood:1"
+          ]
+        },
+        "events" :[
+          {
+            "type": "change_background",
+            "value": "dining_room"
+          }
+        ]
       },
       {
         "character": "Elias",
@@ -126,12 +162,22 @@
       },
       {
         "character": "narrator",
-        "text": "(Elias takes a seat next to Lord Fairfax)"
+        "text": "(Elias takes a seat next to Lord Fairfax)",
+        "actorControl": {
+          "hide": [
+            "Blackwood"
+          ]
+        }
       },
       {
         "character": "Fairfax",
         "text": "Good day, Detective. How has your morning been?",
-        "expression": "neutral"
+        "expression": "neutral",
+        "actorControl": {
+          "show": [
+            "Fairfax:1"
+          ]
+        }
       },
       {
         "character": "Elias",
@@ -140,17 +186,32 @@
       },
       {
         "character": "narrator",
-        "text": "(As chatter erupts in the dining hall, more guests eventually arrive. The woman in red at the ball the night before, took a seat across from Elias.)"
+        "text": "(As chatter erupts in the dining hall, more guests eventually arrive. The woman in red at the ball the night before, took a seat across from Elias.)",
+        "actorControl": {
+          "hide": [
+            "Fairfax"
+          ]
+        }
       },
       {
         "character": "Isabella",
         "text": "Morning, gentlemen.",
-        "expression": "neutral"
+        "expression": "neutral",
+        "actorControl": {
+          "show": [
+            "Isabella:1"
+          ]
+        }
       },
       {
         "character": "Blackwood",
         "text": "Morning to you too, Lady Isabella",
-        "expression": "excited"
+        "expression": "excited",
+        "actorControl": {
+          "show": [
+            "Blackwood:2"
+          ]
+        }
       },
       {
         "character": "narrator",
@@ -159,12 +220,22 @@
       {
         "character": "Rosalind",
         "text": "I'm sorry I'm late, everyone. I thought I lost my shoe, and it turns out the maid found it under the bed, haha. Thank you for your help earlier, Edith.",
-        "expression": "happy"
+        "expression": "happy",
+        "actorControl": {
+          "show": [
+            "Rosalind:3"
+          ]
+        }
       },
       {
         "character": "Edith",
         "text": "My pleasure, my lady",
-        "expression": "neutral"
+        "expression": "neutral",
+        "actorControl": {
+          "show": [
+            "Edith:5"
+          ]
+        }
       },
       {
         "character": "Blackwood",
@@ -202,42 +273,15 @@
       {
         "character": "Edith",
         "text": "It's Lady Eleanor... she's dead, my Lord...",
-        "expression": "shock"
+        "expression": "shock",
+        "events":[
+          {
+            "type": "play_Sound",
+            "value": "tense-horror-background"
+          }
+        ]
       }
     ],
-    "events": [
-      {
-        "type": "changeBackground",
-        "value": "dining room.png",
-        "line": 0
-      },
-      {
-        "type": "playSound",
-        "value": "tense-horror-background-174809.mp3",
-        "line": 19,
-        "loop": true
-      }
-    ],
-    "nextGameMode": {
-      "type": "hiddenObject",
-      "nextDialogueId": "scene_3a"
-    }
-  },
-  {
-    "dialogueId": "scene_2e",
-    "isAutoSave": false,
-    "dialogue": [
-      {
-        "character": "Elias",
-        "text": "A warm cup of jasmine tea.",
-        "expression": "neutral"
-      }
-    ],
-    "events": [
-      {
-        "type": "inspectObject",
-        "value": "tea cup.png"
-      }
-    ]
+    "nextDialogueId": "scene_3a"
   }
 ]

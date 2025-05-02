@@ -16,12 +16,12 @@ namespace Main
         private int dialogueCharacterIdx = -1;
 
         private Action<DialogueCharacterData> updateDialoguePanel = default;
-        private Action<string> updateActorConversation = default;
-        private Action<DialogueActorControl> checkCharacterControl = default;
+        private Action<DialogueActorControl, string> onDialoguePlay = default;
         private Action<List<string>> addCharacter = default;
         private Func<bool> isAnimating = default;
         private Action<List<DialogueEventData>> executeDialogueEvent = default;
         private Action backToChapterSelectionScene = default;
+        private int storyChapter = default;
 
         public bool IsChapterEnded { get; private set; } = false;
 
@@ -29,17 +29,18 @@ namespace Main
         {
             storyManager = data.storyManager;
             updateDialoguePanel = data.updateDialoguePanel;
-            updateActorConversation = data.updateActorConversation;
-            checkCharacterControl = data.checkCharacterControl;
+            onDialoguePlay = data.onDialoguePlay;
             addCharacter = data.addCharacter;
             isAnimating = data.isAnimating;
             executeDialogueEvent = data.executeDialogueEvent;
             backToChapterSelectionScene = data.backToChapterSelectionScene;
+            storyChapter = data.storyChapter;
 
             IsChapterEnded = false;
 
-            storyData = storyManager.GetChapterData(storyManager.CurrentChapter);
+            storyData = storyManager.GetChapterData(data.storyChapter);
             dialogueDataIdx = storyData.dialogueDataList.FindIndex(dialogue => dialogue.dialogueId == storyManager.CurrentDialogueId);
+            dialogueDataIdx = dialogueDataIdx < 0 ? 0 : dialogueDataIdx;
             dialogueCharacterDataList = storyData.dialogueDataList[dialogueDataIdx].dialogue;
 
             AddCharacterByDefault();
@@ -59,7 +60,7 @@ namespace Main
 
         private IEnumerator PlayNextDialogueCor()
         {
-            while(isAnimating.Invoke())
+            while (isAnimating.Invoke())
                 yield return null;
 
             dialogueCharacterIdx++;
@@ -73,9 +74,8 @@ namespace Main
             DialogueCharacterData dialogueCharacterData = dialogueCharacterDataList[dialogueCharacterIdx];
             ExecuteDialogEvent(dialogueCharacterData);
 
-            checkCharacterControl?.Invoke(dialogueCharacterData.actorControl);
             updateDialoguePanel?.Invoke(dialogueCharacterData);
-            updateActorConversation?.Invoke(dialogueCharacterData.character);
+            onDialoguePlay?.Invoke(dialogueCharacterData.actorControl, dialogueCharacterData.character);
         }
 
         private void ExecuteDialogEvent(DialogueCharacterData dialogueCharacterData)
@@ -97,7 +97,11 @@ namespace Main
             else
             {
                 string dialogueId = storyData.dialogueDataList[dialogueDataIdx].dialogueId;
-                storyManager.UpdateStoryProgress(dialogueId, storyManager.CurrentChapter);
+                bool canSave = storyManager.CurrentChapter < storyChapter;
+                if (storyData.dialogueDataList[dialogueDataIdx].isAutoSave && canSave)
+                {
+                    storyManager.UpdateStoryProgress(dialogueId, storyManager.CurrentChapter);
+                }
                 dialogueCharacterDataList = storyData.dialogueDataList[dialogueDataIdx].dialogue;
                 AddCharacterByDefault();
             }
@@ -122,8 +126,11 @@ namespace Main
             }
             else
             {
-                string nextDialogueId = storyData.dialogueDataList[dialogueDataIdx].nextDialogueId;
-                storyManager.UpdateStoryProgress(nextDialogueId, nextChapter);
+                string nextDialogueId = storyData.dialogueDataList[^1].nextDialogueId;
+
+                bool canSave = storyManager.CurrentChapter < storyChapter;
+                if (canSave)
+                    storyManager.UpdateStoryProgress(nextDialogueId, nextChapter);
             }
 
             while (isAnimating.Invoke())

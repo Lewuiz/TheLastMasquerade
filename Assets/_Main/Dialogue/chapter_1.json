@@ -240,6 +240,7 @@
                 "character": "narrator",
                 "text": "(Elias picks up a champagne glass, then moves to a quieter corner, observing Eleanor's continued unease.)"
             }
-        ]
+        ],
+        "nextDialogueId": "scene_2a"
     }
 ]

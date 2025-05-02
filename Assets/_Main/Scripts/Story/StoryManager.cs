@@ -7,6 +7,7 @@ namespace Main
     public class StoryManager : MonoBehaviour
     {
         [SerializeField] private List<TextAsset> dialogueDataList = new List<TextAsset>();
+        [SerializeField] private List<ChapterSelectionData> chapterSelectionDataList = new List<ChapterSelectionData>();
 
         private SaveManager saveManager = default;
         private PlayerData.StoryProgress storyProgress = default;
@@ -15,6 +16,7 @@ namespace Main
         public int CurrentChapter => storyProgress.chapter;
 
         private List<StoryData> storyDataList = new List<StoryData>();
+        public List<StoryData> StoryDataList => storyDataList;
 
         public void Init()
         {
@@ -31,6 +33,11 @@ namespace Main
                 };
                 storyDataList.Add(storyData);
             }
+        }
+
+        public ChapterSelectionData GetChapterSelectionData(int chapter)
+        {
+            return chapterSelectionDataList.Find(selectionData => selectionData.chapter == chapter);
         }
 
         public StoryData GetStoryData(string dialogueId)

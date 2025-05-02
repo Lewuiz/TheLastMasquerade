@@ -87,6 +87,9 @@ namespace Main
             for (int i = 0; i < characterIdList.Count; i++)
             {
                 var actor = inDialogueActorList.Find(dialogueCharacter => dialogueCharacter.CharacterData.characterId == characterIdList[i]);
+                if (actor == null)
+                    continue;
+                
                 actor.Hide();
                 inDialogueActorList.Remove(actor);
             }
