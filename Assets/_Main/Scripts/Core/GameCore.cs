@@ -8,14 +8,23 @@ namespace Main
     {
         [field: SerializeField] public StoryManager StoryManager { get; private set; } = default;
         public SaveManager SaveManager { get; private set; } = default;
+        public StorySceneData StorySceneData { get; private set; } = default;
+
+        private bool hasInitialized = false;
 
         public IEnumerator Initialized()
         {
+            if (hasInitialized)
+                yield break;
+
             yield return null;
             // Initialize in order of priority
             InitializedSaveData();
             InitializedStoryManager();
             InitializedOverlay();
+            InitializeStorySceneData();
+
+            hasInitialized = true;
             Debug.Log($"[{nameof(GameCore)}] has been initialized successfully");
         }
 
@@ -27,6 +36,11 @@ namespace Main
         private void InitializedStoryManager()
         {
             StoryManager.Init();
+        }
+
+        private void InitializeStorySceneData()
+        {
+            StorySceneData = new StorySceneData();
         }
 
         private void InitializedOverlay()

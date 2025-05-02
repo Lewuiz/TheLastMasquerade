@@ -45,18 +45,30 @@ namespace Main
 
         private void InitializeStoryRunner()
         {
+            StorySceneData storySceneData = GameCore.Instance.StorySceneData;
             StoryRunnerData storyRunnerData = new StoryRunnerData()
             {
                 storyManager = storyManager,
                 addCharacter = actorController.AddCharacterInDialogue,
-                checkCharacterControl = CheckActorCharacter,
+                onDialoguePlay = OnDialoguePlay,
                 executeDialogueEvent = ExecuteStoryEvent,
                 isAnimating = IsPlayingAnimation,
-                updateActorConversation = actorController.UpdateActorConversation,
                 updateDialoguePanel = dialoguePanel.UpdateDialoguePanel,
-                backToChapterSelectionScene = BackToChapterSelection
+                backToChapterSelectionScene = BackToChapterSelection,
+                storyChapter = storySceneData.SelectedChapter <= -1 ? storyManager.CurrentChapter : storySceneData.SelectedChapter
             };
             storyRunner.Init(storyRunnerData);
+        }
+
+        public void OnDialoguePlay(DialogueActorControl dialogueActorControl, string characterId)
+        {
+            StartCoroutine(OnDialoguePlayCor(dialogueActorControl, characterId));
+        }
+
+        private IEnumerator OnDialoguePlayCor(DialogueActorControl dialogueActorControl, string characterId)
+        {
+            yield return CheckActorCharacterCor(dialogueActorControl);
+            yield return actorController.UpdateActorConversationCor(characterId);
         }
 
         private IEnumerator CheckActorCharacterCor(DialogueActorControl dialogueActorControl)
@@ -99,7 +111,7 @@ namespace Main
 
         private void BackToChapterSelection()
         {
-            loadingOverlay.Show(.5f, () => 
+            loadingOverlay.Show(.5f, () =>
             {
                 LoadScene(SceneID.ChapterSelectionScene);
             });
