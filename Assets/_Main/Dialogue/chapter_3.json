@@ -2,10 +2,23 @@
   {
     "dialogueId": "scene_3a",
     "isAutoSave": true,
+    "defaultActors": [
+      "Elias",
+      "Isabella",
+      "Blackwood",
+      "Rosalind",
+      "Edith"
+    ],
     "dialogue": [
       {
         "character": "narrator",
-        "text": "(The room was tense and silent, everyone sat there wide-eyed)"
+        "text": "(The room was tense and silent, everyone sat there wide-eyed)",
+        "events": [
+          {
+            "type": "change_background",
+            "value": "dining room"
+          }
+        ]
       },
       {
         "character": "Blackwood",
@@ -25,11 +38,23 @@
       {
         "character": "Elias",
         "text": "Yes, my lord.",
-        "expression": "neutral"
+        "expression": "neutral",
+        "actorControl": {
+          "hide": [
+            "Isabella",
+            "Rosalind"
+          ]
+        }
       },
       {
         "character": "narrator",
-        "text": "(Edith, Blackwood, and Elias rush into Eleanor's room)"
+        "text": "(Edith, Blackwood, and Elias rush into Eleanor's room)",
+        "events": [
+          {
+            "type": "change_background",
+            "value": "bedroom"
+          }
+        ]
       },
       {
         "character": "Edith",
@@ -38,7 +63,13 @@
       },
       {
         "character": "narrator",
-        "text": "(On the floor, lies the lifeless body of Lady Eleanor.)"
+        "text": "(On the floor, lies the lifeless body of Lady Eleanor.)",
+        "events": [
+          {
+            "type": "change_Background",
+            "value": "carpet"
+          }
+        ]
       },
       {
         "character": "Blackwood",
@@ -57,34 +88,41 @@
       {
         "character": "Elias",
         "text": "(This doesn't look like an accident, let's search for some clues)",
-        "expression": "deep in thought"
+        "expression": "deep in thought",
+        "actorControl": {
+          "hide": [
+            "Edith",
+            "Blackwood"
+          ]
+        }
+      },
+      {
+        "character": "Elias",
+        "text": "Her face looks pale, her lips black. What could've happened to her?",
+        "expression": "neutral",
+        "events": [
+          {
+            "type": "change_background",
+            "value": "eleanor_corpse"
+          }
+        ]
       }
     ],
-    "events": [
+    "nextDialogueId": "scene_3b_choices"
+  },
+  {
+    "dialogueId": "scene_3b_1",
+    "isAutoSave": false,
+    "dialogue": [
       {
-        "type": "changeBackground",
-        "value": "dining room.png",
-        "line": 0
-      },
-      {
-        "type": "changeBackground",
-        "value": "bedroom.jpeg",
-        "line": 5
-      },
-      {
-        "type": "changeBackground",
-        "value": "carpet.png",
-        "line": 7
-      },
-      {
-        "type": "playSound",
-        "value": "tense-horror-background-174809.mp3",
-        "line": 0
+        "character": "Elias",
+        "text": "A note asking her to meet at the library... I should investigate the library.",
+        "expression": "neutral"
       }
     ]
   },
   {
-    "dialogueId": "scene_3b",
+    "dialogueId": "scene_3b_2",
     "isAutoSave": false,
     "dialogue": [
       {
@@ -92,93 +130,90 @@
         "text": "Almond Scent... cyanide! This case is definitely no accident.",
         "expression": "neutral"
       }
-    ],
-    "events": [
+    ]
+  },
+  {
+    "dialogueId": "scene_3b_choices",
+    "requirement" : ["elearnor_tea_cup", "business_letter"],
+    "isAutoSave": true,
+    "dialogue": [
+
       {
-        "type": "inspectObject",
-        "value": "tea spilled.png"
+        "character": "Elias",
+        "text": "Where shall I begin my investigation?",
+        "expression": "deep in thought"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Investigate the library",
+        "nextDialogueId": "scene_3c"
+      },
+      {
+        "text": "Ask Edith about the teacup",
+        "nextDialogueId": "scene_3g"
       }
     ]
   },
   {
     "dialogueId": "scene_3c",
-    "isAutoSave": false,
+    "isAutoSave": true,
     "dialogue": [
       {
         "character": "Elias",
-        "text": "So, this is the library, huh"
-      }
-    ],
-    "events": [
-      {
-        "type": "changeBackground",
-        "value": "library.png",
-        "line": 0
-      }
-    ]
-  },
-  {
-    "dialogueId": "scene_3d",
-    "isAutoSave": false,
-    "dialogue": [
+        "text": "So, this is the library, huh",
+        "events": [
+          {
+            "type": "change_background",
+            "value": "library"
+          }
+        ]
+      },
       {
         "character": "Elias",
-        "text": "I believe this is Lady Eleanor's desk."
-      }
-    ],
-    "events": [
-      {
-        "type": "changeBackground",
-        "value": "desk.png",
-        "line": 0
-      }
-    ]
-  },
-  {
-    "dialogueId": "scene_3e",
-    "isAutoSave": false,
-    "dialogue": [
+        "text": "I believe this is Lady Eleanor's desk.",
+        "events": [
+          {
+            "type": "change_background",
+            "value": "desk"
+          },
+          {
+            "type": "inspect_object",
+            "value": "library"
+          }
+        ]
+      },
       {
         "character": "Elias",
         "text": "There is something slipped inside this book",
         "expression": "neutral"
-      },
+      }     
+    ],
+    "nextDialogueId": "scene_3d"
+  },
+  {
+    "dialogueId": "scene_3c_1",
+    "isAutoSave": false,
+    "dialogue": [
       {
         "character": "Elias",
         "text": "A key? And what is this..., a name card? Maybe I can try to call the number",
         "expression": "neutral"
       }
-    ],
-    "events": [
-      {
-        "type": "inspectObject",
-        "value": "key.png"
-      },
-      {
-        "type": "inspectObject",
-        "value": "name card.png"
-      }
     ]
   },
   {
-    "dialogueId": "scene_3f",
+    "dialogueId": "scene_3c_2",
     "isAutoSave": false,
     "dialogue": [
       {
         "character": "Elias",
-        "text": "A business proposal? It seems like Lady Eleanor is working on a new business venture. Interesting.",
-        "expression": "neutral"
-      }
-    ],
-    "events": [
-      {
-        "type": "inspectObject",
-        "value": "business proposal.png"
+        "text": "A business proposal? It seems like Lady Eleanor is working on a new business venture. Interesting."
       }
     ]
   },
   {
-    "dialogueId": "scene_3g",
+    "dialogueId": "scene_3c_3",
     "isAutoSave": false,
     "dialogue": [
       {
@@ -186,16 +221,10 @@
         "text": "What box is this? It's locked. I wonder if the key is around here somewhere",
         "expression": "neutral"
       }
-    ],
-    "events": [
-      {
-        "type": "inspectObject",
-        "value": "box.png"
-      }
     ]
   },
   {
-    "dialogueId": "scene_3h",
+    "dialogueId": "scene_3c_3_1",
     "isAutoSave": false,
     "dialogue": [
       {
@@ -203,66 +232,53 @@
         "text": "Are all these threatening letters addressed to Lady Eleanor? I need to find the murderer as soon as possible. The suspect must have had such a strong motive.",
         "expression": "neutral"
       }
-    ],
-    "events": [
-      {
-        "type": "inspectObject",
-        "value": "deadth threat 1.png"
-      },
-      {
-        "type": "inspectObject",
-        "value": "dead threat 2.png"
-      },
-      {
-        "type": "inspectObject",
-        "value": "deadth threat 3.png"
-      }
     ]
   },
   {
-    "dialogueId": "scene_3i",
-    "isAutoSave": false,
+    "dialogueId": "scene_3d",
+    "requirement" : ["library_box", "business_letter", "key", "name_card"],
+    "isAutoSave": true,
     "dialogue": [
       {
         "character": "Elias",
         "text": "I can say all the books in the library are so many and quite complete",
-        "expression": "neutral"
+        "expression": "neutral",
+        "events": [
+          {
+            "type": "change_background",
+            "value": "bookshelf"
+          }
+        ]
       }
     ],
-    "events": [
-      {
-        "type": "changeBackground",
-        "value": "bookshelf.png",
-        "line": 0
-      }
-    ]
+    "nextDialogueId": "scene_3e"
   },
   {
-    "dialogueId": "scene_3j",
+    "dialogueId": "scene_3e",
     "isAutoSave": false,
     "dialogue": [
       {
         "character": "Elias",
         "text": "There's a telephone here. But who should I dial?",
-        "expression": "neutral"
+        "expression": "neutral",
+        "events": [
+          {
+            "type": "interact_puzzle",
+            "value": "phone_mini_game"
+          }
+        ]
       }
     ],
-    "events": [
-      {
-        "type": "changeBackground",
-        "value": "telephone.png"
-      }
-    ],
-    "nextGameMode": {
-      "type": "phoneMinigame"
-    }
+    "nextDialogueId": "scene_3f"
   },
   {
-    "dialogueId": "scene_3k",
+    "dialogueId": "scene_3f",
+    "defaultActors" : ["Elias", "Edmund"],
+    "requirement" : "phone_mini_game",
     "isAutoSave": true,
     "dialogue": [
       {
-        "character": "???",
+        "character": "Edmund",
         "text": "Hello?",
         "expression": "neutral"
       },
@@ -348,14 +364,23 @@
       }
     ]
   },
+
+
   {
-    "dialogueId": "scene_3l",
+    "dialogueId": "scene_3g",
+    "defaultActors" : ["Elias", "Edith"],
     "isAutoSave": true,
     "dialogue": [
       {
         "character": "Elias",
         "text": "It is you who served the tea for Lady Eleanor, isn't it?",
-        "expression": "deep in thought"
+        "expression": "deep in thought",
+        "events": [
+          {
+            "type": "changeBackground",
+            "value": "bedroom.jpeg"
+          }
+        ]
       },
       {
         "character": "Edith",
@@ -373,22 +398,26 @@
         "expression": "neutral"
       }
     ],
-    "events": [
-      {
-        "type": "changeBackground",
-        "value": "bedroom.jpeg",
-        "line": 0
-      }
-    ]
+    "nextDialogueId": "scene_3m"
   },
   {
     "dialogueId": "scene_3m",
     "isAutoSave": true,
+    "defaultActors" : ["Perry", "Elias"],
     "dialogue": [
       {
         "character": "Perry",
         "text": "How is the investigation going so far, Sir?",
-        "expression": "neutral"
+        "expression": "neutral",
+        "events": [
+          {
+            "type": "change_background",
+            "value": "hallway_1"
+          }
+        ],
+        "actorControl" : {
+          "hide" : ["Edith"]
+        }
       },
       {
         "character": "Elias",
@@ -445,115 +474,6 @@
         "text": "Thank you for the information.",
         "expression": "amused"
       }
-    ],
-    "events": [
-      {
-        "type": "changeBackground",
-        "value": "hallway 1.jpeg",
-        "line": 0
-      }
-    ]
-  },
-  {
-    "dialogueId": "scene_3n",
-    "isAutoSave": false,
-    "dialogue": [
-      {
-        "character": "Elias",
-        "text": "Her face looks pale, her lips black. What could've happened to her?",
-        "expression": "neutral"
-      }
-    ]
-  },
-  {
-    "dialogueId": "scene_3o",
-    "isAutoSave": false,
-    "dialogue": [
-      {
-        "character": "Elias",
-        "text": "A note asking her to meet at the library... I should investigate the library.",
-        "expression": "neutral"
-      }
-    ],
-    "events": [
-      {
-        "type": "inspectObject",
-        "value": "private detective letter.png"
-      }
-    ]
-  },
-  {
-    "dialogueId": "scene_3p",
-    "isAutoSave": true,
-    "dialogue": [
-      {
-        "character": "Elias",
-        "text": "Where shall I begin my investigation?",
-        "expression": "deep in thought"
-      }
-    ],
-    "choices": [
-      {
-        "text": "Investigate the library",
-        "nextDialogueId": "scene_3c"
-      },
-      {
-        "text": "Ask Edith about the teacup",
-        "nextDialogueId": "scene_3l"
-      }
-    ]
-  },
-  {
-    "dialogueId": "scene_4a",
-    "isAutoSave": true,
-    "dialogue": [
-      {
-        "character": "Elias",
-        "text": "During the masquerade, only one guest wore a black mask — Lord Blackwood, the host himself.",
-        "expression": "thinking"
-      },
-      {
-        "character": "Elias",
-        "text": "Now... where could Lord Blackwood be? I need answers — and quickly.",
-        "expression": "neutral"
-      },
-      {
-        "character": "Elias",
-        "text": "(footsteps approaching...)",
-        "expression": "thinking"
-      },
-      {
-        "character": "Lord Blackwood",
-        "text": "Detective, how goes the investigation? I won't rest until the one responsible for my sister's death is found. I assure you — they'll receive no mercy.",
-        "expression": "stern"
-      },
-      {
-        "character": "Elias",
-        "text": "I need access to the guest list. One of the servants mentioned Lady Eleanor spoke with three individuals during the ball. You were the one in the black mask, correct?",
-        "expression": "serious"
-      },
-      {
-        "character": "Lord Blackwood",
-        "text": "Yes, that was me. As the host, I wore black. But I entrusted all the arrangements to Mr. Henshaw — he's the only one who would have the full guest list.",
-        "expression": "calm"
-      },
-      {
-        "character": "Elias",
-        "text": "Understood. I'll find Mr. Henshaw. Thank you, Lord Blackwood.",
-        "expression": "neutral"
-      },
-      {
-        "character": "Lord Blackwood",
-        "text": "Do whatever it takes, Detective. And be quick... I fear this won't be the last tragedy if the killer isn't unmasked soon.",
-        "expression": "grim"
-      }
-    ],
-
-    "events": [
-      {
-        "type": "changebackground",
-        "value": "hallway 1.jpeg"
-    }
     ]
   }
 ]
