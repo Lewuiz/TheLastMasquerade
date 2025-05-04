@@ -8,10 +8,10 @@ namespace Main
     public class InspectItemController : MonoBehaviour
     {
         [SerializeField] private List<InspectItemGameData> inspectItemGameDataList = new List<InspectItemGameData>();
-        [SerializeField] ObtaineditemPanel obtainedItemPanel = default;
+        [SerializeField] ObtainedItemPanel obtainedItemPanel = default;
 
         private GameObject inspectGame = default;
-        private List<Inspectitem> inspecItemList = new List<Inspectitem>();
+        private List<InspectItem> inspecItemList = new List<InspectItem>();
 
         public bool IsGameOnGoing { get; private set; } = false;
 
@@ -46,7 +46,7 @@ namespace Main
 
         private void IntializeInspectItem()
         {
-            inspecItemList = FindObjectsByType<Inspectitem>(FindObjectsSortMode.None).ToList();
+            inspecItemList = FindObjectsByType<InspectItem>(FindObjectsSortMode.None).ToList();
 
             for (int i = 0; i < inspecItemList.Count; i++)
             {
@@ -54,7 +54,7 @@ namespace Main
             }
         }
 
-        private void OnItemFound(Inspectitem inspectItem)
+        private void OnItemFound(InspectItem inspectItem)
         {
 
         }

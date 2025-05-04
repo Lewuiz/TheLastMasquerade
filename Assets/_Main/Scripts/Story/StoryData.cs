@@ -12,6 +12,7 @@ namespace Main
     public class DialogueData
     {
         public string dialogueId;
+        public List<string> requirement;
         public bool isAutoSave;
         public List<string> defaultActors;
         public List<DialogueCharacterData> dialogue;

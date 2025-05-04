@@ -104,6 +104,10 @@
           {
             "type": "change_background",
             "value": "eleanor_corpse"
+          },
+          {
+            "type": "inspect_object",
+            "value": "eleanor_corpse"
           }
         ]
       }
@@ -134,7 +138,7 @@
   },
   {
     "dialogueId": "scene_3b_choices",
-    "requirement" : ["elearnor_tea_cup", "business_letter"],
+    "requirement" : ["item:eleanor_tea_cup,eleanor_library_clue"],
     "isAutoSave": true,
     "dialogue": [
 
@@ -274,7 +278,7 @@
   {
     "dialogueId": "scene_3f",
     "defaultActors" : ["Elias", "Edmund"],
-    "requirement" : "phone_mini_game",
+    "requirement" : ["mini_game:phone_mini_game"],
     "isAutoSave": true,
     "dialogue": [
       {

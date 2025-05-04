@@ -5,14 +5,14 @@ using UnityEngine.EventSystems;
 
 namespace Main
 {
-    public class Inspectitem : MonoBehaviour, IPointerClickHandler
+    public class InspectItem : MonoBehaviour, IPointerClickHandler
     {
         [SerializeField] private List<InspectItemData> inspectItemDataList = new List<InspectItemData>();
 
         public bool HasFound { get; private set; } = false;
-        private Action<Inspectitem> onItemFound = default;
+        private Action<InspectItem> onItemFound = default;
 
-        public void Init(Action<Inspectitem> onItemFound)
+        public void Init(Action<InspectItem> onItemFound)
         {
             this.onItemFound = onItemFound;
         }

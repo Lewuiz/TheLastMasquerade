@@ -8,26 +8,30 @@ namespace Main
     public class DialogueChoicePanel : MonoBehaviour
     {
         [SerializeField] private CanvasGroup cg = default;
-        [SerializeField] private List<DialogueChoice> dialogueChoiceList = new List<DialogueChoice>();
+        [SerializeField] private DialogueChoice dialogueChoiceTemplate = default;
         [SerializeField] private Color32 selectedDialogueChoiceColor = default;
         [SerializeField] private Color32 defaultDialogueChoiceColor = default;
 
+        private List<DialogueChoice> dialogueChoiceList = new List<DialogueChoice>();
         private DialogueChoice selectedDialogueChoice = default;
 
         public void Init()
         {
-            for (int i = 0; i < dialogueChoiceList.Count; i++)
-            {
-                dialogueChoiceList[i].Init(OnDialogueSelect);
-            }
-
             cg.alpha = 0f;
             SetCanvasGroupInteactable(false);
             gameObject.SetActive(false);
         }
 
-        public void ShowDialogue()
+        public void ShowDialogue(List<DialogueChoiceData> dialogueChoiceDataList)
         {
+            for (int i = 0; i < dialogueChoiceDataList.Count; i++)
+            {
+                DialogueChoice dialogueChoice = Instantiate(dialogueChoiceTemplate, dialogueChoiceTemplate.transform.parent);
+                dialogueChoice.Init(OnDialogueSelect);
+                dialogueChoice.gameObject.SetActive(true);
+                dialogueChoiceList.Add(dialogueChoice);
+            }
+
             StartCoroutine(ShowDialogueCor());
         }
 
@@ -53,6 +57,7 @@ namespace Main
         {
             SetCanvasGroupInteactable(false);
             yield return cg.DOFade(0f, .3f).WaitForCompletion();
+            DestoryChoices();
         }
 
         private void OnDialogueSelect(DialogueChoice dialogueChoice)
@@ -79,5 +84,14 @@ namespace Main
             HideDialogue();
         }
 
+        private void DestoryChoices()
+        {
+            for(int i = 0; i < dialogueChoiceList.Count; i++)
+            {
+                Destroy(dialogueChoiceList[i].gameObject);
+            }
+
+            dialogueChoiceList.Clear();
+        }
     }
 }

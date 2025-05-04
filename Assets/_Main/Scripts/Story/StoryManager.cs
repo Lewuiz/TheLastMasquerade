@@ -66,9 +66,15 @@ namespace Main
             Save();
         }
 
-        public int GetTotalActorOnEachDialogue()
+        public void CompleteMiniGame(string miniGameId)
         {
-            return 0;
+            storyProgress.puzzlePlayedList.Add(miniGameId);
+            Save();
+        }
+
+        public bool HasMiniGamePlayed(string miniGameId)
+        {
+            return storyProgress.puzzlePlayedList.Contains(miniGameId);
         }
 
         private void Save()

@@ -21,6 +21,8 @@ namespace Main
         private Func<bool> isAnimating = default;
         private Action<List<DialogueEventData>> executeDialogueEvent = default;
         private Action backToChapterSelectionScene = default;
+
+
         private int storyChapter = default;
 
         public bool IsChapterEnded { get; private set; } = false;

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Main
 {
-    public class ObtaineditemPanel : MonoBehaviour
+    public class ObtainedItemPanel : MonoBehaviour
     {
         [SerializeField] private CanvasGroup canvasGroup = default;
         [SerializeField] private Image itemImageTemplate = default;

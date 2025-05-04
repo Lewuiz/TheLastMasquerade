@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 
 namespace Main
@@ -13,11 +14,12 @@ namespace Main
         [SerializeField] private List<BackgroundEventData> backgroundEventData = new List<BackgroundEventData>();
 
         private Action<Sprite> changeBackground = default;
-        
+        private Action<string> loadInspectItem = default;
 
-        public void Init(Action<Sprite> changeBackground)
+        public void Init(Action<Sprite> changeBackground, Action<string> loadInspectItem)
         {
             this.changeBackground = changeBackground;
+            this.loadInspectItem = loadInspectItem;
         }
 
         public void ExecuteEvents(List<DialogueEventData> dialoguesDataList)
@@ -32,6 +34,10 @@ namespace Main
                 {
                     ChangeBackground(dialogueEventData.value);
                 }
+                else if(dialogueEventData.type == "inspect_object")
+                {
+                    CreateInspectObject(dialogueEventData.value);
+                }
             }
         }
 
@@ -43,6 +49,11 @@ namespace Main
                 return;
             
             changeBackground?.Invoke(bgSprite);
+        }
+
+        private void CreateInspectObject(string id)
+        {
+            loadInspectItem?.Invoke(id);
         }
     }
 }

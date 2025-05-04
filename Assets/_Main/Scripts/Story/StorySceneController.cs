@@ -29,7 +29,7 @@ namespace Main
             InitializeStoryRunner();
             dialoguePanel.Init(storyRunner.PlayNextDialogue, CanProceedNextDialogue);
             dialogueChoicePanel.Init();
-            storyEventHandler.Init(UpdateBackground);
+            storyEventHandler.Init(UpdateBackground, inspectItemController.Load);
 
             loadingOverlay.HideOvelay(.5f, .1f);
         }
@@ -89,10 +89,10 @@ namespace Main
             storyEventHandler.ExecuteEvents(dialoguesDataList);
         }
 
-        private void ShowDialogueChoice()
+        private void ShowDialogueChoice(List<DialogueChoiceData> dialogueChoiceDataList)
         {
             dialogueChoicePanel.gameObject.SetActive(true);
-            dialogueChoicePanel.ShowDialogue();
+            dialogueChoicePanel.ShowDialogue(dialogueChoiceDataList);
         }
 
         private void UpdateBackground(Sprite sprite)
