@@ -13,6 +13,8 @@ namespace Main
         [SerializeField] private List<BackgroundEventData> backgroundEventData = new List<BackgroundEventData>();
 
         private Action<Sprite> changeBackground = default;
+        
+
         public void Init(Action<Sprite> changeBackground)
         {
             this.changeBackground = changeBackground;

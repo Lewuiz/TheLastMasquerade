@@ -13,6 +13,7 @@ namespace Main
         [SerializeField] private ActorController actorController = default;
         [SerializeField] private DialoguePanel dialoguePanel = default;
         [SerializeField] private StoryEventHandler storyEventHandler = default;
+        [SerializeField] private InspectItemController inspectItemController = default;
 
         private StoryManager storyManager = default;
         private LoadingOverlay loadingOverlay = default;
