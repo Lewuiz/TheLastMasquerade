@@ -15,7 +15,14 @@ namespace Main
                     STORY_PROGRESS, new StoryProgress()
                     {
                         dialogue = "scene_1a",
-                        chapter = 0
+                        chapter = 0,
+                        puzzlePlayedList = new List<string>()
+                    }
+                },
+                {
+                    INVENTORY, new Inventory()
+                    {
+                        inspectItemList = new List<string>(),   
                     }
                 }
             };
@@ -33,6 +40,20 @@ namespace Main
             [JsonProperty(PropertyName = CHAPTER)]
             public int chapter;
             public const string CHAPTER = "b";
+
+            [JsonProperty(PropertyName = PUZZLE_PLAYED_LIST)]
+            public List<string> puzzlePlayedList;
+            public const string PUZZLE_PLAYED_LIST = "c";
+        }
+
+        public const string INVENTORY = "inventory";
+
+        [Serializable]
+        public class Inventory
+        {
+            [JsonProperty(PropertyName = INSPECT_ITEM_LIST)]
+            public List<string> inspectItemList;
+            public const string INSPECT_ITEM_LIST = "a";
         }
 
         public override string GetSaveDataId()
