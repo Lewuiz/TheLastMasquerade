@@ -12,12 +12,15 @@ namespace Main
 
         private GameObject inspectGame = default;
         private List<InspectItem> inspecItemList = new List<InspectItem>();
+        private Action showDialogue = default;
+        private InventoryManager inventoryManager = default;
 
         public bool IsGameOnGoing { get; private set; } = false;
 
-        public void Init()
+        public void Init(Action showDialogue)
         {
-            //will implement with inventory manager.
+            inventoryManager = GameCore.Instance.InventoryManager;
+            this.showDialogue = showDialogue;
         }
 
         public void Load(string gameId)
@@ -31,17 +34,17 @@ namespace Main
                 return;
             }
 
-            inspectGame = Instantiate(inspectItemGameData.inspectItemGame, transform.parent);
+            inspectGame = Instantiate(inspectItemGameData.inspectItemGame, transform);
             inspectGame.transform.position = Vector3.zero;
             inspectGame.transform.localScale = Vector3.one;
 
             IntializeInspectItem();
         }
 
-        public void ShowObtainedPanel()
+        public void ShowObtainedPanel(List<Sprite> obtainedSpriteList)
         {
             obtainedItemPanel.gameObject.SetActive(true);
-            obtainedItemPanel.Show(null);
+            obtainedItemPanel.Show(obtainedSpriteList);
         }
 
         private void IntializeInspectItem()
@@ -56,7 +59,12 @@ namespace Main
 
         private void OnItemFound(InspectItem inspectItem)
         {
+            for (int i = 0; i < inspectItem.InspectItemDataList.Count; i++)
+            {
+                inventoryManager.ObtainedInspectItem(inspectItem.InspectItemDataList[i].inspectItemId);
+            }
 
+            ShowObtainedPanel(inspectItem.GetInspectItemSpriteList());
         }
     }
 

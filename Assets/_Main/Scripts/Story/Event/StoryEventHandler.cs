@@ -43,6 +43,7 @@ namespace Main
 
         private void ChangeBackground(string background)
         {
+            Debug.Log(background);
             Sprite bgSprite = backgroundEventData.Find(eventData => eventData.id == background).sprite;
             
             if (bgSprite == null)

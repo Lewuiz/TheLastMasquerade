@@ -1,3 +1,5 @@
+using EasyTextEffects.Editor.MyBoxCopy.Extensions;
+using UnityEditor;
 using UnityEngine;
 
 namespace Main
@@ -17,6 +19,11 @@ namespace Main
         {
             inventory.inspectItemList.Add(inspectItemId);
             Save();
+        }
+
+        public bool HasObtainedItem(string inspectItem)
+        {
+            return inventory.inspectItemList.Contains(inspectItem);
         }
 
         public void Save()

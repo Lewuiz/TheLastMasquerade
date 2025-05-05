@@ -14,5 +14,6 @@ namespace Main
         public Action<List<DialogueEventData>> executeDialogueEvent = default;
         public Action backToChapterSelectionScene = default;
         public int storyChapter = default;
+        public Action hideDialogue = default;
     }
 }

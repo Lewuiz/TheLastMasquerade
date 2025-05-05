@@ -29,13 +29,14 @@ namespace Main
         private void CreateChapterSelection()
         {
             StoryManager storyManager = GameCore.Instance.StoryManager;
-
+            Debug.Log($"WOi: {storyManager.CurrentChapter}");
             for (int i = 0; i < storyManager.StoryDataList.Count; i++)
             {
                 ChapterSelectionItem chapterSelectionItem = Instantiate(chapterSelectionItemTemplate, chapterSelectionItemTemplate.transform.parent);
                 chapterSelectionItem.gameObject.SetActive(true);
                 ChapterSelectionData chapterSelectionData = storyManager.GetChapterSelectionData(i);
-                bool isUnlock = storyManager.CurrentChapter < i;
+                //bool isUnlock = storyManager.CurrentChapter >= i;
+                bool isUnlock = true;
                 chapterSelectionItem.Init(chapterSelectionData, GoToStoryScene, isUnlock);
             }
         }

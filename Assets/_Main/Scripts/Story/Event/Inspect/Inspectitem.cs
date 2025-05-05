@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -8,6 +9,7 @@ namespace Main
     public class InspectItem : MonoBehaviour, IPointerClickHandler
     {
         [SerializeField] private List<InspectItemData> inspectItemDataList = new List<InspectItemData>();
+        public List<InspectItemData> InspectItemDataList => inspectItemDataList;
 
         public bool HasFound { get; private set; } = false;
         private Action<InspectItem> onItemFound = default;
@@ -21,6 +23,11 @@ namespace Main
         {
             HasFound = true;
             onItemFound?.Invoke(this);
+        }
+
+        public List<Sprite> GetInspectItemSpriteList()
+        {
+            return inspectItemDataList.Select(item => item.sprite).ToList();
         }
     }
 }

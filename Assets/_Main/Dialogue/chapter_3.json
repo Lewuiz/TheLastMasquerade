@@ -16,7 +16,7 @@
         "events": [
           {
             "type": "change_background",
-            "value": "dining room"
+            "value": "dining_room"
           }
         ]
       },
@@ -112,36 +112,32 @@
         ]
       }
     ],
-    "nextDialogueId": "scene_3b_choices"
+    "nextDialogueId": "scene_3b"
   },
   {
-    "dialogueId": "scene_3b_1",
+    "dialogueId": "scene_3b",
+    "requirement": [
+      "item:eleanor_tea_cup,eleanor_library_clue"
+    ],
     "isAutoSave": false,
     "dialogue": [
       {
         "character": "Elias",
         "text": "A note asking her to meet at the library... I should investigate the library.",
         "expression": "neutral"
-      }
-    ]
-  },
-  {
-    "dialogueId": "scene_3b_2",
-    "isAutoSave": false,
-    "dialogue": [
+      },
       {
         "character": "Elias",
         "text": "Almond Scent... cyanide! This case is definitely no accident.",
         "expression": "neutral"
       }
-    ]
+    ],
+    "nextDialogueId": "scene_3b_choices"
   },
   {
     "dialogueId": "scene_3b_choices",
-    "requirement" : ["item:eleanor_tea_cup,eleanor_library_clue"],
     "isAutoSave": true,
     "dialogue": [
-
       {
         "character": "Elias",
         "text": "Where shall I begin my investigation?",
@@ -191,7 +187,7 @@
         "character": "Elias",
         "text": "There is something slipped inside this book",
         "expression": "neutral"
-      }     
+      }
     ],
     "nextDialogueId": "scene_3d"
   },
@@ -240,7 +236,12 @@
   },
   {
     "dialogueId": "scene_3d",
-    "requirement" : ["library_box", "business_letter", "key", "name_card"],
+    "requirement": [
+      "library_box",
+      "business_letter",
+      "key",
+      "name_card"
+    ],
     "isAutoSave": true,
     "dialogue": [
       {
@@ -277,8 +278,13 @@
   },
   {
     "dialogueId": "scene_3f",
-    "defaultActors" : ["Elias", "Edmund"],
-    "requirement" : ["mini_game:phone_mini_game"],
+    "defaultActors": [
+      "Elias",
+      "Edmund"
+    ],
+    "requirement": [
+      "mini_game:phone_mini_game"
+    ],
     "isAutoSave": true,
     "dialogue": [
       {
@@ -368,11 +374,12 @@
       }
     ]
   },
-
-
   {
     "dialogueId": "scene_3g",
-    "defaultActors" : ["Elias", "Edith"],
+    "defaultActors": [
+      "Elias",
+      "Edith"
+    ],
     "isAutoSave": true,
     "dialogue": [
       {
@@ -407,7 +414,10 @@
   {
     "dialogueId": "scene_3m",
     "isAutoSave": true,
-    "defaultActors" : ["Perry", "Elias"],
+    "defaultActors": [
+      "Perry",
+      "Elias"
+    ],
     "dialogue": [
       {
         "character": "Perry",
@@ -419,8 +429,10 @@
             "value": "hallway_1"
           }
         ],
-        "actorControl" : {
-          "hide" : ["Edith"]
+        "actorControl": {
+          "hide": [
+            "Edith"
+          ]
         }
       },
       {

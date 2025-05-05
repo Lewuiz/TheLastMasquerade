@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 namespace Main
 {
@@ -21,7 +23,9 @@ namespace Main
         private Func<bool> isAnimating = default;
         private Action<List<DialogueEventData>> executeDialogueEvent = default;
         private Action backToChapterSelectionScene = default;
+        private Action hideDialogue = default;
 
+        private InventoryManager inventoryManager = default;
 
         private int storyChapter = default;
 
@@ -29,6 +33,8 @@ namespace Main
 
         public void Init(StoryRunnerData data)
         {
+            inventoryManager = GameCore.Instance.InventoryManager;
+
             storyManager = data.storyManager;
             updateDialoguePanel = data.updateDialoguePanel;
             onDialoguePlay = data.onDialoguePlay;
@@ -37,6 +43,7 @@ namespace Main
             executeDialogueEvent = data.executeDialogueEvent;
             backToChapterSelectionScene = data.backToChapterSelectionScene;
             storyChapter = data.storyChapter;
+            hideDialogue = data.hideDialogue;
 
             IsChapterEnded = false;
 
@@ -60,12 +67,64 @@ namespace Main
             StartCoroutine(PlayNextDialogueCor());
         }
 
+        private bool CanProceedNextConversation()
+        {
+            bool isLastConversation = dialogueCharacterIdx >= dialogueCharacterDataList.Count - 1;
+            if (!isLastConversation)
+                return true;
+
+            int nextDialogueIdx = dialogueDataIdx + 1;
+            if (nextDialogueIdx > storyData.dialogueDataList.Count)
+                return true;
+
+            DialogueData currentDialogueData = storyData.dialogueDataList[nextDialogueIdx];
+            List<string> requirementList = currentDialogueData.requirement;
+
+            if (requirementList == null || requirementList.Count == 0)
+                return true;
+
+            for (int i = 0; i < requirementList.Count; i++)
+            {
+                string[] splits = requirementList[i].Split(":");
+                if (splits[0] == "item") //proceed Type
+                {
+                    return HasObtainedAllInspectItems(splits[1]);
+                }
+                else
+                {
+
+                }
+            }
+
+            return true;
+        }
+
+        private bool HasObtainedAllInspectItems(string inspectItemList)
+        {
+            string[] requiredItems = inspectItemList.Split(",");
+            for (int i = 0; i < requiredItems.Length; i++)
+            {
+                bool hasObtained = inventoryManager.HasObtainedItem(requiredItems[i]);
+                if (!hasObtained)
+                    return false; 
+            }
+
+            return true;
+        }
+
         private IEnumerator PlayNextDialogueCor()
         {
+            if (!CanProceedNextConversation())
+            {
+                hideDialogue?.Invoke();
+                yield break;
+            }
+
             while (isAnimating.Invoke())
                 yield return null;
-
+            
             dialogueCharacterIdx++;
+
             bool isCharacterDialogueEnded = dialogueCharacterIdx >= dialogueCharacterDataList.Count;
 
             if (isCharacterDialogueEnded)
@@ -99,7 +158,7 @@ namespace Main
             else
             {
                 string dialogueId = storyData.dialogueDataList[dialogueDataIdx].dialogueId;
-                bool canSave = storyManager.CurrentChapter < storyChapter;
+                bool canSave = storyManager.CurrentChapter >= storyChapter;
                 if (storyData.dialogueDataList[dialogueDataIdx].isAutoSave && canSave)
                 {
                     storyManager.UpdateStoryProgress(dialogueId, storyManager.CurrentChapter);
@@ -130,7 +189,7 @@ namespace Main
             {
                 string nextDialogueId = storyData.dialogueDataList[^1].nextDialogueId;
 
-                bool canSave = storyManager.CurrentChapter < storyChapter;
+                bool canSave = storyManager.CurrentChapter >= storyChapter;
                 if (canSave)
                     storyManager.UpdateStoryProgress(nextDialogueId, nextChapter);
             }

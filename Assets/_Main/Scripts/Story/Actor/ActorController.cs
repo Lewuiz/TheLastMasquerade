@@ -33,6 +33,22 @@ namespace Main
             }
         }
 
+        public void HideAllCharacter()
+        {
+            for (int i = 0; i < inDialogueActorList.Count; i++)
+            {
+                inDialogueActorList[i].Hide();
+            }
+        }
+
+        public void ShowAllCharacter()
+        {
+            for (int i = 0; i < inDialogueActorList.Count; i++)
+            {
+                inDialogueActorList[i].Show();
+            }
+        }
+
         public void AddCharacterInDialogue(List<string> actorsData)
         {
             StartCoroutine(AddCharacterInDialogueCor(actorsData));
