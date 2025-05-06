@@ -74,8 +74,13 @@ namespace Main
             bool isLastConversation = dialogueCharacterIdx >= dialogueCharacterDataList.Count - 1;
             if (!isLastConversation)
                 return true;
+           
+            string nextDialogueId = storyData.dialogueDataList[dialogueDataIdx].nextDialogueId;
+            int nextDialoguIdx = storyData.dialogueDataList.FindIndex(dialogue => dialogue.dialogueId == nextDialogueId);
+            if (nextDialoguIdx < 0)
+                return true;
 
-            int nextDialogueIdx = dialogueDataIdx + 1;
+            int nextDialogueIdx = nextDialoguIdx;
             if (nextDialogueIdx > storyData.dialogueDataList.Count)
                 return true;
 
