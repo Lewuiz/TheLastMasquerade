@@ -16,11 +16,14 @@ namespace Main
         private InventoryManager inventoryManager = default;
 
         public bool IsGameOnGoing { get; private set; } = false;
+        private Action playNextDialogue = default;
 
-        public void Init(Action showDialogue)
+        public void Init(Action showDialogue, Action playNextDialogue)
         {
-            inventoryManager = GameCore.Instance.InventoryManager;
             this.showDialogue = showDialogue;
+            this.playNextDialogue = playNextDialogue;
+
+            inventoryManager = GameCore.Instance.InventoryManager;
         }
 
         public void Load(string gameId)
@@ -41,9 +44,10 @@ namespace Main
             IntializeInspectItem();
         }
 
-        public void ShowObtainedPanel(List<Sprite> obtainedSpriteList)
+        public void ShowObtainedPanel(List<Sprite> obtainedSpriteList, Action onFindAllItem)
         {
             obtainedItemPanel.gameObject.SetActive(true);
+            obtainedItemPanel.SetOnFindAllItem(onFindAllItem);
             obtainedItemPanel.Show(obtainedSpriteList);
         }
 
@@ -64,7 +68,23 @@ namespace Main
                 inventoryManager.ObtainedInspectItem(inspectItem.InspectItemDataList[i].inspectItemId);
             }
 
-            ShowObtainedPanel(inspectItem.GetInspectItemSpriteList());
+            inspectItem.gameObject.SetActive(false);
+            ShowObtainedPanel(inspectItem.GetInspectItemSpriteList(), OnFindAllItems);
+        }
+
+        private void OnFindAllItems()
+        {
+            for (int i = 0; i < inspecItemList.Count; i++)
+            {
+                if (!inspecItemList[i].HasFound)
+                    return;
+            }
+
+            showDialogue?.Invoke();
+            IsGameOnGoing = false;
+            Destroy(inspectGame.gameObject);
+            inspectGame = null;
+            playNextDialogue?.Invoke();
         }
     }
 

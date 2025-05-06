@@ -1,9 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 namespace Main
 {
@@ -24,6 +22,8 @@ namespace Main
         private Action<List<DialogueEventData>> executeDialogueEvent = default;
         private Action backToChapterSelectionScene = default;
         private Action hideDialogue = default;
+        private Action<List<DialogueChoiceData>, Action> showDialogueChoice = default;
+        private Func<bool> isShowChoice = default;
 
         private InventoryManager inventoryManager = default;
 
@@ -44,6 +44,8 @@ namespace Main
             backToChapterSelectionScene = data.backToChapterSelectionScene;
             storyChapter = data.storyChapter;
             hideDialogue = data.hideDialogue;
+            showDialogueChoice = data.showDialogueChoice;
+            isShowChoice = data.isShowChoice;
 
             IsChapterEnded = false;
 
@@ -114,6 +116,10 @@ namespace Main
 
         private IEnumerator PlayNextDialogueCor()
         {
+            bool isOnChoice = isShowChoice?.Invoke() ?? false;
+            if (isOnChoice)
+                yield break;
+
             if (!CanProceedNextConversation())
             {
                 hideDialogue?.Invoke();
@@ -134,7 +140,7 @@ namespace Main
 
             DialogueCharacterData dialogueCharacterData = dialogueCharacterDataList[dialogueCharacterIdx];
             ExecuteDialogEvent(dialogueCharacterData);
-
+            showDialogueChoice?.Invoke(storyData.dialogueDataList[dialogueDataIdx].choices, PlayNextDialogue);
             updateDialoguePanel?.Invoke(dialogueCharacterData);
             onDialoguePlay?.Invoke(dialogueCharacterData.actorControl, dialogueCharacterData.character);
         }

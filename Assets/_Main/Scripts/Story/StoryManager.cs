@@ -66,6 +66,11 @@ namespace Main
             Save();
         }
 
+        public void UpdateDialogueId(string progressId)
+        {
+            storyProgress.dialogue = progressId;
+        }
+
         public void CompleteMiniGame(string miniGameId)
         {
             storyProgress.puzzlePlayedList.Add(miniGameId);
@@ -79,7 +84,7 @@ namespace Main
 
         private void Save()
         {
-            saveManager.Set<PlayerData>(PlayerData.STORY_PROGRESS, storyProgress);
+            //saveManager.Set<PlayerData>(PlayerData.STORY_PROGRESS, storyProgress);
         }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,7 +31,7 @@ namespace Main
             dialoguePanel.Init(storyRunner.PlayNextDialogue, CanProceedNextDialogue);
             dialogueChoicePanel.Init();
             storyEventHandler.Init(UpdateBackground, inspectItemController.Load);
-            inspectItemController.Init(ShowDialogue);
+            inspectItemController.Init(ShowDialogue, storyRunner.PlayNextDialogue);
             loadingOverlay.HideOvelay(.5f, .1f);
         }
 
@@ -57,7 +58,9 @@ namespace Main
                 updateDialoguePanel = dialoguePanel.UpdateDialoguePanel,
                 backToChapterSelectionScene = BackToChapterSelection,
                 storyChapter = storySceneData.SelectedChapter <= -1 ? storyManager.CurrentChapter : storySceneData.SelectedChapter,
-                hideDialogue = HideDialogue
+                hideDialogue = HideDialogue,
+                showDialogueChoice = ShowDialogueChoice,
+                isShowChoice = dialogueChoicePanel.IsShowingChoice
             };
             storyRunner.Init(storyRunnerData);
         }
@@ -102,10 +105,13 @@ namespace Main
             storyEventHandler.ExecuteEvents(dialoguesDataList);
         }
 
-        private void ShowDialogueChoice(List<DialogueChoiceData> dialogueChoiceDataList)
+        private void ShowDialogueChoice(List<DialogueChoiceData> dialogueChoiceDataList, Action onChoiceSelected)
         {
+            if (dialogueChoiceDataList == null || dialogueChoiceDataList.Count == 0)
+                return;
+
             dialogueChoicePanel.gameObject.SetActive(true);
-            dialogueChoicePanel.ShowDialogue(dialogueChoiceDataList);
+            dialogueChoicePanel.ShowChoiceDialogue(dialogueChoiceDataList, onChoiceSelected);
         }
 
         private void UpdateBackground(Sprite sprite)

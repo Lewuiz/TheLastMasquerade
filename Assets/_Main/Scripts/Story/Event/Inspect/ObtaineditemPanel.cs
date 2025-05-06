@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,12 @@ namespace Main
 
         public bool IsShowingPanel { get; private set; } = default;
         private bool isPlayingAnimation = false;
+        private Action onFindAllItem = default;
+
+        public void SetOnFindAllItem(Action onFindAllItem)
+        {
+            this.onFindAllItem = onFindAllItem;
+        }
 
         public void Show(List<Sprite> obtainedItemSprite)
         {
@@ -53,6 +60,7 @@ namespace Main
                 Destroy(obtainedImageList[i].gameObject);
             }
 
+            onFindAllItem?.Invoke();
             obtainedImageList.Clear();
             isPlayingAnimation = false;
             gameObject.SetActive(false);

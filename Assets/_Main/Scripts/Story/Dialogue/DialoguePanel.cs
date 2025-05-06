@@ -63,6 +63,7 @@ namespace Main
 
         private IEnumerator ShowCor()
         {
+            cg.gameObject.SetActive(true);
             canClicked = false;
             IsPlayingAnimation = true;
             yield return cg.DOFade(1f, .2f).WaitForCompletion();
