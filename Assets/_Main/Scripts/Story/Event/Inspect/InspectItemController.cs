@@ -11,9 +11,13 @@ namespace Main
         [SerializeField] ObtainedItemPanel obtainedItemPanel = default;
 
         private GameObject inspectGame = default;
+        private InspectItemGameData inspectItemGameData = default;
+
         private List<InspectItem> inspecItemList = new List<InspectItem>();
         private Action showDialogue = default;
+
         private InventoryManager inventoryManager = default;
+        private StoryManager storyManager = default;
 
         public bool IsGameOnGoing { get; private set; } = false;
         private Action playNextDialogue = default;
@@ -24,14 +28,15 @@ namespace Main
             this.playNextDialogue = playNextDialogue;
 
             inventoryManager = GameCore.Instance.InventoryManager;
+            storyManager = GameCore.Instance.StoryManager;
         }
 
         public void Load(string gameId)
         {
             IsGameOnGoing = true;
-            InspectItemGameData inspectItemGameData = inspectItemGameDataList.Find(gameData => gameData.gameId == gameId);
+            inspectItemGameData = inspectItemGameDataList.Find(gameData => gameData.gameId == gameId);
 
-            if (inspectItemGameData == null)
+            if (inspectItemGameData == null || storyManager.HasMiniGamePlayed(inspectItemGameData.gameId))
             {
                 IsGameOnGoing = false;
                 return;
@@ -79,11 +84,13 @@ namespace Main
                 if (!inspecItemList[i].HasFound)
                     return;
             }
-
+            Debug.Log($"Inspect game id: {inspectItemGameData.gameId}");
+            storyManager.CompleteMiniGame(inspectItemGameData.gameId);
             showDialogue?.Invoke();
             IsGameOnGoing = false;
             Destroy(inspectGame.gameObject);
             inspectGame = null;
+            inspectItemGameData = null;
             playNextDialogue?.Invoke();
         }
     }

@@ -73,18 +73,21 @@ namespace Main
 
         public void CompleteMiniGame(string miniGameId)
         {
-            storyProgress.puzzlePlayedList.Add(miniGameId);
+            if (string.IsNullOrEmpty(miniGameId) || string.IsNullOrWhiteSpace(miniGameId))
+                return;
+
+            storyProgress.miniGamePlayedList.Add(miniGameId);
             Save();
         }
 
         public bool HasMiniGamePlayed(string miniGameId)
         {
-            return storyProgress.puzzlePlayedList.Contains(miniGameId);
+            return storyProgress.miniGamePlayedList.Contains(miniGameId);
         }
 
         private void Save()
         {
-            //saveManager.Set<PlayerData>(PlayerData.STORY_PROGRESS, storyProgress);
+            saveManager.Set<PlayerData>(PlayerData.STORY_PROGRESS, storyProgress);
         }
     }
 }

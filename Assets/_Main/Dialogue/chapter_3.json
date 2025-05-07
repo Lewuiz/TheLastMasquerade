@@ -171,6 +171,17 @@
       },
       {
         "character": "Elias",
+        "text": "I can say all the books in the library are so many and quite complete",
+        "expression": "neutral",
+        "events": [
+          {
+            "type": "change_background",
+            "value": "bookshelf"
+          }
+        ]
+      },
+      {
+        "character": "Elias",
         "text": "I believe this is Lady Eleanor's desk.",
         "events": [
           {
@@ -189,10 +200,11 @@
         "expression": "neutral"
       }
     ],
-    "nextDialogueId": "scene_3d"
+    "nextDialogueId": "scene_3c_1"
   },
   {
     "dialogueId": "scene_3c_1",
+    "requirement":["item:key,name_card"],
     "isAutoSave": false,
     "dialogue": [
       {
@@ -234,30 +246,7 @@
       }
     ]
   },
-  {
-    "dialogueId": "scene_3d",
-    "requirement": [
-      "library_box",
-      "business_letter",
-      "key",
-      "name_card"
-    ],
-    "isAutoSave": true,
-    "dialogue": [
-      {
-        "character": "Elias",
-        "text": "I can say all the books in the library are so many and quite complete",
-        "expression": "neutral",
-        "events": [
-          {
-            "type": "change_background",
-            "value": "bookshelf"
-          }
-        ]
-      }
-    ],
-    "nextDialogueId": "scene_3e"
-  },
+
   {
     "dialogueId": "scene_3e",
     "isAutoSave": false,
@@ -415,8 +404,8 @@
     "dialogueId": "scene_3m",
     "isAutoSave": true,
     "defaultActors": [
-      "Perry",
-      "Elias"
+      "Elias",
+      "Perry"
     ],
     "dialogue": [
       {
@@ -490,6 +479,7 @@
         "text": "Thank you for the information.",
         "expression": "amused"
       }
-    ]
+    ],
+    "nextDialogueId" : "end"
   }
 ]

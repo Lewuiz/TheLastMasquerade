@@ -97,6 +97,10 @@ namespace Main
                 {
                     return HasObtainedAllInspectItems(splits[1]);
                 }
+                else if (splits[0] == "mini_game")
+                {
+                    return false;
+                }
                 else
                 {
 
@@ -145,7 +149,10 @@ namespace Main
 
             DialogueCharacterData dialogueCharacterData = dialogueCharacterDataList[dialogueCharacterIdx];
             ExecuteDialogEvent(dialogueCharacterData);
-            showDialogueChoice?.Invoke(storyData.dialogueDataList[dialogueDataIdx].choices, PlayNextDialogue);
+            
+            if(dialogueDataIdx >= 0)
+                showDialogueChoice?.Invoke(storyData.dialogueDataList[dialogueDataIdx].choices, PlayNextDialogue);
+            
             updateDialoguePanel?.Invoke(dialogueCharacterData);
             onDialoguePlay?.Invoke(dialogueCharacterData.actorControl, dialogueCharacterData.character);
         }
@@ -159,9 +166,10 @@ namespace Main
         private void OnDialogueEnded()
         {
             dialogueCharacterIdx = 0;
-            dialogueDataIdx++;
+            string nextDialogueId = storyData.dialogueDataList[dialogueDataIdx].nextDialogueId ?? storyManager.CurrentDialogueId;
+            dialogueDataIdx = storyData.dialogueDataList.FindIndex(dialogue => dialogue.dialogueId == nextDialogueId);
 
-            bool isChapterEnded = dialogueDataIdx >= storyData.dialogueDataList.Count;
+            bool isChapterEnded = dialogueDataIdx == -1 || dialogueDataIdx >= storyData.dialogueDataList.Count;
             if (isChapterEnded)
             {
                 OnChapterEnded();

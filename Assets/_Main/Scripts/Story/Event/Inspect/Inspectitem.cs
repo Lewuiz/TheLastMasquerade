@@ -21,6 +21,11 @@ namespace Main
 
         public void OnPointerClick(PointerEventData eventData)
         {
+            FoudItem();
+        }
+
+        public void FoudItem()
+        {
             HasFound = true;
             onItemFound?.Invoke(this);
         }

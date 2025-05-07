@@ -16,7 +16,7 @@ namespace Main
                     {
                         dialogue = "scene_1a",
                         chapter = 0,
-                        puzzlePlayedList = new List<string>()
+                        miniGamePlayedList = new List<string>()
                     }
                 },
                 {
@@ -41,9 +41,9 @@ namespace Main
             public int chapter;
             public const string CHAPTER = "b";
 
-            [JsonProperty(PropertyName = PUZZLE_PLAYED_LIST)]
-            public List<string> puzzlePlayedList;
-            public const string PUZZLE_PLAYED_LIST = "c";
+            [JsonProperty(PropertyName = MINI_GAME_PLAYED)]
+            public List<string> miniGamePlayedList;
+            public const string MINI_GAME_PLAYED = "c";
         }
 
         public const string INVENTORY = "inventory";
@@ -55,6 +55,8 @@ namespace Main
             public List<string> inspectItemList;
             public const string INSPECT_ITEM_LIST = "a";
         }
+
+        public const string PLAYER_PROGRESS = "player_progress";
 
         public override string GetSaveDataId()
         {
