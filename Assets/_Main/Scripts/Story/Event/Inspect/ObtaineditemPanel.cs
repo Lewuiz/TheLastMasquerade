@@ -17,14 +17,17 @@ namespace Main
         public bool IsShowingPanel { get; private set; } = default;
         private bool isPlayingAnimation = false;
         private Action onFindAllItem = default;
+        private Action showDialogue = default;
 
         public void SetOnFindAllItem(Action onFindAllItem)
         {
             this.onFindAllItem = onFindAllItem;
         }
 
-        public void Show(List<Sprite> obtainedItemSprite)
+        public void Show(List<Sprite> obtainedItemSprite, Action showDialogue)
         {
+            this.showDialogue = showDialogue;
+
             for (int i = 0; i < obtainedItemSprite.Count; i++)
             {
                 Image itemImage = Instantiate(itemImageTemplate, itemImageTemplate.transform.parent);
@@ -64,6 +67,7 @@ namespace Main
             obtainedImageList.Clear();
             isPlayingAnimation = false;
             gameObject.SetActive(false);
+            showDialogue?.Invoke();
         }
 
         public void Continue()

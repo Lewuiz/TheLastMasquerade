@@ -16,25 +16,45 @@ namespace Main
         private bool canClicked = true;
         private Action onDialogueClick = default;
         private Func<bool> canProceedDialogue = default;
+        private bool isOverrideDialogue = false;
+        private Action hideActor = default;
 
         public bool IsPlayingAnimation { get; private set; } = false;
         public bool IsHiding { get; private set; } = false;
 
-        public void Init(Action onDialogueClick, Func<bool> canProceedDialogue)
+        public void Init(Action onDialogueClick, Func<bool> canProceedDialogue, Action hideActor)
         {
             this.onDialogueClick = onDialogueClick;
             this.canProceedDialogue = canProceedDialogue;
+            this.hideActor = hideActor;
+
             canClicked = true;
+        }
+
+        public bool IsDialogueHiding()
+        {
+            return IsHiding;
         }
 
         public void UpdateDialoguePanel(DialogueCharacterData dialogueCharacterData)
         {
+            if(IsHiding)
+                Show();
+
             characterDialogueTMP.text = dialogueCharacterData.text;
             characterNameTMP.text = dialogueCharacterData.character;
         }
 
         public void Continue()
         {
+            //if (isOverrideDialogue)
+            //{
+            //    isOverrideDialogue = false;
+            //    hideActor?.Invoke();
+            //    Hide();
+            //    return;
+            //}
+
             if (!canProceedDialogue.Invoke() || !canClicked || IsPlayingAnimation)
                 return;
 
@@ -58,6 +78,12 @@ namespace Main
 
         public void Show()
         {
+            StartCoroutine(ShowCor());
+        }
+
+        public void Show(bool isOverriedDialog)
+        {
+            this.isOverrideDialogue = isOverriedDialog;
             StartCoroutine(ShowCor());
         }
 

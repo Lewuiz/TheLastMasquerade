@@ -26,6 +26,7 @@ namespace Main
         private Func<bool> isShowChoice = default;
 
         private InventoryManager inventoryManager = default;
+        private TelephoneController telephoneController = default;
 
         private int storyChapter = default;
 
@@ -46,6 +47,7 @@ namespace Main
             hideDialogue = data.hideDialogue;
             showDialogueChoice = data.showDialogueChoice;
             isShowChoice = data.isShowChoice;
+            telephoneController = data.telephoneController;
 
             IsChapterEnded = false;
 
@@ -99,7 +101,7 @@ namespace Main
                 }
                 else if (splits[0] == "mini_game")
                 {
-                    return false;
+                    return !telephoneController.HasMiniGame();
                 }
                 else
                 {

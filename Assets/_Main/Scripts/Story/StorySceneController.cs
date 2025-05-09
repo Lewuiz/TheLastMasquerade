@@ -15,6 +15,7 @@ namespace Main
         [SerializeField] private DialoguePanel dialoguePanel = default;
         [SerializeField] private StoryEventHandler storyEventHandler = default;
         [SerializeField] private InspectItemController inspectItemController = default;
+        [SerializeField] private TelephoneController telephoneController = default;
 
         private StoryManager storyManager = default;
         private LoadingOverlay loadingOverlay = default;
@@ -22,27 +23,29 @@ namespace Main
         protected override void OnStartCompleted()
         {
             loadingOverlay = Overlay.Instance.LoadingOverlay;
-
             loadingOverlay.InitialLoading();
+
             storyManager = GameCore.Instance.StoryManager;
 
             actorController.Init();
             InitializeStoryRunner();
-            dialoguePanel.Init(storyRunner.PlayNextDialogue, CanProceedNextDialogue);
+            dialoguePanel.Init(storyRunner.PlayNextDialogue, CanProceedNextDialogue, actorController.HideAllCharacter);
             dialogueChoicePanel.Init();
-            storyEventHandler.Init(UpdateBackground, inspectItemController.Load);
-            inspectItemController.Init(ShowDialogue, storyRunner.PlayNextDialogue);
+            storyEventHandler.Init(UpdateBackground, inspectItemController.Load, PlayTelephoneMiniGame);
+            inspectItemController.Init(ShowDialogue, storyRunner.PlayNextDialogue, dialoguePanel.UpdateDialoguePanel, dialoguePanel.IsDialogueHiding);
+            telephoneController.Init();
+
             loadingOverlay.HideOvelay(.5f, .1f);
+        }
+
+        private void PlayTelephoneMiniGame()
+        {
+            telephoneController.Show();
         }
 
         private bool CanProceedNextDialogue()
         {
-            return !IsPlayingAnimation() && !storyRunner.IsChapterEnded && !dialoguePanel.IsPlayingAnimation;
-        }
-
-        private void CheckActorCharacter(DialogueActorControl dialogueActorControl)
-        {
-            StartCoroutine(CheckActorCharacterCor(dialogueActorControl));
+            return !IsPlayingAnimation() && !storyRunner.IsChapterEnded && !dialoguePanel.IsPlayingAnimation && !telephoneController.HasMiniGame();
         }
 
         private void InitializeStoryRunner()
@@ -60,7 +63,8 @@ namespace Main
                 storyChapter = storySceneData.SelectedChapter <= -1 ? storyManager.CurrentChapter : storySceneData.SelectedChapter,
                 hideDialogue = HideDialogue,
                 showDialogueChoice = ShowDialogueChoice,
-                isShowChoice = dialogueChoicePanel.IsShowingChoice
+                isShowChoice = dialogueChoicePanel.IsShowingChoice,
+                telephoneController = telephoneController
             };
             storyRunner.Init(storyRunnerData);
         }
@@ -71,9 +75,9 @@ namespace Main
             actorController.HideAllCharacter();
         }
 
-        private void ShowDialogue()
+        private void ShowDialogue(bool isOverrideDialogue = false)
         {
-            dialoguePanel.Show();
+            dialoguePanel.Show(isOverrideDialogue);
             actorController.ShowAllCharacter();
         }
 

@@ -16,5 +16,6 @@ namespace Main
         public Action hideDialogue = default;
         public Action<List<DialogueChoiceData>, Action> showDialogueChoice = default;
         public Func<bool> isShowChoice = default;
+        public TelephoneController telephoneController = default;
     }
 }

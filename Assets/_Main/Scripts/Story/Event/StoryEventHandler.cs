@@ -15,11 +15,13 @@ namespace Main
 
         private Action<Sprite> changeBackground = default;
         private Action<string> loadInspectItem = default;
+        private Action playTelephoneMiniGame = default;
 
-        public void Init(Action<Sprite> changeBackground, Action<string> loadInspectItem)
+        public void Init(Action<Sprite> changeBackground, Action<string> loadInspectItem, Action playTelephoneMiniGame)
         {
             this.changeBackground = changeBackground;
             this.loadInspectItem = loadInspectItem;
+            this.playTelephoneMiniGame = playTelephoneMiniGame;
         }
 
         public void ExecuteEvents(List<DialogueEventData> dialoguesDataList)
@@ -37,6 +39,10 @@ namespace Main
                 else if(dialogueEventData.type == "inspect_object")
                 {
                     CreateInspectObject(dialogueEventData.value);
+                }
+                else
+                {
+                    playTelephoneMiniGame?.Invoke();
                 }
             }
         }

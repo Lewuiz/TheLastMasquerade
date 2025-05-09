@@ -9,9 +9,13 @@ namespace Main
     public class InspectItem : MonoBehaviour, IPointerClickHandler
     {
         [SerializeField] private List<InspectItemData> inspectItemDataList = new List<InspectItemData>();
+        [field: SerializeField] public string PreInspectItemInformation { get; private set; } = default;
+        [SerializeField] private string requiredItems = default;
+        public string RequiredItems => requiredItems;
+        [field: SerializeField] public string PostInspectItemInformation { get; private set; } = default;
         public List<InspectItemData> InspectItemDataList => inspectItemDataList;
 
-        public bool HasFound { get; private set; } = false;
+        public bool hasFound= false;
         private Action<InspectItem> onItemFound = default;
 
         public void Init(Action<InspectItem> onItemFound)
@@ -26,7 +30,6 @@ namespace Main
 
         public void FoudItem()
         {
-            HasFound = true;
             onItemFound?.Invoke(this);
         }
 

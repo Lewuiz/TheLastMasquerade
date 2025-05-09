@@ -80,6 +80,7 @@ namespace Main
 
         public void ShowConversation()
         {
+            gameObject.SetActive(true);
             StartCoroutine(ShowConversationCor());
         }
 
@@ -95,6 +96,7 @@ namespace Main
 
         public void HideConversation()
         {
+            gameObject.SetActive(true);
             StartCoroutine(HideConversationCor());
         }
 

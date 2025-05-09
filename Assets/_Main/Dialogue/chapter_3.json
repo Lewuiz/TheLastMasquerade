@@ -157,6 +157,7 @@
   },
   {
     "dialogueId": "scene_3c",
+    "defaultActors": ["Elias"],
     "isAutoSave": true,
     "dialogue": [
       {
@@ -200,55 +201,11 @@
         "expression": "neutral"
       }
     ],
-    "nextDialogueId": "scene_3c_1"
+    "nextDialogueId": "scene_3e"
   },
-  {
-    "dialogueId": "scene_3c_1",
-    "requirement":["item:key,name_card"],
-    "isAutoSave": false,
-    "dialogue": [
-      {
-        "character": "Elias",
-        "text": "A key? And what is this..., a name card? Maybe I can try to call the number",
-        "expression": "neutral"
-      }
-    ]
-  },
-  {
-    "dialogueId": "scene_3c_2",
-    "isAutoSave": false,
-    "dialogue": [
-      {
-        "character": "Elias",
-        "text": "A business proposal? It seems like Lady Eleanor is working on a new business venture. Interesting."
-      }
-    ]
-  },
-  {
-    "dialogueId": "scene_3c_3",
-    "isAutoSave": false,
-    "dialogue": [
-      {
-        "character": "Elias",
-        "text": "What box is this? It's locked. I wonder if the key is around here somewhere",
-        "expression": "neutral"
-      }
-    ]
-  },
-  {
-    "dialogueId": "scene_3c_3_1",
-    "isAutoSave": false,
-    "dialogue": [
-      {
-        "character": "Elias",
-        "text": "Are all these threatening letters addressed to Lady Eleanor? I need to find the murderer as soon as possible. The suspect must have had such a strong motive.",
-        "expression": "neutral"
-      }
-    ]
-  },
-
   {
     "dialogueId": "scene_3e",
+    "requirement":["item:key,name_card,threat_letter_1,threat_letter_2,threat_letter_3,business_proposal"],
     "isAutoSave": false,
     "dialogue": [
       {
@@ -361,7 +318,8 @@
         "text": "My pleasure, good luck on this case, Detective!",
         "expression": "neutral"
       }
-    ]
+    ],
+    "nextDialogueId" : "end"
   },
   {
     "dialogueId": "scene_3g",
