@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System;
-using UnityEngine;
 
 namespace Main
 {
@@ -14,5 +13,9 @@ namespace Main
         public Action<List<DialogueEventData>> executeDialogueEvent = default;
         public Action backToChapterSelectionScene = default;
         public int storyChapter = default;
+        public Action hideDialogue = default;
+        public Action<List<DialogueChoiceData>, Action> showDialogueChoice = default;
+        public Func<bool> isShowChoice = default;
+        public TelephoneController telephoneController = default;
     }
 }

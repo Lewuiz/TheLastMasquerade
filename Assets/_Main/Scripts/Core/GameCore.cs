@@ -7,6 +7,8 @@ namespace Main
     public class GameCore : PersistentMonoSingleton<GameCore>
     {
         [field: SerializeField] public StoryManager StoryManager { get; private set; } = default;
+        [field: SerializeField] public InventoryManager InventoryManager { get; private set; } = default;
+
         public SaveManager SaveManager { get; private set; } = default;
         public StorySceneData StorySceneData { get; private set; } = default;
 
@@ -21,6 +23,8 @@ namespace Main
             // Initialize in order of priority
             InitializedSaveData();
             InitializedStoryManager();
+            IntializedInventoryManager();
+
             InitializedOverlay();
             InitializeStorySceneData();
 
@@ -36,6 +40,11 @@ namespace Main
         private void InitializedStoryManager()
         {
             StoryManager.Init();
+        }
+
+        private void IntializedInventoryManager()
+        {
+            InventoryManager.Init();
         }
 
         private void InitializeStorySceneData()

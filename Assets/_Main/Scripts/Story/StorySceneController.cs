@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,8 @@ namespace Main
         [SerializeField] private ActorController actorController = default;
         [SerializeField] private DialoguePanel dialoguePanel = default;
         [SerializeField] private StoryEventHandler storyEventHandler = default;
+        [SerializeField] private InspectItemController inspectItemController = default;
+        [SerializeField] private TelephoneController telephoneController = default;
 
         private StoryManager storyManager = default;
         private LoadingOverlay loadingOverlay = default;
@@ -20,27 +23,29 @@ namespace Main
         protected override void OnStartCompleted()
         {
             loadingOverlay = Overlay.Instance.LoadingOverlay;
-
             loadingOverlay.InitialLoading();
+
             storyManager = GameCore.Instance.StoryManager;
 
             actorController.Init();
             InitializeStoryRunner();
-            dialoguePanel.Init(storyRunner.PlayNextDialogue, CanProceedNextDialogue);
+            dialoguePanel.Init(storyRunner.PlayNextDialogue, CanProceedNextDialogue, actorController.HideAllCharacter);
             dialogueChoicePanel.Init();
-            storyEventHandler.Init(UpdateBackground);
+            storyEventHandler.Init(UpdateBackground, inspectItemController.Load, PlayTelephoneMiniGame);
+            inspectItemController.Init(ShowDialogue, storyRunner.PlayNextDialogue, dialoguePanel.UpdateDialoguePanel, dialoguePanel.IsDialogueHiding);
+            telephoneController.Init();
 
             loadingOverlay.HideOvelay(.5f, .1f);
         }
 
-        private bool CanProceedNextDialogue()
+        private void PlayTelephoneMiniGame()
         {
-            return !IsPlayingAnimation() && !storyRunner.IsChapterEnded;
+            telephoneController.Show();
         }
 
-        private void CheckActorCharacter(DialogueActorControl dialogueActorControl)
+        private bool CanProceedNextDialogue()
         {
-            StartCoroutine(CheckActorCharacterCor(dialogueActorControl));
+            return !IsPlayingAnimation() && !storyRunner.IsChapterEnded && !dialoguePanel.IsPlayingAnimation && !telephoneController.HasMiniGame();
         }
 
         private void InitializeStoryRunner()
@@ -55,9 +60,25 @@ namespace Main
                 isAnimating = IsPlayingAnimation,
                 updateDialoguePanel = dialoguePanel.UpdateDialoguePanel,
                 backToChapterSelectionScene = BackToChapterSelection,
-                storyChapter = storySceneData.SelectedChapter <= -1 ? storyManager.CurrentChapter : storySceneData.SelectedChapter
+                storyChapter = storySceneData.SelectedChapter <= -1 ? storyManager.CurrentChapter : storySceneData.SelectedChapter,
+                hideDialogue = HideDialogue,
+                showDialogueChoice = ShowDialogueChoice,
+                isShowChoice = dialogueChoicePanel.IsShowingChoice,
+                telephoneController = telephoneController
             };
             storyRunner.Init(storyRunnerData);
+        }
+
+        private void HideDialogue()
+        {
+            dialoguePanel.Hide();
+            actorController.HideAllCharacter();
+        }
+
+        private void ShowDialogue(bool isOverrideDialogue = false)
+        {
+            dialoguePanel.Show(isOverrideDialogue);
+            actorController.ShowAllCharacter();
         }
 
         public void OnDialoguePlay(DialogueActorControl dialogueActorControl, string characterId)
@@ -88,10 +109,13 @@ namespace Main
             storyEventHandler.ExecuteEvents(dialoguesDataList);
         }
 
-        private void ShowDialogueChoice()
+        private void ShowDialogueChoice(List<DialogueChoiceData> dialogueChoiceDataList, Action onChoiceSelected)
         {
+            if (dialogueChoiceDataList == null || dialogueChoiceDataList.Count == 0)
+                return;
+
             dialogueChoicePanel.gameObject.SetActive(true);
-            dialogueChoicePanel.ShowDialogue();
+            dialogueChoicePanel.ShowChoiceDialogue(dialogueChoiceDataList, onChoiceSelected);
         }
 
         private void UpdateBackground(Sprite sprite)

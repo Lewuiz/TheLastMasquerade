@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 
 namespace Main
@@ -13,9 +14,14 @@ namespace Main
         [SerializeField] private List<BackgroundEventData> backgroundEventData = new List<BackgroundEventData>();
 
         private Action<Sprite> changeBackground = default;
-        public void Init(Action<Sprite> changeBackground)
+        private Action<string> loadInspectItem = default;
+        private Action playTelephoneMiniGame = default;
+
+        public void Init(Action<Sprite> changeBackground, Action<string> loadInspectItem, Action playTelephoneMiniGame)
         {
             this.changeBackground = changeBackground;
+            this.loadInspectItem = loadInspectItem;
+            this.playTelephoneMiniGame = playTelephoneMiniGame;
         }
 
         public void ExecuteEvents(List<DialogueEventData> dialoguesDataList)
@@ -30,17 +36,31 @@ namespace Main
                 {
                     ChangeBackground(dialogueEventData.value);
                 }
+                else if(dialogueEventData.type == "inspect_object")
+                {
+                    CreateInspectObject(dialogueEventData.value);
+                }
+                else
+                {
+                    playTelephoneMiniGame?.Invoke();
+                }
             }
         }
 
         private void ChangeBackground(string background)
         {
+            Debug.Log(background);
             Sprite bgSprite = backgroundEventData.Find(eventData => eventData.id == background).sprite;
             
             if (bgSprite == null)
                 return;
             
             changeBackground?.Invoke(bgSprite);
+        }
+
+        private void CreateInspectObject(string id)
+        {
+            loadInspectItem?.Invoke(id);
         }
     }
 }

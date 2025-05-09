@@ -9,31 +9,31 @@ namespace Main
         [SerializeField] private Image chapterImage = default;
         [SerializeField] private Button chapterButton = default;
 
-        private bool isLocked = false;
+        private bool isUnlock = false;
         private ChapterSelectionData chapterSelectionData = default;
         private Action<int> loadChapter = default;
 
-        public void Init(ChapterSelectionData chapterSelectionData, Action<int> loadChapter, bool isLocked)
+        public void Init(ChapterSelectionData chapterSelectionData, Action<int> loadChapter, bool isUnlock)
         {
             this.loadChapter = loadChapter;
-            this.isLocked = isLocked;
+            this.isUnlock = isUnlock;
             this.chapterSelectionData = chapterSelectionData;
 
             chapterImage.sprite = chapterSelectionData.chapterSprite;
-            UpdateState(isLocked);
+            UpdateState(isUnlock);
         }
 
         public void OnChapterSelected()
         {
-            if (isLocked)
+            if (!isUnlock)
                 return;
 
             loadChapter?.Invoke(chapterSelectionData.chapter);
         }
 
-        public void UpdateState(bool isLocked)
+        public void UpdateState(bool isUnlock)
         {
-            chapterButton.interactable = !isLocked;
+            chapterButton.interactable = isUnlock;
         }
     }
 }

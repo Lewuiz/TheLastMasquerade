@@ -16,6 +16,8 @@ namespace Main
         public bool IsPlayingAnimation { get; private set; } = false;
         public bool IsInDialogue { get; private set; } = false;
 
+        private string ActorAnimationID => gameObject.GetInstanceID().ToString();
+
         public void Init()
         {
             if (hasInit)
@@ -56,8 +58,8 @@ namespace Main
         private IEnumerator ShowCor()
         {
             IsPlayingAnimation = true;
-            actorSR.transform.DOScale(1f, .2f);
-            yield return actorSR.DOFade(1f, .2f).WaitForCompletion();
+            actorSR.transform.DOScale(1f, .2f).SetId(ActorAnimationID);
+            yield return actorSR.DOFade(1f, .2f).SetId(ActorAnimationID).WaitForCompletion();
             IsPlayingAnimation = false;
         }
 
@@ -69,8 +71,8 @@ namespace Main
         public IEnumerator HideCor()
         {
             IsPlayingAnimation = true;
-            actorSR.transform.DOScale(0f, .2f);
-            yield return actorSR.DOFade(0f, .2f).WaitForCompletion();
+            actorSR.transform.DOScale(0f, .2f).SetId(ActorAnimationID);
+            yield return actorSR.DOFade(0f, .2f).SetId(ActorAnimationID).WaitForCompletion();
             gameObject.SetActive(false);
             IsPlayingAnimation = false;
             SetActorInDialogue(false);
@@ -78,6 +80,7 @@ namespace Main
 
         public void ShowConversation()
         {
+            gameObject.SetActive(true);
             StartCoroutine(ShowConversationCor());
         }
 
@@ -86,28 +89,34 @@ namespace Main
             IsPlayingAnimation = true;
             actorSR.sortingOrder = defaultSortingOrder + 1;
             Color32 activeActorColor = Color.white;
-            actorSR.DOColor(activeActorColor, .3f);
-            yield return actorSR.transform.DOScale(1.02f, .3f).WaitForCompletion();
+            actorSR.DOColor(activeActorColor, .3f).SetId(ActorAnimationID);
+            yield return actorSR.transform.DOScale(1.02f, .3f).SetId(ActorAnimationID).WaitForCompletion();
             IsPlayingAnimation = false;
         }
 
         public void HideConversation()
         {
+            gameObject.SetActive(true);
             StartCoroutine(HideConversationCor());
         }
 
         private IEnumerator HideConversationCor()
         {
             IsPlayingAnimation = true;
-            actorSR.DOColor(inactiveActorColor, .3f);
-            yield return actorSR.transform.DOScale(1f, .3f).WaitForCompletion();
+            actorSR.DOColor(inactiveActorColor, .3f).SetId(ActorAnimationID);
+            yield return actorSR.transform.DOScale(1f, .3f).SetId(ActorAnimationID).WaitForCompletion();
             actorSR.sortingOrder = defaultSortingOrder;
             IsPlayingAnimation = false;
         }
 
         public void SetActorInDialogue(bool isInDialogue)
         {
-            this.IsInDialogue = isInDialogue;
+            IsInDialogue = isInDialogue;
+        }
+
+        private void OnDestroy()
+        {
+            DOTween.Kill(ActorAnimationID);
         }
     }
 }
