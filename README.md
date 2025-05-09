@@ -1,4 +1,5 @@
-Game Development Project
+Game Development Project.
+
 Rules to starting the scene:
 TitleScene -> ChapterSelectionSceen -> StoryScene
 
