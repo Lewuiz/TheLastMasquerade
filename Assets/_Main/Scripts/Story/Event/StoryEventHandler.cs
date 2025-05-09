@@ -40,7 +40,7 @@ namespace Main
                 {
                     CreateInspectObject(dialogueEventData.value);
                 }
-                else
+                else if(dialogueEventData.type == "interact_puzzle")
                 {
                     playTelephoneMiniGame?.Invoke();
                 }

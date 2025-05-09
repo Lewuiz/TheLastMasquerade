@@ -185,7 +185,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      telephone redial_0: -278185226269047117
+      telephone redial_1: -5409174473131122758
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

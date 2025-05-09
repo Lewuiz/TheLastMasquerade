@@ -116,6 +116,7 @@ namespace Main
             {
                 DialogueCharacterData dialogueChaaracterData = new DialogueCharacterData()
                 {
+                    character = "Elias",
                     text = inspectItem.PreInspectItemInformation
                 };
                 overrideDialog?.Invoke(dialogueChaaracterData);
@@ -126,6 +127,7 @@ namespace Main
             {
                 DialogueCharacterData dialogueChaaracterData = new DialogueCharacterData()
                 {
+                    character = "Elias",
                     text = inspectItem.PostInspectItemInformation
                 };
 
