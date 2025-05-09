@@ -1,0 +1,443 @@
+[
+  {
+    "dialogueId": "scene_3a",
+    "isAutoSave": true,
+    "defaultActors": [
+      "Elias",
+      "Isabella",
+      "Blackwood",
+      "Rosalind",
+      "Edith"
+    ],
+    "dialogue": [
+      {
+        "character": "narrator",
+        "text": "(The room was tense and silent, everyone sat there wide-eyed)",
+        "events": [
+          {
+            "type": "change_background",
+            "value": "dining_room"
+          }
+        ]
+      },
+      {
+        "character": "Blackwood",
+        "text": "What do you mean, Edith?",
+        "expression": "shock"
+      },
+      {
+        "character": "Edith",
+        "text": "Please follow me, my lord.",
+        "expression": "shock"
+      },
+      {
+        "character": "Blackwood",
+        "text": "Everyone, please retire in your rooms. Detective Wakefield, please follow me...",
+        "expression": "neutral"
+      },
+      {
+        "character": "Elias",
+        "text": "Yes, my lord.",
+        "expression": "neutral",
+        "actorControl": {
+          "hide": [
+            "Isabella",
+            "Rosalind"
+          ]
+        }
+      },
+      {
+        "character": "narrator",
+        "text": "(Edith, Blackwood, and Elias rush into Eleanor's room)",
+        "events": [
+          {
+            "type": "change_background",
+            "value": "bedroom"
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "text": "There she is, my lord...",
+        "expression": "shock"
+      },
+      {
+        "character": "narrator",
+        "text": "(On the floor, lies the lifeless body of Lady Eleanor.)",
+        "events": [
+          {
+            "type": "change_Background",
+            "value": "carpet"
+          }
+        ]
+      },
+      {
+        "character": "Blackwood",
+        "text": "ELEANOR...?! Who dared to do this to my beloved sister?!",
+        "expression": "shock"
+      },
+      {
+        "character": "Elias",
+        "text": "...",
+        "expression": "deep in thought"
+      },
+      {
+        "character": "narrator",
+        "text": "(Blackwood stormed out of the room enraged, while Edith still stood by the door shaking from shock)"
+      },
+      {
+        "character": "Elias",
+        "text": "(This doesn't look like an accident, let's search for some clues)",
+        "expression": "deep in thought",
+        "actorControl": {
+          "hide": [
+            "Edith",
+            "Blackwood"
+          ]
+        }
+      },
+      {
+        "character": "Elias",
+        "text": "Her face looks pale, her lips black. What could've happened to her?",
+        "expression": "neutral",
+        "events": [
+          {
+            "type": "change_background",
+            "value": "eleanor_corpse"
+          },
+          {
+            "type": "inspect_object",
+            "value": "eleanor_corpse"
+          }
+        ]
+      }
+    ],
+    "nextDialogueId": "scene_3b"
+  },
+  {
+    "dialogueId": "scene_3b",
+    "requirement": [
+      "item:eleanor_tea_cup,eleanor_library_clue"
+    ],
+    "isAutoSave": false,
+    "dialogue": [
+      {
+        "character": "Elias",
+        "text": "A note asking her to meet at the library... I should investigate the library.",
+        "expression": "neutral"
+      },
+      {
+        "character": "Elias",
+        "text": "Almond Scent... cyanide! This case is definitely no accident.",
+        "expression": "neutral"
+      }
+    ],
+    "nextDialogueId": "scene_3b_choices"
+  },
+  {
+    "dialogueId": "scene_3b_choices",
+    "isAutoSave": true,
+    "dialogue": [
+      {
+        "character": "Elias",
+        "text": "Where shall I begin my investigation?",
+        "expression": "deep in thought"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Investigate the library",
+        "nextDialogueId": "scene_3c"
+      },
+      {
+        "text": "Ask Edith about the teacup",
+        "nextDialogueId": "scene_3g"
+      }
+    ]
+  },
+  {
+    "dialogueId": "scene_3c",
+    "defaultActors": ["Elias"],
+    "isAutoSave": true,
+    "dialogue": [
+      {
+        "character": "Elias",
+        "text": "So, this is the library, huh",
+        "events": [
+          {
+            "type": "change_background",
+            "value": "library"
+          }
+        ]
+      },
+      {
+        "character": "Elias",
+        "text": "I can say all the books in the library are so many and quite complete",
+        "expression": "neutral",
+        "events": [
+          {
+            "type": "change_background",
+            "value": "bookshelf"
+          }
+        ]
+      },
+      {
+        "character": "Elias",
+        "text": "I believe this is Lady Eleanor's desk.",
+        "events": [
+          {
+            "type": "change_background",
+            "value": "desk"
+          },
+          {
+            "type": "inspect_object",
+            "value": "library"
+          }
+        ]
+      },
+      {
+        "character": "Elias",
+        "text": "There is something slipped inside this book",
+        "expression": "neutral"
+      }
+    ],
+    "nextDialogueId": "scene_3e"
+  },
+  {
+    "dialogueId": "scene_3e",
+    "requirement":["item:key,name_card,threat_letter_1,threat_letter_2,threat_letter_3,business_proposal"],
+    "isAutoSave": false,
+    "dialogue": [
+      {
+        "character": "Elias",
+        "text": "There's a telephone here. But who should I dial?",
+        "expression": "neutral",
+        "events": [
+          {
+            "type": "interact_puzzle",
+            "value": "phone_mini_game"
+          }
+        ]
+      }
+    ],
+    "nextDialogueId": "scene_3f"
+  },
+  {
+    "dialogueId": "scene_3f",
+    "defaultActors": [
+      "Elias",
+      "Edmund"
+    ],
+    "requirement": [
+      "mini_game:phone_mini_game"
+    ],
+    "isAutoSave": true,
+    "dialogue": [
+      {
+        "character": "Edmund",
+        "text": "Hello?",
+        "expression": "neutral"
+      },
+      {
+        "character": "Elias",
+        "text": "Hello, is this Mr. Edmund?",
+        "expression": "neutral"
+      },
+      {
+        "character": "Edmund",
+        "text": "Hmm, and who is this I am talking to?",
+        "expression": "neutral"
+      },
+      {
+        "character": "Elias",
+        "text": "I am Elias Wakefield, a--",
+        "expression": "neutral"
+      },
+      {
+        "character": "Edmund",
+        "text": "Elias Wakefield? As in the infamous detective in town? What brings you to reach out to me?",
+        "expression": "excited"
+      },
+      {
+        "character": "Elias",
+        "text": "I'm working on a case, it's regarding Lady Eleanor Blackwood. I found your name card on her desk. What do you know about her?",
+        "expression": "neutral"
+      },
+      {
+        "character": "Edmund",
+        "text": "Ah, Lady Blackwood. Did she hire you as well?",
+        "expression": "neutral"
+      },
+      {
+        "character": "Elias",
+        "text": "No... she has been murdered.",
+        "expression": "deep in thought"
+      },
+      {
+        "character": "Edmund",
+        "text": "Oh...",
+        "expression": "neutral"
+      },
+      {
+        "character": "Elias",
+        "text": "That's why I need all the information you have on her so I can solve her death, since I found a note written by you.",
+        "expression": "neutral"
+      },
+      {
+        "character": "Edmund",
+        "text": "She had reported to me that someone has been continuously writing her death threats. But I haven't found the culprit. It appears I was too late",
+        "expression": "neutral"
+      },
+      {
+        "character": "Elias",
+        "text": "Have you gotten any clues so far?",
+        "expression": "neutral"
+      },
+      {
+        "character": "Edmund",
+        "text": "Lord Blackwood, Lady Eleanor, and Lord Fairfax, they are working on a new business venture, something related to railways. Someone who knows about this wants to ruin their plan.",
+        "expression": "neutral"
+      },
+      {
+        "character": "Elias",
+        "text": "And how do you know that?",
+        "expression": "neutral"
+      },
+      {
+        "character": "Edmund",
+        "text": "One of the death threats Eleanor had shown me said that this person loathed their upcoming business plan, and went into great detail. I believe this person is someone close to them because that death threat was written way before the masquerade party for the business was held.",
+        "expression": "neutral"
+      },
+      {
+        "character": "Elias",
+        "text": "Hmm, I see. Thank you for the information, Mr. Edmund.",
+        "expression": "neutral"
+      },
+      {
+        "character": "Edmund",
+        "text": "My pleasure, good luck on this case, Detective!",
+        "expression": "neutral"
+      }
+    ],
+    "nextDialogueId" : "end"
+  },
+  {
+    "dialogueId": "scene_3g",
+    "defaultActors": [
+      "Elias",
+      "Edith"
+    ],
+    "isAutoSave": true,
+    "dialogue": [
+      {
+        "character": "Elias",
+        "text": "It is you who served the tea for Lady Eleanor, isn't it?",
+        "expression": "deep in thought",
+        "events": [
+          {
+            "type": "changeBackground",
+            "value": "bedroom.jpeg"
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "text": "Yes, Sir! But I swear to God, it isn't me! You have to believe me!",
+        "expression": "shock"
+      },
+      {
+        "character": "Elias",
+        "text": "Calm down! When was the last time you saw Lady Eleanor?",
+        "expression": "shock"
+      },
+      {
+        "character": "Edith",
+        "text": "Yesterday night, I saw her walk into the library after the party and spent some time there before returning to her chambers.",
+        "expression": "neutral"
+      }
+    ],
+    "nextDialogueId": "scene_3m"
+  },
+  {
+    "dialogueId": "scene_3m",
+    "isAutoSave": true,
+    "defaultActors": [
+      "Elias",
+      "Perry"
+    ],
+    "dialogue": [
+      {
+        "character": "Perry",
+        "text": "How is the investigation going so far, Sir?",
+        "expression": "neutral",
+        "events": [
+          {
+            "type": "change_background",
+            "value": "hallway_1"
+          }
+        ],
+        "actorControl": {
+          "hide": [
+            "Edith"
+          ]
+        }
+      },
+      {
+        "character": "Elias",
+        "text": "I'm currently still working on it.",
+        "expression": "neutral"
+      },
+      {
+        "character": "Perry",
+        "text": "Um...",
+        "expression": "neutral"
+      },
+      {
+        "character": "Elias",
+        "text": "Do you have something to tell?",
+        "expression": "neutral"
+      },
+      {
+        "character": "Perry",
+        "text": "I do not know if this is important, Sir...",
+        "expression": "neutral"
+      },
+      {
+        "character": "Elias",
+        "text": "You know everything matters, and please if you have some clues that will be helpful.",
+        "expression": "neutral"
+      },
+      {
+        "character": "Perry",
+        "text": "During the party last night, Lady Eleanor seemed so... nervous.",
+        "expression": "nervous"
+      },
+      {
+        "character": "Elias",
+        "text": "Yes, I noticed as well. Do you know why?",
+        "expression": "deep in thought"
+      },
+      {
+        "character": "Perry",
+        "text": "I do not know much, Sir. She was fine before, yet after talking with some people she suddenly changed her behavior.",
+        "expression": "nervous"
+      },
+      {
+        "character": "Elias",
+        "text": "Do you know whom she talked with the whole night?",
+        "expression": "neutral"
+      },
+      {
+        "character": "Perry",
+        "text": "I don't know because everyone used a mask. I remember she talked with three people, each wearing a black, gold, and silver mask respectively.",
+        "expression": "neutral"
+      },
+      {
+        "character": "Elias",
+        "text": "Thank you for the information.",
+        "expression": "amused"
+      }
+    ],
+    "nextDialogueId" : "end"
+  }
+]

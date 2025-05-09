@@ -1,0 +1,287 @@
+[
+  {
+    "dialogueId": "scene_2a",
+    "isAutoSave": true,
+    "defaultActors": [
+      "Elias"
+    ],
+    "dialogue": [
+      {
+        "character": "narrator",
+        "text": "(Midnight strikes, and all guests retire back into their chambers.)",
+        "events": [
+          {
+            "type": "change_background",
+            "value": "hallway_1"
+          }
+        ]
+      },
+      {
+        "character": "Elias",
+        "text": "What a night. Time to rest.",
+        "expression": "amused"
+      },
+      {
+        "character": "narrator",
+        "text": "(The next morning, as dawn barely rises, Elias wakes early and gets ready for the day.)"
+      },
+      {
+        "character": "Elias",
+        "text": "(Seems like everyone hasn't woken up yet, maybe I can do some exploring)",
+        "expression": "neutral"
+      }
+    ],
+    "nextDialogueId": "scene_2b"
+  },
+  {
+    "dialogueId": "scene_2b",
+    "isAutoSave": true,
+    "defaultActors": [
+      "Elias"
+    ],
+    "dialogue": [
+      {
+        "character": "narrator",
+        "text": "(Midnight strikes, and all guests retire back into their chambers.)",
+        "events": [
+          {
+            "type": "change_background",
+            "value": "hallway_2"
+          },
+          {
+            "type": "play_sound",
+            "value": "calm_music.mp3"
+          }
+        ]
+      },
+      {
+        "character": "narrator",
+        "text": "(As Elias admires the intricate paintings on the walls of the hallway, he was met with one of the servants, Edith, holding a hot cup of fresh tea.)"
+      },
+      {
+        "character": "Edith",
+        "text": "Good morning, Sir Wakefield. You're up this early. Would you like a cup of tea?",
+        "expression": "neutral",
+        "actorControl": {
+          "show": [
+            "Edith:1"
+          ]
+        }
+      },
+      {
+        "character": "Elias",
+        "text": "Uh--",
+        "expression": "neutral"
+      },
+      {
+        "character": "narrator",
+        "text": "(Before Elias can respond, a loud yell echoes through the hallway)"
+      },
+      {
+        "character": "Rosalind",
+        "text": "EXCUSE ME! CAN SOMEONE COME TO MY ROOM? I NEED SOME ASSISTANCE WITH MY DRESS!",
+        "actorControl": {
+          "show": [
+            "Rosalind:3"
+          ]
+        }
+      },
+      {
+        "character": "Edith",
+        "text": "Yes, My Lady! I will be right there. Excuse me, Sir",
+        "expression": "neutral"
+      },
+      {
+        "character": "narrator",
+        "text": "(Edith bows, then places the teacup that was in his hands on to a nearby dresser and rushes to Lady Rosalind's bedroom)"
+      }
+    ],
+    "nextDialogueId": "scene_2c"
+  },
+  {
+    "dialogueId": "scene_2c",
+    "isAutoSave": true,
+    "defaultActors": [
+      "Elias"
+    ],
+    "dialogue": [
+      {
+        "character": "narrator",
+        "text": "(Each side of the hallways were filled with shut wooden doors, it was eerily quiet)",
+        "actorControl": {
+          "hide": [
+            "Rosalind", "Edith"
+          ]
+        },
+        "events": [
+          {
+            "type": "change_background",
+            "value": "hallway_3"
+          }
+        ]
+      },
+      {
+        "character": "Elias",
+        "text": "(It seems like not everyone has woken up yet)",
+        "expression": "neutral"
+      }
+    ],
+    "nextDialogueId" : "scene_2d"
+  },
+  {
+    "dialogueId": "scene_2d",
+    "defaultActors": [
+      "Elias"
+    ],
+    "isAutoSave": true,
+    "dialogue": [
+      {
+        "character": "narrator",
+        "text": "(Elias enters the manor's dining hall. It was grand, in there lays a large table with many chairs, with some guests seated already."
+      },
+      {
+        "character": "Blackwood",
+        "text": "Good morning, Mr. Wakefield! Please, have a seat while we wait for everyone else to get ready.",
+        "expression": "excited",
+        "actorControl": {
+          "show": [
+            "Blackwood:1"
+          ]
+        },
+        "events" :[
+          {
+            "type": "change_background",
+            "value": "dining_room"
+          }
+        ]
+      },
+      {
+        "character": "Elias",
+        "text": "Yes, my lord.",
+        "expression": "amused"
+      },
+      {
+        "character": "narrator",
+        "text": "(Elias takes a seat next to Lord Fairfax)",
+        "actorControl": {
+          "hide": [
+            "Blackwood"
+          ]
+        }
+      },
+      {
+        "character": "Fairfax",
+        "text": "Good day, Detective. How has your morning been?",
+        "expression": "neutral",
+        "actorControl": {
+          "show": [
+            "Fairfax:1"
+          ]
+        }
+      },
+      {
+        "character": "Elias",
+        "text": "I'm fine, thank you.",
+        "expression": "neutral"
+      },
+      {
+        "character": "narrator",
+        "text": "(As chatter erupts in the dining hall, more guests eventually arrive. The woman in red at the ball the night before, took a seat across from Elias.)",
+        "actorControl": {
+          "hide": [
+            "Fairfax"
+          ]
+        }
+      },
+      {
+        "character": "Isabella",
+        "text": "Morning, gentlemen.",
+        "expression": "neutral",
+        "actorControl": {
+          "show": [
+            "Isabella:1"
+          ]
+        }
+      },
+      {
+        "character": "Blackwood",
+        "text": "Morning to you too, Lady Isabella",
+        "expression": "excited",
+        "actorControl": {
+          "show": [
+            "Blackwood:2"
+          ]
+        }
+      },
+      {
+        "character": "narrator",
+        "text": "(Not long after, Lady Rosalind arrived, looking rushed and seated next to Blackwood)"
+      },
+      {
+        "character": "Rosalind",
+        "text": "I'm sorry I'm late, everyone. I thought I lost my shoe, and it turns out the maid found it under the bed, haha. Thank you for your help earlier, Edith.",
+        "expression": "happy",
+        "actorControl": {
+          "show": [
+            "Rosalind:3"
+          ]
+        }
+      },
+      {
+        "character": "Edith",
+        "text": "My pleasure, my lady",
+        "expression": "neutral",
+        "actorControl": {
+          "show": [
+            "Edith:5"
+          ]
+        }
+      },
+      {
+        "character": "Blackwood",
+        "text": "Hmm, Eleanor isn't here yet. It's strange of her to not be on time. Edith, can you check on her?",
+        "expression": "neutral"
+      },
+      {
+        "character": "Edith",
+        "text": "Yes, my lord. I shall go to her room.",
+        "expression": "neutral"
+      },
+      {
+        "character": "narrator",
+        "text": "(Edith then leaves the dining hall, while Perry and Henshaw serve each guest their breakfast platters)"
+      },
+      {
+        "character": "Blackwood",
+        "text": "While we wait for Eleanor, please enjoy the food, everyone.",
+        "expression": "excited"
+      },
+      {
+        "character": "narrator",
+        "text": "(Not long after, Edith comes back rushing, looking pale)"
+      },
+      {
+        "character": "Edith",
+        "text": "My lord!",
+        "expression": "shock"
+      },
+      {
+        "character": "Blackwood",
+        "text": "What's the matter, Edith?",
+        "expression": "neutral"
+      },
+      {
+        "character": "Edith",
+        "text": "It's Lady Eleanor... she's dead, my Lord...",
+        "expression": "shock",
+        "events":[
+          {
+            "type": "play_Sound",
+            "value": "tense-horror-background"
+          }
+        ]
+      }
+    ],
+    "nextDialogueId": "scene_3a"
+  }
+]
