@@ -236,7 +236,12 @@
       {
         "character": "Edmund",
         "text": "Hello?",
-        "expression": "neutral"
+        "expression": "neutral",
+        "actorControl": {
+          "show": [
+            "Elias:0"
+          ]
+        }
       },
       {
         "character": "Elias",

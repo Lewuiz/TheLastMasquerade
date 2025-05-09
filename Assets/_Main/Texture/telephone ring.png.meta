@@ -185,7 +185,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      telephone ring_0: -5366062184473965688
+      telephone ring_1: -9065885259964204841
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
