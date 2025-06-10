@@ -1,0 +1,257 @@
+[
+    {
+        "dialogueId": "scene_5a",
+        "isAutoSave": true,
+        "defaultActors": [
+            "Elias"
+        ],
+        "dialogue": [
+            {
+                "character": "narrator",
+                "text": "(Elias knocks on the ornate door of Lady Isabella's guest room. The late afternoon sun casts long shadows across the hallway. Tension is in the air.)"
+            },
+            {
+                "character": "Elias",
+                "text": "Lady Isabella? May I have a word?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Isabella",
+                "text": "Oh, Detective Elias. Of course. Please, come in.",
+                "expression": "happy"
+            },
+            {
+                "character": "narrator",
+                "text": "(Elias steps into a refined room, tastefully decorated but cold. Isabella pours herself a cup of tea but doesn't offer one to Elias.)"
+            },
+            {
+                "character": "Elias",
+                "text": "I've heard from several people that you were speaking to someone during the party last night... someone wearing a gold mask.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Isabella",
+                "text": "Is that so? The party was full of masked strangers. I'm afraid I don't remember every face, Detective.",
+                "expression": "happy"
+            },
+            {
+                "character": "Elias",
+                "text": "Lady Rosalind said you were seen conversing quite intently with this person. She said he didn't he didn't appear to be Lord Fairfax.",
+                "expression": "deep in thought"
+            },
+            {
+                "character": "Isabella",
+                "text": "Oh? I suppose it could've been someone else. I didn't ask for names. We spoke briefly, nothing important.",
+                "expression": "shock"
+            },
+            {
+                "character": "Elias",
+                "text": "But you accepted something from him, didn't you? A bouquet of roses.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Isabella",
+                "text": "Ah, yes. It was... unexpected. A gesture, perhaps. Nothing more. I have many admirers, Detective.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "Interesting. Because the man you spoke with seemed very eager to avoid others. Even Lady Rosalind mentioned his rude behavior.",
+                "expression": "deep in thought"
+            },
+            {
+                "character": "Isabella",
+                "text": "I suppose some guests do not feel comfortable conversing with everyone,, unlike the friendly Lady Rosalind. May I ask, Detective... what is this really about?",
+                "expression": "shock"
+            },
+            {
+                "character": "Elias",
+                "text": "I'm piecing together the final moments of Lady Eleanor. She spoke with only a handful of people that night-- and after those conversations, her mood changed drastically. She was angry. Disturbed.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Isabella",
+                "text": "... Eleanor had a way of getting under people's skin. She was never afraid to speak her mind, no matter how cruel.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "Did she ever speak your mind to you?",
+                "expression": "deep in thought"
+            },
+            {
+                "character": "Isabella",
+                "text": "Are you accusing me of something, Detective?",
+                "expression": "shock"
+            },
+            {
+                "character": "Elias",
+                "text": "... not yet. But your answers are... interesting. That'll be all for now, Lady Isabella. THank you for your time.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Isabella",
+                "text": "Of course. Anything for justice.",
+                "expression": "neutral"
+            }
+        ],
+        "nextDialogueId": "scene_5b"
+    },
+    {
+        "dialogueId": "scene_5b",
+        "defaultActors": [
+            "Elias"
+        ],
+        "isAutoSave": true,
+        "dialogue": [
+            {
+                "character": "narrator",
+                "text": "(Elias scans the hallway, the manor now unusually quiet. A sense of urgency creeps into his step as he searches for any sign of Sir Fairfax)"
+            },
+            {
+                "character": "Elias",
+                "text": "I wonder where Sir Fairfax could be...",
+                "expression": "deep in thought"
+            },
+            {
+                "character": "Elias",
+                "text": "Excuse me, Edith. Do you know where Sir Fairfax could be...",
+                "expression": "neutral"
+            },
+            {
+                "character": "Edith",
+                "text": "Pardon me, Sir. I do not know and the last time I saw him, he said he did not want to be interrupted and needed his time alone.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "Alright, thank you for the information",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "(I better not be wasting my time. Maybe I can go interview Lady Rosalind first.)",
+                "expression": "neutral"
+            }
+        ],
+        "nextDialogueId": "scene_5c"
+    },
+    {
+        "dialogueId": "scene_5c",
+        "defaultActors": [
+            "Elias"
+        ],
+        "isAutoSave": true,
+        "dialogue": [
+            {
+                "character": "narrator",
+                "text": "(Outside the parlor, Elias hears hurried footsteps and muffled voices. Lady Rosalind paces nervously, clutching a glass of sherry.)"
+            },
+            {
+                "character": "Elias",
+                "text": "Where could Lady Rosalind be...",
+                "expression": "neutral"
+            },
+            {
+                "character": "Rosalind",
+                "text": "When will the murderer be exposed? I need to get out here before they find the next victim!",
+                "expression": "shock"
+            },
+            {
+                "character": "Elias",
+                "text": "Perfect timing, may I talk to you for a moment?",
+                "expression": "aha moment"
+            },
+            {
+                "character": "Rosalind",
+                "text": "Anything, Detective! I need all this panic to be over soon.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "Were you wearing a silver mask at the party last night?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Rosalind",
+                "text": "Err, yes... and why do you ask that?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "According to what Edith said, you were one of the people who chatted with Lady Eleanor during the party.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Rosalind",
+                "text": "Yes, but wait. Arre you suspecting me, Detective?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Rosalind",
+                "text": "Are you out of your mind?! Lady Eleanor and I have known each other since we were children! Why would I enact such horrific action towards her?",
+                "expression": "shock"
+            },
+            {
+                "character": "Rosalind",
+                "text": "... however, she was definitely not in a good mood the night before after talking to someone, and I could see anger in her eyes afterwards...",
+                "expression": "thinking"
+            },
+            {
+                "character": "Rosalind",
+                "text": "I went to get a drink for her, and when I returned she grew more furious after talking to someone in a gold mask!",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "Do you know who wore the gold mask?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Rosalind",
+                "text": "I am not certain, but there some things I noticed.",
+                "expression": "thinking"
+            },
+            {
+                "character": "Elias",
+                "text": "What is it, my Lady?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Rosalind",
+                "text": "I think there were two guests wearing gold masks last night. One was wearing a striking sapphire blue suit, which I believe was Lord Fairfax, and the other one was wearing a simple black suit, and looked a bit... older?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "Are you certain about that, my Lady?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Rosalind",
+                "text": "My eyes have never lied to me! Lord Fairfax was a gentleman the whole night, but when it came to the man in the black suit, I tried starting a conversation with but he dismissed me and seemed to be in a rush. How rude of him, now that I think of it.",
+                "expression": "shock"
+            },
+            {
+                "character": "Rosalind",
+                "text": "...",
+                "expression": "thinking"
+            },
+            {
+                "character": "Rosalind",
+                "text": "I did see him talk with Lady Isabella though, even handing her a bouquet of roses which made it even stranger!",
+                "expression": "thinking"
+            },
+            {
+                "character": "Elias",
+                "text": "I see... Thank you for your time, my Lady.",
+                "expression": "deep in thought"
+            },
+            {
+                "character": "Rosalind",
+                "text": "Yes, let me know if you need me, Detective, I would do anything to get justice for Lady Eleanor.",
+                "expression": "happy"
+            }
+        ]
+    }
+]
