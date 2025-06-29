@@ -9,53 +9,43 @@ namespace Main
     public class DialoguePanel : MonoBehaviour
     {
         [SerializeField] private CanvasGroup cg = default;
-        [SerializeField] private TextMeshProUGUI characterNameTMP = default;
-        [SerializeField] private TextMeshProUGUI characterDialogueTMP = default;
+        [SerializeField] private TextMeshProUGUI titleTMP = default;
+        [SerializeField] private TextMeshProUGUI dialogueTextTMP = default;
         [SerializeField] private TextMeshProUGUI dialogueStatusTMP = default;
 
         private bool canClicked = true;
-        private Action onDialogueClick = default;
-        private Func<bool> canProceedDialogue = default;
-        private bool isOverrideDialogue = false;
-        private Action hideActor = default;
-
-        public bool IsPlayingAnimation { get; private set; } = false;
+        private bool isPlayingAnimation = false;
         public bool IsHiding { get; private set; } = false;
 
-        public void Init(Action onDialogueClick, Func<bool> canProceedDialogue, Action hideActor)
-        {
-            this.onDialogueClick = onDialogueClick;
-            this.canProceedDialogue = canProceedDialogue;
-            this.hideActor = hideActor;
+        private Action onDialogueClick = default;
 
+        public void Init()
+        {
             canClicked = true;
         }
 
-        public bool IsDialogueHiding()
+        public void SetCanClick(bool canClicked)
         {
-            return IsHiding;
+            this.canClicked = canClicked;
         }
 
-        public void UpdateDialoguePanel(DialogueCharacterData dialogueCharacterData)
+        public void SetOnClickEvent(Action onDialogueClick)
         {
-            if(IsHiding)
+            this.onDialogueClick = onDialogueClick;
+        }
+
+        public void UpdateDialoguePanel(string text, string title = "")
+        {
+            if (IsHiding)
                 Show();
 
-            characterDialogueTMP.text = dialogueCharacterData.text;
-            characterNameTMP.text = dialogueCharacterData.character;
+            dialogueTextTMP.text = text;    
+            titleTMP.text = title;
         }
 
         public void Continue()
         {
-            //if (isOverrideDialogue)
-            //{
-            //    isOverrideDialogue = false;
-            //    hideActor?.Invoke();
-            //    Hide();
-            //    return;
-            //}
-
-            if (!canProceedDialogue.Invoke() || !canClicked || IsPlayingAnimation)
+            if (!canClicked || isPlayingAnimation)
                 return;
 
             onDialogueClick?.Invoke();
@@ -70,10 +60,10 @@ namespace Main
         {
             IsHiding = true;
             canClicked = false;
-            IsPlayingAnimation = true;
+            isPlayingAnimation = true;
             yield return cg.DOFade(0f, .2f).WaitForCompletion();
             cg.gameObject.SetActive(false);
-            IsPlayingAnimation = false;
+            isPlayingAnimation = false;
         }
 
         public void Show()
@@ -83,7 +73,6 @@ namespace Main
 
         public void Show(bool isOverriedDialog)
         {
-            this.isOverrideDialogue = isOverriedDialog;
             StartCoroutine(ShowCor());
         }
 
@@ -91,9 +80,9 @@ namespace Main
         {
             cg.gameObject.SetActive(true);
             canClicked = false;
-            IsPlayingAnimation = true;
+            isPlayingAnimation = true;
             yield return cg.DOFade(1f, .2f).WaitForCompletion();
-            IsPlayingAnimation = false;
+            isPlayingAnimation = false;
             canClicked = true;
             IsHiding = false;
         }

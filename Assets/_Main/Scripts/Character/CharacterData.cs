@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,13 @@ namespace Main
     {
         public string characterId = default;
         public string characterName = default;
-        public List<Sprite> characterSpriteList = new List<Sprite>();
+        public List<CharacterState> characterSpriteList = new List<CharacterState>();
+    }
+
+    [Serializable]
+    public class CharacterState
+    {
+        public Sprite sprite;
+        public CharacterExpression expression;
     }
 }

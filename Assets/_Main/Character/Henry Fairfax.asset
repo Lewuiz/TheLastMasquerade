@@ -15,4 +15,5 @@ MonoBehaviour:
   characterId: Fairfax
   characterName: Henry Fairfax
   characterSpriteList:
-  - {fileID: 21300000, guid: 90a566b62947f2d45a4ece2bf22c6749, type: 3}
+  - sprite: {fileID: 21300000, guid: 90a566b62947f2d45a4ece2bf22c6749, type: 3}
+    expression: 0

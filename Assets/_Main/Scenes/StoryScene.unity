@@ -286,8 +286,6 @@ MonoBehaviour:
   actorController: {fileID: 1515296990}
   dialoguePanel: {fileID: 359985924761881180}
   storyEventHandler: {fileID: 769427116}
-  inspectItemController: {fileID: 1248596781}
-  telephoneController: {fileID: 92961621}
 --- !u!1 &106696271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1639,31 +1637,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd33cec75d394e9429d3511db23e472e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundEventData:
-  - id: masquerade_ball
-    sprite: {fileID: 21300000, guid: 0e5eb4fea064fe846b2772f7424b1759, type: 3}
-  - id: house_gate
-    sprite: {fileID: 21300000, guid: b58078e1ce4af8246a791af7a1fd5c9e, type: 3}
-  - id: hallway_1
-    sprite: {fileID: 21300000, guid: b94f107a03ae41c44a01df103517304c, type: 3}
-  - id: hallway_2
-    sprite: {fileID: 21300000, guid: b94f107a03ae41c44a01df103517304c, type: 3}
-  - id: hallway_3
-    sprite: {fileID: 21300000, guid: b94f107a03ae41c44a01df103517304c, type: 3}
-  - id: dining_room
-    sprite: {fileID: 21300000, guid: 81a4217b926cf0b40805e22ae6813b47, type: 3}
-  - id: bedroom
-    sprite: {fileID: 21300000, guid: 3deb866258db8364aa7c29a225a9ba61, type: 3}
-  - id: carpet
-    sprite: {fileID: 21300000, guid: 6d6e7a8a72886f549a00884dda060f69, type: 3}
-  - id: eleanor_corpse
-    sprite: {fileID: 21300000, guid: b801f5e77c149444882d00ad530316e8, type: 3}
-  - id: library
-    sprite: {fileID: 21300000, guid: 1294471228a55214bbbf00a558aacfe0, type: 3}
-  - id: desk
-    sprite: {fileID: 21300000, guid: 63659fe7fa2e77c4190b11c7bd1d08cb, type: 3}
-  - id: bookshelf
-    sprite: {fileID: 21300000, guid: f32b07bdb67b2e54f88220772e1260e8, type: 3}
 --- !u!1 &831123856
 GameObject:
   m_ObjectHideFlags: 0
@@ -3613,20 +3586,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca6c54d83f22ac4b92b1f691d1dac0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterDataList:
-  - {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
-  - {fileID: 11400000, guid: e3e3b01075cfef5448786d6b861fb316, type: 2}
-  - {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
-  - {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
-  - {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
-  - {fileID: 11400000, guid: 6ee169133aa926d4094861beabb39e8b, type: 2}
-  - {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
-  - {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
-  - {fileID: 11400000, guid: a8241fb1ead44e047a1486d07917a732, type: 2}
-  - {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
-  - {fileID: 11400000, guid: 39fb3c771c4123c4781887e7bf4155df, type: 2}
-  - {fileID: 11400000, guid: 70aee53e15dc6434b9d20592b57e46ce, type: 2}
-  - {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
   actorTemplate: {fileID: 1912832876}
 --- !u!1 &1536299681
 GameObject:
@@ -4817,6 +4776,7 @@ MonoBehaviour:
   - {fileID: 1662087910}
   - {fileID: 1664245427}
   - {fileID: 1380545141}
+  cg: {fileID: 0}
   phoneNumberCall: 888235813
   phoneNumberTMP: {fileID: 664395197}
 --- !u!225 &1966123653
@@ -4934,8 +4894,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cg: {fileID: 9198003593891183023}
-  characterNameTMP: {fileID: 6542874145701794150}
-  characterDialogueTMP: {fileID: 3510620732709337051}
+  titleTMP: {fileID: 6542874145701794150}
+  dialogueTextTMP: {fileID: 3510620732709337051}
   dialogueStatusTMP: {fileID: 3548908757510234410}
 --- !u!224 &367856727437349904
 RectTransform:
@@ -6762,7 +6722,7 @@ GameObject:
   - component: {fileID: 1261169022235156212}
   - component: {fileID: 6542874145701794150}
   m_Layer: 5
-  m_Name: Character Name
+  m_Name: 'Title '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -15,4 +15,5 @@ MonoBehaviour:
   characterId: Henshaw
   characterName: 'Alistair Henshaw '
   characterSpriteList:
-  - {fileID: 21300000, guid: 9c8138bfb071e0e48827cb934bf5f7a5, type: 3}
+  - sprite: {fileID: 21300000, guid: 9c8138bfb071e0e48827cb934bf5f7a5, type: 3}
+    expression: 0

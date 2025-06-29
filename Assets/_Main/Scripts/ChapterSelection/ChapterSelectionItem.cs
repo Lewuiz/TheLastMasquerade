@@ -10,16 +10,16 @@ namespace Main
         [SerializeField] private Button chapterButton = default;
 
         private bool isUnlock = false;
-        private ChapterSelectionData chapterSelectionData = default;
         private Action<int> loadChapter = default;
+        private int chapter = default;
 
-        public void Init(ChapterSelectionData chapterSelectionData, Action<int> loadChapter, bool isUnlock)
+        public void Init(Sprite thumbnailSprite, int chapter, Action<int> loadChapter, bool isUnlock)
         {
             this.loadChapter = loadChapter;
             this.isUnlock = isUnlock;
-            this.chapterSelectionData = chapterSelectionData;
-
-            chapterImage.sprite = chapterSelectionData.chapterSprite;
+            this.chapter = chapter;
+            
+            chapterImage.sprite = thumbnailSprite;
             UpdateState(isUnlock);
         }
 
@@ -28,7 +28,7 @@ namespace Main
             if (!isUnlock)
                 return;
 
-            loadChapter?.Invoke(chapterSelectionData.chapter);
+            loadChapter?.Invoke(chapter);
         }
 
         public void UpdateState(bool isUnlock)

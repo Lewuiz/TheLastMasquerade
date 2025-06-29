@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Main
@@ -14,8 +11,6 @@ namespace Main
         [SerializeField] private ActorController actorController = default;
         [SerializeField] private DialoguePanel dialoguePanel = default;
         [SerializeField] private StoryEventHandler storyEventHandler = default;
-        [SerializeField] private InspectItemController inspectItemController = default;
-        [SerializeField] private TelephoneController telephoneController = default;
 
         private StoryManager storyManager = default;
         private LoadingOverlay loadingOverlay = default;
@@ -28,109 +23,91 @@ namespace Main
             storyManager = GameCore.Instance.StoryManager;
 
             actorController.Init();
-            InitializeStoryRunner();
-            dialoguePanel.Init(storyRunner.PlayNextDialogue, CanProceedNextDialogue, actorController.HideAllCharacter);
+            dialoguePanel.Init();
             dialogueChoicePanel.Init();
-            storyEventHandler.Init(UpdateBackground, inspectItemController.Load, PlayTelephoneMiniGame);
-            inspectItemController.Init(ShowDialogue, storyRunner.PlayNextDialogue, dialoguePanel.UpdateDialoguePanel, dialoguePanel.IsDialogueHiding);
-            telephoneController.Init();
+
+            InitializeStoryRunner();
+            storyRunner.Run();
 
             loadingOverlay.HideOvelay(.5f, .1f);
         }
 
-        private void PlayTelephoneMiniGame()
-        {
-            telephoneController.Show();
-        }
-
-        private bool CanProceedNextDialogue()
-        {
-            return !IsPlayingAnimation() && !storyRunner.IsChapterEnded && !dialoguePanel.IsPlayingAnimation && !telephoneController.HasMiniGame();
-        }
 
         private void InitializeStoryRunner()
         {
-            StorySceneData storySceneData = GameCore.Instance.StorySceneData;
             StoryRunnerData storyRunnerData = new StoryRunnerData()
             {
                 storyManager = storyManager,
-                addCharacter = actorController.AddCharacterInDialogue,
-                onDialoguePlay = OnDialoguePlay,
-                executeDialogueEvent = ExecuteStoryEvent,
-                isAnimating = IsPlayingAnimation,
-                updateDialoguePanel = dialoguePanel.UpdateDialoguePanel,
+                actorController = actorController,
                 backToChapterSelectionScene = BackToChapterSelection,
-                storyChapter = storySceneData.SelectedChapter <= -1 ? storyManager.CurrentChapter : storySceneData.SelectedChapter,
-                hideDialogue = HideDialogue,
-                showDialogueChoice = ShowDialogueChoice,
-                isShowChoice = dialogueChoicePanel.IsShowingChoice,
-                telephoneController = telephoneController
+                dialogueChoicePanel = dialogueChoicePanel,
+                dialoguePanel = dialoguePanel,
+                storyEventHandler = storyEventHandler,
             };
             storyRunner.Init(storyRunnerData);
         }
 
-        private void HideDialogue()
+        //private void HideDialogue()
+        //{
+        //    dialoguePanel.Hide();
+        //    actorController.HideAllCharacter();
+        //}
+
+        //private void ShowDialogue(bool isOverrideDialogue = false)
+        //{
+        //    dialoguePanel.Show(isOverrideDialogue);
+        //    actorController.ShowAllCharacter();
+        //}
+
+        //public void OnDialoguePlay(DialogueActorControl dialogueActorControl, string characterId)
+        //{
+        //    StartCoroutine(OnDialoguePlayCor(dialogueActorControl, characterId));
+        //}
+
+        //private IEnumerator OnDialoguePlayCor(DialogueActorControl dialogueActorControl, string characterId)
+        //{
+        //    yield return CheckActorCharacterCor(dialogueActorControl);
+        //    yield return actorController.UpdateActorConversationCor(characterId);
+        //}
+
+        //private IEnumerator CheckActorCharacterCor(DialogueActorControl dialogueActorControl)
+        //{
+        //    if (dialogueActorControl == null)
+        //        yield break;
+
+        //    var hideActorlist = dialogueActorControl.hide;
+        //    yield return actorController.RemoveActorInDialogueCor(hideActorlist);
+
+        //    var showActorlist = dialogueActorControl.show;
+        //    yield return actorController.AddCharacterInDialogueCor(showActorlist);
+        //}
+
+        //private void ExecuteStoryEvent(List<DialogueEventData> dialoguesDataList)
+        //{
+        //    storyEventHandler.ExecuteEvents(dialoguesDataList);
+        //}
+
+        //private void ShowDialogueChoice(List<DialogueChoiceData> dialogueChoiceDataList, Action onChoiceSelected)
+        //{
+        //    if (dialogueChoiceDataList == null || dialogueChoiceDataList.Count == 0)
+        //        return;
+
+        //    dialogueChoicePanel.gameObject.SetActive(true);
+        //    dialogueChoicePanel.ShowChoiceDialogue(dialogueChoiceDataList, onChoiceSelected);
+        //}
+
+        private void UpdateConversation()
         {
-            dialoguePanel.Hide();
-            actorController.HideAllCharacter();
-        }
-
-        private void ShowDialogue(bool isOverrideDialogue = false)
-        {
-            dialoguePanel.Show(isOverrideDialogue);
-            actorController.ShowAllCharacter();
-        }
-
-        public void OnDialoguePlay(DialogueActorControl dialogueActorControl, string characterId)
-        {
-            StartCoroutine(OnDialoguePlayCor(dialogueActorControl, characterId));
-        }
-
-        private IEnumerator OnDialoguePlayCor(DialogueActorControl dialogueActorControl, string characterId)
-        {
-            yield return CheckActorCharacterCor(dialogueActorControl);
-            yield return actorController.UpdateActorConversationCor(characterId);
-        }
-
-        private IEnumerator CheckActorCharacterCor(DialogueActorControl dialogueActorControl)
-        {
-            if (dialogueActorControl == null)
-                yield break;
-
-            var hideActorlist = dialogueActorControl.hide;
-            yield return actorController.RemoveActorInDialogueCor(hideActorlist);
-
-            var showActorlist = dialogueActorControl.show;
-            yield return actorController.AddCharacterInDialogueCor(showActorlist);
-        }
-
-        private void ExecuteStoryEvent(List<DialogueEventData> dialoguesDataList)
-        {
-            storyEventHandler.ExecuteEvents(dialoguesDataList);
-        }
-
-        private void ShowDialogueChoice(List<DialogueChoiceData> dialogueChoiceDataList, Action onChoiceSelected)
-        {
-            if (dialogueChoiceDataList == null || dialogueChoiceDataList.Count == 0)
-                return;
-
-            dialogueChoicePanel.gameObject.SetActive(true);
-            dialogueChoicePanel.ShowChoiceDialogue(dialogueChoiceDataList, onChoiceSelected);
+ 
         }
 
         private void UpdateBackground(Sprite sprite)
         {
-            void callback()
+            loadingOverlay.ShowAndHideOverlay(.3f, () => 
             {
                 backgroundSR.sprite = sprite;
                 backgroundSizeFitter.FitToCamera();
-            }
-            loadingOverlay.ShowAndHideOverlay(.3f, callback, .5f, .3f);
-        }
-
-        private bool IsPlayingAnimation()
-        {
-            return actorController.IsAnimatingActor() || loadingOverlay.IsPlayingAnimation;
+            }, .5f, .3f);
         }
 
         private void BackToChapterSelection()

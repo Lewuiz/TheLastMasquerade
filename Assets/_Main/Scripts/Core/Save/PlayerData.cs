@@ -14,7 +14,7 @@ namespace Main
                 {
                     STORY_PROGRESS, new StoryProgress()
                     {
-                        dialogue = "scene_1a",
+                        dialogue = "",
                         chapter = 0,
                         miniGamePlayedList = new List<string>()
                     }

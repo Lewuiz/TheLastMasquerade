@@ -15,4 +15,5 @@ MonoBehaviour:
   characterId: Servant 2
   characterName: Servant
   characterSpriteList:
-  - {fileID: 21300000, guid: 5a65a9a4b3a4fd64986fca2d93298c62, type: 3}
+  - sprite: {fileID: 21300000, guid: 5a65a9a4b3a4fd64986fca2d93298c62, type: 3}
+    expression: 0
