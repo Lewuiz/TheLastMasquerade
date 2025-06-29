@@ -28,7 +28,7 @@ namespace Main
 
         }
 
-        public abstract void SetDefault();
+        protected abstract void SetDefault();
 
         public void OpenWindow()
         {
