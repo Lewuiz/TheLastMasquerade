@@ -6,11 +6,15 @@ namespace Main
     {
         public void Play()
         {
-            void callback()
+            Overlay.Instance.LoadingOverlay.Show(.5f, () => 
             {
                 LoadScene(SceneID.ChapterSelectionScene);
-            }
-            Overlay.Instance.LoadingOverlay.Show(.5f, callback);
+            });
+        }
+
+        protected override void UpdateWindowCanvasCamera()
+        {
+            WindowController.Instance.UpdateWindowCanvasCamera();
         }
     }
 }

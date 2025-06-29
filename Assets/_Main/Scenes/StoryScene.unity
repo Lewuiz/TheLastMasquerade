@@ -3587,6 +3587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actorTemplate: {fileID: 1912832876}
+  IsAnimating: 0
 --- !u!1 &1536299681
 GameObject:
   m_ObjectHideFlags: 0

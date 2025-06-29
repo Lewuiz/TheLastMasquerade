@@ -120,5 +120,10 @@ namespace Main
                 LoadScene(SceneID.ChapterSelectionScene);
             });
         }
+
+        protected override void UpdateWindowCanvasCamera()
+        {
+            WindowController.Instance.UpdateWindowCanvasCamera();
+        }
     }
 }

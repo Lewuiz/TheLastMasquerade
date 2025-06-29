@@ -13,6 +13,11 @@ namespace Main
             chapterSelection.Init(GoToStoryScene);
         }
 
+        protected override void UpdateWindowCanvasCamera()
+        {
+            WindowController.Instance.UpdateWindowCanvasCamera();
+        }
+
         private void GoToStoryScene()
         {
             LoadScene(SceneID.StoryScene);
