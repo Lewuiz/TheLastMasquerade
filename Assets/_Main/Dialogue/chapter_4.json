@@ -1,0 +1,237 @@
+[
+    {
+        "dialogueId": "scene_4a",
+        "isAutoSave": true,
+        "defaultActors": [
+            "Elias",
+            "Blackwood"
+        ],
+        "dialogue": [
+            {
+                "character": "Blackwood",
+                "text": "So how is the investigation so far, Detective? You know I can't wait any longer! I shall give no mercy to the person who did this to my beloved sister!",
+                "expression": "anxious",
+                "events": [
+                    {
+                        "type": "change_background",
+                        "value": "drawing_room"
+                    }
+                ]
+            },
+            {
+                "character": "Elias",
+                "text": "Hold on, Lord Blackwood. Would you please help me?",
+                "expression": "deep in thought"
+            },
+            {
+                "character": "Blackwood",
+                "text": "Yes, Detective. Anything to solve my sister's case",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "I need to see the guest list of the party yesterday. One of the servants told me Lady Eleanor talked to three people during the party. And I suppose you are the one with the black mask, correct?",
+                "expression": "deep in thought"
+            },
+            {
+                "character": "Blackwood",
+                "text": "Yes indeed, Detective. I was the one wearing the black mask during the party. And for the guest list... Mr. Henshaw was the one who was in charge of the party, he's the only person who has the list.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "Okay, I shall go look for him now. Thank you for you cooperation, My Lord.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Blackwood",
+                "text": "Why, of course. It is of utmost importance we find the scum who did this to my sister",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "(I have to go search for Mr. Henshaw now)",
+                "expression": "neutral"
+            },
+            {
+                "character": "narrator",
+                "text": "(Elias exits the drawing room, navigating the echoing halls of the manor in search of the butler.)",
+                "events": [
+                    {
+                        "type": "change_background",
+                        "value": "hallway_1"
+                    }
+                ]
+            }
+        ],
+        "nextDialogueId": "scene_4b"
+    },
+    {
+        "dialogueId": "scene_4b",
+        "isAutoSave": true,
+        "defaultActors": [
+            "Elias",
+            "Henshaw"
+        ],
+        "dialogue": [
+            {
+                "character": "Elias",
+                "text": "There you are! I've been looking everywhere for you, Mr. Henshaw.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Henshaw",
+                "text": "Is there anything I can do to help you, Detective?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "I need to see the guest list of the party last night. Lord Blackwood said you were in charge of the guests",
+                "expression": "neutral"
+            },
+            {
+                "character": "Henshaw",
+                "text": "Ah yes, Sir. But it's not with me now. It's in the library. I'm afraid I can't be of much help at the moment due to the recent tragedy. You'll have to go get it on your own.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "That is fine. Thank you, Mr. Henshaw.",
+                "expression": "neutral"
+            }
+        ],
+        "nextDialogueId": "scene_4c"
+    },
+    {
+        "dialogueId": "scene_4c",
+        "isAutoSave": true,
+        "defaultActors": [
+            "Elias"
+        ],
+        "dialogue": [
+            {
+                "character": "narrator",
+                "text": "(Elias makes his way to the grand library. Dusty volumes and silence surround him as he begins his search.)",
+                "events": [
+                    {
+                        "type": "change_background",
+                        "value": "library"
+                    }
+                ]
+            },
+            {
+                "character": "Elias",
+                "text": "(It must be here somewhere)",
+                "expression": "deep in thought",
+                "events": [
+                    {
+                        "type": "change_background",
+                        "value": "bookshelf"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "dialogueId": "scene_4d",
+        "isAutoSave": true,
+        "defaultActors": [
+            "Elias"
+        ],
+        "dialogue": [
+            {
+                "character": "narrator",
+                "text": "(A faint glimmer from between books catches his eye-- a folded parchment with a torn edge.)",
+                "events": [
+                    {
+                        "type": "inspect_object",
+                        "value": "torn_paper_1"
+                    }
+                ]
+            },
+            {
+                "character": "Elias",
+                "text": "No way, the guest list is torn? That's a little suspicious.",
+                "expression": "shock"
+            },
+            {
+                "character": "Elias",
+                "text": "I need to find the rest of the pieces",
+                "expression": "neutral"
+            }
+        ]
+    },
+    {
+        "dialogueId": "scene_4e",
+        "isAutoSave": true,
+        "defaultActors": [
+            "Elias"
+        ],
+        "dialogue": [
+            {
+                "character": "Elias",
+                "text": "There seems to be one more part.",
+                "expression": "neutral",
+                "events": [
+                    {
+                        "type": "inspect_object",
+                        "value": "torn_paper_2"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "dialogueId": "scene_4f",
+        "isAutoSave": true,
+        "defaultActors": [
+            "Elias"
+        ],
+        "dialogue": [
+            {
+                "character": "Elias",
+                "text": "I think this is the last of it.",
+                "expression": "neutral",
+                "events": [
+                    {
+                        "type": "inspect_object",
+                        "value": "torn_paper_3"
+                    }
+                ]
+            }
+        ],
+        "nextDialogueId": "scene_4g"
+    },
+    {
+        "dialogueId": "scene_4g",
+        "isAutoSave": true,
+        "defaultActors": [
+            "Elias"
+        ],
+        "dialogue": [
+            {
+                "character": "narrator",
+                "text": "(Elias assembles the fragments on the desk, piecing them together like a puzzle until a full guest list forms before him)",
+                "events": [
+                    {
+                        "type": "inspect_object",
+                        "value": "guest_list"
+                    }
+                ]
+            },
+            {
+                "character": "Elias",
+                "text": "According to the guest list, Lady Rosalind wore the silver mask, and Sir Fairfax wore the golden one. I need to ask them for more details...",
+                "expression": "aha moment"
+            },
+            {
+                "character": "narrator",
+                "text": "(Elias analyzes the list further)"
+            },
+            {
+                "character": "Elias",
+                "text": "Ah, I nearly forgot about Lady Isabella. I should stop by her room, she could give me some leads."
+            }
+        ]
+    }
+]
