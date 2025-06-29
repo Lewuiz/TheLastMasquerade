@@ -48,12 +48,26 @@ namespace Main
             {
                 chapter = storyManager.CurrentChapter;
                 chapterData = storyManager.GetChapterData(chapter);
+
+                if (chapterData == null)
+                {
+                    data.backToChapterSelectionScene?.Invoke();
+                    return;
+                }
+
                 chapterDialogue = storyManager.GetDialogue(chapterData, storyManager.CurrentDialogueId);
             }
             else
             {
                 chapter = storySceneData.SelectedChapter;
                 chapterData = storyManager.GetChapterData(chapter);
+
+                if (chapterData == null)
+                {
+                    data.backToChapterSelectionScene?.Invoke();
+                    return;
+                }
+
                 chapterDialogue = storyManager.GetDialogue(chapterData, chapterData.dialogueList[0].dialogueId);
             }
 
@@ -100,6 +114,7 @@ namespace Main
             data.dialoguePanel.SetCanClick(false);
 
             CharacterDialogue characterDialogue = chapterDialogue.dialogueList[conversationIdx];
+            data.storyEventHandler.ExecuteEvents(characterDialogue.chapterDialogueEventList, ChapterDialogueEventPhase.Start);
 
             data.actorController.UpdateActorsConversation(characterDialogue);
 
@@ -108,7 +123,7 @@ namespace Main
 
             string dialogueTitle = characterDialogue.characterData != null ? characterDialogue.characterData.name : "";
             data.dialoguePanel.UpdateDialoguePanel(characterDialogue.text, dialogueTitle);
-
+            data.storyEventHandler.ExecuteEvents(characterDialogue.chapterDialogueEventList, ChapterDialogueEventPhase.End);
             data.dialoguePanel.SetCanClick(true);
         }
 

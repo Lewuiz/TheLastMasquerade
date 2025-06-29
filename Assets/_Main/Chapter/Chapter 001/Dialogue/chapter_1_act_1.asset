@@ -23,7 +23,12 @@ MonoBehaviour:
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
       expression: 0
-    chapterDialogueEventList: []
+    chapterDialogueEventList:
+    - eventPhase: 0
+      eventType: 0
+      backgroundSprite: {fileID: 21300000, guid: b58078e1ce4af8246a791af7a1fd5c9e, type: 3}
+      audioName: 
+      prefab: {fileID: 0}
   - text: It's cold.
     characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
     characterInChargeList:
@@ -31,12 +36,7 @@ MonoBehaviour:
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
       expression: 0
-    chapterDialogueEventList:
-    - eventPhase: 0
-      eventType: 0
-      backgroundSprite: {fileID: 21300000, guid: b58078e1ce4af8246a791af7a1fd5c9e, type: 3}
-      audioName: 
-      prefab: {fileID: 0}
+    chapterDialogueEventList: []
   - text: (A security guard blocks the entrance.)
     characterData: {fileID: 0}
     characterInChargeList:
@@ -66,12 +66,7 @@ MonoBehaviour:
       characterData: {fileID: 11400000, guid: a8241fb1ead44e047a1486d07917a732, type: 2}
       inChargeState: 0
       expression: 0
-    chapterDialogueEventList:
-    - eventPhase: 0
-      eventType: 0
-      backgroundSprite: {fileID: 21300000, guid: b58078e1ce4af8246a791af7a1fd5c9e, type: 3}
-      audioName: 
-      prefab: {fileID: 0}
+    chapterDialogueEventList: []
   - text: (Elias hops back on to the carriage, deciding to spend his night at a nearby
       teahouse instead, fully in bliss)
     characterData: {fileID: 0}
@@ -84,12 +79,7 @@ MonoBehaviour:
       characterData: {fileID: 11400000, guid: a8241fb1ead44e047a1486d07917a732, type: 2}
       inChargeState: 0
       expression: 0
-    chapterDialogueEventList:
-    - eventPhase: 0
-      eventType: 0
-      backgroundSprite: {fileID: 21300000, guid: b58078e1ce4af8246a791af7a1fd5c9e, type: 3}
-      audioName: 
-      prefab: {fileID: 0}
+    chapterDialogueEventList: []
   dialogueChoiceData: []
   requiredToProceedNextDialogue: 
   nextDialogueId: chapter_1_act_2

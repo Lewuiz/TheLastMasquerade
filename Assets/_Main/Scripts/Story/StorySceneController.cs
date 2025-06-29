@@ -21,7 +21,7 @@ namespace Main
             loadingOverlay.InitialLoading();
 
             storyManager = GameCore.Instance.StoryManager;
-
+            storyEventHandler.Init(UpdateBackground);
             actorController.Init();
             dialoguePanel.Init();
             dialogueChoicePanel.Init();
@@ -103,6 +103,9 @@ namespace Main
 
         private void UpdateBackground(Sprite sprite)
         {
+            if (backgroundSR.sprite == sprite)
+                return;
+
             loadingOverlay.ShowAndHideOverlay(.3f, () => 
             {
                 backgroundSR.sprite = sprite;

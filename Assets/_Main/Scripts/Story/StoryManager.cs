@@ -52,6 +52,8 @@ namespace Main
 
         public ChapterData GetChapterData(int chapter)
         {
+            if (chapter >= chapterDatabase.chapters.Count)
+                return null;
             return chapterDatabase.chapters[chapter];
         }
 
