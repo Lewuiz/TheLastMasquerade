@@ -22,7 +22,7 @@ namespace Main
                 {
                     INVENTORY, new Inventory()
                     {
-                        inspectItemList = new List<string>(),   
+                        inventoryItemList = new List<string>(),   
                     }
                 }
             };
@@ -51,9 +51,9 @@ namespace Main
         [Serializable]
         public class Inventory
         {
-            [JsonProperty(PropertyName = INSPECT_ITEM_LIST)]
-            public List<string> inspectItemList;
-            public const string INSPECT_ITEM_LIST = "a";
+            [JsonProperty(PropertyName = INVENTORY_ITEM_LIST)]
+            public List<string> inventoryItemList;
+            public const string INVENTORY_ITEM_LIST = "a";
         }
 
         public const string PLAYER_PROGRESS = "player_progress";

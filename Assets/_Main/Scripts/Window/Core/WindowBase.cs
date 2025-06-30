@@ -17,7 +17,7 @@ namespace Main
             canvasGroup.alpha = 0;
             canvasGroup.interactable = false;
             canvasGroup.blocksRaycasts = false;
-            transform.localScale = Vector3.zero;
+            transform.localScale = Vector3.one;
 
         }
 
@@ -28,18 +28,20 @@ namespace Main
 
         }
 
-        protected abstract void SetDefault();
+        protected abstract void SetDefaultUI();
 
         public void OpenWindow()
         {
             SetDefaultOpen();
+            SetDefaultUI();
             StartCoroutine(OpenWindowCor());
         }
 
         private IEnumerator OpenWindowCor()
-        {  
-            canvasGroup.DOFade(1f, ANIMATION_DURATION);
-            yield return transform.DOScale(Vector3.one, ANIMATION_DURATION);
+        {
+            yield return canvasGroup.DOFade(1f, ANIMATION_DURATION).SetEase(Ease.OutQuad).WaitForCompletion();
+            canvasGroup.interactable = true;
+            canvasGroup.blocksRaycasts = true;
             OnOpenComplete();
         }
 
@@ -51,8 +53,7 @@ namespace Main
 
         private IEnumerator CloseWindowCor()
         {
-            canvasGroup.DOFade(0f, ANIMATION_DURATION);
-            yield return transform.DOScale(Vector3.zero, ANIMATION_DURATION);
+            yield return canvasGroup.DOFade(0f, ANIMATION_DURATION).SetEase(Ease.InQuad).WaitForCompletion();
             OnCloseComplete();
         }
 

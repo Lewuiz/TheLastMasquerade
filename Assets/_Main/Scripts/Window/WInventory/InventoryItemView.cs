@@ -13,18 +13,22 @@ namespace Main
         public readonly Color32 UNSELECTED_COLOR = new Color32(217, 217, 217, 128);
 
         private Action<InventoryItemView> selectInventoryItem = default;
+        public InventoryItem InventoryItem { get; private set; } = default;
 
-        public void Init(Action<InventoryItemView> selectInventoryItem)
+        public void Init(InventoryItem inventoryItem, Action<InventoryItemView> selectInventoryItem)
         {
+            InventoryItem = inventoryItem;
             this.selectInventoryItem = selectInventoryItem;
+            itemIcon.sprite = inventoryItem.sprite;
+            DeselectItemUI();
         }
 
-        public void SelectItem()
+        public void SelectItemUI()
         {
             itemBG.color = SELECTED_COLOR;
         }
 
-        public void DeselectItem()
+        public void DeselectItemUI()
         {
             itemBG.color = UNSELECTED_COLOR;
         }

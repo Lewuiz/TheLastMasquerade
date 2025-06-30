@@ -80,7 +80,7 @@ namespace Main
                 List<string> splits = inspectItem.RequiredItems.Split(",").ToList();
                 for (int i = 0; i < splits.Count; i++)
                 {
-                    bool hasObtainedItem = inventoryManager.HasObtainedItem(splits[i]);
+                    bool hasObtainedItem = /*inventoryManager.HasObtainedItem(splits[i])*/ false;
                     if (!hasObtainedItem)
                     {
                         canObtain = false;
@@ -93,7 +93,7 @@ namespace Main
             {
                 for (int i = 0; i < inspectItem.InspectItemDataList.Count; i++)
                 {
-                    inventoryManager.ObtainedInspectItem(inspectItem.InspectItemDataList[i].inspectItemId);
+                    //inventoryManager.ObtainedInspectItem(inspectItem.InspectItemDataList[i].inspectItemId);
                 }
             }
 

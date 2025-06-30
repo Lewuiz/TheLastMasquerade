@@ -10,19 +10,14 @@ namespace Main
         [SerializeField] private Canvas canvas = default;
         [SerializeField] private List<WindowBaseData> windows = new List<WindowBaseData>();
 
-#if UNITY_EDITOR
-        private void Update()
+        private void OnValidate()
         {
-            if (Application.isPlaying)
-                return;
-
             for (int i = 0; i < windows.Count; i++) 
             {
                 windows[i].UpdateWindowName();
                 UnityEditor.EditorUtility.SetDirty(this);
             }
         }
-#endif
 
         public void Init()
         {
@@ -40,6 +35,8 @@ namespace Main
         {
             canvas.renderMode = RenderMode.ScreenSpaceCamera;
             canvas.worldCamera = Camera.main;
+            canvas.sortingLayerName = "Windows";
+            canvas.sortingOrder = 10;
         }
 
         public void CloseAll()

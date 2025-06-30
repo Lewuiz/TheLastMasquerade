@@ -147,4 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 8592445641632892507}
-  windows: []
+  windows:
+  - windowName: WInventory
+    window: {fileID: 3244256270636434885, guid: 05b595f0e49313a4088a36239096fc1e, type: 3}
