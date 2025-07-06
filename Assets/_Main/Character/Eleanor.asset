@@ -15,4 +15,5 @@ MonoBehaviour:
   characterId: Eleanor
   characterName: 'Eleanor '
   characterSpriteList:
-  - {fileID: 21300000, guid: 44ac671d255cde644908976ecc0eeaef, type: 3}
+  - sprite: {fileID: 21300000, guid: 44ac671d255cde644908976ecc0eeaef, type: 3}
+    expression: 0

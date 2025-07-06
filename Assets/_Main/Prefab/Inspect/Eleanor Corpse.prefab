@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 6831380630663628242}
   - component: {fileID: 1590655129074906482}
   - component: {fileID: 4167784597545086719}
-  - component: {fileID: 3432188394575813359}
+  - component: {fileID: 6345296755238237336}
   m_Layer: 0
   m_Name: Tea Cup
   m_TagString: Untagged
@@ -108,9 +108,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1222348955
+  m_SortingLayer: 1
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 3579caf0fdfe63b47938328a1cd4a38c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -168,7 +168,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 7.55, y: 4.39}
   m_EdgeRadius: 0
---- !u!114 &3432188394575813359
+--- !u!114 &6345296755238237336
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,13 +177,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5643597372448299006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36ba0223571852a478d76be86fc647bd, type: 3}
+  m_Script: {fileID: 11500000, guid: ed2e3e6759937f146850e67000869174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inspectItemDataList:
-  - isSaveToSaveData: 1
-    inspectItemId: eleanor_tea_cup
-    sprite: {fileID: 21300000, guid: 3579caf0fdfe63b47938328a1cd4a38c, type: 3}
+  inspectionType: 1
+  inventoryItem: {fileID: 11400000, guid: 7545f66b7fac23e438cd2096de452af4, type: 2}
+  keyItem: {fileID: 0}
+  keyItemUnlockEvent: 
 --- !u!1 &8807840594207216714
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 3581530853510304906}
   - component: {fileID: 4966342075846914013}
   - component: {fileID: 1112510029644716442}
-  - component: {fileID: 8081380246573898561}
+  - component: {fileID: 1789187518932089388}
   m_Layer: 0
   m_Name: Paper
   m_TagString: Untagged
@@ -259,9 +259,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1222348955
+  m_SortingLayer: 1
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 2435ac2299045cd418ecf4a3cbdbbcb0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -319,7 +319,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.06, y: 3.67}
   m_EdgeRadius: 0
---- !u!114 &8081380246573898561
+--- !u!114 &1789187518932089388
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -328,10 +328,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8807840594207216714}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36ba0223571852a478d76be86fc647bd, type: 3}
+  m_Script: {fileID: 11500000, guid: ed2e3e6759937f146850e67000869174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inspectItemDataList:
-  - isSaveToSaveData: 1
-    inspectItemId: eleanor_library_clue
-    sprite: {fileID: 21300000, guid: 2435ac2299045cd418ecf4a3cbdbbcb0, type: 3}
+  inspectionType: 0
+  inventoryItem: {fileID: 11400000, guid: de9691b865ad1d34e8e2571d2640a10d, type: 2}
+  keyItem: {fileID: 0}
+  keyItemUnlockEvent: 

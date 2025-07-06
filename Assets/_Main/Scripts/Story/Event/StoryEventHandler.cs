@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using UnityEngine;
 
 namespace Main
@@ -11,56 +12,56 @@ namespace Main
     /// </summary>
     public class StoryEventHandler : MonoBehaviour
     {
-        [SerializeField] private List<BackgroundEventData> backgroundEventData = new List<BackgroundEventData>();
-
+        private InspectItemController inspectItemController = default;
         private Action<Sprite> changeBackground = default;
-        private Action<string> loadInspectItem = default;
-        private Action playTelephoneMiniGame = default;
 
-        public void Init(Action<Sprite> changeBackground, Action<string> loadInspectItem, Action playTelephoneMiniGame)
+        private bool isCollectingItem = false;
+
+        public void Init(Action<Sprite> changeBackground, InspectItemController inspectItemController)
         {
             this.changeBackground = changeBackground;
-            this.loadInspectItem = loadInspectItem;
-            this.playTelephoneMiniGame = playTelephoneMiniGame;
+            this.inspectItemController = inspectItemController;
         }
 
-        public void ExecuteEvents(List<DialogueEventData> dialoguesDataList)
+        public void ExecuteEvents(List<ChapterDialogueEvent> chapterDialogueEventList, ChapterDialogueEventPhase phase)
         {
-            if (dialoguesDataList == null)
+            if (chapterDialogueEventList == null)
                 return;
-
-            for (int i = 0; i < dialoguesDataList.Count; i++)
+            
+            var chapterDialogueEventByPhase = chapterDialogueEventList.Where(dialogueEvent => dialogueEvent.eventPhase == phase);
+            for (int i = 0; i < chapterDialogueEventList.Count; i++)
             {
-                var dialogueEventData = dialoguesDataList[i];
-                if (dialogueEventData.type == "change_background")
+                var chapterDialogueEvent = chapterDialogueEventList[i];
+                
+                if(chapterDialogueEvent.eventType == ChapterDialogueEventType.ChangeBackground)
                 {
-                    ChangeBackground(dialogueEventData.value);
+                    ChangeBackground(chapterDialogueEvent.backgroundSprite);
                 }
-                else if(dialogueEventData.type == "inspect_object")
+                else if (chapterDialogueEvent.eventType == ChapterDialogueEventType.Audio)
                 {
-                    CreateInspectObject(dialogueEventData.value);
+
                 }
-                else if(dialogueEventData.type == "interact_puzzle")
+                else if (chapterDialogueEvent.eventType == ChapterDialogueEventType.Item)
                 {
-                    playTelephoneMiniGame?.Invoke();
+                    inspectItemController.Spawn(chapterDialogueEvent.prefab);
+                }
+                else if (chapterDialogueEvent.eventType == ChapterDialogueEventType.Battle)
+                {
+
                 }
             }
         }
 
-        private void ChangeBackground(string background)
+        private void ChangeBackground(Sprite bgSprite)
         {
-            Debug.Log(background);
-            Sprite bgSprite = backgroundEventData.Find(eventData => eventData.id == background).sprite;
-            
-            if (bgSprite == null)
-                return;
-            
             changeBackground?.Invoke(bgSprite);
         }
 
-        private void CreateInspectObject(string id)
+
+
+        public bool IsExecutingEvent()
         {
-            loadInspectItem?.Invoke(id);
+            return false;
         }
     }
 }

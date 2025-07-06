@@ -1,16 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Main
 {
     public class ActorController : MonoBehaviour
     {
-        [SerializeField] private List<CharacterData> characterDataList = new List<CharacterData>();
         [SerializeField] private Actor actorTemplate = default;
 
         private List<Actor> actorList = new List<Actor>();
-        private List<Actor> inDialogueActorList = new List<Actor>();
 
         private readonly List<Vector2> actorPositionList = new List<Vector2>()
         {
@@ -22,8 +21,13 @@ namespace Main
             new Vector2(4, -7),  //position actor 6
         };
 
+        private int totalActorInDialogue = 0;
+        public bool IsAnimating = false;
+
         public void Init()
         {
+            SetDefault();
+
             actorTemplate.gameObject.SetActive(false);
             for (int i = 0; i < actorPositionList.Count; i++)
             {
@@ -33,114 +37,140 @@ namespace Main
             }
         }
 
-        public void HideAllCharacter()
+        private void SetDefault()
         {
-            for (int i = 0; i < inDialogueActorList.Count; i++)
+            totalActorInDialogue = 0;
+        }
+
+        private Actor GetAvailableActor()
+        {
+            for (int i = 0; i < actorList.Count; i++)
             {
-                inDialogueActorList[i].Hide();
+                if (actorList[i].CharacterData == null)
+                    return actorList[i];
             }
+            return null;
         }
 
-        public void ShowAllCharacter()
+        private Actor GetActorOnDialogue(string characterId)
         {
-            for (int i = 0; i < inDialogueActorList.Count; i++)
+            for (int i = 0; i < actorList.Count; i++)
             {
-                inDialogueActorList[i].Show();
+                Actor actor = actorList[i];
+                if (actor.CharacterData != null && actorList[i].CharacterData.characterId == characterId)
+                    return actor;
             }
+            return null;
         }
 
-        public void AddCharacterInDialogue(List<string> actorsData)
+        public void FadeCharacterOnDialogue(string characterId)
         {
-            StartCoroutine(AddCharacterInDialogueCor(actorsData));
+            Actor actor = GetActorOnDialogue(characterId);
+            actor.Fade();
         }
 
-        public IEnumerator AddCharacterInDialogueCor(List<string> actorsData)
+        public void UnFadeCharacterOnDialogue(string characterId)
         {
-            if (actorsData == null)
-                yield break;
+            Actor actor = GetActorOnDialogue(characterId);
+            actor.UnFade();
+        }
 
-            while (IsAnimatingActor())
-                yield return null;
+        private IEnumerator CheckDialogueCharacter(List<CharacterInCharge> characterInChargeList)
+        {
+            var sortedCharacterInChargeList = characterInChargeList.OrderBy(c => c.inChargeState).ToList();
 
-            for (int i = 0; i < actorsData.Count; i++)
+            for (int i = 0; i < sortedCharacterInChargeList.Count; i++)
             {
-                string actorData = actorsData[i];
-
-                string[] splits = actorData.Split(":");
-                bool isAutoPlacing = splits.Length == 1;
-                Vector3 position = isAutoPlacing ? actorPositionList[i] : actorPositionList[int.Parse(splits[1])];
-                string actorId = isAutoPlacing ? actorData : splits[0];
-
-                Actor inDialogueActor = inDialogueActorList.Find(inDialogueCharacter => inDialogueCharacter.CharacterData.characterId == actorId);
-                if (inDialogueActor != null)
-                    continue;
-
-                CharacterData characterData = characterDataList.Find(character => character.characterId == actorId);
-
-                Actor actor = actorList.Find(x => !x.IsInDialogue);
-                inDialogueActorList.Add(actor);
-
-                actor.transform.localPosition = position;
-                actor.SetCharacterData(characterData);
-                actor.Show();
-                actor.SetActorInDialogue(true);
-            }
-        }
-
-        public void RemoveActorInDialogue(List<string> characterIdList)
-        {
-            StartCoroutine(RemoveActorInDialogueCor(characterIdList));
-        }
-
-        public IEnumerator RemoveActorInDialogueCor(List<string> characterIdList)
-        {
-            if (characterIdList == null)
-                yield break;
-
-            while (IsAnimatingActor())
-                yield return null;
-
-            for (int i = 0; i < characterIdList.Count; i++)
-            {
-                var actor = inDialogueActorList.Find(dialogueCharacter => dialogueCharacter.CharacterData.characterId == characterIdList[i]);
-                if (actor == null)
-                    continue;
-                
-                actor.Hide();
-                inDialogueActorList.Remove(actor);
-            }
-        }
-
-        public void UpdateActorConversation(string characterId)
-        {
-            StartCoroutine(UpdateActorConversationCor(characterId));
-        }
-
-        public IEnumerator UpdateActorConversationCor(string characterId)
-        {
-            while (IsAnimatingActor())
-                yield return null;
-
-            for (int i = 0; i < inDialogueActorList.Count; i++)
-            {
-                Actor actor = inDialogueActorList[i];
-
-                if (actor.CharacterData.characterId == characterId)
+                CharacterInCharge characterInCharge = characterInChargeList[i];
+                if (characterInCharge.inChargeState == CharacterInChargeState.Hide)
                 {
-                    actor.ShowConversation();
+                    Actor actor = GetActorOnDialogue(characterInCharge.characterData.characterId);
+                    if (actor == null)
+                    {
+                        Debug.LogWarning($"[ActorController] There isn't any spesific character id: {characterInCharge.characterData.characterId} on dialogue, proceed to ignore");
+                        continue;
+                    }
+
+                    actor.Hide();
+                    totalActorInDialogue--;
                 }
-                else
+                else if (characterInCharge.inChargeState == CharacterInChargeState.Show)
+                {
+                    if (IsActorOnDialogue(characterInCharge.characterData.characterId))
+                        continue;
+
+                    Actor availableActor = GetAvailableActor();
+                    if (availableActor == null)
+                    {
+                        Debug.LogError($"[ActorController] There isn't any available actor");
+                        continue;
+                    }
+
+                    availableActor.UpdateCharacter(characterInCharge);
+                    availableActor.SetLocalPosition(actorPositionList[totalActorInDialogue]);
+                    availableActor.Show();
+                    totalActorInDialogue++;
+                }
+
+                while (IsAnimatingActor())
+                    yield return null;
+            }
+        }
+
+        public IEnumerator UpdateActorsConversationCor(CharacterDialogue characterDialogue)
+        {
+            IsAnimating = true;
+            yield return CheckDialogueCharacter(characterDialogue.characterInChargeList);
+
+            for (int i = 0; i < actorList.Count; i++)
+            {
+                Actor actor = actorList[i];
+
+                if (actor.CharacterData == null || characterDialogue.characterData == null)
                 {
                     actor.HideConversation();
+                    continue;
                 }
+
+                if (actor.CharacterData.characterId == characterDialogue.characterData.characterId)
+                    actor.ShowConversation();
+                else
+                    actor.HideConversation();
             }
+
+            while (IsAnimatingActor())
+                yield return null;
+
+            IsAnimating = false;
         }
 
-        public bool IsAnimatingActor()
+        public void UpdateActorsConversation(CharacterDialogue characterDialogue)
         {
-            for (int i = 0; i < inDialogueActorList.Count; i++)
+            if (IsAnimating)
+                return;
+
+            StartCoroutine(UpdateActorsConversationCor(characterDialogue));
+        }
+
+        private bool IsActorOnDialogue(string characterId)
+        {
+            for (int i = 0; i < actorList.Count; i++)
             {
-                if (inDialogueActorList[i].IsPlayingAnimation)
+                Actor actor = actorList[i];
+                if (actor.CharacterData == null)
+                    continue;
+
+                if (actor.CharacterData.characterId == characterId)
+                    return true;
+            }
+            return false;
+        }
+
+        private bool IsAnimatingActor()
+        {
+            for (int i = 0; i < actorList.Count; i++)
+            {
+                if (actorList[i].IsPlayingAnimation)
                     return true;
             }
             return false;

@@ -15,13 +15,14 @@ namespace Main
 
         private List<DialogueChoice> dialogueChoiceList = new List<DialogueChoice>();
         private DialogueChoice selectedDialogueChoice = default;
-        private Action onChoiceSelected = default;
+        private Action<string> onChoiceSelected = default;
         private bool isShowingChoice  = false;
-        private StoryManager storyManager = default;
+        private Action continueDialogue = default;
 
-        public void Init()
+        public void Init(Action continueDialogue)
         {
-            storyManager = GameCore.Instance.StoryManager;
+            this.continueDialogue = continueDialogue;
+
             cg.alpha = 0f;
             SetCanvasGroupInteactable(false);
             gameObject.SetActive(false);
@@ -32,7 +33,7 @@ namespace Main
             return isShowingChoice;
         }
 
-        public void ShowChoiceDialogue(List<DialogueChoiceData> dialogueChoiceDataList, Action onChoiceSelected)
+        public void ShowChoiceDialogue(List<DialogueChoiceData> dialogueChoiceDataList, Action<string> onChoiceSelected)
         {
             this.onChoiceSelected = onChoiceSelected;
 
@@ -46,12 +47,12 @@ namespace Main
                 dialogueChoiceList.Add(dialogueChoice);
             }
 
+            gameObject.SetActive(true);
             StartCoroutine(ShowDialogueCor());
         }
 
         private IEnumerator ShowDialogueCor()
         {
-            gameObject.SetActive(true);
             SetCanvasGroupInteactable(false);
             yield return cg.DOFade(1f, .3f).WaitForCompletion();
             SetCanvasGroupInteactable(true);
@@ -64,17 +65,18 @@ namespace Main
             cg.blocksRaycasts = canInteract;
         }
 
-        public void SubmitDialogue()
+        public void SubmitDialogue(string dialogueId)
         {
-            StartCoroutine(SubmitDialogueCor());
+            StartCoroutine(SubmitDialogueCor(dialogueId));
         }
 
-        private IEnumerator SubmitDialogueCor()
+        private IEnumerator SubmitDialogueCor(string dialogueId)
         {
             SetCanvasGroupInteactable(false);
             yield return cg.DOFade(0f, .3f).WaitForCompletion();
-            onChoiceSelected?.Invoke();
+            onChoiceSelected?.Invoke(dialogueId);
             DestoryChoices();
+            continueDialogue?.Invoke();
             isShowingChoice = false;
             gameObject.SetActive(false);
         }
@@ -88,8 +90,7 @@ namespace Main
             }
             else if(selectedDialogueChoice == dialogueChoice)
             {
-                storyManager.UpdateDialogueId(dialogueChoice.NextDialogueId);
-                SubmitDialogue();
+                SubmitDialogue(dialogueChoice.NextDialogueId);
             }
             else
             {

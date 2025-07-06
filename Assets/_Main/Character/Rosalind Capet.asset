@@ -15,4 +15,5 @@ MonoBehaviour:
   characterId: Rosalind
   characterName: Rosalind Capet
   characterSpriteList:
-  - {fileID: 21300000, guid: f8669563c3c776c4ba74ed13a8c3f161, type: 3}
+  - sprite: {fileID: 21300000, guid: f8669563c3c776c4ba74ed13a8c3f161, type: 3}
+    expression: 0

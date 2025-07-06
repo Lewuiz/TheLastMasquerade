@@ -6,11 +6,23 @@ namespace Main
     {
         public void Play()
         {
-            void callback()
+            Overlay.Instance.LoadingOverlay.Show(.5f, () => 
             {
                 LoadScene(SceneID.ChapterSelectionScene);
+            });
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                WindowController.Instance.Show(nameof(WTelephone));
             }
-            Overlay.Instance.LoadingOverlay.Show(.5f, callback);
+        }
+
+        protected override void UpdateWindowCanvasCamera()
+        {
+            WindowController.Instance.UpdateWindowCanvasCamera();
         }
     }
 }

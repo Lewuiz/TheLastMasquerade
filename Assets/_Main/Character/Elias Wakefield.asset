@@ -15,4 +15,5 @@ MonoBehaviour:
   characterId: Elias
   characterName: Elias Wakefield
   characterSpriteList:
-  - {fileID: 21300000, guid: ee5ee80db568e5643a10c27762c979ac, type: 3}
+  - sprite: {fileID: 21300000, guid: ee5ee80db568e5643a10c27762c979ac, type: 3}
+    expression: 0

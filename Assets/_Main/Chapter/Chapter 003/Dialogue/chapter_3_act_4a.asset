@@ -1,0 +1,232 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1be49e8c53155294881bc800e9741da5, type: 3}
+  m_Name: chapter_3_act_4a
+  m_EditorClassIdentifier: 
+  dialogueId: chapter_3_act_4a
+  dialogueList:
+  - text: Hello?
+    characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edmund | Show
+      characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Hello, is this Mr. Edmund?
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edmund | Show
+      characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Hmm, and who is this I am talking to?
+    characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edmund | Show
+      characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: I am Elias Wakefield, a--
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edmund | Show
+      characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Elias Wakefield? As in the infamous detective in town? What brings you
+      to reach out to me?
+    characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edmund | Show
+      characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: I'm working on a case, it's regarding Lady Eleanor Blackwood. I found your
+      name card on her desk. What do you know about her?
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edmund | Show
+      characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Ah, Lady Blackwood. Did she hire you as well?
+    characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edmund | Show
+      characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: No... she has been murdered.
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edmund | Show
+      characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Oh...
+    characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edmund | Show
+      characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: That's why I need all the information you have on her so I can solve her
+      death, since I found a note written by you.
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edmund | Show
+      characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: She had reported to me that someone has been continuously writing her death
+      threats. But I haven't found the culprit. It appears I was too late
+    characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edmund | Show
+      characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Have you gotten any clues so far?
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edmund | Show
+      characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Lord Blackwood, Lady Eleanor, and Lord Fairfax, they are working on a new
+      business venture, something related to railways. Someone who knows about this
+      wants to ruin their plan.
+    characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edmund | Show
+      characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: And how do you know that?
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edmund | Show
+      characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: One of the death threats Eleanor had shown me said that this person loathed
+      their upcoming business plan, and went into great detail. I believe this person
+      is someone close to them because that death threat was written way before the
+      masquerade party for the business was held.
+    characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edmund | Show
+      characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Hmm, I see. Thank you for the information, Mr. Edmund.
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edmund | Show
+      characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: My pleasure, good luck on this case, Detective!
+    characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edmund | Show
+      characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  dialogueChoiceData: []
+  requiredToProceedNextDialogue: 
+  nextDialogueId: end

@@ -1,0 +1,464 @@
+[
+    {
+        "dialogueId": "scene_6a",
+        "isAutoSave": true,
+        "defaultActors": [
+            "Elias"
+        ],
+        "dialogue": [
+            {
+                "character": "narrator",
+                "text": "(In the far end of the hallway, Elias notices something odd under the carpet. A raised edge... a hollow echo when stepped on.)"
+            },
+            {
+                "character": "Elias",
+                "text": "What is this under the carpet?!",
+                "expression": "shock"
+            },
+            {
+                "character": "narrator",
+                "text": "(He pulls it aside and discovers a trapdoor leading to a dark stairwell.)"
+            },
+            {
+                "character": "narrator",
+                "text": "(Nearby, a golf bag lies knocked over-- one of the sticks slick with something dark...)"
+            },
+            {
+                "character": "Elias",
+                "text": "Knocked over golf bag... Is this golf stick covered with blood?!",
+                "expression": "shock"
+            }
+        ],
+        "nextDialogueId": "scene_6b"
+    },
+    {
+        "dialogueId": "scene_6b",
+        "isAutoSave": false,
+        "defaultActors": [
+            "Elias"
+        ],
+        "dialogue": [
+            {
+                "character": "narrator",
+                "text": "(The air in the hidden chamber is stale and cold. Elias hesitates.)"
+            },
+            {
+                "character": "Elias",
+                "text": "Why didn't Lord Blackwood mention anything about having a secret chamber underneath the manor?",
+                "expression": "deep in thought"
+            },
+            {
+                "character": "Elias",
+                "text": "I wonder what's inside... should I bring a weapon here just in case?",
+                "expression": "neutral"
+            }
+        ],
+        "nextDialogueId": "scene_6c"
+    },
+    {
+        "dialogueId": "scene_6c",
+        "isAutoSave": true,
+        "defaultActors": [],
+        "dialogue": [
+            {
+                "character": "narrator",
+                "text": "(As Elias descends, a figure stirs in the shadows)"
+            }
+        ],
+        "nextDialogueId": "scene_6d"
+    },
+    {
+        "dialogueId": "scene_6d",
+        "isAutoSave": true,
+        "defaultActors": [
+            "Elias"
+        ],
+        "dialogue": [
+            {
+                "character": "Elias",
+                "text": "(There's someone here!)",
+                "expression":"shock"
+            },
+            {
+                "character": "Elias",
+                "text": "Hey, who's there?!",
+                "expression": "shock"
+            },
+            {
+                "character": "???",
+                "text": "Hmph!"
+            },
+            {
+                "character": "narrator",
+                "text": "(Elias rushes forward and unties a weak and dazed Lord Fairfax.)"
+            },
+            {
+                "character": "Elias",
+                "text": "Lord Fairfax?! How did you end up here?!",
+                "expression": "shock"
+            },
+            {
+                "character": "Fairfax",
+                "text": "I do not remember clearly.",
+                "expression": "hurt"
+            },
+            {
+                "character": "Fairfax",
+                "text": "I received a note from Lord Blackwood yesterday, and--",
+                "expression": "hurt"
+            },
+            {
+                "character": "narrator",
+                "text": "(Suddenly, loud footsteps approach. Heavy. Deliberate."
+            },
+            {
+                "character": "Fairfax",
+                "text": "You have to hide now, Detective! Quick!",
+                "expression": "scared"
+            },
+            {
+                "character": "Elias",
+                "text": "I can't leave you here, Lord Fairfax!",
+                "expression": "shock"
+            },
+            {
+                "character": "???",
+                "text": "Well, well, well... it seems like Lord Fairfax won't be the only one to be abandoned here forever, he'd have you as company, Detective."
+            },
+            {
+                "character": "Elias",
+                "text": "(What should I do?)",
+                "expression": "shock"
+            }
+        ],
+        "nextDialogueId": "scene_6e"
+    },
+    {
+        "dialogueId": "scene_6e",
+        "isAutoSave": true,
+        "defaultActors": [],
+        "dialogue": [
+            {
+                "character": "narrator",
+                "text": "(BANG!)"
+            },
+            {
+                "character": "narrator",
+                "text": "(Elias loses conciousness as a hard object hits the side of his head)"
+            }
+        ],
+        "nextDialogueId": "scene_6f"
+    },
+    {
+        "dialogueId": "scene_6f",
+        "isAutoSave": true,
+        "defaultActors": [],
+        "dialogue": [
+            {
+                "character": "narrator",
+                "text": "(Without hesitation, Elias swings the golf stick.)"
+            },
+            {
+                "character": "narrator",
+                "text": "(The attacker stumbles and his mask falls--)"
+            },
+            {
+                "character": "Elias",
+                "text": "Reveal yourself, murderer!",
+                "expression": "aha moment"
+            }
+        ],
+        "nextDialogueId": "scene_6g"
+    },
+    {
+        "dialogueId": "scene_6g",
+        "isAutoSave": true,
+        "defaultActors": [
+            "Elias",
+            "Henshaw",
+            "Fairfax"
+        ],
+        "dialogue": [
+            {
+                "character": "narrator",
+                "text": "(Everyone stands in the hidden chamber, breathless after Elias unmasks Henshaw. Lord Fairfax is still recovering, seated nearby.)"
+            },
+            {
+                "character": "Fairfax",
+                "text": "Henshaw?! How could you do this? Unbelievable!",
+                "expression": "shock"
+            },
+            {
+                "character": "Henshaw",
+                "text": "...",
+                "expression": "annoyed"
+            },
+            {
+                "character": "narrator",
+                "text": "(Suddenly, the commotion draws others. The sound of hurried steps and gasps fill the chamber.)"
+            },
+            {
+                "character": "???",
+                "text": "What's with all the ruckus?!"
+            },
+            {
+                "character": "narrator",
+                "text": "(Lord Blackwood, Lady Rosalind, and Lady Isabella arrive, staring in disbelief at the scene.)"
+            },
+            {
+                "character": "Blackwood",
+                "text": "Fairfax?! What on earth happened to you?",
+                "expression": "shock"
+            },
+            {
+                "character": "Rosalind",
+                "text": "Oh my, what am I witnessing here?",
+                "expression": "shock"
+            },
+            {
+                "character": "Isabella",
+                "text": "...",
+                "expression": "angry"
+            },
+            {
+                "character": "Blackwood",
+                "text": "Fairfax, tell me how you ended up here. No one has been here for the last decade. I forgot this place even existed in the manor.",
+                "expression": "anxious"
+            },
+            {
+                "character": "Fairfax",
+                "text": "I actually received a note from you, Lord Blackwood, last night asking to meet you in your chambers, but then i blacked out and when I woke up I was tied up here",
+                "expression": "hurt"
+            },
+            {
+                "character": "Blackwood",
+                "text": "A note? I don't remember handing you a note, Fairfax.",
+                "expression": "shock"
+            },
+            {
+                "character": "Elias",
+                "text": "A note? Can I see it?",
+                "expression": "deep in thought"
+            },
+            {
+                "character": "narrator",
+                "text": "(Fairfax retrieves a torn and crumpled note from his jacket pocket and hands it to Elias.)"
+            },
+            {
+                "character": "narrator",
+                "text": "(Elias analyzes it carefully.)"
+            },
+            {
+                "character": "Elias",
+                "text": "Lord Blackwood, you were never meant to deliver that note, were you?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Blackwood",
+                "text": "Of course not! I never wrote anything of the sort.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "Exactly. The note was forged. The handwriting... it matches this.",
+                "expression": "neutral"
+            },
+            {
+                "character": "narrator",
+                "text": "(Elias holds up Lady Eleanor's threat letters)"
+            },
+            {
+                "character": "Elias",
+                "text": "The same strokes, the same loops. Do you know who's handwriting it could be?",
+                "expression": "deep in thought"
+            },
+            {
+                "character": "narrator",
+                "text": "(Blackwood slowly approached Elias and analyzes the two pieces of papers, widening his eyes.)"
+            },
+            {
+                "character": "Blackwood",
+                "text": "That perfect unforgettable cursive handwriting..., it's Isabella's.",
+                "expression": "shock"
+            },
+            {
+                "character": "narrator",
+                "text": "(He turned his head towards Isabella.)"
+            },
+            {
+                "character": "Isabella",
+                "text": "...",
+                "expression": "shock"
+            },
+            {
+                "character": "Rosalind",
+                "text": "No... Isabella?",
+                "expression": "shock"
+            },
+            {
+                "character": "Isabella",
+                "text": "... well done, Detective.",
+                "expression": "happy"
+            },
+            {
+                "character": "Blackwood",
+                "text": "What in God's name are you talking about?!",
+                "expression": "shock"
+            },
+            {
+                "character": "Elias",
+                "text": "This wasn't a crime of passion. It was betrayal. Long in the making.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "You once had Lord Blackwood's heart... and his wallet. Isn't that right?",
+                "expression": "neutral"
+            },
+            {
+                "character": "Isabella",
+                "text": "He loved me. He gave me everything. But then she came in.",
+                "expression": "angry"
+            },
+            {
+                "character": "narrator",
+                "text": "(Isabella then glares at the floor.)"
+            },
+            {
+                "character": "Isabella",
+                "text": "Lady Eleanor. With her contracts. Her conditions. Her threats. She never approved of me. None of them did. Not Fairfax. Not her.",
+                "expression": "angry"
+            },
+            {
+                "character": "Blackwood",
+                "text": "Eleanor was trying to protect me... She said you were draining my finances behind my back.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Isabella",
+                "text": "Oh, now you see it. She convinced you to throw me aside like garbage. But I stayed quiet. Gracious. Dignified.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Isabella",
+                "text": "I stayed courteous by receiving the roses that you asked Henshaw to give me, even forcing him to disguise himself so Fairfax and the rest wouldn't know what you were up to behind their backs. Which inexplicably ruined our nearly perfect plan.",
+                "expression": "happy"
+            },
+            {
+                "character": "Isabella",
+                "text": "But do you know what it's like to be discarded after building your life around someone? To lose everything?",
+                "expression": "angry"
+            },
+            {
+                "character": "Rosalind",
+                "text": "So you killed her?",
+                "expression": "shock"
+            },
+            {
+                "character": "Isabella",
+                "text": "Not alone.",
+                "expression": "neutral"
+            },
+            {
+                "character": "narrator",
+                "text": "(She nods towards Henshaw.)"
+            },
+            {
+                "character": "Henshaw",
+                "text": "She came to me after the breakup. Said she was cut off, I had access. Connections. The estate, the staff... and I was tired of being invisible. Tired of watching men like Blackwood and Fairfax sit in their velvet chairs while I counted their wine bottles.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Elias",
+                "text": "So you worked together. Isabella fed you information, and you help her sent forged letters, leave death threats, sabotage the guest list--",
+                "expression": "deep in thought"
+            },
+            {
+                "character": "Isabella",
+                "text": "And Lady Eleanor? She sealed her fate the moment she threatened to cut him off if he didn't leave me. She thought she could control everything.",
+                "expression": "angry"
+            },
+            {
+                "character": "Blackwood",
+                "text": "So you murdered my sister because she wanted the best for me?!",
+                "expression": "angry"
+            },
+            {
+                "character": "Isabella",
+                "text": "Don't flatter her. It wasn't just that. She killed the future I planned. You promised to make me your wife. Everything was slipping from my fingers. And she was so smug about it.",
+                "expression": "happy"
+            },
+            {
+                "character": "Fairfax",
+                "text": "You lured me into this chamber to make sure I couldn't interfere",
+                "expression": "angry"
+            },
+            {
+                "character": "Elias",
+                "text": "And you were the next victim. Henshaw was supposed to make Fairfax disappear. Permanently.",
+                "expression": "angry"
+            },
+            {
+                "character": "Henshaw",
+                "text": "We didn't think anyone would look here. This place's been abandoned for years.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Rosalind",
+                "text": "You're both monsters...",
+                "expression": "shock"
+            },
+            {
+                "character": "Elias",
+                "text": "Edith, Perry, please get the guards down here. Make sure the authorities see the forged note and the torn guest list.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Edith",
+                "text": "Yes, Sir.",
+                "expression": "neutral"
+            },
+            {
+                "character": "Blackwood",
+                "text": "You used me. All this time. Everything we had-- was it all a lie?",
+                "expression": "anxious"
+            },
+            {
+                "character": "Isabella",
+                "text": "If I was, I could've just married any first rich suitor I had... you do not know the pain you have caused me.",
+                "expression": "neutral"
+            },
+            {
+                "character": "narrator",
+                "text": "(Guards arrive. Elias gives them a nod. They move in and restrain both Isabella and Henshaw.)"
+            },
+            {
+                "character": "narrator",
+                "text": "(Isabella is led away, still composed, but with a flicker of something-- regret, or maybe hurt. Henshaw keeps his eyes down.)"
+            },
+            {
+                "character": "narrator",
+                "text": "(Blackwood solemnly gazes at Isabella, deep in thought.)"
+            }
+        ],
+        "nextDialogueId": "scene_6h"
+    },
+    {
+        "dialogueId": "scene_6h",
+        "isAutoSave": false,
+        "defaultActors": [
+            "Elias"
+        ],
+        "dialogue": [
+            {
+                "character": "narrator",
+                "text": "(Elias stood by the very gate where it all began)"
+            },
+            {
+                "character": "Elias",
+                "text": "Phew... Finally it's all done. What a case!",
+                "expression": "amused"
+            }
+        ]
+    }
+]

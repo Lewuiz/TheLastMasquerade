@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Main
@@ -8,217 +7,169 @@ namespace Main
     public class StoryRunner : MonoBehaviour
     {
         private StoryManager storyManager = default;
-
-        private StoryData storyData = default;
-        private int dialogueDataIdx = -1;
-
-        private List<DialogueCharacterData> dialogueCharacterDataList = new List<DialogueCharacterData>();
-        private int dialogueCharacterIdx = -1;
-
-        private Action<DialogueCharacterData> updateDialoguePanel = default;
-        private Action<DialogueActorControl, string> onDialoguePlay = default;
-        private Action<List<string>> addCharacter = default;
-        private Func<bool> isAnimating = default;
-        private Action<List<DialogueEventData>> executeDialogueEvent = default;
-        private Action backToChapterSelectionScene = default;
-        private Action hideDialogue = default;
-        private Action<List<DialogueChoiceData>, Action> showDialogueChoice = default;
-        private Func<bool> isShowChoice = default;
-
         private InventoryManager inventoryManager = default;
-        private TelephoneController telephoneController = default;
+        private StoryRunnerData data = default;
 
-        private int storyChapter = default;
+        private ChapterData chapterData = default;
+        private ChapterDialogue chapterDialogue = default;
 
-        public bool IsChapterEnded { get; private set; } = false;
+        private int conversationIdx = default;
+
+        public bool IsPlaying { get; private set; } = default;
+        private bool hasInit = false;
+        private bool canProceedDialogue = false;
+
+        private int chapter = 0;
+
+        public event Action OnDialogueEndedEvent = default;
+        public event Action OnChapterEndedEvent = default;
 
         public void Init(StoryRunnerData data)
         {
             inventoryManager = GameCore.Instance.InventoryManager;
-
             storyManager = data.storyManager;
-            updateDialoguePanel = data.updateDialoguePanel;
-            onDialoguePlay = data.onDialoguePlay;
-            addCharacter = data.addCharacter;
-            isAnimating = data.isAnimating;
-            executeDialogueEvent = data.executeDialogueEvent;
-            backToChapterSelectionScene = data.backToChapterSelectionScene;
-            storyChapter = data.storyChapter;
-            hideDialogue = data.hideDialogue;
-            showDialogueChoice = data.showDialogueChoice;
-            isShowChoice = data.isShowChoice;
-            telephoneController = data.telephoneController;
-
-            IsChapterEnded = false;
-
-            storyData = storyManager.GetChapterData(data.storyChapter);
-            dialogueDataIdx = storyData.dialogueDataList.FindIndex(dialogue => dialogue.dialogueId == storyManager.CurrentDialogueId);
-            dialogueDataIdx = dialogueDataIdx < 0 ? 0 : dialogueDataIdx;
-            dialogueCharacterDataList = storyData.dialogueDataList[dialogueDataIdx].dialogue;
-
-            AddCharacterByDefault();
-            PlayNextDialogue();
+            this.data = data;
+            SetDialoguePanelEvent();
+            hasInit = true;
         }
 
-        private void AddCharacterByDefault()
+        public void SetDialoguePanelEvent()
         {
-            var dialogue = storyData.dialogueDataList[dialogueDataIdx];
-            addCharacter?.Invoke(dialogue.defaultActors);
+            data.dialoguePanel.SetOnClickEvent(ForceProceedDialogue);
         }
 
-        public void PlayNextDialogue()
+        public void ForceProceedDialogue()
         {
-            StartCoroutine(PlayNextDialogueCor());
+            canProceedDialogue = true;
         }
 
-        private bool CanProceedNextConversation()
+        public void SetDefault()
         {
-            bool isLastConversation = dialogueCharacterIdx >= dialogueCharacterDataList.Count - 1;
-            if (!isLastConversation)
-                return true;
-           
-            string nextDialogueId = storyData.dialogueDataList[dialogueDataIdx].nextDialogueId;
-            int nextDialoguIdx = storyData.dialogueDataList.FindIndex(dialogue => dialogue.dialogueId == nextDialogueId);
-            if (nextDialoguIdx < 0)
-                return true;
+            conversationIdx = 0;
+        }
 
-            int nextDialogueIdx = nextDialoguIdx;
-            if (nextDialogueIdx > storyData.dialogueDataList.Count)
-                return true;
+        public void Run()
+        {
+            SetDefault();
 
-            DialogueData currentDialogueData = storyData.dialogueDataList[nextDialogueIdx];
-            List<string> requirementList = currentDialogueData.requirement;
+            StorySceneData storySceneData = GameCore.Instance.StorySceneData;
 
-            if (requirementList == null || requirementList.Count == 0)
-                return true;
-
-            for (int i = 0; i < requirementList.Count; i++)
+            if (storySceneData.SelectedChapter == -1)
             {
-                string[] splits = requirementList[i].Split(":");
-                if (splits[0] == "item") //proceed Type
-                {
-                    return HasObtainedAllInspectItems(splits[1]);
-                }
-                else if (splits[0] == "mini_game")
-                {
-                    return !telephoneController.HasMiniGame();
-                }
-                else
-                {
+                chapter = storyManager.CurrentChapter;
+                chapterData = storyManager.GetChapterData(chapter);
 
+                if (chapterData == null)
+                {
+                    data.backToChapterSelectionScene?.Invoke();
+                    return;
                 }
+
+                chapterDialogue = storyManager.GetDialogue(chapterData, storyManager.CurrentDialogueId);
+            }
+            else
+            {
+                chapter = storySceneData.SelectedChapter;
+                chapterData = storyManager.GetChapterData(chapter);
+
+                if (chapterData == null)
+                {
+                    data.backToChapterSelectionScene?.Invoke();
+                    return;
+                }
+
+                chapterDialogue = storyManager.GetDialogue(chapterData, chapterData.dialogueList[0].dialogueId);
             }
 
-            return true;
+            IsPlaying = true;
+            canProceedDialogue = true;
         }
 
-        private bool HasObtainedAllInspectItems(string inspectItemList)
+        private void Update()
         {
-            string[] requiredItems = inspectItemList.Split(",");
-            for (int i = 0; i < requiredItems.Length; i++)
-            {
-                bool hasObtained = inventoryManager.HasObtainedItem(requiredItems[i]);
-                if (!hasObtained)
-                    return false; 
-            }
+            if (!IsPlaying || !hasInit)
+                return;
 
-            return true;
+            if (data.inspectItemController.IsExecuting())
+                return;
+
+            if (!canProceedDialogue)
+                return;
+
+            CheckDialogue();
         }
 
-        private IEnumerator PlayNextDialogueCor()
+        private void CheckDialogue()
         {
-            bool isOnChoice = isShowChoice?.Invoke() ?? false;
-            if (isOnChoice)
-                yield break;
-
-            if (!CanProceedNextConversation())
+            if (chapterDialogue == null)
             {
-                hideDialogue?.Invoke();
-                yield break;
+                OnChapterEnded();
+                return;
             }
 
-            while (isAnimating.Invoke())
-                yield return null;
-            
-            dialogueCharacterIdx++;
-
-            bool isCharacterDialogueEnded = dialogueCharacterIdx >= dialogueCharacterDataList.Count;
-
-            if (isCharacterDialogueEnded)
+            if (conversationIdx >= chapterDialogue.dialogueList.Count)
             {
                 OnDialogueEnded();
+                return;
             }
 
-            DialogueCharacterData dialogueCharacterData = dialogueCharacterDataList[dialogueCharacterIdx];
-            ExecuteDialogEvent(dialogueCharacterData);
-            
-            if(dialogueDataIdx >= 0)
-                showDialogueChoice?.Invoke(storyData.dialogueDataList[dialogueDataIdx].choices, PlayNextDialogue);
-            
-            updateDialoguePanel?.Invoke(dialogueCharacterData);
-            onDialoguePlay?.Invoke(dialogueCharacterData.actorControl, dialogueCharacterData.character);
+            StartCoroutine(PlayDialogueCor());
+            canProceedDialogue = false;
+            conversationIdx++;
         }
 
-        private void ExecuteDialogEvent(DialogueCharacterData dialogueCharacterData)
+        private IEnumerator PlayDialogueCor()
         {
-            var dialogueEvents = dialogueCharacterData.events;
-            executeDialogueEvent?.Invoke(dialogueEvents);
+            data.dialoguePanel.SetCanClick(false);
+
+            CharacterDialogue characterDialogue = chapterDialogue.dialogueList[conversationIdx];
+            data.storyEventHandler.ExecuteEvents(characterDialogue.chapterDialogueEventList, ChapterDialogueEventPhase.Start);
+
+            data.actorController.UpdateActorsConversation(characterDialogue);
+
+            while (data.actorController.IsAnimating)
+                yield return null;
+
+            string dialogueTitle = characterDialogue.characterData != null ? characterDialogue.characterData.name : "";
+            data.dialoguePanel.UpdateDialoguePanel(characterDialogue.text, dialogueTitle);
+            data.storyEventHandler.ExecuteEvents(characterDialogue.chapterDialogueEventList, ChapterDialogueEventPhase.End);
+            data.dialoguePanel.SetCanClick(true);
         }
 
         private void OnDialogueEnded()
         {
-            dialogueCharacterIdx = 0;
-            string nextDialogueId = storyData.dialogueDataList[dialogueDataIdx].nextDialogueId ?? storyManager.CurrentDialogueId;
-            dialogueDataIdx = storyData.dialogueDataList.FindIndex(dialogue => dialogue.dialogueId == nextDialogueId);
-
-            bool isChapterEnded = dialogueDataIdx == -1 || dialogueDataIdx >= storyData.dialogueDataList.Count;
-            if (isChapterEnded)
+            if (chapterDialogue.dialogueChoiceData.Count > 0)
             {
-                OnChapterEnded();
+                data.dialogueChoicePanel.ShowChoiceDialogue(chapterDialogue.dialogueChoiceData, UpdateDialogue);
             }
             else
             {
-                string dialogueId = storyData.dialogueDataList[dialogueDataIdx].dialogueId;
-                bool canSave = storyManager.CurrentChapter >= storyChapter;
-                if (storyData.dialogueDataList[dialogueDataIdx].isAutoSave && canSave)
-                {
-                    storyManager.UpdateStoryProgress(dialogueId, storyManager.CurrentChapter);
-                }
-                dialogueCharacterDataList = storyData.dialogueDataList[dialogueDataIdx].dialogue;
-                AddCharacterByDefault();
+                UpdateDialogue(chapterDialogue.nextDialogueId);
             }
+            SetDefault();
+            data.dialoguePanel.SetCanClick(false);
+            OnDialogueEndedEvent?.Invoke();
+        }
+
+        private void UpdateDialogue(string nextDialogueId)
+        {
+            if (storyManager.CurrentChapter <= chapter)
+                storyManager.UpdateDialogueId(nextDialogueId);
+
+            chapterDialogue = storyManager.GetDialogue(nextDialogueId);
         }
 
         private void OnChapterEnded()
         {
-            StartCoroutine(OnChapterEndedCor());
+            storyManager.UpdateChapter(storyManager.CurrentChapter + 1);
+            OnChapterEndedEvent?.Invoke();
+            data.backToChapterSelectionScene?.Invoke();
+            Stop();
         }
 
-        private IEnumerator OnChapterEndedCor()
+        public void Stop()
         {
-            IsChapterEnded = true;
-
-            int nextChapter = storyManager.CurrentChapter + 1;
-            var nextChapterData = storyManager.GetChapterData(nextChapter);
-
-            if (nextChapterData == null)
-            {
-                //storyManager.UpdateStoryProgress("completed", nextChapter);
-                //return to main menu
-            }
-            else
-            {
-                string nextDialogueId = storyData.dialogueDataList[^1].nextDialogueId;
-
-                bool canSave = storyManager.CurrentChapter >= storyChapter;
-                if (canSave)
-                    storyManager.UpdateStoryProgress(nextDialogueId, nextChapter);
-            }
-
-            while (isAnimating.Invoke())
-                yield return null;
-
-            backToChapterSelectionScene?.Invoke();
+            IsPlaying = false;
         }
     }
 }
