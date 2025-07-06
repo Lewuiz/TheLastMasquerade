@@ -12,6 +12,14 @@ namespace Main
             });
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                WindowController.Instance.Show(nameof(WTelephone));
+            }
+        }
+
         protected override void UpdateWindowCanvasCamera()
         {
             WindowController.Instance.UpdateWindowCanvasCamera();

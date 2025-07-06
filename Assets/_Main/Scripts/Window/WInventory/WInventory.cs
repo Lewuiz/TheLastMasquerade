@@ -1,9 +1,15 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 namespace Main
 {
+    public class InventoryWindowData
+    {
+        public Action<InventoryItem> onUseItem = default;
+    }
+
     public class WInventory : WindowBase
     {
         [SerializeField] private TextMeshProUGUI itemTitleTMP = default;
@@ -14,10 +20,13 @@ namespace Main
         private InventoryManager inventoryManager = default;
 
         private InventoryItemView selectedInventoryItemView = default;
+        private InventoryWindowData inventoryWindowData = default;
 
         protected override void SetDefaultUI()
         {
             inventoryManager = GameCore.Instance.InventoryManager;
+            inventoryWindowData = data as InventoryWindowData;
+
             CreateInventoryItemViews();
             SetDefault();
         }
@@ -67,7 +76,8 @@ namespace Main
         /// </summary>
         public void UseItem()
         {
-
+            inventoryWindowData.onUseItem?.Invoke(selectedInventoryItemView.InventoryItem);
+            CloseWindow();
         }
     }
 }

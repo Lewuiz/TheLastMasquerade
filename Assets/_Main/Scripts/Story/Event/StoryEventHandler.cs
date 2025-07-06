@@ -12,20 +12,22 @@ namespace Main
     /// </summary>
     public class StoryEventHandler : MonoBehaviour
     {
+        private InspectItemController inspectItemController = default;
         private Action<Sprite> changeBackground = default;
 
-        public bool IsExecuting { get; private set; } = false;
+        private bool isCollectingItem = false;
 
-        public void Init(Action<Sprite> changeBackground)
+        public void Init(Action<Sprite> changeBackground, InspectItemController inspectItemController)
         {
             this.changeBackground = changeBackground;
+            this.inspectItemController = inspectItemController;
         }
 
         public void ExecuteEvents(List<ChapterDialogueEvent> chapterDialogueEventList, ChapterDialogueEventPhase phase)
         {
             if (chapterDialogueEventList == null)
                 return;
-
+            
             var chapterDialogueEventByPhase = chapterDialogueEventList.Where(dialogueEvent => dialogueEvent.eventPhase == phase);
             for (int i = 0; i < chapterDialogueEventList.Count; i++)
             {
@@ -41,13 +43,9 @@ namespace Main
                 }
                 else if (chapterDialogueEvent.eventType == ChapterDialogueEventType.Item)
                 {
-
+                    inspectItemController.Spawn(chapterDialogueEvent.prefab);
                 }
                 else if (chapterDialogueEvent.eventType == ChapterDialogueEventType.Battle)
-                {
-
-                }
-                else if (chapterDialogueEvent.eventType == ChapterDialogueEventType.MiniGame)
                 {
 
                 }
@@ -59,9 +57,11 @@ namespace Main
             changeBackground?.Invoke(bgSprite);
         }
 
-        private void CreateInspectObject(string id)
-        {
 
+
+        public bool IsExecutingEvent()
+        {
+            return false;
         }
     }
 }

@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -10,7 +11,10 @@ namespace Main
         [SerializeField] private RectTransform rectTransform = default;
         [SerializeField] private CanvasGroup canvasGroup = default;
 
+        public event Action OnWindowClosed = default;
+
         private const float ANIMATION_DURATION = 0.5f;
+        protected object data = default;
 
         private void SetDefaultOpen()
         {
@@ -25,13 +29,13 @@ namespace Main
         {
             canvasGroup.interactable = false;
             canvasGroup.blocksRaycasts = false;
-
         }
 
         protected abstract void SetDefaultUI();
 
-        public void OpenWindow()
+        public void OpenWindow(object data = null)
         {
+            this.data = data;
             SetDefaultOpen();
             SetDefaultUI();
             StartCoroutine(OpenWindowCor());
@@ -54,7 +58,9 @@ namespace Main
         private IEnumerator CloseWindowCor()
         {
             yield return canvasGroup.DOFade(0f, ANIMATION_DURATION).SetEase(Ease.InQuad).WaitForCompletion();
+            OnWindowClosed?.Invoke();
             OnCloseComplete();
+            Destroy(this.gameObject);
         }
 
         protected virtual void OnOpenComplete() {}

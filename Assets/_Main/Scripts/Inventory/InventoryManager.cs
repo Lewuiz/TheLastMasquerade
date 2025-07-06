@@ -47,7 +47,7 @@ namespace Main
         //    return inventory.inspectItemList.Contains(inspectItem);
         //}
 
-        public void Save()
+        private void Save()
         {
             saveManager.Set<PlayerData>(PlayerData.INVENTORY, inventorySaveData);
         }

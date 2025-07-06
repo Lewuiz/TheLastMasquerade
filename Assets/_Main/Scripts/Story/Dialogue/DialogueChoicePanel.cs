@@ -17,9 +17,12 @@ namespace Main
         private DialogueChoice selectedDialogueChoice = default;
         private Action<string> onChoiceSelected = default;
         private bool isShowingChoice  = false;
+        private Action continueDialogue = default;
 
-        public void Init()
+        public void Init(Action continueDialogue)
         {
+            this.continueDialogue = continueDialogue;
+
             cg.alpha = 0f;
             SetCanvasGroupInteactable(false);
             gameObject.SetActive(false);
@@ -44,12 +47,12 @@ namespace Main
                 dialogueChoiceList.Add(dialogueChoice);
             }
 
+            gameObject.SetActive(true);
             StartCoroutine(ShowDialogueCor());
         }
 
         private IEnumerator ShowDialogueCor()
         {
-            gameObject.SetActive(true);
             SetCanvasGroupInteactable(false);
             yield return cg.DOFade(1f, .3f).WaitForCompletion();
             SetCanvasGroupInteactable(true);
@@ -73,6 +76,7 @@ namespace Main
             yield return cg.DOFade(0f, .3f).WaitForCompletion();
             onChoiceSelected?.Invoke(dialogueId);
             DestoryChoices();
+            continueDialogue?.Invoke();
             isShowingChoice = false;
             gameObject.SetActive(false);
         }

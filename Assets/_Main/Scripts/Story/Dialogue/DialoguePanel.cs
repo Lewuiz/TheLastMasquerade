@@ -15,6 +15,8 @@ namespace Main
 
         private bool canClicked = true;
         private bool isPlayingAnimation = false;
+
+        public string DialogueText { get; private set; } = default;
         public bool IsHiding { get; private set; } = false;
 
         private Action onDialogueClick = default;
@@ -34,11 +36,11 @@ namespace Main
             this.onDialogueClick = onDialogueClick;
         }
 
-        public void UpdateDialoguePanel(string text, string title = "")
+        public void UpdateDialoguePanel(string text, string title = "(Narrator)")
         {
             if (IsHiding)
                 Show();
-
+            DialogueText = text;
             dialogueTextTMP.text = text;    
             titleTMP.text = title;
         }
@@ -67,11 +69,6 @@ namespace Main
         }
 
         public void Show()
-        {
-            StartCoroutine(ShowCor());
-        }
-
-        public void Show(bool isOverriedDialog)
         {
             StartCoroutine(ShowCor());
         }

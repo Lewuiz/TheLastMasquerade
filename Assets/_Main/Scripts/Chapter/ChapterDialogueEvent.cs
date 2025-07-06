@@ -21,7 +21,7 @@ namespace Main
 
         private bool CanShowPrefabField()
         {
-            return eventType == ChapterDialogueEventType.MiniGame || eventType == ChapterDialogueEventType.Item;
+            return eventType == ChapterDialogueEventType.Item;
         }
     }
 }

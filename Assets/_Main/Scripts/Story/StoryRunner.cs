@@ -29,8 +29,18 @@ namespace Main
             inventoryManager = GameCore.Instance.InventoryManager;
             storyManager = data.storyManager;
             this.data = data;
-            data.dialoguePanel.SetOnClickEvent(() => canProceedDialogue = true);
+            SetDialoguePanelEvent();
             hasInit = true;
+        }
+
+        public void SetDialoguePanelEvent()
+        {
+            data.dialoguePanel.SetOnClickEvent(ForceProceedDialogue);
+        }
+
+        public void ForceProceedDialogue()
+        {
+            canProceedDialogue = true;
         }
 
         private void SetDefault()
@@ -80,7 +90,7 @@ namespace Main
             if (!IsPlaying || !hasInit)
                 return;
 
-            if (data.dialoguePanel.IsHiding)
+            if (data.inspectItemController.IsExecuting())
                 return;
 
             if (!canProceedDialogue)

@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System;
 
 namespace Main
@@ -10,6 +9,7 @@ namespace Main
         public DialogueChoicePanel dialogueChoicePanel = default;
         public DialoguePanel dialoguePanel = default;
         public StoryEventHandler storyEventHandler = default;
+        public InspectItemController inspectItemController = default;
         public Action backToChapterSelectionScene = default;
     }
 }

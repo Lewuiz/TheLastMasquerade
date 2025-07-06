@@ -63,6 +63,18 @@ namespace Main
             return null;
         }
 
+        public void FadeCharacterOnDialogue(string characterId)
+        {
+            Actor actor = GetActorOnDialogue(characterId);
+            actor.Fade();
+        }
+
+        public void UnFadeCharacterOnDialogue(string characterId)
+        {
+            Actor actor = GetActorOnDialogue(characterId);
+            actor.UnFade();
+        }
+
         private IEnumerator CheckDialogueCharacter(List<CharacterInCharge> characterInChargeList)
         {
             var sortedCharacterInChargeList = characterInChargeList.OrderBy(c => c.inChargeState).ToList();

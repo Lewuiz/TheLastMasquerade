@@ -7,7 +7,6 @@ namespace Main
         ChangeBackground,
         Audio,
         Item,
-        MiniGame,
         Battle
     }
 }

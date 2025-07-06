@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Key
   m_EditorClassIdentifier: 
   inventoryId: key
-  desc: .... adalah kunci
+  itemName: Key
+  desc: key? to unlock something like box item?
   sprite: {fileID: 21300000, guid: 6dd9fd48ec683d74ba3c9de196a79402, type: 3}
+  dialogueText: 

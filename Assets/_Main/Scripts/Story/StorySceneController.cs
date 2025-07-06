@@ -11,6 +11,7 @@ namespace Main
         [SerializeField] private ActorController actorController = default;
         [SerializeField] private DialoguePanel dialoguePanel = default;
         [SerializeField] private StoryEventHandler storyEventHandler = default;
+        [SerializeField] private InspectItemController inspectItemController = default;
 
         private StoryManager storyManager = default;
         private LoadingOverlay loadingOverlay = default;
@@ -21,17 +22,49 @@ namespace Main
             loadingOverlay.InitialLoading();
 
             storyManager = GameCore.Instance.StoryManager;
-            storyEventHandler.Init(UpdateBackground);
+            storyEventHandler.Init(UpdateBackground, inspectItemController);
             actorController.Init();
             dialoguePanel.Init();
-            dialogueChoicePanel.Init();
+            dialogueChoicePanel.Init(dialoguePanel.Continue);
 
             InitializeStoryRunner();
+
+            inspectItemController.Init(dialoguePanel, actorController, storyRunner.ForceProceedDialogue);
+            DetachItemInspectionListener();
+            AttachItemInspectionListener();
+
+
             storyRunner.Run();
 
             loadingOverlay.HideOvelay(.5f, .1f);
         }
 
+        public void ShowInventory()
+        {
+            InventoryWindowData inventoryWindowData = new InventoryWindowData() 
+            {
+                onUseItem = UseInventoryItem
+            };
+            WindowController.Instance.Show(nameof(WInventory), inventoryWindowData);
+        }
+
+        private void UseInventoryItem(InventoryItem inventoryItem)
+        {
+            inspectItemController.UnlockInspectionItem(inventoryItem);
+
+        }
+
+        private void AttachItemInspectionListener()
+        {
+            inspectItemController.OnItemInspectionCompleted += storyRunner.SetDialoguePanelEvent;
+            inspectItemController.OnItemInspectionCompleted += dialoguePanel.Continue;
+        }
+
+        private void DetachItemInspectionListener()
+        {
+            inspectItemController.OnItemInspectionCompleted -= storyRunner.SetDialoguePanelEvent;
+            inspectItemController.OnItemInspectionCompleted -= dialoguePanel.Continue;
+        }
 
         private void InitializeStoryRunner()
         {
@@ -43,62 +76,9 @@ namespace Main
                 dialogueChoicePanel = dialogueChoicePanel,
                 dialoguePanel = dialoguePanel,
                 storyEventHandler = storyEventHandler,
+                inspectItemController = inspectItemController,
             };
             storyRunner.Init(storyRunnerData);
-        }
-
-        //private void HideDialogue()
-        //{
-        //    dialoguePanel.Hide();
-        //    actorController.HideAllCharacter();
-        //}
-
-        //private void ShowDialogue(bool isOverrideDialogue = false)
-        //{
-        //    dialoguePanel.Show(isOverrideDialogue);
-        //    actorController.ShowAllCharacter();
-        //}
-
-        //public void OnDialoguePlay(DialogueActorControl dialogueActorControl, string characterId)
-        //{
-        //    StartCoroutine(OnDialoguePlayCor(dialogueActorControl, characterId));
-        //}
-
-        //private IEnumerator OnDialoguePlayCor(DialogueActorControl dialogueActorControl, string characterId)
-        //{
-        //    yield return CheckActorCharacterCor(dialogueActorControl);
-        //    yield return actorController.UpdateActorConversationCor(characterId);
-        //}
-
-        //private IEnumerator CheckActorCharacterCor(DialogueActorControl dialogueActorControl)
-        //{
-        //    if (dialogueActorControl == null)
-        //        yield break;
-
-        //    var hideActorlist = dialogueActorControl.hide;
-        //    yield return actorController.RemoveActorInDialogueCor(hideActorlist);
-
-        //    var showActorlist = dialogueActorControl.show;
-        //    yield return actorController.AddCharacterInDialogueCor(showActorlist);
-        //}
-
-        //private void ExecuteStoryEvent(List<DialogueEventData> dialoguesDataList)
-        //{
-        //    storyEventHandler.ExecuteEvents(dialoguesDataList);
-        //}
-
-        //private void ShowDialogueChoice(List<DialogueChoiceData> dialogueChoiceDataList, Action onChoiceSelected)
-        //{
-        //    if (dialogueChoiceDataList == null || dialogueChoiceDataList.Count == 0)
-        //        return;
-
-        //    dialogueChoicePanel.gameObject.SetActive(true);
-        //    dialogueChoicePanel.ShowChoiceDialogue(dialogueChoiceDataList, onChoiceSelected);
-        //}
-
-        private void UpdateConversation()
-        {
- 
         }
 
         private void UpdateBackground(Sprite sprite)
@@ -124,6 +104,11 @@ namespace Main
         protected override void UpdateWindowCanvasCamera()
         {
             WindowController.Instance.UpdateWindowCanvasCamera();
+        }
+
+        private void OnDestroy()
+        {
+            DetachItemInspectionListener();
         }
     }
 }

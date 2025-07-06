@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,22 +8,40 @@ using UnityEngine.UI;
 
 namespace Main
 {
-    public class Telephone : MonoBehaviour
+    public class TelephoneWindowData
+    {
+        public Action onGameCompleted;
+    }
+
+    public class WTelephone : WindowBase
     {
         [SerializeField] private List<Button> telephoneButtonList = new List<Button>();
         [SerializeField] private CanvasGroup cg = default;
         [SerializeField] private string phoneNumberCall = default;
         [SerializeField] private TextMeshProUGUI phoneNumberTMP = default;
+        [SerializeField] private Transform rollNumberTr = default;
+        private bool isPlayingAnimation = false;
+
+        private TelephoneWindowData telephoneWindowData = default;
+
+        private Dictionary<string, float> rotateNumberDict = new Dictionary<string, float>()
+        {
+            {"0", -327f},
+            {"1", -59f},
+            {"2", -87f},
+            {"3", -115f},
+            {"4", -139f},
+            {"5", -172f},
+            {"6", -203f},
+            {"7", -233f},
+            {"8", -261f},
+            {"9", -295f},
+        };
 
         public bool HasWin { get; private set; } = false;
 
         private string dialNumber = "";
 
-        public void Init()
-        {
-            HasWin = false;
-            SetOnButtonClickNumber();
-        }
 
         private void SetOnButtonClickNumber()
         {
@@ -33,11 +52,28 @@ namespace Main
                 telephoneButtonList[i].onClick.RemoveAllListeners();
                 telephoneButtonList[i].onClick.AddListener(() =>
                 {
+                    if (isPlayingAnimation)
+                        return;
+
                     dialNumber += capturedNumber;
+                    DialNumberAnimation(capturedNumber);
                     UpdatePhoneNumber();
                     CheckNumber();
                 });
             }
+        }
+
+        private void DialNumberAnimation(string capturedNumber)
+        {
+            StartCoroutine(DialNumberAnimationCor(capturedNumber));
+        }
+
+        private IEnumerator DialNumberAnimationCor(string capturedNumber)
+        {
+            isPlayingAnimation = true;
+            yield return rollNumberTr.DORotate(new Vector3(0f, 0f, rotateNumberDict[capturedNumber]), 200f, RotateMode.FastBeyond360).SetSpeedBased(true).WaitForCompletion();
+            yield return rollNumberTr.DORotate(new Vector3(0f, 0f, 360f), 200f, RotateMode.FastBeyond360).SetSpeedBased(true).WaitForCompletion();
+            isPlayingAnimation = false;
         }
 
         private void CheckNumber()
@@ -53,22 +89,12 @@ namespace Main
                 }
             }
 
-            if(phoneNumberCall.Length == dialNumber.Length)
+            if (phoneNumberCall.Length == dialNumber.Length)
             {
                 HasWin = true;
-                Hide();
+                CloseWindow();
+                telephoneWindowData.onGameCompleted?.Invoke();
             }
-        }
-
-        public void Hide()
-        {
-            StartCoroutine(HideCor());
-        }
-
-        private IEnumerator HideCor()
-        {
-            yield return cg.DOFade(0f, .3f).WaitForCompletion();
-            gameObject.SetActive(false);
         }
 
         private void UpdatePhoneNumber()
@@ -85,6 +111,13 @@ namespace Main
         {
             yield return cg.DOFade(1f, .3f).WaitForCompletion();
             gameObject.SetActive(true);
+        }
+
+        protected override void SetDefaultUI()
+        {
+            HasWin = false;
+            SetOnButtonClickNumber();
+            telephoneWindowData = data as TelephoneWindowData;
         }
     }
 }

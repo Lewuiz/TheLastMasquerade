@@ -69,6 +69,16 @@ namespace Main
             StartCoroutine(HideCor());
         }
 
+        public void Fade()
+        {
+            actorSR.DOFade(0f, .2f);
+        }
+
+        public void UnFade()
+        {
+            actorSR.DOFade(1f, .2f);
+        }
+
         public IEnumerator HideCor()
         {
             IsPlayingAnimation = true;
