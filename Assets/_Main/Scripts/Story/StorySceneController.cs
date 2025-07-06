@@ -25,7 +25,11 @@ namespace Main
             storyEventHandler.Init(UpdateBackground, inspectItemController);
             actorController.Init();
             dialoguePanel.Init();
-            dialogueChoicePanel.Init(dialoguePanel.Continue);
+            dialogueChoicePanel.Init(()=>
+            {
+                storyRunner.SetDefault();
+                dialoguePanel.Continue();
+            });
 
             InitializeStoryRunner();
 

@@ -21,13 +21,13 @@ MonoBehaviour:
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
       expression: 0
-    - name: Perry | Show
-      characterData: {fileID: 11400000, guid: 70aee53e15dc6434b9d20592b57e46ce, type: 2}
-      inChargeState: 0
-      expression: 0
     - name: Edith | Hide
       characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
       inChargeState: 1
+      expression: 0
+    - name: Perry | Show
+      characterData: {fileID: 11400000, guid: 70aee53e15dc6434b9d20592b57e46ce, type: 2}
+      inChargeState: 0
       expression: 0
     chapterDialogueEventList:
     - eventPhase: 0

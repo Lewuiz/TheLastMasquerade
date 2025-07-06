@@ -43,7 +43,7 @@ namespace Main
             canProceedDialogue = true;
         }
 
-        private void SetDefault()
+        public void SetDefault()
         {
             conversationIdx = 0;
         }
@@ -114,7 +114,6 @@ namespace Main
             }
 
             StartCoroutine(PlayDialogueCor());
-
             canProceedDialogue = false;
             conversationIdx++;
         }
@@ -147,7 +146,6 @@ namespace Main
             {
                 UpdateDialogue(chapterDialogue.nextDialogueId);
             }
-
             SetDefault();
             data.dialoguePanel.SetCanClick(false);
             OnDialogueEndedEvent?.Invoke();
@@ -157,6 +155,7 @@ namespace Main
         {
             if (storyManager.CurrentChapter <= chapter)
                 storyManager.UpdateDialogueId(nextDialogueId);
+
             chapterDialogue = storyManager.GetDialogue(nextDialogueId);
         }
 

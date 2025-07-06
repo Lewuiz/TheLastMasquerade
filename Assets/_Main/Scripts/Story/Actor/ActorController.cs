@@ -146,6 +146,9 @@ namespace Main
 
         public void UpdateActorsConversation(CharacterDialogue characterDialogue)
         {
+            if (IsAnimating)
+                return;
+
             StartCoroutine(UpdateActorsConversationCor(characterDialogue));
         }
 
