@@ -22,6 +22,12 @@ namespace Main
             return database.inventoryItemList;
         }
 
+        public InventoryItem GetItem(string itemId)
+        {
+            var inventoryItem = GetInventoryItemList().Find(inventory => inventory.inventoryId == itemId);
+            return inventoryItem;
+        }
+
         public bool HasObtained(string item)
         {
             return inventorySaveData.inventoryItemList.Contains(item);

@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1be49e8c53155294881bc800e9741da5, type: 3}
+  m_Name: chapter_4_act_2
+  m_EditorClassIdentifier: 
+  dialogueId: chapter_4_act_2
+  dialogueList:
+  - text: There you are! I've been looking everywhere for you, Mr. Henshaw.
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Alistair Henshaw | Show
+      characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Is there anything I can do to help you, Detective?
+    characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Alistair Henshaw | Show
+      characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: I need to see the guest list of the party last night. Lord Blackwood said
+      you were in charge of the guests
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Alistair Henshaw | Show
+      characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Ah yes, Sir. But it's not with me now. It's in the library. I'm afraid
+      I can't be of much help at the moment due to the recent tragedy. You'll have
+      to go get it on your own
+    characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Alistair Henshaw | Show
+      characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: That is fine. Thank you, Mr. Henshaw.
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Alistair Henshaw | Show
+      characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  dialogueChoiceData: []
+  requiredToProceedNextDialogue: 
+  nextDialogueId: chapter_4_act_3

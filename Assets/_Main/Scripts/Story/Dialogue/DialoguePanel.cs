@@ -50,6 +50,7 @@ namespace Main
             if (!canClicked || isPlayingAnimation)
                 return;
 
+
             onDialogueClick?.Invoke();
         }
 

@@ -21,12 +21,15 @@ namespace Main
         public bool CanClick { get; private set; } = default;
 
         private Action onCloseWindowEventType = default;
+        private Action<string> checkItem = default;
 
-        public void Init(Action<ItemInspection> collect, Action<string> save, Action onCloseWindowEventType)
+        public void Init(Action<ItemInspection> collect, Action<string> save, Action onCloseWindowEventType, Action<string> claimItemList)
         {
             this.collect = collect;
             this.save = save;
             this.onCloseWindowEventType = onCloseWindowEventType;
+            this.checkItem = claimItemList;
+
             HasCollected = false;
             CanClick = true;
 
@@ -78,11 +81,16 @@ namespace Main
             {
                 string[] ids = splits[1].Split(",");
 
-                for(int i = 0; i < ids.Length; i++) 
+                for (int i = 0; i < ids.Length; i++)
                 {
                     save?.Invoke(ids[i]);
                 }
             }
+            else if (splits[0] == "claim")
+            {
+                string id = splits[1];
+                checkItem?.Invoke(id);
+            }            
             //else if (splits[0] == "collect")
             //{
             //    CollectItemWindowData collectItemWindowData = new CollectItemWindowData()
