@@ -1,0 +1,284 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1be49e8c53155294881bc800e9741da5, type: 3}
+  m_Name: chapter_5_act_3
+  m_EditorClassIdentifier: 
+  dialogueId: chapter_5_act_3
+  dialogueList:
+  - text: (Outside the parlor, Elias hears hurried footsteps and muffled voices.
+      Lady Rosalind paces nervously, clutching a glass of sherry.)
+    characterData: {fileID: 0}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList:
+    - eventPhase: 0
+      eventType: 0
+      backgroundSprite: {fileID: 21300000, guid: b94f107a03ae41c44a01df103517304c, type: 3}
+      audioName: 
+      prefab: {fileID: 0}
+  - text: Where could Lady Rosalind be...
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: When will the murderer be exposed? I need to get out here before they find
+      the next victim!
+    characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Perfect timing, may I talk to you for a moment?
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Anything, Detective! I need all this panic to be over soon.
+    characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Were you wearing a silver mask at the party last night?
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Err, yes... and why do you ask that?
+    characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: According to what Edith said, you were one of the people who chatted with
+      Lady Eleanor during the party.
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Yes, but wait. Are you suspecting me, Detective?
+    characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Are you out of your mind?! Lady Eleanor and I have known each other since
+      we were children! Why would I enact such horrific action towards her?
+    characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: ... however, she was definitely not in a good mood the night before after
+      talking to someone, and I could see anger in her eyes afterwards...
+    characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: I went to get a drink for her, and when I returned she grew more furious
+      after talking to someone in a gold mask!
+    characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Do you know who wore the gold mask?
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: I am not certain, but there some things I noticed.
+    characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: What is it, my Lady?
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: I think there were two guests wearing gold masks last night. One was wearing
+      a striking sapphire blue suit, which I believe was Lord Fairfax, and the other
+      one was wearing a simple black suit, and looked a bit... older?
+    characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Are you certain about that, my Lady?
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: My eyes have never lied to me! Lord Fairfax was a gentleman the whole night,
+      but when it came to the man in the black suit, I tried starting a conversation
+      with but he dismissed me and seemed to be in a rush. How rude of him, now that
+      I think of it.
+    characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: '"...",'
+    characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: I did see him talk with Lady Isabella though, even handing her a bouquet
+      of roses which made it even stranger!
+    characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: I see... Thank you for your time, my Lady.
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Yes, let me know if you need me, Detective
+    characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  dialogueChoiceData: []
+  requiredToProceedNextDialogue: 
+  nextDialogueId: end
