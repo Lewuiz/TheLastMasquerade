@@ -12,6 +12,7 @@ namespace Main
         [SerializeField] private DialoguePanel dialoguePanel = default;
         [SerializeField] private StoryEventHandler storyEventHandler = default;
         [SerializeField] private InspectItemController inspectItemController = default;
+        [SerializeField] private JigsawController jigsawController = default;
 
         private StoryManager storyManager = default;
         private LoadingOverlay loadingOverlay = default;
@@ -33,10 +34,12 @@ namespace Main
 
             InitializeStoryRunner();
 
-            inspectItemController.Init(dialoguePanel, actorController, storyRunner.ForceProceedDialogue);
+            inspectItemController.Init(dialoguePanel, actorController, storyRunner.ForceProceedDialogue, jigsawController);
             DetachItemInspectionListener();
             AttachItemInspectionListener();
 
+            jigsawController.Init();
+            jigsawController.Hide();
 
             storyRunner.Run();
 

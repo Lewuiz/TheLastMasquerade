@@ -34,3 +34,15 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 68581b97ebc1d6844b1054d1b3a05ea7, type: 2}
     - {fileID: 11400000, guid: 8e4c2ce43f650b7488f096f7a467c1aa, type: 2}
     thumbnail: {fileID: 21300000, guid: 0e5eb4fea064fe846b2772f7424b1759, type: 3}
+  - chapterId: chapter_4
+    dialogueList:
+    - {fileID: 11400000, guid: 985fcf4a28b914b4ab6f38e7d9f9e019, type: 2}
+    - {fileID: 11400000, guid: d6a6b00b463f99c45bf2775e1e330d81, type: 2}
+    - {fileID: 11400000, guid: eff7b7359c3feba418618885c1375862, type: 2}
+    thumbnail: {fileID: 21300000, guid: 0e5eb4fea064fe846b2772f7424b1759, type: 3}
+  - chapterId: chapter_5
+    dialogueList:
+    - {fileID: 11400000, guid: d96c5551db103d44c865ba06d2826f61, type: 2}
+    - {fileID: 11400000, guid: 4b89409559837b74fa7da6eb51cf50b2, type: 2}
+    - {fileID: 11400000, guid: 6287214d774ec5e4888be84c15052588, type: 2}
+    thumbnail: {fileID: 21300000, guid: 3b8bf95093cb59c43a81276988f05b88, type: 3}

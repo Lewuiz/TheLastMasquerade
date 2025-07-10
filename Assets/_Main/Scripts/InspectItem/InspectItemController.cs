@@ -25,12 +25,16 @@ namespace Main
         public event Action OnItemInspectionCompleted = default;
         private InventoryManager inventoryManager = default;
         private Action forceRunStory = default;
+        private List<string> claimItemList = new List<string>();
+        private JigsawController jigsawController = default;
+        private bool isPlayingJigsaw = default;
 
-        public void Init(DialoguePanel dialoguePanel, ActorController actorController, Action forceRunStory)
+        public void Init(DialoguePanel dialoguePanel, ActorController actorController, Action forceRunStory, JigsawController jigsawController)
         {
             this.dialoguePanel = dialoguePanel;
             this.actorController = actorController;
             this.forceRunStory = forceRunStory;
+            this.jigsawController = jigsawController;
 
             inventoryManager = GameCore.Instance.InventoryManager;
         }
@@ -61,7 +65,7 @@ namespace Main
                     isShowing = false; 
                     forceRunStory?.Invoke();
                     OnItemInspectionCompleted?.Invoke();
-                });
+                }, CheckItem);
             }
             SetAllItemCanClick(false);
         }
@@ -72,6 +76,7 @@ namespace Main
             {
                 Destroy(itemGameobject);
             }
+            claimItemList = new List<string>();
             collectItemImage.color = new Color32(255, 255, 255, 0);
             itemInspectionList.Clear();
             isShowing = false;
@@ -111,6 +116,8 @@ namespace Main
             dialoguePanel.SetCanClick(false);
             dialoguePanel.SetOnClickEvent(Continue);
             actorController.UnFadeCharacterOnDialogue(characterData.characterId);
+            var selectedActor = actorController.GetActorOnDialogue(characterData.characterId);
+            selectedActor.ShowConversation();
             dialoguePanel.UpdateDialoguePanel(itemInspection.InventoryItem.dialogueText, characterData.characterName);
             
             while (actorController.IsAnimating)
@@ -124,7 +131,7 @@ namespace Main
 
         private void Continue()
         {
-            if (HasCollectAllInspectionItem())
+            if (HasCollectAllInspectionItem() && !isPlayingJigsaw)
             {
                 isShowing = false;
                 SetDefault();
@@ -139,6 +146,40 @@ namespace Main
                 collectItemImage.DOFade(0f, .3f);
                 actorController.FadeCharacterOnDialogue(characterData.characterId);
                 SetAllItemCanClick(true);
+            }
+        }
+
+        private void CheckItem(string id)
+        {
+            claimItemList.Add(id);
+
+            //hard coded due to limitation of time
+            if(claimItemList.Count > 0)
+            {
+                if (claimItemList.Count == 4 && claimItemList[0].Contains("torn_paper"))
+                {
+                    isPlayingJigsaw = true;
+                    jigsawController.SetOnCompleted(() => 
+                    {
+                        isPlayingJigsaw = false;
+                        dialoguePanel.Show();
+                        collectItemImage.DOFade(0f, .3f);
+                        actorController.UnFadeCharacterOnDialogue(characterData.characterId);
+
+                        inventoryManager.Claim("guest_list");
+                        var guestList = inventoryManager.GetItem("guest_list");
+                        CollectItemWindowData collectItemWindowData = new CollectItemWindowData()
+                        {
+                            onWindowClosed = () => 
+                            { 
+                                Continue(); 
+                            },
+                            sprite = guestList.sprite
+                        };
+                        WindowController.Instance.Show(nameof(WCollectItem), collectItemWindowData);
+                    });
+                    jigsawController.Show();
+                }
             }
         }
 
@@ -168,15 +209,6 @@ namespace Main
                     }
                 }
 
-            }
-        }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                Debug.Log($"WOILAH: {HasCollectAllInspectionItem()}");
-                Debug.Log($"IsExecuting: {IsExecuting()}");
             }
         }
 

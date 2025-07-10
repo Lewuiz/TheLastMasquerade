@@ -52,7 +52,7 @@ namespace Main
             return null;
         }
 
-        private Actor GetActorOnDialogue(string characterId)
+        public Actor GetActorOnDialogue(string characterId)
         {
             for (int i = 0; i < actorList.Count; i++)
             {
