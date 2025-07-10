@@ -240,9 +240,9 @@ MonoBehaviour:
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
       expression: 0
-    - name: Lady Isabella | Show
+    - name: Lady Isabella | Hide
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
-      inChargeState: 0
+      inChargeState: 1
       expression: 0
     chapterDialogueEventList: []
   dialogueChoiceData: []

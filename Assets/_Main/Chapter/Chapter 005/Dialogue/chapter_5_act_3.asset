@@ -274,9 +274,9 @@ MonoBehaviour:
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
       expression: 0
-    - name: Rosalind Capet | Show
+    - name: Rosalind Capet | Hide
       characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
-      inChargeState: 0
+      inChargeState: 1
       expression: 0
     chapterDialogueEventList: []
   dialogueChoiceData: []
