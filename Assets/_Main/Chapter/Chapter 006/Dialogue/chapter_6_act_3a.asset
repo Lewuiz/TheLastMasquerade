@@ -33,7 +33,7 @@ MonoBehaviour:
     - eventPhase: 0
       eventType: 0
       backgroundSprite: {fileID: 21300000, guid: 9b8656f36d95d364681f3894f00cb3bb, type: 3}
-      audioName: 
+      audioClip: {fileID: 0}
       prefab: {fileID: 0}
   - text: (The attacker stumbles and his mask falls--)
     characterData: {fileID: 0}
@@ -1636,7 +1636,7 @@ MonoBehaviour:
     - eventPhase: 0
       eventType: 0
       backgroundSprite: {fileID: 21300000, guid: b58078e1ce4af8246a791af7a1fd5c9e, type: 3}
-      audioName: 
+      audioClip: {fileID: 0}
       prefab: {fileID: 0}
   - text: Phew... Finally it's all done. What a case!
     characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
@@ -1669,7 +1669,7 @@ MonoBehaviour:
     - eventPhase: 0
       eventType: 0
       backgroundSprite: {fileID: 21300000, guid: b58078e1ce4af8246a791af7a1fd5c9e, type: 3}
-      audioName: 
+      audioClip: {fileID: 0}
       prefab: {fileID: 0}
   dialogueChoiceData: []
   requiredToProceedNextDialogue: 

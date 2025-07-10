@@ -14,7 +14,7 @@ namespace Main
         public Sprite backgroundSprite;
 
         [ShowIf(nameof(eventType), ChapterDialogueEventType.Audio)]
-        public string audioName;
+        public AudioClip audioClip;
 
         [ShowIf(nameof(CanShowPrefabField))]
         public GameObject prefab;

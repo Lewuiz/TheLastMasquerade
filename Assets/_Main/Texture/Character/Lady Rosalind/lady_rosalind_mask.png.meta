@@ -124,7 +124,7 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
+  alignment: 7
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -785,7 +785,33 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lady_rosalind_mask_0: 3099143985169620573
+      lady_rosalind_mask_1: 8725894027407703722
+      lady_rosalind_mask_10: -2701482999111455227
+      lady_rosalind_mask_11: 2991159131215993679
+      lady_rosalind_mask_12: -3989798989723038277
+      lady_rosalind_mask_13: -3771136772766873444
+      lady_rosalind_mask_14: -2280290603787998739
+      lady_rosalind_mask_15: -7021650991381828180
+      lady_rosalind_mask_16: 8439606906273873160
+      lady_rosalind_mask_17: 132759768346860045
+      lady_rosalind_mask_18: -6928325511125087592
+      lady_rosalind_mask_19: -1681571457259724669
+      lady_rosalind_mask_2: 4949076710433631313
+      lady_rosalind_mask_20: 1511473145001901760
+      lady_rosalind_mask_21: 7635708527098818552
+      lady_rosalind_mask_22: -3908046919117261046
+      lady_rosalind_mask_23: -8743718263840020782
+      lady_rosalind_mask_24: 4573018087353132806
+      lady_rosalind_mask_25: -9194256650806671770
+      lady_rosalind_mask_3: 330698234257248735
+      lady_rosalind_mask_4: 4797936754483911831
+      lady_rosalind_mask_5: 8430340893861276622
+      lady_rosalind_mask_6: 7772048669242763741
+      lady_rosalind_mask_7: 7519264046309170038
+      lady_rosalind_mask_8: -3764799578704442290
+      lady_rosalind_mask_9: 4163512949115166169
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -29,7 +29,7 @@ MonoBehaviour:
     - eventPhase: 0
       eventType: 0
       backgroundSprite: {fileID: 21300000, guid: 3deb866258db8364aa7c29a225a9ba61, type: 3}
-      audioName: 
+      audioClip: {fileID: 0}
       prefab: {fileID: 0}
   - text: Yes, Sir! But I swear to God, it isn't me! You have to believe me!
     characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}

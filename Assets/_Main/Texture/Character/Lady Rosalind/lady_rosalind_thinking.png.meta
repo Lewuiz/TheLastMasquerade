@@ -124,7 +124,7 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
+  alignment: 7
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -785,7 +785,33 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lady_rosalind_thinking_0: 4197011651872311412
+      lady_rosalind_thinking_1: -4649689142883255826
+      lady_rosalind_thinking_10: -2551522455740591876
+      lady_rosalind_thinking_11: 8735470058465174575
+      lady_rosalind_thinking_12: -5487694016119863499
+      lady_rosalind_thinking_13: 3169217999172942249
+      lady_rosalind_thinking_14: 5358408872051390654
+      lady_rosalind_thinking_15: 4352223731867858515
+      lady_rosalind_thinking_16: 2556557435690669159
+      lady_rosalind_thinking_17: -8780202295545730533
+      lady_rosalind_thinking_18: -7590971310085573518
+      lady_rosalind_thinking_19: 3582116423196057192
+      lady_rosalind_thinking_2: -6614206972698499116
+      lady_rosalind_thinking_20: -1073143876461390427
+      lady_rosalind_thinking_21: 3430154758677028464
+      lady_rosalind_thinking_22: -7912991527142444419
+      lady_rosalind_thinking_23: -5170176445173864681
+      lady_rosalind_thinking_24: 6156998473383483472
+      lady_rosalind_thinking_25: 584137301744398602
+      lady_rosalind_thinking_3: -1355054704745241604
+      lady_rosalind_thinking_4: -2067790180832223269
+      lady_rosalind_thinking_5: 6806175174521832342
+      lady_rosalind_thinking_6: 4836774368616749481
+      lady_rosalind_thinking_7: -2326116329165944689
+      lady_rosalind_thinking_8: -3812614943598275216
+      lady_rosalind_thinking_9: -2166107803894789309
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

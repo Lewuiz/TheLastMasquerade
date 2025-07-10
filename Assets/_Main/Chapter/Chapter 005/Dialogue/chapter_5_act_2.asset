@@ -26,7 +26,7 @@ MonoBehaviour:
     - eventPhase: 0
       eventType: 0
       backgroundSprite: {fileID: 21300000, guid: 3b8bf95093cb59c43a81276988f05b88, type: 3}
-      audioName: 
+      audioClip: {fileID: 0}
       prefab: {fileID: 0}
   - text: I wonder where Sir Fairfax could be...
     characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
@@ -51,7 +51,7 @@ MonoBehaviour:
     - eventPhase: 0
       eventType: 0
       backgroundSprite: {fileID: 21300000, guid: 3b8bf95093cb59c43a81276988f05b88, type: 3}
-      audioName: 
+      audioClip: {fileID: 0}
       prefab: {fileID: 0}
   - text: Pardon me, Sir. I do not know and the last time I saw him, he said he did
       not want to be interrupted and needed his time alone.
@@ -69,7 +69,7 @@ MonoBehaviour:
     - eventPhase: 0
       eventType: 0
       backgroundSprite: {fileID: 21300000, guid: 3b8bf95093cb59c43a81276988f05b88, type: 3}
-      audioName: 
+      audioClip: {fileID: 0}
       prefab: {fileID: 0}
   - text: Alright, thank you for the information
     characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
@@ -86,7 +86,7 @@ MonoBehaviour:
     - eventPhase: 0
       eventType: 0
       backgroundSprite: {fileID: 21300000, guid: 3b8bf95093cb59c43a81276988f05b88, type: 3}
-      audioName: 
+      audioClip: {fileID: 0}
       prefab: {fileID: 0}
   - text: (I better not be wasting my time. Maybe I can go interview Lady Rosalind
       first.)
@@ -104,7 +104,7 @@ MonoBehaviour:
     - eventPhase: 0
       eventType: 0
       backgroundSprite: {fileID: 21300000, guid: 3b8bf95093cb59c43a81276988f05b88, type: 3}
-      audioName: 
+      audioClip: {fileID: 0}
       prefab: {fileID: 0}
   dialogueChoiceData: []
   requiredToProceedNextDialogue: 

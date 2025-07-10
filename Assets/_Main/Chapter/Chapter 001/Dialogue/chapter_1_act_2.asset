@@ -29,7 +29,7 @@ MonoBehaviour:
     - eventPhase: 0
       eventType: 0
       backgroundSprite: {fileID: 21300000, guid: b58078e1ce4af8246a791af7a1fd5c9e, type: 3}
-      audioName: 
+      audioClip: {fileID: 0}
       prefab: {fileID: 0}
   - text: (Elias steps inside, greeted by an older man in a suit)
     characterData: {fileID: 0}
@@ -87,7 +87,7 @@ MonoBehaviour:
     - eventPhase: 0
       eventType: 0
       backgroundSprite: {fileID: 21300000, guid: 0e5eb4fea064fe846b2772f7424b1759, type: 3}
-      audioName: 
+      audioClip: {fileID: 0}
       prefab: {fileID: 0}
   - text: Ah, Detective Wakefield, welcome! I trust your journey was pleasant?
     characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
@@ -99,7 +99,7 @@ MonoBehaviour:
     - name: Reginal Blackwood | Show
       characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 4
     chapterDialogueEventList: []
   - text: As pleasant as one can expect. I am honored by the invitation, my lord.
     characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
@@ -107,7 +107,7 @@ MonoBehaviour:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 10
     - name: Reginal Blackwood | Show
       characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
     - name: Reginal Blackwood | Show
       characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 4
     chapterDialogueEventList: []
   - text: (Blackwood then leads Elias to a group of chattering people)
     characterData: {fileID: 0}
@@ -164,7 +164,7 @@ MonoBehaviour:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 4
     - name: Reginal Blackwood | Show
       characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
@@ -217,7 +217,7 @@ MonoBehaviour:
     - name: Rosalind Capet | Show
       characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 4
     chapterDialogueEventList: []
   - text: (Among the group, a woman in a green dress stays silent, her eyes averted,
       seeming to be deep in thought)
@@ -278,7 +278,7 @@ MonoBehaviour:
     - name: Eleanor | Show
       characterData: {fileID: 11400000, guid: e3e3b01075cfef5448786d6b861fb316, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 2
     chapterDialogueEventList: []
   - text: (Eleanor leaves, still looking distressed. Blackwood was speechless for
       a moment)
@@ -308,7 +308,7 @@ MonoBehaviour:
     - name: Reginal Blackwood | Show
       characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 2
     chapterDialogueEventList: []
   - text: No worries, my lord. It's fine.
     characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}

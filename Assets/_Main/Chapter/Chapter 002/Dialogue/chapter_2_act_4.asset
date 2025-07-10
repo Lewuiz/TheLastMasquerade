@@ -34,12 +34,12 @@ MonoBehaviour:
     - name: Reginal Blackwood | Show
       characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 4
     chapterDialogueEventList:
     - eventPhase: 0
       eventType: 0
       backgroundSprite: {fileID: 21300000, guid: 81a4217b926cf0b40805e22ae6813b47, type: 3}
-      audioName: 
+      audioClip: {fileID: 0}
       prefab: {fileID: 0}
   - text: Yes, my lord.
     characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
@@ -47,7 +47,7 @@ MonoBehaviour:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 10
     - name: Reginal Blackwood | Show
       characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
@@ -97,9 +97,9 @@ MonoBehaviour:
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
       expression: 0
-    - name: Henry Fairfax | Hide
+    - name: Henry Fairfax | Show
       characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
-      inChargeState: 1
+      inChargeState: 0
       expression: 0
     chapterDialogueEventList: []
   - text: Morning, gentlemen.
@@ -115,6 +115,10 @@ MonoBehaviour:
       expression: 0
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Reginal Blackwood | Show
+      characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
       expression: 0
     chapterDialogueEventList: []
@@ -133,6 +137,10 @@ MonoBehaviour:
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
       inChargeState: 0
       expression: 0
+    - name: Reginal Blackwood | Show
+      characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
+      inChargeState: 0
+      expression: 4
     chapterDialogueEventList: []
   - text: (Not long after, Lady Rosalind arrived, looking rushed and seated next
       to Blackwood)
@@ -148,6 +156,10 @@ MonoBehaviour:
       expression: 0
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Reginal Blackwood | Show
+      characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
       expression: 0
     chapterDialogueEventList: []
@@ -170,7 +182,7 @@ MonoBehaviour:
     - name: Rosalind Capet | Show
       characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 4
     chapterDialogueEventList: []
   - text: My pleasure, my lady
     characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
@@ -193,6 +205,10 @@ MonoBehaviour:
       expression: 0
     - name: Edith | Show
       characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Reginal Blackwood | Show
+      characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
       expression: 0
     chapterDialogueEventList: []
@@ -220,6 +236,10 @@ MonoBehaviour:
       characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
       inChargeState: 0
       expression: 0
+    - name: Reginal Blackwood | Show
+      characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
+      inChargeState: 0
+      expression: 0
     chapterDialogueEventList: []
   - text: Yes, my lord. I shall go to her room.
     characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
@@ -244,29 +264,8 @@ MonoBehaviour:
       characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
       inChargeState: 0
       expression: 0
-    chapterDialogueEventList: []
-  - text: (Edith then leaves the dining hall, while Perry and Henshaw serve each
-      guest their breakfast platters)
-    characterData: {fileID: 0}
-    characterInChargeList:
-    - name: Elias Wakefield | Show
-      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
-      inChargeState: 0
-      expression: 0
-    - name: Henry Fairfax | Show
-      characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
-      inChargeState: 0
-      expression: 0
-    - name: Lady Isabella | Show
-      characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
-      inChargeState: 0
-      expression: 0
-    - name: Rosalind Capet | Show
-      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
-      inChargeState: 0
-      expression: 0
-    - name: Edith | Show
-      characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
+    - name: Reginal Blackwood | Show
+      characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
       expression: 0
     chapterDialogueEventList: []
@@ -318,6 +317,10 @@ MonoBehaviour:
       characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
       inChargeState: 0
       expression: 0
+    - name: Reginal Blackwood | Show
+      characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
+      inChargeState: 0
+      expression: 4
     chapterDialogueEventList: []
   - text: (Not long after, Edith comes back rushing, looking pale)
     characterData: {fileID: 0}
@@ -340,6 +343,10 @@ MonoBehaviour:
       expression: 0
     - name: Edith | Show
       characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Reginal Blackwood | Show
+      characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
       expression: 0
     chapterDialogueEventList: []
@@ -390,6 +397,10 @@ MonoBehaviour:
       characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
       inChargeState: 0
       expression: 0
+    - name: Reginal Blackwood | Show
+      characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
+      inChargeState: 0
+      expression: 7
     chapterDialogueEventList: []
   - text: It's Lady Eleanor... she's dead, my Lord...
     characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
@@ -413,8 +424,17 @@ MonoBehaviour:
     - name: Edith | Show
       characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
       inChargeState: 0
+      expression: 7
+    - name: Reginal Blackwood | Show
+      characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
+      inChargeState: 0
       expression: 0
-    chapterDialogueEventList: []
+    chapterDialogueEventList:
+    - eventPhase: 0
+      eventType: 1
+      backgroundSprite: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 50773cefc13ae664db3b15a0384eaeea, type: 3}
+      prefab: {fileID: 0}
   dialogueChoiceData: []
   requiredToProceedNextDialogue: 
   nextDialogueId: end

@@ -124,7 +124,7 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
+  alignment: 7
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -785,7 +785,33 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lady_rosalind_default_0: 8509427628564704293
+      lady_rosalind_default_1: -9192221431610333417
+      lady_rosalind_default_10: -9192767417817953454
+      lady_rosalind_default_11: -1360272419110702150
+      lady_rosalind_default_12: 783001608625209138
+      lady_rosalind_default_13: 4987719218609256893
+      lady_rosalind_default_14: 4445886498180575061
+      lady_rosalind_default_15: 1136421448473521222
+      lady_rosalind_default_16: -7689560642943428335
+      lady_rosalind_default_17: -3261670531985236442
+      lady_rosalind_default_18: 6865464012931843246
+      lady_rosalind_default_19: -74033678542460263
+      lady_rosalind_default_2: -1899708087571018234
+      lady_rosalind_default_20: -3919568690386713458
+      lady_rosalind_default_21: -8675490861652063297
+      lady_rosalind_default_22: -764019158063765803
+      lady_rosalind_default_23: 8056578976367823352
+      lady_rosalind_default_24: -630081823918923659
+      lady_rosalind_default_25: 5392448062386839258
+      lady_rosalind_default_3: -2454960735659695944
+      lady_rosalind_default_4: -2493196590147291478
+      lady_rosalind_default_5: 5172313372646438977
+      lady_rosalind_default_6: -4746014612236619324
+      lady_rosalind_default_7: -383363353194280604
+      lady_rosalind_default_8: 8165899868507392468
+      lady_rosalind_default_9: 6186398902665748476
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -33,7 +33,7 @@ MonoBehaviour:
     - eventPhase: 0
       eventType: 0
       backgroundSprite: {fileID: 21300000, guid: 9b8656f36d95d364681f3894f00cb3bb, type: 3}
-      audioName: 
+      audioClip: {fileID: 0}
       prefab: {fileID: 0}
   - text: (BANG!)
     characterData: {fileID: 0}

@@ -37,11 +37,15 @@ MonoBehaviour:
       characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
       inChargeState: 0
       expression: 0
+    - name: Henry Fairfax | Hide
+      characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
+      inChargeState: 1
+      expression: 0
     chapterDialogueEventList:
     - eventPhase: 0
       eventType: 0
       backgroundSprite: {fileID: 21300000, guid: 81a4217b926cf0b40805e22ae6813b47, type: 3}
-      audioName: 
+      audioClip: {fileID: 0}
       prefab: {fileID: 0}
   - text: What do you mean, Edith?
     characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
@@ -57,7 +61,7 @@ MonoBehaviour:
     - name: Reginal Blackwood | Show
       characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 7
     - name: Rosalind Capet | Show
       characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
       inChargeState: 0
@@ -159,7 +163,7 @@ MonoBehaviour:
     - eventPhase: 0
       eventType: 0
       backgroundSprite: {fileID: 21300000, guid: 3deb866258db8364aa7c29a225a9ba61, type: 3}
-      audioName: 
+      audioClip: {fileID: 0}
       prefab: {fileID: 0}
   - text: There she is, my lord...
     characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
@@ -180,7 +184,7 @@ MonoBehaviour:
     - eventPhase: 0
       eventType: 0
       backgroundSprite: {fileID: 21300000, guid: 3deb866258db8364aa7c29a225a9ba61, type: 3}
-      audioName: 
+      audioClip: {fileID: 0}
       prefab: {fileID: 0}
   - text: (On the floor, lies the lifeless body of Lady Eleanor.)
     characterData: {fileID: 0}
@@ -208,7 +212,7 @@ MonoBehaviour:
     - name: Reginal Blackwood | Show
       characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 7
     - name: Edith | Show
       characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
       inChargeState: 0
@@ -224,7 +228,7 @@ MonoBehaviour:
     - name: Reginal Blackwood | Show
       characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 9
     - name: Edith | Show
       characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
       inChargeState: 0
@@ -247,6 +251,24 @@ MonoBehaviour:
       inChargeState: 1
       expression: 0
     chapterDialogueEventList: []
+  - text: (This doesn't look like an accident, let's search for some clues)
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList:
+    - eventPhase: 0
+      eventType: 0
+      backgroundSprite: {fileID: 21300000, guid: b801f5e77c149444882d00ad530316e8, type: 3}
+      audioClip: {fileID: 0}
+      prefab: {fileID: 0}
+    - eventPhase: 0
+      eventType: 2
+      backgroundSprite: {fileID: 0}
+      audioClip: {fileID: 0}
+      prefab: {fileID: 3947770590183656656, guid: e5760f76e799d56479354be25148afc1, type: 3}
   - text: Her face looks pale, her lips black. What could've happened to her?
     characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
     characterInChargeList:
@@ -258,12 +280,12 @@ MonoBehaviour:
     - eventPhase: 0
       eventType: 0
       backgroundSprite: {fileID: 21300000, guid: b801f5e77c149444882d00ad530316e8, type: 3}
-      audioName: 
+      audioClip: {fileID: 0}
       prefab: {fileID: 0}
     - eventPhase: 0
       eventType: 2
       backgroundSprite: {fileID: 0}
-      audioName: 
+      audioClip: {fileID: 0}
       prefab: {fileID: 3947770590183656656, guid: e5760f76e799d56479354be25148afc1, type: 3}
   dialogueChoiceData: []
   requiredToProceedNextDialogue: 

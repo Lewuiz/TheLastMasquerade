@@ -124,7 +124,7 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
+  alignment: 7
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -785,7 +785,33 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lady_rosalind_happy_0: 4302944329551281828
+      lady_rosalind_happy_1: -937534462182946755
+      lady_rosalind_happy_10: 1367025026107237177
+      lady_rosalind_happy_11: -9182137935357739647
+      lady_rosalind_happy_12: -9180760663710425594
+      lady_rosalind_happy_13: 7933729409341411493
+      lady_rosalind_happy_14: -7131236588883702037
+      lady_rosalind_happy_15: -7973029350798524489
+      lady_rosalind_happy_16: 4707196637045081860
+      lady_rosalind_happy_17: 2633199990406968449
+      lady_rosalind_happy_18: 8469772092109848597
+      lady_rosalind_happy_19: 4822041516866094544
+      lady_rosalind_happy_2: 9172983564920332460
+      lady_rosalind_happy_20: 276069511634716880
+      lady_rosalind_happy_21: 6567459228726174193
+      lady_rosalind_happy_22: -8518127665968414073
+      lady_rosalind_happy_23: -4019834728750087431
+      lady_rosalind_happy_24: 72724076568860112
+      lady_rosalind_happy_25: 7076182627216239918
+      lady_rosalind_happy_3: 6918136976159788229
+      lady_rosalind_happy_4: -4278201361321681621
+      lady_rosalind_happy_5: -7528267839435067331
+      lady_rosalind_happy_6: 1326250731503994153
+      lady_rosalind_happy_7: -2094698364922606131
+      lady_rosalind_happy_8: -1647882475067142278
+      lady_rosalind_happy_9: -3091099816827122187
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

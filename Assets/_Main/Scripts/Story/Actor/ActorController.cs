@@ -97,8 +97,11 @@ namespace Main
                 else if (characterInCharge.inChargeState == CharacterInChargeState.Show)
                 {
                     if (IsActorOnDialogue(characterInCharge.characterData.characterId))
+                    {
+                        var actor = GetActorOnDialogue(characterInCharge.characterData.characterId);
+                        actor.UpdateCharacterExpression(characterInCharge);   
                         continue;
-
+                    }
                     Actor availableActor = GetAvailableActor();
                     if (availableActor == null)
                     {

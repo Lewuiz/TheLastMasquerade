@@ -33,6 +33,12 @@ namespace Main
             var characterData = characterInCharge.characterData;
             CharacterData = characterData;
 
+            UpdateCharacterExpression(characterInCharge);
+        }
+
+        public void UpdateCharacterExpression(CharacterInCharge characterInCharge)
+        {
+            var characterData = characterInCharge.characterData;
             var characterState = characterData.characterSpriteList.Find(data => data.expression == characterInCharge.expression);
             if (characterState == null)
             {

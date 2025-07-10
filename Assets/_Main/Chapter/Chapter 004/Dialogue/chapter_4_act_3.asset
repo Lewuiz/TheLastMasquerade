@@ -30,7 +30,7 @@ MonoBehaviour:
     - eventPhase: 0
       eventType: 0
       backgroundSprite: {fileID: 21300000, guid: 1294471228a55214bbbf00a558aacfe0, type: 3}
-      audioName: 
+      audioClip: {fileID: 0}
       prefab: {fileID: 0}
   - text: (It must be here somewhere)
     characterData: {fileID: 0}
@@ -43,7 +43,7 @@ MonoBehaviour:
     - eventPhase: 0
       eventType: 0
       backgroundSprite: {fileID: 21300000, guid: f32b07bdb67b2e54f88220772e1260e8, type: 3}
-      audioName: 
+      audioClip: {fileID: 0}
       prefab: {fileID: 0}
   - text: (A faint glimmer from between books catches his eye-- a folded parchment
       with a torn edge.)
@@ -57,7 +57,7 @@ MonoBehaviour:
     - eventPhase: 0
       eventType: 2
       backgroundSprite: {fileID: 0}
-      audioName: 
+      audioClip: {fileID: 0}
       prefab: {fileID: 585608289238014703, guid: b046e0f2d8e97b94d90c779d4946d30a, type: 3}
   - text: According to the guest list, Lady Rosalind wore the silver mask, and Sir
       Fairfax wore the golden one. I need to ask them for more details...

@@ -1,3 +1,4 @@
+using Papae.UnitySDK.Managers;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -39,7 +40,7 @@ namespace Main
                 }
                 else if (chapterDialogueEvent.eventType == ChapterDialogueEventType.Audio)
                 {
-
+                    AudioManager.Instance.PlayOneShot(chapterDialogueEvent.audioClip);
                 }
                 else if (chapterDialogueEvent.eventType == ChapterDialogueEventType.Item)
                 {

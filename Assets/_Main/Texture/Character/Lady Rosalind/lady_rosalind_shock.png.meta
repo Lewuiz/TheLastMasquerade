@@ -124,7 +124,7 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
+  alignment: 7
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -785,7 +785,33 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lady_rosalind_shock_0: -1023736570043250061
+      lady_rosalind_shock_1: -5573445238671137474
+      lady_rosalind_shock_10: -8394427843002186073
+      lady_rosalind_shock_11: -7149318504196738427
+      lady_rosalind_shock_12: -3218565411619615816
+      lady_rosalind_shock_13: -258995389112061579
+      lady_rosalind_shock_14: -6298188251618912371
+      lady_rosalind_shock_15: -6536057843079196220
+      lady_rosalind_shock_16: 55178204855386864
+      lady_rosalind_shock_17: 5913512423805018328
+      lady_rosalind_shock_18: 2476448267363935211
+      lady_rosalind_shock_19: -4232198376162965780
+      lady_rosalind_shock_2: 6155429917717198880
+      lady_rosalind_shock_20: -4186291952271951455
+      lady_rosalind_shock_21: 6134293221349814677
+      lady_rosalind_shock_22: 2244100061947804388
+      lady_rosalind_shock_23: -2833075352718791324
+      lady_rosalind_shock_24: -8891974776029777052
+      lady_rosalind_shock_25: -5709715019980279759
+      lady_rosalind_shock_3: -8235218322499015716
+      lady_rosalind_shock_4: -228602640410767005
+      lady_rosalind_shock_5: -6115040147461898155
+      lady_rosalind_shock_6: -8084582784083319266
+      lady_rosalind_shock_7: -7009450565746095075
+      lady_rosalind_shock_8: 3478096122628114915
+      lady_rosalind_shock_9: 5441051871176866715
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
