@@ -125,7 +125,6 @@ namespace Main
             for (int i = 0; i < actorList.Count; i++)
             {
                 Actor actor = actorList[i];
-
                 if (actor.CharacterData == null || characterDialogue.characterData == null)
                 {
                     actor.HideConversation();

@@ -1,3 +1,4 @@
+using Papae.UnitySDK.Managers;
 using UnityEngine;
 
 namespace Main
@@ -19,6 +20,9 @@ namespace Main
 
         protected override void OnStartCompleted()
         {
+            AudioClip audioClip = Resources.Load<AudioClip>("Audio/bgm_story");
+            AudioManager.Instance.PlayBGM(audioClip, MusicTransition.CrossFade);
+
             loadingOverlay = Overlay.Instance.LoadingOverlay;
             loadingOverlay.InitialLoading();
 

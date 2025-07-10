@@ -15,5 +15,5 @@ MonoBehaviour:
   characterId: Edmund
   characterName: Edmund
   characterSpriteList:
-  - sprite: {fileID: 21300000, guid: 990429f1987af5b47be72426bdf0cb9e, type: 3}
+  - sprite: {fileID: 21300000, guid: a0c13e901b6fb294eba8c2206cb7e8ba, type: 3}
     expression: 0

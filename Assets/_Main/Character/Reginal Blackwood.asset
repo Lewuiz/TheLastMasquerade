@@ -15,5 +15,11 @@ MonoBehaviour:
   characterId: Blackwood
   characterName: Reginal Blackwood
   characterSpriteList:
-  - sprite: {fileID: 21300000, guid: a490cd6edf480c04781409cb52619d92, type: 3}
+  - sprite: {fileID: 21300000, guid: c4843724a85bb704bb320463e5af31d8, type: 3}
     expression: 0
+  - sprite: {fileID: 21300000, guid: 1fcb6f2bc0e9ea04eb5b454e8c0b2966, type: 3}
+    expression: 2
+  - sprite: {fileID: 21300000, guid: c9011f7ee4b51b145a498154294db6d0, type: 3}
+    expression: 5
+  - sprite: {fileID: 21300000, guid: 5a9ae57d19d8a3e46a8242c5658c6aab, type: 3}
+    expression: 4

@@ -130,7 +130,7 @@ namespace Main
             while (data.actorController.IsAnimating)
                 yield return null;
 
-            string dialogueTitle = characterDialogue.characterData != null ? characterDialogue.characterData.name : "";
+            string dialogueTitle = characterDialogue.characterData != null ? characterDialogue.characterData.name : "Narrator";
             data.dialoguePanel.UpdateDialoguePanel(characterDialogue.text, dialogueTitle);
             data.storyEventHandler.ExecuteEvents(characterDialogue.chapterDialogueEventList, ChapterDialogueEventPhase.End);
             data.dialoguePanel.SetCanClick(true);

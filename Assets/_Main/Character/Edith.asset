@@ -15,5 +15,5 @@ MonoBehaviour:
   characterId: Edith
   characterName: Edith
   characterSpriteList:
-  - sprite: {fileID: 21300000, guid: 990429f1987af5b47be72426bdf0cb9e, type: 3}
+  - sprite: {fileID: 21300000, guid: edd88334f6b08f1488d98afae860fd65, type: 3}
     expression: 0

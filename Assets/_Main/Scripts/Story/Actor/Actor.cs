@@ -32,7 +32,16 @@ namespace Main
 
             var characterData = characterInCharge.characterData;
             CharacterData = characterData;
-            actorSR.sprite = characterData.characterSpriteList[0].sprite;
+
+            var characterState = characterData.characterSpriteList.Find(data => data.expression == characterInCharge.expression);
+            if (characterState == null)
+            {
+                actorSR.sprite = characterData.characterSpriteList[0].sprite;
+            }
+            else
+            {
+                actorSR.sprite = characterState.sprite;
+            }
         }
 
         public void SetLocalPosition(Vector3 position)

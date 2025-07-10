@@ -1,3 +1,4 @@
+using Papae.UnitySDK.Managers;
 using UnityEngine;
 
 namespace Main
@@ -11,6 +12,9 @@ namespace Main
             Overlay.Instance.LoadingOverlay.HideOvelay(.5f, 1f);
 
             chapterSelection.Init(GoToStoryScene);
+
+            AudioClip audioClip = Resources.Load<AudioClip>("Audio/bgm_chapter_selection");
+            AudioManager.Instance.PlayBGM(audioClip, MusicTransition.CrossFade);
         }
 
         protected override void UpdateWindowCanvasCamera()

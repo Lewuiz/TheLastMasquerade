@@ -15,5 +15,5 @@ MonoBehaviour:
   characterId: Perry
   characterName: Perry
   characterSpriteList:
-  - sprite: {fileID: 21300000, guid: 990429f1987af5b47be72426bdf0cb9e, type: 3}
+  - sprite: {fileID: 21300000, guid: 29c39aa02c79f414fadbc8e59cb11699, type: 3}
     expression: 0

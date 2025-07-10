@@ -1,6 +1,7 @@
 using Main.Singleton;
 using System.Collections;
 using UnityEngine;
+using Papae.UnitySDK.Managers;
 
 namespace Main
 {
@@ -22,14 +23,22 @@ namespace Main
             yield return null;
             // Initialize in order of priority
             InitializedSaveData();
+            InitializedOverlay();
+            InitializedAudioManager();
             InitializedStoryManager();
             IntializedInventoryManager();
-
-            InitializedOverlay();
             InitializeStorySceneData();
 
             hasInitialized = true;
             Debug.Log($"[{nameof(GameCore)}] has been initialized successfully");
+        }
+
+        private void InitializedAudioManager()
+        {
+            GameObject audioGO = new GameObject();
+            audioGO.AddComponent<AudioManager>();
+            audioGO.name = "Audio Manager";
+            DontDestroyOnLoad(audioGO);
         }
 
         private void InitializedSaveData()
