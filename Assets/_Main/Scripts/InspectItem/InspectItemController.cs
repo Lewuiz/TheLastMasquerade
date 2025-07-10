@@ -93,8 +93,7 @@ namespace Main
                     {
                         StartCoroutine(PlayDialogueCor(itemInspection));
                     }
-
-            };
+                };
                 WindowController.Instance.Show(nameof(WCollectItem), collectItemWindowData);
             }
             else if(itemInspection.InspectionType == ItemInspectionShowingType.Display)
