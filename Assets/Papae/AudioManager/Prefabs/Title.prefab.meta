@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2cccbd0f88dfa2c4eb1c6d907b3dc063
+timeCreated: 1483836684
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 70172
+  packageName: Papae - AudioManager
+  packageVersion: 1.3.0
+  assetPath: Assets/Papae/AudioManager/Prefabs/Title.prefab
+  uploadId: 195537

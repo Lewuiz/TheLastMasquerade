@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 64dd55613ee9fe045baa264ad25cd855
+timeCreated: 1471220479
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 70172
+  packageName: Papae - AudioManager
+  packageVersion: 1.3.0
+  assetPath: Assets/Papae/AudioManager/Scenes/1. Demo Scene.unity
+  uploadId: 195537

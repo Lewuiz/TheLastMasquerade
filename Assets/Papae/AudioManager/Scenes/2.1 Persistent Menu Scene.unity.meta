@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 324de5753f122eb43ba3e5b0f734727d
+timeCreated: 1470423996
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 70172
+  packageName: Papae - AudioManager
+  packageVersion: 1.3.0
+  assetPath: Assets/Papae/AudioManager/Scenes/2.1 Persistent Menu Scene.unity
+  uploadId: 195537

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ffa13633ae1193f4faef342ac60209bb
+timeCreated: 1470332029
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 70172
+  packageName: Papae - AudioManager
+  packageVersion: 1.3.0
+  assetPath: Assets/Papae/AudioManager/Scenes/2.2 Persistent Game Scene.unity
+  uploadId: 195537

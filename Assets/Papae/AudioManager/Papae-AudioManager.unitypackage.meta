@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c809b4b551d68eb438a0d3f4ae47618e
+timeCreated: 1502679762
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 70172
+  packageName: Papae - AudioManager
+  packageVersion: 1.3.0
+  assetPath: Assets/Papae/AudioManager/Papae-AudioManager.unitypackage
+  uploadId: 195537

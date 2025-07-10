@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7ed1e1e073bb7b845a85054d9ae76f80
+timeCreated: 1483834009
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 70172
+  packageName: Papae - AudioManager
+  packageVersion: 1.3.0
+  assetPath: Assets/Papae/AudioManager/Animation/toTransparent.anim
+  uploadId: 195537
