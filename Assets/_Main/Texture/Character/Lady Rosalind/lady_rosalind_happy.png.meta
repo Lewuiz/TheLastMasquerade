@@ -1,0 +1,819 @@
+fileFormatVersion: 2
+guid: b197c848814824546a23ddfa8eb6c741
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4302944329551281828
+    second: lady_rosalind_happy_0
+  - first:
+      213: -937534462182946755
+    second: lady_rosalind_happy_1
+  - first:
+      213: 9172983564920332460
+    second: lady_rosalind_happy_2
+  - first:
+      213: 6918136976159788229
+    second: lady_rosalind_happy_3
+  - first:
+      213: -4278201361321681621
+    second: lady_rosalind_happy_4
+  - first:
+      213: -7528267839435067331
+    second: lady_rosalind_happy_5
+  - first:
+      213: 1326250731503994153
+    second: lady_rosalind_happy_6
+  - first:
+      213: -2094698364922606131
+    second: lady_rosalind_happy_7
+  - first:
+      213: -1647882475067142278
+    second: lady_rosalind_happy_8
+  - first:
+      213: -3091099816827122187
+    second: lady_rosalind_happy_9
+  - first:
+      213: 1367025026107237177
+    second: lady_rosalind_happy_10
+  - first:
+      213: -9182137935357739647
+    second: lady_rosalind_happy_11
+  - first:
+      213: -9180760663710425594
+    second: lady_rosalind_happy_12
+  - first:
+      213: 7933729409341411493
+    second: lady_rosalind_happy_13
+  - first:
+      213: -7131236588883702037
+    second: lady_rosalind_happy_14
+  - first:
+      213: -7973029350798524489
+    second: lady_rosalind_happy_15
+  - first:
+      213: 4707196637045081860
+    second: lady_rosalind_happy_16
+  - first:
+      213: 2633199990406968449
+    second: lady_rosalind_happy_17
+  - first:
+      213: 8469772092109848597
+    second: lady_rosalind_happy_18
+  - first:
+      213: 4822041516866094544
+    second: lady_rosalind_happy_19
+  - first:
+      213: 276069511634716880
+    second: lady_rosalind_happy_20
+  - first:
+      213: 6567459228726174193
+    second: lady_rosalind_happy_21
+  - first:
+      213: -8518127665968414073
+    second: lady_rosalind_happy_22
+  - first:
+      213: -4019834728750087431
+    second: lady_rosalind_happy_23
+  - first:
+      213: 72724076568860112
+    second: lady_rosalind_happy_24
+  - first:
+      213: 7076182627216239918
+    second: lady_rosalind_happy_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: lady_rosalind_happy_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 587
+        width: 15
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ae7f2bd11127bb30800000000000000
+      internalID: 4302944329551281828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_1
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 701
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3806e8bf553df2f0800000000000000
+      internalID: -937534462182946755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_2
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 0
+        width: 1103
+        height: 1500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca0a295a3fbfc4f70800000000000000
+      internalID: 9172983564920332460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_3
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 661
+        width: 28
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cccf7b0de8220060800000000000000
+      internalID: 6918136976159788229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_4
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 639
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2d14dc5786c0a4c0800000000000000
+      internalID: -4278201361321681621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_5
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 615
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d30b9785948368790800000000000000
+      internalID: -7528267839435067331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_6
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 607
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 925c566730ac76210800000000000000
+      internalID: 1326250731503994153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_7
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 615
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcd423f6fe22ee2e0800000000000000
+      internalID: -2094698364922606131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_8
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 584
+        width: 43
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7f080aae9b8129e0800000000000000
+      internalID: -1647882475067142278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_9
+      rect:
+        serializedVersion: 2
+        x: 1286
+        y: 609
+        width: 19
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fd8ebc08153a15d0800000000000000
+      internalID: -3091099816827122187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_10
+      rect:
+        serializedVersion: 2
+        x: 1313
+        y: 610
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 933e038b406a8f210800000000000000
+      internalID: 1367025026107237177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_11
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 604
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18dfc54623e729080800000000000000
+      internalID: -9182137935357739647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_12
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 548
+        width: 13
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60e19af61d2679080800000000000000
+      internalID: -9180760663710425594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_13
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 573
+        width: 27
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a05dd3fcd44a1e60800000000000000
+      internalID: 7933729409341411493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_14
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 580
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bee8156fa12c80d90800000000000000
+      internalID: -7131236588883702037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_15
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 577
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bff3e16c0c1a5190800000000000000
+      internalID: -7973029350798524489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_16
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 541
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4074cfec662535140800000000000000
+      internalID: 4707196637045081860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_17
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 569
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 184f4c2a0710b8420800000000000000
+      internalID: 2633199990406968449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_18
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 547
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51089bec7dcaa8570800000000000000
+      internalID: 8469772092109848597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_19
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 527
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d54df816355be240800000000000000
+      internalID: 4822041516866094544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_20
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 535
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d88d4612cbc4d300800000000000000
+      internalID: 276069511634716880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_21
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 487
+        width: 40
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f1a5156f5d442b50800000000000000
+      internalID: 6567459228726174193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_22
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 516
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 782868ec40889c980800000000000000
+      internalID: -8518127665968414073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_23
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 506
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f28219bc9da638c0800000000000000
+      internalID: -4019834728750087431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_24
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 493
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d5518e892e520100800000000000000
+      internalID: 72724076568860112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_rosalind_happy_25
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 473
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2da305bb96a33260800000000000000
+      internalID: 7076182627216239918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      lady_rosalind_happy_0: 4302944329551281828
+      lady_rosalind_happy_1: -937534462182946755
+      lady_rosalind_happy_10: 1367025026107237177
+      lady_rosalind_happy_11: -9182137935357739647
+      lady_rosalind_happy_12: -9180760663710425594
+      lady_rosalind_happy_13: 7933729409341411493
+      lady_rosalind_happy_14: -7131236588883702037
+      lady_rosalind_happy_15: -7973029350798524489
+      lady_rosalind_happy_16: 4707196637045081860
+      lady_rosalind_happy_17: 2633199990406968449
+      lady_rosalind_happy_18: 8469772092109848597
+      lady_rosalind_happy_19: 4822041516866094544
+      lady_rosalind_happy_2: 9172983564920332460
+      lady_rosalind_happy_20: 276069511634716880
+      lady_rosalind_happy_21: 6567459228726174193
+      lady_rosalind_happy_22: -8518127665968414073
+      lady_rosalind_happy_23: -4019834728750087431
+      lady_rosalind_happy_24: 72724076568860112
+      lady_rosalind_happy_25: 7076182627216239918
+      lady_rosalind_happy_3: 6918136976159788229
+      lady_rosalind_happy_4: -4278201361321681621
+      lady_rosalind_happy_5: -7528267839435067331
+      lady_rosalind_happy_6: 1326250731503994153
+      lady_rosalind_happy_7: -2094698364922606131
+      lady_rosalind_happy_8: -1647882475067142278
+      lady_rosalind_happy_9: -3091099816827122187
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

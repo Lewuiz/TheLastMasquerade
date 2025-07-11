@@ -1,0 +1,440 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1be49e8c53155294881bc800e9741da5, type: 3}
+  m_Name: chapter_2_act_4
+  m_EditorClassIdentifier: 
+  dialogueId: chapter_2_act_4
+  dialogueList:
+  - text: (Elias enters the manor's dining hall. It was grand, in there lays a large
+      table with many chairs, with some guests seated already.
+    characterData: {fileID: 0}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Good morning, Mr. Wakefield! Please, have a seat while we wait for everyone
+      else to get ready.
+    characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Reginal Blackwood | Show
+      characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
+      inChargeState: 0
+      expression: 4
+    chapterDialogueEventList:
+    - eventPhase: 0
+      eventType: 0
+      backgroundSprite: {fileID: 21300000, guid: 81a4217b926cf0b40805e22ae6813b47, type: 3}
+      audioClip: {fileID: 0}
+      prefab: {fileID: 0}
+  - text: Yes, my lord.
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 10
+    - name: Reginal Blackwood | Show
+      characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: (Elias takes a seat next to Lord Fairfax)
+    characterData: {fileID: 0}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Reginal Blackwood | Hide
+      characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
+      inChargeState: 1
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Good day, Detective. How has your morning been?
+    characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Henry Fairfax | Show
+      characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: I'm fine, thank you.
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Henry Fairfax | Show
+      characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: (As chatter erupts in the dining hall, more guests eventually arrive. The
+      woman in red at the ball the night before, took a seat across from Elias.)
+    characterData: {fileID: 0}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Henry Fairfax | Show
+      characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Morning, gentlemen.
+    characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Henry Fairfax | Hide
+      characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
+      inChargeState: 1
+      expression: 0
+    - name: Lady Isabella | Show
+      characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Reginal Blackwood | Show
+      characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Morning to you too, Lady Isabella
+    characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Henry Fairfax | Show
+      characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Lady Isabella | Show
+      characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Reginal Blackwood | Show
+      characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
+      inChargeState: 0
+      expression: 4
+    chapterDialogueEventList: []
+  - text: (Not long after, Lady Rosalind arrived, looking rushed and seated next
+      to Blackwood)
+    characterData: {fileID: 0}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Henry Fairfax | Show
+      characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Lady Isabella | Show
+      characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Reginal Blackwood | Show
+      characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: I'm sorry I'm late, everyone. I thought I lost my shoe, and it turns out
+      the maid found it under the bed, haha. Thank you for your help earlier, Edith.
+    characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Henry Fairfax | Show
+      characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Lady Isabella | Show
+      characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 4
+    chapterDialogueEventList: []
+  - text: My pleasure, my lady
+    characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Henry Fairfax | Show
+      characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Lady Isabella | Show
+      characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edith | Show
+      characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Reginal Blackwood | Show
+      characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Hmm, Eleanor isn't here yet. It's strange of her to not be on time. Edith,
+      can you check on her?
+    characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Henry Fairfax | Show
+      characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Lady Isabella | Show
+      characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edith | Show
+      characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Reginal Blackwood | Show
+      characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Yes, my lord. I shall go to her room.
+    characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Henry Fairfax | Show
+      characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Lady Isabella | Show
+      characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edith | Show
+      characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Reginal Blackwood | Show
+      characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: (Edith then leaves the dining hall, while Perry and Henshaw serve each
+      guest their breakfast platters)
+    characterData: {fileID: 0}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Henry Fairfax | Show
+      characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Lady Isabella | Show
+      characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edith | Show
+      characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: While we wait for Eleanor, please enjoy the food, everyone.
+    characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Henry Fairfax | Show
+      characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Lady Isabella | Show
+      characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edith | Show
+      characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Reginal Blackwood | Show
+      characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
+      inChargeState: 0
+      expression: 4
+    chapterDialogueEventList: []
+  - text: (Not long after, Edith comes back rushing, looking pale)
+    characterData: {fileID: 0}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Henry Fairfax | Show
+      characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Lady Isabella | Show
+      characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edith | Show
+      characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Reginal Blackwood | Show
+      characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: My lord!
+    characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Henry Fairfax | Show
+      characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Lady Isabella | Show
+      characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edith | Show
+      characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: What's the matter, Edith?
+    characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Henry Fairfax | Show
+      characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Lady Isabella | Show
+      characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edith | Show
+      characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Reginal Blackwood | Show
+      characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
+      inChargeState: 0
+      expression: 7
+    chapterDialogueEventList: []
+  - text: It's Lady Eleanor... she's dead, my Lord...
+    characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Henry Fairfax | Show
+      characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Lady Isabella | Show
+      characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Edith | Show
+      characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}
+      inChargeState: 0
+      expression: 7
+    - name: Reginal Blackwood | Show
+      characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList:
+    - eventPhase: 0
+      eventType: 1
+      backgroundSprite: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 50773cefc13ae664db3b15a0384eaeea, type: 3}
+      prefab: {fileID: 0}
+  dialogueChoiceData: []
+  requiredToProceedNextDialogue: 
+  nextDialogueId: end

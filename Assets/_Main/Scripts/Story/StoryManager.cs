@@ -1,4 +1,3 @@
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,8 +5,9 @@ namespace Main
 {
     public class StoryManager : MonoBehaviour
     {
-        [SerializeField] private List<TextAsset> dialogueDataList = new List<TextAsset>();
-        [SerializeField] private List<ChapterSelectionData> chapterSelectionDataList = new List<ChapterSelectionData>();
+        [SerializeField] private ChapterDatabase chapterDatabase = default;
+
+        public ChapterDatabase ChapterDatabase => chapterDatabase;
 
         private SaveManager saveManager = default;
         private PlayerData.StoryProgress storyProgress = default;
@@ -15,60 +15,58 @@ namespace Main
         public string CurrentDialogueId => storyProgress.dialogue;
         public int CurrentChapter => storyProgress.chapter;
 
-        private List<StoryData> storyDataList = new List<StoryData>();
-        public List<StoryData> StoryDataList => storyDataList;
-
         public void Init()
         {
             saveManager = GameCore.Instance.SaveManager;
             storyProgress = saveManager.Get<PlayerData>(PlayerData.STORY_PROGRESS).ToObject<PlayerData.StoryProgress>();
 
-            for (int i = 0; i < dialogueDataList.Count; i++)
+            CheckDialogueSaveData();
+        }
+
+        private void CheckDialogueSaveData()
+        {
+            bool isNewPlayer = string.IsNullOrWhiteSpace(storyProgress.dialogue) || string.IsNullOrEmpty(storyProgress.dialogue);
+            if (!isNewPlayer)
+                return;
+
+            storyProgress.dialogue = GetChapterData(0).dialogueList[0].dialogueId;
+            Save();
+        }
+
+        public ChapterDialogue GetDialogue(string dialogueId)
+        {
+            for(int i = 0; i < chapterDatabase.chapters.Count; i++)
             {
-                List<DialogueData> dialogueDataList = JsonConvert.DeserializeObject<List<DialogueData>>(this.dialogueDataList[i].text);
-                StoryData storyData = new StoryData()
-                {
-                    chapter = i,
-                    dialogueDataList = dialogueDataList
-                };
-                storyDataList.Add(storyData);
+                ChapterDialogue chapterData = chapterDatabase.chapters[i].dialogueList.Find(dialogue => dialogue.dialogueId == dialogueId);
+                if (chapterData != null)
+                    return chapterData;
             }
+            return null;
         }
 
-        public ChapterSelectionData GetChapterSelectionData(int chapter)
+        public ChapterDialogue GetDialogue(ChapterData chapterData, string dialogueId)
         {
-            return chapterSelectionDataList.Find(selectionData => selectionData.chapter == chapter);
+            ChapterDialogue chapterDialogue = chapterData.dialogueList.Find(dialogue => dialogue.dialogueId == dialogueId);
+            return chapterDialogue;
         }
 
-        public StoryData GetStoryData(string dialogueId)
+        public ChapterData GetChapterData(int chapter)
         {
-            for(int i = 0; i < storyDataList.Count; i++)
-            {
-                StoryData storyData = storyDataList[i];
-                DialogueData dialogueData = storyData.dialogueDataList.Find(dialogueData => dialogueData.dialogueId == dialogueId);
-                if (dialogueData != null)
-                    return storyData;
-            }
-
-            throw new System.Exception($"[{nameof(StoryManager)}] did not find such id: {dialogueId}");
+            if (chapter >= chapterDatabase.chapters.Count)
+                return null;
+            return chapterDatabase.chapters[chapter];
         }
 
-        public StoryData GetChapterData(int chapter)
+        public void UpdateChapter(int chapter)
         {
-            return storyDataList.Find(storyData => storyData.chapter == chapter);
-        }
-
-        public void UpdateStoryProgress(string progressId, int chapter)
-        {
-            storyProgress.dialogue = progressId;
             storyProgress.chapter = chapter;
-
             Save();
         }
 
         public void UpdateDialogueId(string progressId)
         {
             storyProgress.dialogue = progressId;
+            Save();
         }
 
         public void CompleteMiniGame(string miniGameId)

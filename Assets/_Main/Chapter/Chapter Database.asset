@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a665e1925f1d6d45b241b38beedd0f1, type: 3}
+  m_Name: Chapter Database
+  m_EditorClassIdentifier: 
+  chapters:
+  - chapterId: chapter_1
+    dialogueList:
+    - {fileID: 11400000, guid: c431db8c247cb36438df765e0c2c5cc6, type: 2}
+    - {fileID: 11400000, guid: 8e29fb5d57ba59d4091c1310a5a2f7b3, type: 2}
+    thumbnail: {fileID: 21300000, guid: b58078e1ce4af8246a791af7a1fd5c9e, type: 3}
+  - chapterId: chapter_2
+    dialogueList:
+    - {fileID: 11400000, guid: dbbb868dd134afa498e14a38756f8cdc, type: 2}
+    - {fileID: 11400000, guid: 03b854e06d27b364ba1f5a44c22b02c9, type: 2}
+    - {fileID: 11400000, guid: 71c106030f8671a459bd0a63f9a42c4f, type: 2}
+    - {fileID: 11400000, guid: fa69e6c534291a848b22ab7de5abadf9, type: 2}
+    thumbnail: {fileID: 21300000, guid: 0e5eb4fea064fe846b2772f7424b1759, type: 3}
+  - chapterId: chapter_3
+    dialogueList:
+    - {fileID: 11400000, guid: f50818a43a86f3c4d9429cc09f663b6e, type: 2}
+    - {fileID: 11400000, guid: ed68e4721498d004a8698367dc953858, type: 2}
+    - {fileID: 11400000, guid: ddc15014249cb42449bd6f05580239be, type: 2}
+    - {fileID: 11400000, guid: 08b23c4c2f5a2734e9d9049859f85727, type: 2}
+    - {fileID: 11400000, guid: 68581b97ebc1d6844b1054d1b3a05ea7, type: 2}
+    - {fileID: 11400000, guid: 8e4c2ce43f650b7488f096f7a467c1aa, type: 2}
+    thumbnail: {fileID: 21300000, guid: 1294471228a55214bbbf00a558aacfe0, type: 3}
+  - chapterId: chapter_4
+    dialogueList:
+    - {fileID: 11400000, guid: 985fcf4a28b914b4ab6f38e7d9f9e019, type: 2}
+    - {fileID: 11400000, guid: d6a6b00b463f99c45bf2775e1e330d81, type: 2}
+    - {fileID: 11400000, guid: eff7b7359c3feba418618885c1375862, type: 2}
+    thumbnail: {fileID: 21300000, guid: d4f22e9e2a0cb034898cb2fa974f7cf2, type: 3}
+  - chapterId: chapter_5
+    dialogueList:
+    - {fileID: 11400000, guid: d96c5551db103d44c865ba06d2826f61, type: 2}
+    - {fileID: 11400000, guid: 4b89409559837b74fa7da6eb51cf50b2, type: 2}
+    - {fileID: 11400000, guid: 6287214d774ec5e4888be84c15052588, type: 2}
+    thumbnail: {fileID: 21300000, guid: 3b8bf95093cb59c43a81276988f05b88, type: 3}
+  - chapterId: chapter_6
+    dialogueList:
+    - {fileID: 11400000, guid: 96cf657bda339e245a6f4331c5c09beb, type: 2}
+    - {fileID: 11400000, guid: cb300876e89f8b0449962320bb3f174f, type: 2}
+    - {fileID: 11400000, guid: 41b57eed9cb4dbe4ab19d46d12504cab, type: 2}
+    - {fileID: 11400000, guid: 755e113434c343e42afbe3aee57a6c9a, type: 2}
+    - {fileID: 11400000, guid: 30a186089ecab0e4581a277cd7aceed5, type: 2}
+    thumbnail: {fileID: 21300000, guid: 543bac9735ca49f448f980f810da38a6, type: 3}

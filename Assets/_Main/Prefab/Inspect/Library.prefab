@@ -44,8 +44,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3817912595359854620}
   - component: {fileID: 5399124256913601722}
-  - component: {fileID: 904390985391694418}
   - component: {fileID: 1786360932699613194}
+  - component: {fileID: 25626736800524577}
   m_Layer: 0
   m_Name: Bussiness Proposal
   m_TagString: Untagged
@@ -109,9 +109,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 30
+  m_SortingLayerID: 1222348955
+  m_SortingLayer: 1
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 3c0c69a6143592240adc51201f29eb46, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -123,26 +123,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &904390985391694418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 938814226728775920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36ba0223571852a478d76be86fc647bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inspectItemDataList:
-  - isSaveToSaveData: 1
-    inspectItemId: business_proposal
-    sprite: {fileID: 21300000, guid: 3c0c69a6143592240adc51201f29eb46, type: 3}
-  <PreInspectItemInformation>k__BackingField: 
-  requiredItems: 
-  <PostInspectItemInformation>k__BackingField: A business proposal? It seems like
-    Lady Eleanor is working on a new business venture. Interesting.
 --- !u!61 &1786360932699613194
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -189,6 +169,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 9.65, y: 11.07}
   m_EdgeRadius: 0
+--- !u!114 &25626736800524577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938814226728775920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e3e6759937f146850e67000869174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inspectionType: 1
+  inventoryItem: {fileID: 11400000, guid: d0a1b664e8b7bd1438ca4f59e46d6698, type: 2}
+  keyItem: {fileID: 0}
+  keyItemUnlockEvent: save:business_proposal
 --- !u!1 &2576792767604329085
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9204090531304101340}
   - component: {fileID: 1280625609310522259}
-  - component: {fileID: 4709497787693078155}
+  - component: {fileID: 5277203964651695940}
   m_Layer: 0
   m_Name: Book
   m_TagString: Untagged
@@ -268,7 +264,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.63, y: 3.1}
   m_EdgeRadius: 0
---- !u!114 &4709497787693078155
+--- !u!114 &5277203964651695940
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -277,20 +273,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2576792767604329085}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36ba0223571852a478d76be86fc647bd, type: 3}
+  m_Script: {fileID: 11500000, guid: ed2e3e6759937f146850e67000869174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inspectItemDataList:
-  - isSaveToSaveData: 1
-    inspectItemId: key
-    sprite: {fileID: 21300000, guid: 6dd9fd48ec683d74ba3c9de196a79402, type: 3}
-  - isSaveToSaveData: 1
-    inspectItemId: name_card
-    sprite: {fileID: 21300000, guid: b62e0dad1a8d09841b7a3e473da10325, type: 3}
-  <PreInspectItemInformation>k__BackingField: 
-  requiredItems: 
-  <PostInspectItemInformation>k__BackingField: A key? And what is this..., a name
-    card? Maybe I can try to call the number
+  inspectionType: 1
+  inventoryItem: {fileID: 11400000, guid: 901f915e4bf328e41b44a3150c47a325, type: 2}
+  keyItem: {fileID: 0}
+  keyItemUnlockEvent: save:key,number
 --- !u!1 &2742017011386428304
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +291,7 @@ GameObject:
   - component: {fileID: 6929807414431222103}
   - component: {fileID: 8755645109507219677}
   - component: {fileID: 5764083125384203145}
-  - component: {fileID: 4852160928951586967}
+  - component: {fileID: 1737820117068197011}
   m_Layer: 0
   m_Name: box
   m_TagString: Untagged
@@ -366,9 +355,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 20
+  m_SortingLayerID: 1222348955
+  m_SortingLayer: 1
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 9179707e40f592b408335d2b8114662d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -426,7 +415,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 8.19, y: 6.19}
   m_EdgeRadius: 0
---- !u!114 &4852160928951586967
+--- !u!114 &1737820117068197011
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -435,22 +424,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2742017011386428304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36ba0223571852a478d76be86fc647bd, type: 3}
+  m_Script: {fileID: 11500000, guid: ed2e3e6759937f146850e67000869174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inspectItemDataList:
-  - isSaveToSaveData: 1
-    inspectItemId: threat_letter_1
-    sprite: {fileID: 21300000, guid: 0e6832dc06498284d8150a5c461c07e2, type: 3}
-  - isSaveToSaveData: 1
-    inspectItemId: threat_letter_2
-    sprite: {fileID: 21300000, guid: 997d359a6ca2e6c49a5ce39a047a47fc, type: 3}
-  - isSaveToSaveData: 1
-    inspectItemId: threat_letter_3
-    sprite: {fileID: 21300000, guid: e0d580e504862824796f1310a550f3fe, type: 3}
-  <PreInspectItemInformation>k__BackingField: What box is this? It's locked. I wonder
-    if the key is around here somewhere
-  requiredItems: key
-  <PostInspectItemInformation>k__BackingField: Are all these threatening letters
-    addressed to Lady Eleanor? I need to find the murderer as soon as possible. The
-    suspect must have had such a strong motive.
+  inspectionType: 1
+  inventoryItem: {fileID: 11400000, guid: 6e51bfaaa3bcdcd44bc26d67f5499662, type: 2}
+  keyItem: {fileID: 11400000, guid: ae2a3e6f73bc49e4eb45e23655f43258, type: 2}
+  keyItemUnlockEvent: save:death_threat_1,death_threat_2,death_threat_3

@@ -15,4 +15,13 @@ MonoBehaviour:
   characterId: Isabella
   characterName: Lady Isabella
   characterSpriteList:
-  - {fileID: 21300000, guid: 42ad31e9e7af83040b2e055cf0829cc5, type: 3}
+  - sprite: {fileID: 21300000, guid: 6a88eb9a421df7c449527a10f4c54182, type: 3}
+    expression: 0
+  - sprite: {fileID: 21300000, guid: 4f0a81e1adc0a2444ad6233764b0d3e2, type: 3}
+    expression: 1
+  - sprite: {fileID: 21300000, guid: f09aa4bbf8566c04b8b8dbdc57c551ff, type: 3}
+    expression: 4
+  - sprite: {fileID: 21300000, guid: 0b57cd76f24c10c4087dd7716294b893, type: 3}
+    expression: 5
+  - sprite: {fileID: 21300000, guid: 426ad86899e0a7b44883e75c068de556, type: 3}
+    expression: 7

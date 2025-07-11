@@ -14,8 +14,6 @@ namespace Main
         
         public CharacterData CharacterData { get; private set; } = default;
         public bool IsPlayingAnimation { get; private set; } = false;
-        public bool IsInDialogue { get; private set; } = false;
-
         private string ActorAnimationID => gameObject.GetInstanceID().ToString();
 
         public void Init()
@@ -28,12 +26,33 @@ namespace Main
             SetDefault();
         }
 
-        public void SetCharacterData(CharacterData characterData)
+        public void UpdateCharacter(CharacterInCharge characterInCharge)
         {
             SetDefault();
 
+            var characterData = characterInCharge.characterData;
             CharacterData = characterData;
-            actorSR.sprite = characterData.characterSpriteList[0];
+
+            UpdateCharacterExpression(characterInCharge);
+        }
+
+        public void UpdateCharacterExpression(CharacterInCharge characterInCharge)
+        {
+            var characterData = characterInCharge.characterData;
+            var characterState = characterData.characterSpriteList.Find(data => data.expression == characterInCharge.expression);
+            if (characterState == null)
+            {
+                actorSR.sprite = characterData.characterSpriteList[0].sprite;
+            }
+            else
+            {
+                actorSR.sprite = characterState.sprite;
+            }
+        }
+
+        public void SetLocalPosition(Vector3 position)
+        {
+            transform.localPosition = position;
         }
 
         private void SetDefault()
@@ -48,9 +67,6 @@ namespace Main
 
         public void Show()
         {
-            if (IsInDialogue)
-                return;
-
             gameObject.SetActive(true);
             StartCoroutine(ShowCor());
         }
@@ -68,6 +84,16 @@ namespace Main
             StartCoroutine(HideCor());
         }
 
+        public void Fade()
+        {
+            actorSR.DOFade(0f, .2f);
+        }
+
+        public void UnFade()
+        {
+            actorSR.DOFade(1f, .2f);
+        }
+
         public IEnumerator HideCor()
         {
             IsPlayingAnimation = true;
@@ -75,11 +101,14 @@ namespace Main
             yield return actorSR.DOFade(0f, .2f).SetId(ActorAnimationID).WaitForCompletion();
             gameObject.SetActive(false);
             IsPlayingAnimation = false;
-            SetActorInDialogue(false);
+            CharacterData = null;
         }
 
         public void ShowConversation()
         {
+            if (CharacterData == null)
+                return;
+
             gameObject.SetActive(true);
             StartCoroutine(ShowConversationCor());
         }
@@ -96,6 +125,9 @@ namespace Main
 
         public void HideConversation()
         {
+            if (CharacterData == null)
+                return;
+
             gameObject.SetActive(true);
             StartCoroutine(HideConversationCor());
         }
@@ -107,11 +139,6 @@ namespace Main
             yield return actorSR.transform.DOScale(1f, .3f).SetId(ActorAnimationID).WaitForCompletion();
             actorSR.sortingOrder = defaultSortingOrder;
             IsPlayingAnimation = false;
-        }
-
-        public void SetActorInDialogue(bool isInDialogue)
-        {
-            IsInDialogue = isInDialogue;
         }
 
         private void OnDestroy()

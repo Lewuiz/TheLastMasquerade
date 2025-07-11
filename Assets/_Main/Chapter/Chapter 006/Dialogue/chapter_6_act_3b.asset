@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1be49e8c53155294881bc800e9741da5, type: 3}
+  m_Name: chapter_6_act_3b
+  m_EditorClassIdentifier: 
+  dialogueId: chapter_6_act_3b
+  dialogueList:
+  - text: "(I should\u2019ve taken the golf club when I had the chance)"
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Henry Fairfax | Show
+      characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Alistair Henshaw | Show
+      characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList:
+    - eventPhase: 0
+      eventType: 0
+      backgroundSprite: {fileID: 21300000, guid: 9b8656f36d95d364681f3894f00cb3bb, type: 3}
+      audioClip: {fileID: 0}
+      prefab: {fileID: 0}
+  - text: (BANG!)
+    characterData: {fileID: 0}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Henry Fairfax | Show
+      characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Alistair Henshaw | Show
+      characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: (Elias loses conciousness as a hard object hits the side of his head)
+    characterData: {fileID: 0}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Henry Fairfax | Show
+      characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Alistair Henshaw | Show
+      characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  dialogueChoiceData: []
+  requiredToProceedNextDialogue: 
+  nextDialogueId: end_lose

@@ -15,4 +15,17 @@ MonoBehaviour:
   characterId: Elias
   characterName: Elias Wakefield
   characterSpriteList:
-  - {fileID: 21300000, guid: ee5ee80db568e5643a10c27762c979ac, type: 3}
+  - sprite: {fileID: 21300000, guid: 749280b257713e24a98d78089827ff9f, type: 3}
+    expression: 0
+  - sprite: {fileID: 21300000, guid: c204921d5b229244c830570be54568fd, type: 3}
+    expression: 5
+  - sprite: {fileID: 21300000, guid: 9f0fef94fa86e0b44b7739ec5f84384a, type: 3}
+    expression: 7
+  - sprite: {fileID: 21300000, guid: bf1e97c0280d6134786c3f06c81589c6, type: 3}
+    expression: 8
+  - sprite: {fileID: 21300000, guid: a7d1a36939d34a54e9810a54d6ff5fb0, type: 3}
+    expression: 9
+  - sprite: {fileID: 21300000, guid: eabd3834317470e4c9b9eada1d085307, type: 3}
+    expression: 10
+  - sprite: {fileID: 21300000, guid: 84ae8f2169a1c4748bec5f5d153e00ad, type: 3}
+    expression: 3

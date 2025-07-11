@@ -29,6 +29,7 @@ namespace Main
         public DialogueActorControl actorControl;
     }
 
+    [Serializable]
     public class DialogueChoiceData
     {
         public string text;

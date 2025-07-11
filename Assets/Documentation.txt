@@ -1,0 +1,203 @@
+Core System:
+1. Save System
+Save System adalah sistem penyimpanan data pemain yang bersifat lokal, aman, fleksibel, dan mudah digunakan.
+Sistem ini menyimpan data dalam bentuk terenkripsi menggunakan AES-256, dan dapat menangani berbagai jenis data dengan struktur yang terorganisir.
+Sistem ini bisa adaptasi otomatis dengan perubahan struktur data yang diperbarui di kode tanpa membuat data lama error. Data lama otomatis di-update dan dipastikan punya semua property baru yang diperlukan dengan nilai defaultnya.
+Sistem ini terdiri dari beberapa komponen utama:
+    1. AesOperation.cs
+        Melakukan proses enkripsi dan dekripsi string menggunakan algoritma AES-256. Hal ini player akan kesusahan untuk memanipulasi save data
+    2. PlayerData.cs
+        Menentukan struktur data spesifik untuk pemain.
+    3. SaveData.cs
+        Menjadi base class untuk semua jenis struktur data yang akan disimpan.
+    4. SaveDataExtension.cs
+        Mengubah data dari hasil deserialisasi JSON kembali ke bentuk class aslinya
+    5. SaveManager.cs
+        Mengelola semua data penyimpanan selama runtime.
+        Melakukan:
+        - Load data dari file
+        - Menambahkan struktur data yang diperbarui
+        - Get/Set data pada runtime
+        - Simpan perubahan
+    6. SaveSystem.cs
+        Mengatur proses read/write file untuk data game.
+
+2. RootSceneController.cs
+    Sistem ini bertanggung jawab sebagai entry point untuk setiap scene dalam game. RootSceneController bertugas menginisialisasi modul-modul penting (seperti GameCore, WindowController, dll) saat scene dimulai.
+    Sistem ini memisahkan logika awal scene ke dalam dua level:
+    - SceneController → base logic untuk semua scene
+    - RootSceneController → implementasi utama untuk scene-scene utama
+
+3. Window System
+Window System adalah sistem modular untuk mengelola tampilan UI jendela (window) di dalam game. Sistem ini memudahkan proses membuka, menutup, dan mengatur jendela UI secara dinamis, serta menangani animasi transisi dengan DOTween.
+Sistem ini terdiri dari tiga komponen utama:
+    1. WindowController.cs
+        WindowController adalah singleton yang bertugas sebagai manajer utama semua window dalam game. Ia bertanggung jawab untuk membuka, menutup, dan menyimpan referensi window aktif.
+        Fitur:
+        - Menyimpan list prefab window yang bisa diinstansiasi (windows)
+        - Men-track window aktif dalam dictionary (activeWindows)
+    2. WindowBase.cs
+        WindowBase adalah base class abstrak untuk semua UI window yang bisa dibuka/ditutup.
+        Fitur:
+        - Menangani animasi fade-in dan fade-out menggunakan DOTween, serta mendefinisikan lifecycle window
+    3. WindowBaseData.cs
+        Class ini digunakan sebagai data container untuk window yang akan didaftarkan ke WindowController.
+
+4. Overlay System
+System ini bertujuan untuk mengontrol UI yang bertugas untuk menampilkan lapisan visual seperti loading screen, yang menutupi seluruh layar sementara proses lain (misalnya loading scene, fetching data, dll) berlangsung.
+Sistem ini terdiri dari dua komponen utama:
+    1.Overlay.cs
+        sebagai manager dan entry point untuk overlay system
+    2.LoadingOverlay.cs
+        Script ini mengatur tampilan animasi overlay hitam transparan (biasanya saat loading atau transisi), termasuk animasi fade-in dan fade-out menggunakan DOTween.
+
+5. Singleton System
+Singleton System adalah kumpulan base class yang digunakan untuk menerapkan pola singleton di Unity, baik untuk class biasa (non-MonoBehaviour), MonoBehaviour biasa, maupun MonoBehaviour yang persistent (tidak dihancurkan antar scene).
+Dengan menggunakan sistem ini, Anda cukup mewarisi class Singleton<T>, MonoSingleton<T>, atau PersistentMonoSingleton<T>, dan script Anda secara otomatis akan menerapkan design pattern singleton.
+Hal ini mempermudah pengembangan game dengan memberikan cara yang efisien, terstruktur, dan reusable untuk membuat class yang hanya memiliki satu instance dan dapat diakses secara global.
+Contoh penggunaan:
+GameCore : PersistentMonoSingleton<GameCore>
+Jenis-jenis Singleton:
+    1. MonoSingleton.cs
+    Base class untuk membuat singleton MonoBehaviour biasa.
+    Tidak persistent, artinya akan dihancurkan saat scene berganti.
+    2. PersistentMonoSingleton.cs
+    Base class untuk membuat singleton MonoBehaviour yang tidak dihancurkan antar scene.
+    3. Singleton.cs
+    Base class untuk membuat singleton biasa (non-MonoBehaviour).
+
+6. GameCore.cs
+    GameCore adalah inti penting dalam game karena bertanggung jawab untuk menginisialisasi semua sistem penting game saat awal dijalankan. Script ini bertindak sebagai semacam "bootstrapper".
+
+Game Script:
+Managers:
+1. StoryManager.cs
+Sistem narasi mengatur alur cerita, progres dialog, dan interaksi seperti minigame berdasarkan chapter dan dialogue ID. Sistem ini terhubung langsung ke sistem save, dan mendukung branching serta persisten antar sesi bermain.
+Struktur Utama:
+    1. StoryManager.cs
+        Kelas utama yang mengatur:
+        - Progres cerita saat ini
+        - Chapter & Dialogue yang sedang dimainkan
+        - Validasi save data untuk player baru
+        - Integrasi dengan minigame dan save system
+    2. ChapterDatabase.cs
+        ScriptableObject yang menyimpan list dari seluruh ChapterData.
+    3. ChapterData.cs
+        Data dari satu chapter berisi:
+        - ID chapter
+        - List ChapterDialogue
+        - Thumbnail
+    4. ChapterDialogue.cs
+        ScriptableObject utama untuk satu dialog per ID, berisi:
+        – List percakapan (CharacterDialogue)
+        - Branching pilihan
+        – Tujuan dialog jika tidak menggunakan pilihan
+    5. CharacterDialogue.cs
+        Representasi dari satu baris dialog:
+        - Teks
+        - Karakter bicara
+        - Karakter yang muncul (dalam list)
+        - Event yang bisa dipicu (ganti background, main audio, spawn prefab, dll.)
+    6. CharacterData.cs
+        Berisi:
+        - ID karakter
+        - Nama
+        - Sprite dan ekspresinya
+    7. CharacterInCharge.cs
+        Digunakan untuk mengatur karakter mana yang muncul di scene dan dalam kondisi apa yang terdiri dari:
+        - Data karakter
+        - inChargeState (enum, misal Show, Hide)
+        - Ekspresi (jika ditampilkan)
+    8. ChapterDialogueEvent.cs
+        Event yang bisa terjadi selama dialog:
+        -Ganti background
+        -Play audio
+        -Spawn prefab
+    9. DialogueChoiceData.cs
+        Digunakan untuk percabangan cerita. Setiap pilihan memiliki:
+        -Teks pilihan
+        -ID dialog tujuan
+
+2. InventoryManager
+Sistem inventory ini berfungsi untuk menyimpan, mengambil, dan memanage data item yang dimiliki pemain. Terhubung ke sistem save agar progres inventory dapat dipertahankan antar sesi.
+Struktur Utama:
+1.InventoryManager
+    Ini kelas utama yang mengatur data inventory pemain.
+2.InventoryDatabase
+    Ini adalah koleksi semua item yang ada di game, disimpan dalam bentuk ScriptableObject. Jadi, kamu bisa mengatur daftar item ini lewat Unity Editor.
+3. InventoryItem
+    Mewakili satu item di dalam game, berisi ID, nama, deskripsi, gambar, dan teks dialog jika diperlukan.
+
+TitleScene
+1. TitleSceneController.cs
+    komponen ini sebagai title untuk menghubungkan ke scene selanjutnya yaitu ChapterSelectionScene
+
+ChapterSelectionScene
+1. ChapterSelectionSceneController.cs
+    Sebagai controller untuk layar chapter selection.
+2. ChapterSelection.cs
+    Komponen ini buat nampilin daftar chapter yang bisa dipilih di UI.
+3. ChapterSelectionItem.cs
+    Ini adalah gameobject item UI yang merepresentasikan satu chapter.
+
+StoryScene
+1. StorySceneController.cs
+    Sebagai controller pada story yang menghandle dan menghubungkan seluruh component yang ada pada scene itu
+2. StoryRunner.cs
+    Logic dari story yang mengelola chapter, pilihan dialog, transisi antar dialog / chapter.
+3. ActorController.cs
+    Mengatur aktor / karakter yang tampil saat dialog, termasuk posisi aktor, aktor yang di-highlight.
+4. StoryEventHandler.cs
+    Berperan sebagai eksekutor event yang ter-trigger selama dialog meliputi audio, change background, menampilkan prefab
+5. InspectItemController
+    Mengatur interaki pemain dengan item. Apakah sudah meng-klik seluruh item atau tidak, serta mengatur bagian instantiate prefab.
+6. JigsawController
+    Berperan menangani puzzle jigsaw. Controller ini juga yang mengecek apakahj jigsaw sudah siap dimainkan atau tidak, serta meng-snap puzzle dengan toleransi tertentu. 
+7. DialoguePanel.cs
+    Menampilkan panel dialog utama dalam game. Panel ini berisi:
+    - Judul (nama karakter atau narator)
+    - Teks dialog
+    - Kontrol untuk menunjukkan atau menyembunyikan panel secara halus
+8. DialogueChoicePanel.cs
+    Menampilkan daftar pilihan dialog yang bisa dipilih pemain, seperti pertanyaan atau respons dalam percakapan bercabang.
+9. Actor.cs
+    Mewakili karakter dalam scene (visualisasi karakter dengan ekspresi). Bertanggung jawab atas animasi tampil, menyembunyikan, dan mengatur ekspresi. 
+10. JigsawPiece.cs
+    Mengatur perilaku satu keping puzzle (jigsaw). Mendukung drag & drop, koneksi antar keping, dan sistem penyusunan.
+11. ItemInspection.cs
+    Mewakili objek di dalam scene yang bisa diinspeksi atau diinteraksikan oleh pemain, seperti item puzzle yang harus dikumpulkan atau digunakan dengan item kunci tertentu (keyItem).
+12. WTelephone.cs
+    Mini-game berupa telepon putar (rotary dial) di mana pemain harus menekan angka dalam urutan yang benar. Jika berhasil, permainan selesai.
+13. WInventory.cs
+    Menampilkan UI inventory untuk memilih dan menggunakan item yang dimiliki oleh pemain.
+14. InventoryItemView.cs
+    Mewakili satu elemen UI dari sebuah item dalam inventory. Bisa dipilih oleh pemain untuk digunakan sebagai key item.
+
+Utility Script:
+1. BackgroundSizeFitter.cs
+Script ini digunakan untuk menyesuaikan ukuran objek dengan komponen SpriteRenderer agar sesuai dengan ukuran layar (screen).
+Dengan script ini, sprite akan secara otomatis di-scale agar fit ke layar, tanpa perlu menghitung ukuran scale secara manual.
+Hal ini sangat berguna untuk menghindari kesalahan visual (vision error) seperti background yang terpotong atau tidak mengisi layar secara penuh pada berbagai resolusi layar.
+
+Plug-in:
+1. DOTween
+DOTween adalah library tweening yang digunakan untuk membuat animasi secara efisien di Unity.
+Contoh penggunaan: animasi perpindahan posisi, perubahan scale, fade UI, dll.
+
+2.SaintField
+SaintField merupakan ekstensi untuk editor Unity yang berfungsi memperindah dan mempermudah tampilan di Inspector.
+Beberapa fitur utamanya termasuk:
+- Menentukan apakah field bisa direferensikan melalui drag-and-drop
+- Kontrol visibilitas atau editabilitas field
+- Memberikan anotasi/atribut tambahan untuk membantu pengembangan
+
+3.Papae Audio Manager
+Menggunakan sistem Audio Manager dari Papae untuk mengatur dan memainkan audio dalam game.
+Library ini mempermudah manajemen audio seperti BGM, SFX, dan event audio tanpa harus membuat sistem dari nol.
+Fitur:
+- Dukungan Audio Clip pooling
+- Pemanggilan audio melalui script secara terstruktur
+- Volume control dan kategorisasi audio
+
+4.UIEffect
+library ini menyediakan vfx pada UI seperti shimmer, dissolve, dll

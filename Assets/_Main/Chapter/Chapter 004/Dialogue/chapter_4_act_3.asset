@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1be49e8c53155294881bc800e9741da5, type: 3}
+  m_Name: chapter_4_act_3
+  m_EditorClassIdentifier: 
+  dialogueId: chapter_4_act_3
+  dialogueList:
+  - text: (Elias makes his way to the grand library. Dusty volumes and silence surround
+      him as he begins his search.)
+    characterData: {fileID: 0}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    - name: Alistair Henshaw | Hide
+      characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
+      inChargeState: 1
+      expression: 0
+    chapterDialogueEventList:
+    - eventPhase: 0
+      eventType: 0
+      backgroundSprite: {fileID: 21300000, guid: 1294471228a55214bbbf00a558aacfe0, type: 3}
+      audioClip: {fileID: 0}
+      prefab: {fileID: 0}
+  - text: (It must be here somewhere)
+    characterData: {fileID: 0}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList:
+    - eventPhase: 0
+      eventType: 0
+      backgroundSprite: {fileID: 21300000, guid: f32b07bdb67b2e54f88220772e1260e8, type: 3}
+      audioClip: {fileID: 0}
+      prefab: {fileID: 0}
+  - text: (A faint glimmer from between books catches his eye-- a folded parchment
+      with a torn edge.)
+    characterData: {fileID: 0}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 7
+    chapterDialogueEventList:
+    - eventPhase: 0
+      eventType: 2
+      backgroundSprite: {fileID: 0}
+      audioClip: {fileID: 0}
+      prefab: {fileID: 585608289238014703, guid: b046e0f2d8e97b94d90c779d4946d30a, type: 3}
+  - text: According to the guest list, Lady Rosalind wore the silver mask, and Sir
+      Fairfax wore the golden one. I need to ask them for more details...
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: (Elias analyzes the list further)
+    characterData: {fileID: 0}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Ah, I nearly forgot about Lady Isabella. I should stop by her room, she
+      could give me some leads.
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  dialogueChoiceData: []
+  requiredToProceedNextDialogue: 
+  nextDialogueId: end

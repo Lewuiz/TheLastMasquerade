@@ -9,6 +9,7 @@ namespace Main.Scene
         private IEnumerator Start()
         {
             yield return InitializeGameModule();
+            UpdateWindowCanvasCamera();
             OnStartCompleted();
         }
 
@@ -18,6 +19,8 @@ namespace Main.Scene
         {
 
         }
+
+        protected abstract void UpdateWindowCanvasCamera();
 
         protected void LoadScene(SceneID sceneId)
         {
