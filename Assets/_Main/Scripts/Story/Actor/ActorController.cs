@@ -184,7 +184,8 @@ namespace Main
             for (int i = 0; i < actorList.Count; i++)
             {
                 Actor actor = actorList[i];
-                actor.Hide();
+                if(actor.CharacterData != null)
+                    actor.Hide();
             }
         }
     }
