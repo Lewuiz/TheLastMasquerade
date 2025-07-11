@@ -73,7 +73,7 @@ MonoBehaviour:
     - name: Edmund | Show
       characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 4
     chapterDialogueEventList: []
   - text: I'm working on a case, it's regarding Lady Eleanor Blackwood. I found your
       name card on her desk. What do you know about her?
@@ -106,7 +106,7 @@ MonoBehaviour:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 9
     - name: Edmund | Show
       characterData: {fileID: 11400000, guid: e67221a4773e73b4994a51406bc4355a, type: 2}
       inChargeState: 0

@@ -34,7 +34,7 @@ MonoBehaviour:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 9
     chapterDialogueEventList: []
   - text: Excuse me, Edith. Do you know where Sir Fairfax could be...
     characterData: {fileID: 11400000, guid: 2efa27e6aa32bdb489a3a4056c855761, type: 2}

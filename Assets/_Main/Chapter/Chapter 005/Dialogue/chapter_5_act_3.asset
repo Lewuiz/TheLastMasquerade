@@ -44,12 +44,20 @@ MonoBehaviour:
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
       expression: 0
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
+      inChargeState: 0
+      expression: 7
     chapterDialogueEventList: []
   - text: Perfect timing, may I talk to you for a moment?
     characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
     characterInChargeList:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 8
+    - name: Rosalind Capet | Show
+      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
       inChargeState: 0
       expression: 0
     chapterDialogueEventList: []
@@ -125,7 +133,7 @@ MonoBehaviour:
     - name: Rosalind Capet | Show
       characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 7
     chapterDialogueEventList: []
   - text: ... however, she was definitely not in a good mood the night before after
       talking to someone, and I could see anger in her eyes afterwards...
@@ -134,7 +142,7 @@ MonoBehaviour:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 9
     - name: Rosalind Capet | Show
       characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
       inChargeState: 0
@@ -175,7 +183,7 @@ MonoBehaviour:
     - name: Rosalind Capet | Show
       characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 9
     chapterDialogueEventList: []
   - text: What is it, my Lady?
     characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
@@ -228,9 +236,9 @@ MonoBehaviour:
     - name: Rosalind Capet | Show
       characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 7
     chapterDialogueEventList: []
-  - text: '"...",'
+  - text: ...
     characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
     characterInChargeList:
     - name: Elias Wakefield | Show
@@ -240,7 +248,7 @@ MonoBehaviour:
     - name: Rosalind Capet | Show
       characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 9
     chapterDialogueEventList: []
   - text: I did see him talk with Lady Isabella though, even handing her a bouquet
       of roses which made it even stranger!
@@ -253,7 +261,7 @@ MonoBehaviour:
     - name: Rosalind Capet | Show
       characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 9
     chapterDialogueEventList: []
   - text: I see... Thank you for your time, my Lady.
     characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
@@ -261,7 +269,7 @@ MonoBehaviour:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 9
     - name: Rosalind Capet | Show
       characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
       inChargeState: 0
@@ -273,10 +281,6 @@ MonoBehaviour:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
-      expression: 0
-    - name: Rosalind Capet | Hide
-      characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
-      inChargeState: 1
       expression: 0
     chapterDialogueEventList: []
   dialogueChoiceData: []

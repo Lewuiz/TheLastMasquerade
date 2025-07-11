@@ -20,7 +20,7 @@ MonoBehaviour:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 9
     chapterDialogueEventList: []
   dialogueChoiceData:
   - text: Investigate the library

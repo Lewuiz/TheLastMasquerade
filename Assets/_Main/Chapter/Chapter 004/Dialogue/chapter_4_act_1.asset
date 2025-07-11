@@ -25,7 +25,7 @@ MonoBehaviour:
     - name: Reginal Blackwood | Show
       characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 2
     chapterDialogueEventList:
     - eventPhase: 0
       eventType: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 9
     - name: Reginal Blackwood | Show
       characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
@@ -64,7 +64,7 @@ MonoBehaviour:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 9
     - name: Reginal Blackwood | Show
       characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0

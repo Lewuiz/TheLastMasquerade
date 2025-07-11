@@ -106,7 +106,7 @@ MonoBehaviour:
     - name: Perry | Show
       characterData: {fileID: 11400000, guid: 70aee53e15dc6434b9d20592b57e46ce, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 2
     chapterDialogueEventList: []
   - text: Yes, I noticed as well. Do you know why?
     characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
@@ -114,7 +114,7 @@ MonoBehaviour:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 9
     - name: Perry | Show
       characterData: {fileID: 11400000, guid: 70aee53e15dc6434b9d20592b57e46ce, type: 2}
       inChargeState: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
     - name: Perry | Show
       characterData: {fileID: 11400000, guid: 70aee53e15dc6434b9d20592b57e46ce, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 2
     chapterDialogueEventList: []
   - text: Do you know whom she talked with the whole night?
     characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
@@ -164,7 +164,7 @@ MonoBehaviour:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 10
     - name: Perry | Show
       characterData: {fileID: 11400000, guid: 70aee53e15dc6434b9d20592b57e46ce, type: 2}
       inChargeState: 0

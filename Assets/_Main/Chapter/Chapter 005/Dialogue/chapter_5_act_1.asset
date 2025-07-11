@@ -38,7 +38,7 @@ MonoBehaviour:
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 4
     chapterDialogueEventList: []
   - text: Oh, Detective Elias. Of course. Please, come in.
     characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
@@ -89,7 +89,7 @@ MonoBehaviour:
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 4
     chapterDialogueEventList: []
   - text: Lady Rosalind said you were seen conversing quite intently with this person.
       She said he didn't he didn't appear to be Lord Fairfax.
@@ -98,7 +98,7 @@ MonoBehaviour:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 9
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
       inChargeState: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 7
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
       inChargeState: 0
@@ -149,7 +149,7 @@ MonoBehaviour:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 9
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
       inChargeState: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 7
     chapterDialogueEventList: []
   - text: I'm piecing together the final moments of Lady Eleanor. She spoke with
       only a handful of people that night-- and after those conversations, her mood
@@ -202,7 +202,7 @@ MonoBehaviour:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 9
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
       inChargeState: 0
@@ -218,7 +218,7 @@ MonoBehaviour:
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 7
     chapterDialogueEventList: []
   - text: .. not yet. But your answers are... interesting. That'll be all for now,
       Lady Isabella. THank you for your time.
