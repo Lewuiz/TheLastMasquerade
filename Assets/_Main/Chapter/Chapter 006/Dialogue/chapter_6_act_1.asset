@@ -34,7 +34,7 @@ MonoBehaviour:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 7
     chapterDialogueEventList: []
   - text: (He pulls it aside and discovers a trapdoor leading to a dark stairwell.)
     characterData: {fileID: 0}
@@ -59,7 +59,49 @@ MonoBehaviour:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
+      expression: 7
+    chapterDialogueEventList: []
+  - text: (In the far end of the hallway, Elias notices something odd under the carpet.
+      A raised edge... a hollow echo when stepped on.)
+    characterData: {fileID: 0}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
       expression: 0
+    chapterDialogueEventList: []
+  - text: What is this under the carpet?!
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 7
+    chapterDialogueEventList: []
+  - text: (He pulls it aside and discovers a trapdoor leading to a dark stairwell.)
+    characterData: {fileID: 0}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: (Nearby, a golf bag lies knocked over-- one of the sticks slick with something
+      dark...)
+    characterData: {fileID: 0}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 0
+    chapterDialogueEventList: []
+  - text: Knocked over golf bag... Is this golf stick covered with blood?!
+    characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+    characterInChargeList:
+    - name: Elias Wakefield | Show
+      characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
+      inChargeState: 0
+      expression: 7
     chapterDialogueEventList: []
   dialogueChoiceData:
   - text: Take It

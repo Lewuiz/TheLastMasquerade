@@ -69,4 +69,4 @@ MonoBehaviour:
     chapterDialogueEventList: []
   dialogueChoiceData: []
   requiredToProceedNextDialogue: 
-  nextDialogueId: end
+  nextDialogueId: end_lose

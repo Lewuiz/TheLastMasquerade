@@ -11,5 +11,6 @@ namespace Main
         public StoryEventHandler storyEventHandler = default;
         public InspectItemController inspectItemController = default;
         public Action backToChapterSelectionScene = default;
+        public Action backToTitleScene = default;
     }
 }

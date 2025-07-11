@@ -88,8 +88,14 @@ namespace Main
                 dialoguePanel = dialoguePanel,
                 storyEventHandler = storyEventHandler,
                 inspectItemController = inspectItemController,
+                backToTitleScene = BackToTitleScene
             };
             storyRunner.Init(storyRunnerData);
+        }
+
+        private void BackToTitleScene()
+        {
+            LoadScene((int)SceneID.TitleScene);
         }
 
         private void UpdateBackground(Sprite sprite)

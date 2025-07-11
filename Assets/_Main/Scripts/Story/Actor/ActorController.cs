@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 namespace Main
 {
@@ -168,7 +169,7 @@ namespace Main
             return false;
         }
 
-        private bool IsAnimatingActor()
+        public bool IsAnimatingActor()
         {
             for (int i = 0; i < actorList.Count; i++)
             {
@@ -176,6 +177,15 @@ namespace Main
                     return true;
             }
             return false;
+        }
+
+        public void HideAllActor()
+        {
+            for (int i = 0; i < actorList.Count; i++)
+            {
+                Actor actor = actorList[i];
+                actor.Hide();
+            }
         }
     }
 }

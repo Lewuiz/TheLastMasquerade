@@ -57,7 +57,7 @@ MonoBehaviour:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 8
     - name: Henry Fairfax | Show
       characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
       inChargeState: 0
@@ -94,7 +94,7 @@ MonoBehaviour:
     - name: Alistair Henshaw | Show
       characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 7
     - name: Henry Fairfax | Show
       characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
       inChargeState: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
     - name: Alistair Henshaw | Show
       characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 3
     chapterDialogueEventList: []
   - text: (Suddenly, the commotion draws others. The sound of hurried steps and gasps
       fill the chamber.)
@@ -160,7 +160,7 @@ MonoBehaviour:
     - name: Henry Fairfax | Show
       characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 11
     - name: Alistair Henshaw | Show
       characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
       inChargeState: 0
@@ -192,11 +192,11 @@ MonoBehaviour:
     - name: Henry Fairfax | Show
       characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 11
     - name: Reginal Blackwood | Show
       characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 7
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
       inChargeState: 0
@@ -216,7 +216,7 @@ MonoBehaviour:
     - name: Henry Fairfax | Show
       characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 11
     - name: Alistair Henshaw | Show
       characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
       inChargeState: 0
@@ -224,7 +224,7 @@ MonoBehaviour:
     - name: Reginal Blackwood | Show
       characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 7
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
       inChargeState: 0
@@ -232,7 +232,7 @@ MonoBehaviour:
     - name: Rosalind Capet | Show
       characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 7
     chapterDialogueEventList: []
   - text: ...
     characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
@@ -244,7 +244,7 @@ MonoBehaviour:
     - name: Henry Fairfax | Show
       characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 11
     - name: Alistair Henshaw | Show
       characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
       inChargeState: 0
@@ -256,7 +256,7 @@ MonoBehaviour:
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 1
     - name: Rosalind Capet | Show
       characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
       inChargeState: 0
@@ -277,11 +277,11 @@ MonoBehaviour:
     - name: Henry Fairfax | Show
       characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 11
     - name: Reginal Blackwood | Show
       characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 2
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
       inChargeState: 0
@@ -307,7 +307,7 @@ MonoBehaviour:
     - name: Henry Fairfax | Show
       characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 11
     - name: Reginal Blackwood | Show
       characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
@@ -327,7 +327,7 @@ MonoBehaviour:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 9
     - name: Alistair Henshaw | Show
       characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
       inChargeState: 0
@@ -339,7 +339,7 @@ MonoBehaviour:
     - name: Reginal Blackwood | Show
       characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 7
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
       inChargeState: 0
@@ -553,7 +553,7 @@ MonoBehaviour:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 9
     - name: Alistair Henshaw | Show
       characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
       inChargeState: 0
@@ -605,7 +605,7 @@ MonoBehaviour:
       expression: 0
     chapterDialogueEventList: []
   - text: That perfect unforgettable cursive handwriting..., it's Isabella's.
-    characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
+    characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
     characterInChargeList:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
@@ -622,7 +622,7 @@ MonoBehaviour:
     - name: Reginal Blackwood | Show
       characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 7
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
       inChargeState: 0
@@ -682,7 +682,7 @@ MonoBehaviour:
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 7
     - name: Rosalind Capet | Show
       characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
       inChargeState: 0
@@ -714,7 +714,7 @@ MonoBehaviour:
     - name: Rosalind Capet | Show
       characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 7
     chapterDialogueEventList: []
   - text: ... well done, Detective.
     characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
@@ -738,7 +738,7 @@ MonoBehaviour:
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 4
     - name: Rosalind Capet | Show
       characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
       inChargeState: 0
@@ -762,7 +762,7 @@ MonoBehaviour:
     - name: Reginal Blackwood | Show
       characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 7
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
       inChargeState: 0
@@ -851,7 +851,7 @@ MonoBehaviour:
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 1
     - name: Rosalind Capet | Show
       characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
       inChargeState: 0
@@ -908,7 +908,7 @@ MonoBehaviour:
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 1
     - name: Rosalind Capet | Show
       characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
       inChargeState: 0
@@ -997,7 +997,7 @@ MonoBehaviour:
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 4
     - name: Rosalind Capet | Show
       characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
       inChargeState: 0
@@ -1014,7 +1014,7 @@ MonoBehaviour:
     - name: Henry Fairfax | Show
       characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 11
     - name: Alistair Henshaw | Show
       characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
       inChargeState: 0
@@ -1026,7 +1026,7 @@ MonoBehaviour:
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 1
     - name: Rosalind Capet | Show
       characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
       inChargeState: 0
@@ -1042,7 +1042,7 @@ MonoBehaviour:
     - name: Henry Fairfax | Show
       characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 11
     - name: Alistair Henshaw | Show
       characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
       inChargeState: 0
@@ -1058,7 +1058,7 @@ MonoBehaviour:
     - name: Rosalind Capet | Show
       characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 7
     chapterDialogueEventList: []
   - text: Not alone.
     characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
@@ -1070,7 +1070,7 @@ MonoBehaviour:
     - name: Henry Fairfax | Show
       characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 11
     - name: Alistair Henshaw | Show
       characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
       inChargeState: 0
@@ -1098,7 +1098,7 @@ MonoBehaviour:
     - name: Henry Fairfax | Show
       characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 11
     - name: Alistair Henshaw | Show
       characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
       inChargeState: 0
@@ -1129,7 +1129,7 @@ MonoBehaviour:
     - name: Henry Fairfax | Show
       characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 11
     - name: Alistair Henshaw | Show
       characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
       inChargeState: 0
@@ -1158,7 +1158,7 @@ MonoBehaviour:
     - name: Henry Fairfax | Show
       characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 11
     - name: Alistair Henshaw | Show
       characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
       inChargeState: 0
@@ -1187,7 +1187,7 @@ MonoBehaviour:
     - name: Henry Fairfax | Show
       characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 11
     - name: Alistair Henshaw | Show
       characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
       inChargeState: 0
@@ -1211,11 +1211,11 @@ MonoBehaviour:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 9
     - name: Henry Fairfax | Show
       characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 11
     - name: Alistair Henshaw | Show
       characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
       inChargeState: 0
@@ -1245,7 +1245,7 @@ MonoBehaviour:
     - name: Henry Fairfax | Show
       characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 11
     - name: Alistair Henshaw | Show
       characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
       inChargeState: 0
@@ -1273,7 +1273,7 @@ MonoBehaviour:
     - name: Henry Fairfax | Show
       characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 11
     - name: Alistair Henshaw | Show
       characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
       inChargeState: 0
@@ -1281,7 +1281,7 @@ MonoBehaviour:
     - name: Reginal Blackwood | Show
       characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 1
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
       inChargeState: 0
@@ -1301,7 +1301,7 @@ MonoBehaviour:
     - name: Henry Fairfax | Show
       characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 11
     - name: Alistair Henshaw | Show
       characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
       inChargeState: 0
@@ -1330,7 +1330,7 @@ MonoBehaviour:
     - name: Henry Fairfax | Show
       characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 11
     - name: Alistair Henshaw | Show
       characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
       inChargeState: 0
@@ -1359,7 +1359,7 @@ MonoBehaviour:
     - name: Henry Fairfax | Show
       characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 11
     - name: Alistair Henshaw | Show
       characterData: {fileID: 11400000, guid: 0492e72e6b9e2f74296421603bf523c7, type: 2}
       inChargeState: 0
@@ -1403,7 +1403,7 @@ MonoBehaviour:
     - name: Rosalind Capet | Show
       characterData: {fileID: 11400000, guid: e520f1218f361014b95df81d90e00edd, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 7
     chapterDialogueEventList: []
   - text: Edith, Perry, please get the guards down here. Make sure the authorities
       see the forged note and the torn guest list.
@@ -1480,7 +1480,7 @@ MonoBehaviour:
     - name: Reginal Blackwood | Show
       characterData: {fileID: 11400000, guid: c9e6580d3476f524d805f8c80a42de99, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 2
     - name: Lady Isabella | Show
       characterData: {fileID: 11400000, guid: 8b669871a2c2a5f4993dc9ad1c04b9f8, type: 2}
       inChargeState: 0
@@ -1644,7 +1644,7 @@ MonoBehaviour:
     - name: Elias Wakefield | Show
       characterData: {fileID: 11400000, guid: c7056aca07669fb4180a757ca52d9c2d, type: 2}
       inChargeState: 0
-      expression: 0
+      expression: 10
     - name: Henry Fairfax | Hide
       characterData: {fileID: 11400000, guid: 14af2acde3f2e9145bd7c1bf1e37dfc7, type: 2}
       inChargeState: 1
@@ -1673,4 +1673,4 @@ MonoBehaviour:
       prefab: {fileID: 0}
   dialogueChoiceData: []
   requiredToProceedNextDialogue: 
-  nextDialogueId: chapter_6_act_2
+  nextDialogueId: end_win

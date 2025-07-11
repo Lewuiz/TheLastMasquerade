@@ -163,7 +163,45 @@ namespace Main
         {
             storyManager.UpdateChapter(storyManager.CurrentChapter + 1);
             OnChapterEndedEvent?.Invoke();
-            data.backToChapterSelectionScene?.Invoke();
+            if (chapterDialogue.nextDialogueId == "end_win" || chapterDialogue.nextDialogueId == "end_lose")
+            {
+                data.actorController.HideAllActor();
+                data.dialoguePanel.Hide();
+
+                GameCompleteWindowData gameCompleteWindowData;
+                Func<bool> canProceed = () => !data.actorController.IsAnimatingActor() && data.dialoguePanel.IsHiding;
+                
+                if(chapterDialogue.nextDialogueId == "end_win")
+                {
+                    gameCompleteWindowData = new GameCompleteWindowData() 
+                    {
+                        canProceed = canProceed,
+                        isGameStatusCompleted = true,
+                        onWindowClosed = () =>
+                        {
+                            data.backToTitleScene?.Invoke();
+                        }
+                    };
+                }
+                else
+                {
+                    gameCompleteWindowData = new GameCompleteWindowData()
+                    {
+                        canProceed = canProceed,
+                        isGameStatusCompleted = true,
+                        onWindowClosed = () =>
+                        {
+                            data.backToChapterSelectionScene?.Invoke();
+                        }
+                    };
+                }
+                WindowController.Instance.Show(nameof(WGameComplete), gameCompleteWindowData);
+            }
+            else
+            {
+                data.backToChapterSelectionScene?.Invoke();
+            }
+
             Stop();
         }
 
