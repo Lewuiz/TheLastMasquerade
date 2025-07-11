@@ -19,6 +19,11 @@ namespace Main
             });
         }
 
+        public void Quit()
+        {
+            Application.Quit();
+        }
+
         protected override void UpdateWindowCanvasCamera()
         {
             WindowController.Instance.UpdateWindowCanvasCamera();

@@ -6,6 +6,9 @@ namespace Main
     public class ChapterSelectionSceneController : RootSceneController
     {
         [SerializeField] private ChapterSelection chapterSelection = default;
+
+        private LoadingOverlay loadingOverlay = default;
+
         protected override void OnStartCompleted()
         {
             Overlay.Instance.LoadingOverlay.InitialLoading();
@@ -20,11 +23,23 @@ namespace Main
         protected override void UpdateWindowCanvasCamera()
         {
             WindowController.Instance.UpdateWindowCanvasCamera();
+            loadingOverlay = Overlay.Instance.LoadingOverlay;
         }
 
         private void GoToStoryScene()
         {
-            LoadScene(SceneID.StoryScene);
+            loadingOverlay.Show(.5f, () =>
+            {
+                LoadScene(SceneID.StoryScene);
+            });
+        }
+
+        public void BackToTitleScene()
+        {
+            loadingOverlay.Show(.5f, () =>
+            {
+                LoadScene(SceneID.TitleScene);
+            });
         }
     }
 }

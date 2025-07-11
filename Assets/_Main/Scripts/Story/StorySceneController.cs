@@ -93,9 +93,12 @@ namespace Main
             storyRunner.Init(storyRunnerData);
         }
 
-        private void BackToTitleScene()
+        public void BackToTitleScene()
         {
-            LoadScene((int)SceneID.TitleScene);
+            loadingOverlay.Show(.5f, () =>
+            {
+                LoadScene((int)SceneID.TitleScene);
+            });
         }
 
         private void UpdateBackground(Sprite sprite)
@@ -110,7 +113,7 @@ namespace Main
             }, .5f, .3f);
         }
 
-        private void BackToChapterSelection()
+        public void BackToChapterSelection()
         {
             loadingOverlay.Show(.5f, () =>
             {
