@@ -34,8 +34,7 @@ namespace Main
                 ChapterSelectionItem chapterSelectionItem = Instantiate(chapterSelectionItemTemplate, chapterSelectionItemTemplate.transform.parent);
                 chapterSelectionItem.gameObject.SetActive(true);
 
-                //bool isUnlock = storyManager.CurrentChapter >= i;
-                bool isUnlock = true;
+                bool isUnlock = storyManager.CurrentChapter >= i;
                 int chapter = i;
 
                 chapterSelectionItem.Init(chapterData.thumbnail, chapter, GoToStoryScene, isUnlock);
