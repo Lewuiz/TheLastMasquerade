@@ -9,6 +9,8 @@ namespace Main
         {
             AudioClip audioClip = Resources.Load<AudioClip>("Audio/bgm_title");
             AudioManager.Instance.PlayBGM(audioClip, MusicTransition.Swift);
+
+            Overlay.Instance.LoadingOverlay.HideOvelay(.5f);
         }
 
         public void Play()

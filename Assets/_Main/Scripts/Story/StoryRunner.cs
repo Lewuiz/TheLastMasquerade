@@ -195,7 +195,7 @@ namespace Main
                     gameCompleteWindowData = new GameCompleteWindowData()
                     {
                         canProceed = canProceed,
-                        isGameStatusCompleted = true,
+                        isGameStatusCompleted = false,
                         onWindowClosed = () =>
                         {
                             data.backToChapterSelectionScene?.Invoke();
