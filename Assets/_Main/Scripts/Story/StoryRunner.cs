@@ -24,6 +24,8 @@ namespace Main
         public event Action OnDialogueEndedEvent = default;
         public event Action OnChapterEndedEvent = default;
 
+        private string chapterEndId = default;
+
         public void Init(StoryRunnerData data)
         {
             inventoryManager = GameCore.Instance.InventoryManager;
@@ -156,6 +158,11 @@ namespace Main
             if (storyManager.CurrentChapter <= chapter)
                 storyManager.UpdateDialogueId(nextDialogueId);
 
+            if(nextDialogueId =="end_win" || nextDialogueId == "end_lose")
+            {
+                chapterEndId = nextDialogueId;
+            }
+
             chapterDialogue = storyManager.GetDialogue(nextDialogueId);
         }
 
@@ -163,7 +170,7 @@ namespace Main
         {
             storyManager.UpdateChapter(storyManager.CurrentChapter + 1);
             OnChapterEndedEvent?.Invoke();
-            if (chapterDialogue.nextDialogueId == "end_win" || chapterDialogue.nextDialogueId == "end_lose")
+            if (chapterEndId == "end_win" || chapterEndId == "end_lose")
             {
                 data.actorController.HideAllActor();
                 data.dialoguePanel.Hide();
@@ -171,7 +178,7 @@ namespace Main
                 GameCompleteWindowData gameCompleteWindowData;
                 Func<bool> canProceed = () => !data.actorController.IsAnimatingActor() && data.dialoguePanel.IsHiding;
                 
-                if(chapterDialogue.nextDialogueId == "end_win")
+                if(chapterEndId == "end_win")
                 {
                     gameCompleteWindowData = new GameCompleteWindowData() 
                     {
